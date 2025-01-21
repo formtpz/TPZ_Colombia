@@ -1,7 +1,7 @@
 # ----- Librerías ---- #
 
 import streamlit as st
-import Historial, Capacitacion, Otros_Registros, Bonos, Salir, IFI, IFII, IFIII, Conformacion, CC_Conformacion, CC_IFI, Auxiliares, Validacion, Testing, Ubicacion
+import Historial, Capacitacion, Otros_Registros, Bonos, Salir, IFI, IFII
 
 # ----- Procesos 1 ---- #
 
@@ -41,27 +41,6 @@ def Procesos1(usuario,puesto):
         placeholder10_2= st.empty()
         informacion_final_iii_2 = placeholder10_2.button("Información Final III",key="informacion_final_iii_2")
 
-        placeholder11_2= st.empty()
-        conformacion_2 = placeholder11_2.button("Conformación",key="conformacion_2")
-
-        placeholder12_2= st.empty()
-        cc_conformacion_2 = placeholder12_2.button("Control de Calidad Conformación",key="cc_conformacion_2")
-
-        placeholder13_2= st.empty()
-        cc_ifi_2 = placeholder13_2.button("Control de Calidad IF I",key="cc_ifi_2")
-
-        placeholder14_2= st.empty()
-        auxiliares_2 = placeholder14_2.button("Auxiliares",key="auxiliares_2")
-
-        placeholder15_2= st.empty()
-        validacion_2 = placeholder15_2.button("Validación",key="validacion_2")
-
-        placeholder16_2= st.empty()
-        testing_2 = placeholder16_2.button("Testing",key="testing_2")
-
-        placeholder17_2= st.empty()
-        ubicacion_2 = placeholder17_2.button("Ubicación",key="ubicacion_2")
-        
         # ----- Historial ---- #
 
         if historial_2:
@@ -76,13 +55,6 @@ def Procesos1(usuario,puesto):
             placeholder8_2.empty()
             placeholder9_2.empty()
             placeholder10_2.empty()
-            placeholder11_2.empty()
-            placeholder12_2.empty()
-            placeholder13_2.empty()
-            placeholder14_2.empty()
-            placeholder15_2.empty()
-            placeholder16_2.empty()
-            placeholder17_2.empty()
             st.session_state.Procesos=True
             st.session_state.Historial=True
             Historial.Historial(usuario,puesto)
@@ -101,13 +73,6 @@ def Procesos1(usuario,puesto):
             placeholder8_2.empty()
             placeholder9_2.empty()
             placeholder10_2.empty()
-            placeholder11_2.empty()
-            placeholder12_2.empty()
-            placeholder13_2.empty()
-            placeholder14_2.empty()
-            placeholder15_2.empty()
-            placeholder16_2.empty()
-            placeholder17_2.empty()
             st.session_state.Procesos=True
             st.session_state.Capacitacion=True
             Capacitacion.Capacitacion(usuario,puesto)
@@ -126,13 +91,6 @@ def Procesos1(usuario,puesto):
             placeholder8_2.empty()
             placeholder9_2.empty()
             placeholder10_2.empty()
-            placeholder11_2.empty()
-            placeholder12_2.empty()
-            placeholder13_2.empty()
-            placeholder14_2.empty()
-            placeholder15_2.empty()
-            placeholder16_2.empty()
-            placeholder17_2.empty()
             st.session_state.Procesos=True
             st.session_state.Otros_Registros=True
             Otros_Registros.Otros_Registros(usuario,puesto)
@@ -151,13 +109,6 @@ def Procesos1(usuario,puesto):
             placeholder8_2.empty()
             placeholder9_2.empty()
             placeholder10_2.empty()
-            placeholder11_2.empty()
-            placeholder12_2.empty()
-            placeholder13_2.empty()
-            placeholder14_2.empty() 
-            placeholder15_2.empty()
-            placeholder16_2.empty()
-            placeholder17_2.empty()
             st.session_state.Procesos=True
             st.session_state.Bonos=True
             Bonos.Bonos(usuario,puesto)
@@ -176,13 +127,6 @@ def Procesos1(usuario,puesto):
             placeholder8_2.empty()
             placeholder9_2.empty()
             placeholder10_2.empty()
-            placeholder11_2.empty()
-            placeholder12_2.empty()
-            placeholder13_2.empty()
-            placeholder14_2.empty()
-            placeholder15_2.empty()
-            placeholder16_2.empty()
-            placeholder17_2.empty()
             st.session_state.Ingreso= False
             st.session_state.Procesos=True
             st.session_state.Salir=True
@@ -202,13 +146,6 @@ def Procesos1(usuario,puesto):
             placeholder8_2.empty()
             placeholder9_2.empty()
             placeholder10_2.empty()
-            placeholder11_2.empty()
-            placeholder12_2.empty()
-            placeholder13_2.empty()
-            placeholder14_2.empty()
-            placeholder15_2.empty()
-            placeholder16_2.empty()
-            placeholder17_2.empty()
             st.session_state.Procesos=True
             st.session_state.IFI=True
             IFI.IFI(usuario,puesto)
@@ -227,217 +164,9 @@ def Procesos1(usuario,puesto):
             placeholder8_2.empty()
             placeholder9_2.empty()
             placeholder10_2.empty()
-            placeholder11_2.empty()
-            placeholder12_2.empty()
-            placeholder13_2.empty()
-            placeholder14_2.empty()
-            placeholder15_2.empty()
-            placeholder16_2.empty()
-            placeholder17_2.empty()
             st.session_state.Procesos=True
             st.session_state.IFII=True
             IFII.IFII(usuario,puesto)
-
-        # ----- IFIII ---- #
-
-        elif informacion_final_iii_2:
-
-            placeholder1_2.empty()
-            placeholder2_2.empty()
-            placeholder3_2.empty()
-            placeholder4_2.empty()
-            placeholder5_2.empty()
-            placeholder6_2.empty()
-            placeholder7_2.empty()
-            placeholder8_2.empty()
-            placeholder9_2.empty()
-            placeholder10_2.empty()
-            placeholder11_2.empty()
-            placeholder12_2.empty()
-            placeholder13_2.empty()
-            placeholder14_2.empty()
-            placeholder15_2.empty()
-            placeholder16_2.empty()
-            placeholder17_2.empty()
-            st.session_state.Procesos=True
-            st.session_state.IFIII=True
-            IFIII.IFIII(usuario,puesto)
-
-        # ----- Conformación ---- #
-
-        elif conformacion_2:
-
-            placeholder1_2.empty()
-            placeholder2_2.empty()
-            placeholder3_2.empty()
-            placeholder4_2.empty()
-            placeholder5_2.empty()
-            placeholder6_2.empty()
-            placeholder7_2.empty()
-            placeholder8_2.empty()
-            placeholder9_2.empty()
-            placeholder10_2.empty()
-            placeholder11_2.empty()
-            placeholder12_2.empty()
-            placeholder13_2.empty()
-            placeholder14_2.empty()      
-            placeholder15_2.empty()
-            placeholder16_2.empty()
-            placeholder17_2.empty()      
-            st.session_state.Procesos=True
-            st.session_state.Conformacion=True
-            Conformacion.Conformacion(usuario,puesto)
-
-        # ----- Control de Calidad Conformación ---- #
-        
-        elif cc_conformacion_2:
-
-            placeholder1_2.empty()
-            placeholder2_2.empty()
-            placeholder3_2.empty()
-            placeholder4_2.empty()
-            placeholder5_2.empty()
-            placeholder6_2.empty()
-            placeholder7_2.empty()
-            placeholder8_2.empty()
-            placeholder9_2.empty()
-            placeholder10_2.empty()
-            placeholder11_2.empty()
-            placeholder12_2.empty()
-            placeholder13_2.empty()
-            placeholder14_2.empty()
-            placeholder15_2.empty()
-            placeholder16_2.empty()
-            placeholder17_2.empty()
-            st.session_state.Procesos=True
-            st.session_state.CC_Conformacion=True
-            CC_Conformacion.CC_Conformacion(usuario,puesto)
-
-        # ----- Control de Calidad IF I ---- #
-
-        elif cc_ifi_2:
-
-            placeholder1_2.empty()
-            placeholder2_2.empty()
-            placeholder3_2.empty()
-            placeholder4_2.empty()
-            placeholder5_2.empty()
-            placeholder6_2.empty()
-            placeholder7_2.empty()
-            placeholder8_2.empty()
-            placeholder9_2.empty()
-            placeholder10_2.empty()
-            placeholder11_2.empty()
-            placeholder12_2.empty()
-            placeholder13_2.empty()
-            placeholder14_2.empty()
-            placeholder15_2.empty()
-            placeholder16_2.empty()
-            placeholder17_2.empty()
-            st.session_state.Procesos=True
-            st.session_state.CC_IFI=True
-            CC_IFI.CC_IFI(usuario,puesto)
-
-        # ----- Auxiliares ---- #
-
-        elif auxiliares_2:
-
-            placeholder1_2.empty()
-            placeholder2_2.empty()
-            placeholder3_2.empty()
-            placeholder4_2.empty()
-            placeholder5_2.empty()
-            placeholder6_2.empty()
-            placeholder7_2.empty()
-            placeholder8_2.empty()
-            placeholder9_2.empty()
-            placeholder10_2.empty()
-            placeholder11_2.empty()
-            placeholder12_2.empty()
-            placeholder13_2.empty()
-            placeholder14_2.empty()
-            placeholder15_2.empty()
-            placeholder16_2.empty()
-            placeholder17_2.empty()
-            st.session_state.Procesos=True
-            st.session_state.Auxiliares=True
-            Auxiliares.Auxiliares(usuario,puesto)
-
-        # ----- Validación ---- #
-
-        elif validacion_2:
-
-            placeholder1_2.empty()
-            placeholder2_2.empty()
-            placeholder3_2.empty()
-            placeholder4_2.empty()
-            placeholder5_2.empty()
-            placeholder6_2.empty()
-            placeholder7_2.empty()
-            placeholder8_2.empty()
-            placeholder9_2.empty()
-            placeholder10_2.empty()
-            placeholder11_2.empty()
-            placeholder12_2.empty()
-            placeholder13_2.empty()
-            placeholder14_2.empty()
-            placeholder15_2.empty()
-            placeholder16_2.empty()
-            placeholder17_2.empty()
-            st.session_state.Procesos=True
-            st.session_state.Validacion=True
-            Validacion.Validacion(usuario,puesto)
-
-        # ----- Testing ---- #
-
-        elif testing_2:
-
-            placeholder1_2.empty()
-            placeholder2_2.empty()
-            placeholder3_2.empty()
-            placeholder4_2.empty()
-            placeholder5_2.empty()
-            placeholder6_2.empty()
-            placeholder7_2.empty()
-            placeholder8_2.empty()
-            placeholder9_2.empty()
-            placeholder10_2.empty()
-            placeholder11_2.empty()
-            placeholder12_2.empty()
-            placeholder13_2.empty()
-            placeholder14_2.empty()
-            placeholder15_2.empty()
-            placeholder16_2.empty()
-            placeholder17_2.empty()
-            st.session_state.Procesos=True
-            st.session_state.Testing=True
-            Testing.Testing(usuario,puesto)
-
-
-        # ----- Ubicación ---- #
-
-        elif ubicacion_2:
-
-            placeholder1_2.empty()
-            placeholder2_2.empty()
-            placeholder3_2.empty()
-            placeholder4_2.empty()
-            placeholder5_2.empty()
-            placeholder6_2.empty()
-            placeholder7_2.empty()
-            placeholder8_2.empty()
-            placeholder9_2.empty()
-            placeholder10_2.empty()
-            placeholder11_2.empty()
-            placeholder12_2.empty()
-            placeholder13_2.empty()
-            placeholder14_2.empty()
-            placeholder15_2.empty()
-            placeholder16_2.empty()
-            placeholder17_2.empty()
-            st.session_state.Procesos=True
-            st.session_state.Ubicacion=True
-            Ubicacion.Ubicacion(usuario,puesto)
 
     elif st.session_state.Procesos==True:
 
@@ -458,31 +187,7 @@ def Procesos1(usuario,puesto):
 
         elif st.session_state.IFII==True:
             IFII.IFII(usuario,puesto)
-
-        elif st.session_state.IFIII==True:
-            IFIII.IFIII(usuario,puesto)
-        
-        elif st.session_state.Conformacion==True:
-            Conformacion.Conformacion(usuario,puesto)
-        
-        elif st.session_state.CC_Conformacion==True:
-            CC_Conformacion.CC_Conformacion(usuario,puesto)
-           
-        elif st.session_state.CC_IFI==True:
-            CC_IFI.CC_IFI(usuario,puesto)
-
-        elif st.session_state.Auxiliares==True:
-            Auxiliares.Auxiliares(usuario,puesto)
-
-        elif st.session_state.Validacion==True:
-            Validacion.Validacion(usuario,puesto)
-        
-        elif st.session_state.Testing==True:
-            Testing.Testing(usuario,puesto)
-
-        elif st.session_state.Ubicacion==True:
-            Ubicacion.Ubicacion(usuario,puesto)
-
+            
 # ----- Procesos 2 ---- #
 
 def Procesos2(usuario,puesto):
@@ -692,24 +397,6 @@ def Procesos3(usuario,puesto):
         placeholder9_2 = st.empty()
         informacion_final_ii_2 = placeholder9_2.button("Información Final II",key="informacion_final_ii_2")
 
-        placeholder10_2= st.empty()
-        informacion_final_iii_2 = placeholder10_2.button("Información Final III",key="informacion_final_iii_2")
-
-        placeholder11_2= st.empty()
-        conformacion_2 = placeholder11_2.button("Conformación",key="conformacion_2")
-
-        placeholder14_2= st.empty()
-        auxiliares_2 = placeholder14_2.button("Auxiliares",key="auxiliares_2")
-
-        placeholder15_2= st.empty()
-        validacion_2 = placeholder15_2.button("Validación",key="validacion_2")
-
-        placeholder16_2= st.empty()
-        testing_2 = placeholder16_2.button("Testing",key="testing_2")
-
-        placeholder17_2= st.empty()
-        ubicacion_2 = placeholder17_2.button("Ubicación",key="ubicacion_2")
-
         # ----- Historial ---- #
 
         if historial_2:
@@ -723,12 +410,6 @@ def Procesos3(usuario,puesto):
             placeholder7_2.empty()
             placeholder8_2.empty()
             placeholder9_2.empty()
-            placeholder10_2.empty()
-            placeholder11_2.empty()
-            placeholder14_2.empty()
-            placeholder15_2.empty()
-            placeholder16_2.empty()
-            placeholder17_2.empty()
             st.session_state.Procesos=True
             st.session_state.Historial=True
             Historial.Historial(usuario,puesto)
@@ -746,12 +427,6 @@ def Procesos3(usuario,puesto):
             placeholder7_2.empty()
             placeholder8_2.empty()
             placeholder9_2.empty()
-            placeholder10_2.empty()
-            placeholder11_2.empty()
-            placeholder14_2.empty()
-            placeholder15_2.empty()
-            placeholder16_2.empty()
-            placeholder17_2.empty()
             st.session_state.Procesos=True
             st.session_state.Capacitacion=True
             Capacitacion.Capacitacion(usuario,puesto)
@@ -769,12 +444,6 @@ def Procesos3(usuario,puesto):
             placeholder7_2.empty()
             placeholder8_2.empty()
             placeholder9_2.empty()
-            placeholder10_2.empty()
-            placeholder11_2.empty()
-            placeholder14_2.empty()
-            placeholder15_2.empty()
-            placeholder16_2.empty()
-            placeholder17_2.empty()
             st.session_state.Procesos=True
             st.session_state.Otros_Registros=True
             Otros_Registros.Otros_Registros(usuario,puesto)
@@ -792,12 +461,6 @@ def Procesos3(usuario,puesto):
             placeholder7_2.empty()
             placeholder8_2.empty()
             placeholder9_2.empty()
-            placeholder10_2.empty()
-            placeholder11_2.empty()
-            placeholder14_2.empty()
-            placeholder15_2.empty()
-            placeholder16_2.empty()
-            placeholder17_2.empty()
             st.session_state.Procesos=True
             st.session_state.Bonos=True
             Bonos.Bonos(usuario,puesto)
@@ -815,12 +478,6 @@ def Procesos3(usuario,puesto):
             placeholder7_2.empty()
             placeholder8_2.empty()
             placeholder9_2.empty()
-            placeholder10_2.empty()
-            placeholder11_2.empty()
-            placeholder14_2.empty()
-            placeholder15_2.empty()
-            placeholder16_2.empty()
-            placeholder17_2.empty()
             st.session_state.Ingreso = False
             st.session_state.Procesos = True
             st.session_state.Salir=True
@@ -839,12 +496,6 @@ def Procesos3(usuario,puesto):
             placeholder7_2.empty()
             placeholder8_2.empty()
             placeholder9_2.empty()
-            placeholder10_2.empty()
-            placeholder11_2.empty()
-            placeholder14_2.empty()
-            placeholder15_2.empty()
-            placeholder16_2.empty()
-            placeholder17_2.empty()
             st.session_state.Procesos=True
             st.session_state.IFI=True
             IFI.IFI(usuario,puesto)
@@ -862,154 +513,9 @@ def Procesos3(usuario,puesto):
             placeholder7_2.empty()
             placeholder8_2.empty()
             placeholder9_2.empty()
-            placeholder10_2.empty()
-            placeholder11_2.empty()
-            placeholder14_2.empty()
-            placeholder15_2.empty()
-            placeholder16_2.empty()
-            placeholder17_2.empty()
             st.session_state.Procesos=True
             st.session_state.IFII=True
             IFII.IFII(usuario,puesto)
-
-        # ----- IFIII ---- #
-
-        elif informacion_final_iii_2:
-
-            placeholder1_2.empty()
-            placeholder2_2.empty()
-            placeholder3_2.empty()
-            placeholder4_2.empty()
-            placeholder5_2.empty()
-            placeholder6_2.empty()
-            placeholder7_2.empty()
-            placeholder8_2.empty()
-            placeholder9_2.empty()
-            placeholder10_2.empty()
-            placeholder11_2.empty()
-            placeholder14_2.empty()
-            placeholder15_2.empty()
-            placeholder16_2.empty()
-            placeholder17_2.empty()
-            st.session_state.Procesos=True
-            st.session_state.IFIII=True
-            IFIII.IFIII(usuario,puesto)
-
-        # ----- Conformación ---- #
-
-        elif conformacion_2:
-
-            placeholder1_2.empty()
-            placeholder2_2.empty()
-            placeholder3_2.empty()
-            placeholder4_2.empty()
-            placeholder5_2.empty()
-            placeholder6_2.empty()
-            placeholder7_2.empty()
-            placeholder8_2.empty()
-            placeholder9_2.empty()
-            placeholder10_2.empty()
-            placeholder11_2.empty()
-            placeholder14_2.empty()
-            placeholder15_2.empty()
-            placeholder16_2.empty()
-            placeholder17_2.empty()
-            st.session_state.Procesos=True
-            st.session_state.Conformacion=True
-            Conformacion.Conformacion(usuario,puesto)
-
-        # ----- Auxiliares ---- #
-
-        elif auxiliares_2:
-
-            placeholder1_2.empty()
-            placeholder2_2.empty()
-            placeholder3_2.empty()
-            placeholder4_2.empty()
-            placeholder5_2.empty()
-            placeholder6_2.empty()
-            placeholder7_2.empty()
-            placeholder8_2.empty()
-            placeholder9_2.empty()
-            placeholder10_2.empty()
-            placeholder11_2.empty()
-            placeholder14_2.empty()
-            placeholder15_2.empty()
-            placeholder16_2.empty()
-            placeholder17_2.empty()
-            st.session_state.Procesos=True
-            st.session_state.Auxiliares=True
-            Auxiliares.Auxiliares(usuario,puesto)
-
-        # ----- Validación ---- #
-
-        elif validacion_2:
-
-            placeholder1_2.empty()
-            placeholder2_2.empty()
-            placeholder3_2.empty()
-            placeholder4_2.empty()
-            placeholder5_2.empty()
-            placeholder6_2.empty()
-            placeholder7_2.empty()
-            placeholder8_2.empty()
-            placeholder9_2.empty()
-            placeholder10_2.empty()
-            placeholder11_2.empty()
-            placeholder14_2.empty()
-            placeholder15_2.empty()
-            placeholder16_2.empty()
-            placeholder17_2.empty()
-            st.session_state.Procesos=True
-            st.session_state.Validacion=True
-            Validacion.Validacion(usuario,puesto)
-
-        # ----- Testing ---- #
-
-        elif testing_2:
-
-            placeholder1_2.empty()
-            placeholder2_2.empty()
-            placeholder3_2.empty()
-            placeholder4_2.empty()
-            placeholder5_2.empty()
-            placeholder6_2.empty()
-            placeholder7_2.empty()
-            placeholder8_2.empty()
-            placeholder9_2.empty()
-            placeholder10_2.empty()
-            placeholder11_2.empty()
-            placeholder14_2.empty()
-            placeholder15_2.empty()
-            placeholder16_2.empty()
-            placeholder17_2.empty()
-            st.session_state.Procesos=True
-            st.session_state.Testing=True
-            Testing.Testing(usuario,puesto)
-
-
-        # ----- Ubicación ---- #
-
-        elif ubicacion_2:
-
-            placeholder1_2.empty()
-            placeholder2_2.empty()
-            placeholder3_2.empty()
-            placeholder4_2.empty()
-            placeholder5_2.empty()
-            placeholder6_2.empty()
-            placeholder7_2.empty()
-            placeholder8_2.empty()
-            placeholder9_2.empty()
-            placeholder10_2.empty()
-            placeholder11_2.empty()
-            placeholder14_2.empty()
-            placeholder15_2.empty()
-            placeholder16_2.empty()
-            placeholder17_2.empty()
-            st.session_state.Procesos=True
-            st.session_state.Ubicacion=True
-            Ubicacion.Ubicacion(usuario,puesto)
 
     elif st.session_state.Procesos==True:
 
@@ -1030,21 +536,3 @@ def Procesos3(usuario,puesto):
 
         elif st.session_state.IFII==True:
             IFII.IFII(usuario,puesto)
-
-        elif st.session_state.IFIII==True:
-            IFIII.IFIII(usuario,puesto)
-        
-        elif st.session_state.Conformacion==True:
-            Conformacion.Conformacion(usuario,puesto)
-
-        elif st.session_state.Auxiliares==True:
-            Auxiliares.Auxiliares(usuario,puesto)
-
-        elif st.session_state.Validacion==True:
-            Validacion.Validacion(usuario,puesto)
-
-        elif st.session_state.Testing==True:
-            Testing.Testing(usuario,puesto)    
-
-        elif st.session_state.Ubicacion==True:
-            Ubicacion.Ubicacion(usuario,puesto)    
