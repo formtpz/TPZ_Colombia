@@ -86,19 +86,19 @@ def Capacitacion(usuario,puesto):
     filtro_8 = placeholder19_8.selectbox("Filtro", options=("Todos","Operarios","Propio","Personal Asignado","Reportados"), key="filtro_8")
 
     if filtro_8=="Todos":
-      data = pd.read_sql(f"select cast(id as integer),marca,usuario,nombre,perfil,puesto,supervisor,fecha,tema,observaciones,horas,reporte from capacitaciones where fecha>='{fecha_de__inicio_8}' and fecha<='{fecha_de__finalizacion_8}'", con)
+      data = pd.read_sql(f"select cast(id as integer),marca,usuario,nombre,puesto,supervisor,fecha,tema,observaciones,horas,reporte from capacitaciones where fecha>='{fecha_de__inicio_8}' and fecha<='{fecha_de__finalizacion_8}'", con)
 
     elif filtro_8=="Operarios":
-      data = pd.read_sql(f"select cast(id as integer),marca,usuario,nombre,perfil,puesto,supervisor,fecha,tema,observaciones,horas,reporte from capacitaciones where puesto='Operario Catastral' and fecha>='{fecha_de__inicio_8}' and fecha<='{fecha_de__finalizacion_8}'", con)
+      data = pd.read_sql(f"select cast(id as integer),marca,usuario,nombre,puesto,supervisor,fecha,tema,observaciones,horas,reporte from capacitaciones where puesto='Operario Catastral' and fecha>='{fecha_de__inicio_8}' and fecha<='{fecha_de__finalizacion_8}'", con)
       
     elif filtro_8=="Propio" :
-      data = pd.read_sql(f"select cast(id as integer),marca,usuario,nombre,perfil,puesto,supervisor,fecha,tema,observaciones,horas,reporte from capacitaciones where usuario='{usuario}' and fecha>='{fecha_de__inicio_8}' and fecha<='{fecha_de__finalizacion_8}'", con)
+      data = pd.read_sql(f"select cast(id as integer),marca,usuario,nombre,puesto,supervisor,fecha,tema,observaciones,horas,reporte from capacitaciones where usuario='{usuario}' and fecha>='{fecha_de__inicio_8}' and fecha<='{fecha_de__finalizacion_8}'", con)
 
     elif filtro_8=="Personal Asignado" :
-      data = pd.read_sql(f"select cast(id as integer),marca,usuario,nombre,perfil,puesto,supervisor,fecha,tema,observaciones,horas,reporte from capacitaciones where supervisor='{nombre_8}' and fecha>='{fecha_de__inicio_8}' and fecha<='{fecha_de__finalizacion_8}'", con)
+      data = pd.read_sql(f"select cast(id as integer),marca,usuario,nombre,puesto,supervisor,fecha,tema,observaciones,horas,reporte from capacitaciones where supervisor='{nombre_8}' and fecha>='{fecha_de__inicio_8}' and fecha<='{fecha_de__finalizacion_8}'", con)
 
     elif filtro_8=="Personal Reportados" :
-      data = pd.read_sql(f"select cast(id as integer),marca,usuario,nombre,perfil,puesto,supervisor,fecha,tema,observaciones,horas,reporte from capacitaciones where reporte='{nombre_8}' and fecha>='{fecha_de__inicio_8}' and fecha<='{fecha_de__finalizacion_8}'", con)
+      data = pd.read_sql(f"select cast(id as integer),marca,usuario,nombre,puesto,supervisor,fecha,tema,observaciones,horas,reporte from capacitaciones where reporte='{nombre_8}' and fecha>='{fecha_de__inicio_8}' and fecha<='{fecha_de__finalizacion_8}'", con)
       
   elif puesto=="Supervisor":   
 
