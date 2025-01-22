@@ -362,17 +362,13 @@ def Capacitacion(usuario,puesto):
 
           usuario_8= pd.read_sql(f"select usuario from usuarios where nombre ='{nombre}'",uri)
           usuario_8 = usuario_8.loc[0,'usuario']
-          
-          perfil_8= pd.read_sql(f"select perfil from usuarios where nombre ='{nombre}'",uri)
-          perfil_8 = perfil_8.loc[0,'perfil']
-
+    
           puesto_8= pd.read_sql(f"select puesto from usuarios where nombre ='{nombre}'",uri)
           puesto_8 = puesto_8.loc[0,'puesto']
 
           supervisor_8= pd.read_sql(f"select supervisor from usuarios where nombre ='{nombre}'",uri)
           supervisor_8 = supervisor_8.loc[0,'supervisor']
           
-          cursor01.execute(f"INSERT INTO capacitaciones (marca,usuario,nombre,perfil,puesto,supervisor,fecha,tema,observaciones,horas,reporte)VALUES('{marca_8}','{usuario_8}','{nombre}','{perfil_8}','{puesto_8}','{supervisor_8}','{fecha_8}','{tema_8}','{observaciones_8}','{horas_8}','{nombre_8}')")
+          cursor01.execute(f"INSERT INTO capacitaciones (marca,usuario,nombre,puesto,supervisor,fecha,tema,observaciones,horas,reporte)VALUES('{marca_8}','{usuario_8}','{nombre}','{perfil_8}','{puesto_8}','{supervisor_8}','{fecha_8}','{tema_8}','{observaciones_8}','{horas_8}','{nombre_8}')")
           con.commit()                                                                                               
         st.success('Registro enviado correctamente')
-
