@@ -7,7 +7,7 @@ from urllib.parse import urlparse
 import pytz
 import Procesos,Historial,Otros_Registros,Bonos,Salir
 
-def Capacitacion_Costa_Rica(usuario,puesto,perfil):
+def Capacitacion(usuario,puesto,perfil):
 
   # ----- Conexión, Botones y Memoria ---- #
 
