@@ -142,19 +142,19 @@ def Capacitacion(usuario,puesto):
     filtro_8 = placeholder18_8.selectbox("Filtro", options=("Todos","Operarios","Propio","Personal Asignado","Reportados"), key="filtro_8")
 
     if filtro_8=="Todos":
-      data = pd.read_sql(f"select cast(id as integer),marca,usuario,nombre,perfil,puesto,supervisor,fecha,tema,observaciones,horas,reporte from capacitaciones where fecha>='{fecha_de__inicio_8}' and fecha<='{fecha_de__finalizacion_8}'", con)
+      data = pd.read_sql(f"select cast(id as integer),marca,usuario,nombre,puesto,supervisor,fecha,tema,observaciones,horas,reporte from capacitaciones where fecha>='{fecha_de__inicio_8}' and fecha<='{fecha_de__finalizacion_8}'", con)
 
     elif filtro_8=="Operarios":
-      data = pd.read_sql(f"select cast(id as integer),marca,usuario,nombre,perfil,puesto,supervisor,fecha,tema,observaciones,horas,reporte from capacitaciones where puesto='Operario Catastral' and fecha>='{fecha_de__inicio_8}' and fecha<='{fecha_de__finalizacion_8}'", con)
+      data = pd.read_sql(f"select cast(id as integer),marca,usuario,nombre,puesto,supervisor,fecha,tema,observaciones,horas,reporte from capacitaciones where puesto='Operario Catastral' and fecha>='{fecha_de__inicio_8}' and fecha<='{fecha_de__finalizacion_8}'", con)
       
     elif filtro_8=="Propio" :
-      data = pd.read_sql(f"select cast(id as integer),marca,usuario,nombre,perfil,puesto,supervisor,fecha,tema,observaciones,horas,reporte from capacitaciones where usuario='{usuario}' and fecha>='{fecha_de__inicio_8}' and fecha<='{fecha_de__finalizacion_8}'", con)
+      data = pd.read_sql(f"select cast(id as integer),marca,usuario,nombre,puesto,supervisor,fecha,tema,observaciones,horas,reporte from capacitaciones where usuario='{usuario}' and fecha>='{fecha_de__inicio_8}' and fecha<='{fecha_de__finalizacion_8}'", con)
 
     elif filtro_8=="Personal Asignado" :
-      data = pd.read_sql(f"select cast(id as integer),marca,usuario,nombre,perfil,puesto,supervisor,fecha,tema,observaciones,horas,reporte from capacitaciones where supervisor='{nombre_8}' and fecha>='{fecha_de__inicio_8}' and fecha<='{fecha_de__finalizacion_8}'", con)
+      data = pd.read_sql(f"select cast(id as integer),marca,usuario,nombre,puesto,supervisor,fecha,tema,observaciones,horas,reporte from capacitaciones where supervisor='{nombre_8}' and fecha>='{fecha_de__inicio_8}' and fecha<='{fecha_de__finalizacion_8}'", con)
 
     elif filtro_8=="Personal Reportados" :
-      data = pd.read_sql(f"select cast(id as integer),marca,usuario,nombre,perfil,puesto,supervisor,fecha,tema,observaciones,horas,reporte from capacitaciones where reporte='{nombre_8}' and fecha>='{fecha_de__inicio_8}' and fecha<='{fecha_de__finalizacion_8}'", con)
+      data = pd.read_sql(f"select cast(id as integer),marca,usuario,nombre,puesto,supervisor,fecha,tema,observaciones,horas,reporte from capacitaciones where reporte='{nombre_8}' and fecha>='{fecha_de__inicio_8}' and fecha<='{fecha_de__finalizacion_8}'", con)
 
   elif puesto=="Operario Catastral":
 
@@ -169,7 +169,7 @@ def Capacitacion(usuario,puesto):
     placeholder21_8 = st.empty()
     fecha_de__finalizacion_8 = placeholder21_8.date_input("Fecha de Finalización",value=default_date_8,key="fecha_de_finalizacion_8")
       
-    data = pd.read_sql(f"select cast(id as integer),marca,usuario,nombre,perfil,puesto,supervisor,fecha,tema,observaciones,horas,reporte from capacitaciones where usuario='{usuario}' and fecha>='{fecha_de__inicio_8}' and fecha<='{fecha_de__finalizacion_8}'", con)
+    data = pd.read_sql(f"select cast(id as integer),marca,usuario,nombre,puesto,supervisor,fecha,tema,observaciones,horas,reporte from capacitaciones where usuario='{usuario}' and fecha>='{fecha_de__inicio_8}' and fecha<='{fecha_de__finalizacion_8}'", con)
 
   placeholder22_8 = st.empty()
   histo_8= placeholder22_8.dataframe(data=data)
