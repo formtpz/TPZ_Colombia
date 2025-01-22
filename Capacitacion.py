@@ -59,7 +59,7 @@ def Capacitacion_Costa_Rica(usuario,puesto,perfil):
     fecha_8= placeholder10_8.date_input("Fecha",value=default_date_8,key="fecha_8")
 
     placeholder11_8= st.empty()
-    tema_8=placeholder11_8.selectbox("Tema", options=("Bonos","Información General","Reportes y Registros","QGIS","Parcelas","Cubiertas y Mejoras","Otros"), key="tema_8")
+    tema_8=placeholder11_8.selectbox("Tema", options=("Bonos","Criterios IGAC","Información General","QGIS","Reportes y Registros","Sistema de Gestión Empresarial","Otros"), key="tema_8")
 
     placeholder12_8= st.empty()
     observaciones_8= placeholder12_8.text_input("Observaciones",key="observaciones_8")
@@ -115,7 +115,7 @@ def Capacitacion_Costa_Rica(usuario,puesto,perfil):
     default_date_8 = datetime.now(pytz.timezone('America/Guatemala'))
       
     placeholder10_8= st.empty()
-    tema_8=placeholder10_8.selectbox("Tema", options=("Bonos","Información General","Reportes y Registros","QGIS","Parcelas","Cubiertas y Mejoras","Otros"), key="tema_8")
+    tema_8=placeholder10_8.selectbox("Tema", options=("Bonos","Criterios IGAC","Información General","QGIS","Reportes y Registros","Sistema de Gestión Empresarial","Otros"), key="tema_8")
 
     placeholder11_8= st.empty()
     observaciones_8= placeholder11_8.text_input("Observaciones",key="observaciones_8")
