@@ -7,7 +7,7 @@ from urllib.parse import urlparse
 import pytz
 import Procesos,Historial,Otros_Registros,Bonos,Salir
 
-def Capacitacion(usuario,puesto,perfil):
+def Capacitacion(usuario,puesto):
 
   # ----- Conexión, Botones y Memoria ---- #
 
@@ -208,7 +208,7 @@ def Capacitacion(usuario,puesto,perfil):
     placeholder23_8.empty()
     st.session_state.Procesos=False
     st.session_state.Capacitacion=False
-    Procesos.Procesos(usuario,puesto,perfil)
+    Procesos.Procesos(usuario,puesto)
                 
   # ----- Historial ---- #
     
@@ -241,7 +241,7 @@ def Capacitacion(usuario,puesto,perfil):
     placeholder23_8.empty()
     st.session_state.Capacitacion=False
     st.session_state.Historial=True
-    Historial.Historial(usuario,puesto,perfil)
+    Historial.Historial(usuario,puesto)
 
   # ----- Otros Registros ---- #
     
@@ -274,7 +274,7 @@ def Capacitacion(usuario,puesto,perfil):
     placeholder23_8.empty()
     st.session_state.Capacitacion=False
     st.session_state.Otros_Registros=True
-    Otros_Registros.Otros_Registros(usuario,puesto,perfil)
+    Otros_Registros.Otros_Registros(usuario,puesto)
 
   # ----- Bonos ---- #
     
@@ -307,7 +307,7 @@ def Capacitacion(usuario,puesto,perfil):
     placeholder23_8.empty()
     st.session_state.Capacitacion=False
     st.session_state.Bonos=True
-    Bonos.Bonos(usuario,puesto,perfil)
+    Bonos.Bonos(usuario,puesto)
     
   # ----- Salir ---- #
     
