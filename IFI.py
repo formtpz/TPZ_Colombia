@@ -8,7 +8,7 @@ import pytz
 from urllib.parse import urlparse
 import Procesos,Historial,Capacitacion,Otros_Registros,Bonos,Salir
 
-def IFI(usuario,puesto):
+def FMI(usuario,puesto):
 
   # ----- Conexión, Botones y Memoria ---- #
 
@@ -87,7 +87,7 @@ def IFI(usuario,puesto):
     placeholder14_3.empty()
     placeholder15_3.empty()
     st.session_state.Procesos=False
-    st.session_state.IFI=False
+    st.session_state.FMI=False
 
     perfil=pd.read_sql(f"select perfil from usuarios where usuario ='{usuario}'",uri)
     perfil= perfil.loc[0,'perfil']
@@ -123,7 +123,7 @@ def IFI(usuario,puesto):
     placeholder13_3.empty()
     placeholder14_3.empty()
     placeholder15_3.empty()
-    st.session_state.IFI=False
+    st.session_state.FMI=False
     st.session_state.Historial=True
     Historial.Historial(usuario,puesto)   
 
@@ -145,7 +145,7 @@ def IFI(usuario,puesto):
     placeholder13_3.empty()
     placeholder14_3.empty()
     placeholder15_3.empty()
-    st.session_state.IFI=False
+    st.session_state.FMI=False
     st.session_state.Capacitacion=True
     Capacitacion.Capacitacion(usuario,puesto)
 
@@ -167,7 +167,7 @@ def IFI(usuario,puesto):
     placeholder13_3.empty()
     placeholder14_3.empty()
     placeholder15_3.empty()
-    st.session_state.IFI=False
+    st.session_state.FMI=False
     st.session_state.Otros_Registros=True
     Otros_Registros.Otros_Registros(usuario,puesto)
 
@@ -189,7 +189,7 @@ def IFI(usuario,puesto):
     placeholder13_3.empty()
     placeholder14_3.empty()
     placeholder15_3.empty()
-    st.session_state.IFI=False
+    st.session_state.FMI=False
     st.session_state.Bonos=True
     Bonos.Bonos(usuario,puesto)    
 
@@ -212,7 +212,7 @@ def IFI(usuario,puesto):
     placeholder14_3.empty()
     placeholder15_3.empty()
     st.session_state.Ingreso = False
-    st.session_state.IFI=False
+    st.session_state.FMI=False
     st.session_state.Salir=True
     Salir.Salir()
 
@@ -231,6 +231,6 @@ def IFI(usuario,puesto):
     supervisor_3= pd.read_sql(f"select supervisor from usuarios where usuario ='{usuario}'",uri)
     supervisor_3 = supervisor_3.loc[0,'supervisor']
 
-    cursor01.execute(f"INSERT INTO registro (marca,usuario,nombre,horario,puesto,supervisor,proceso,fecha,bloque,estado,tipo,predios,horas)VALUES('{marca_3}','{usuario}','{nombre_3}','{horario_3}','{puesto}','{supervisor_3}','Información Final I','{fecha_3}','{bloque_3}','{estado_3}','{tipo_3}','{predios_3}','{horas_3}')")
+    cursor01.execute(f"INSERT INTO registro (marca,usuario,nombre,puesto,supervisor,proceso,fecha,unidad_asignación,tipo,produccion,aprobados,rechazados,horas)VALUES('{marca_3}','{usuario}','{nombre_3}','{horario_3}','{puesto}','{supervisor_3}','Información Final I','{fecha_3}','{bloque_3}','{estado_3}','{tipo_3}','{predios_3}','{horas_3}')")
     con.commit()                                                                                                                                 
     st.success('Reporte enviado correctamente')
