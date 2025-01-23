@@ -74,7 +74,7 @@ def Capacitacion(usuario,puesto):
     separador_8 = placeholder15_8.markdown("_____")
 
     placeholder16_8 = st.empty()
-    capacitacion_historial_8 = placeholder16_8.subheader("Historial")
+    capacitacion_historial_8 = placeholder16_8.subheader("Historial Capacitaciones")
 
     placeholder17_8 = st.empty()
     fecha_de__inicio_8 = placeholder17_8.date_input("Fecha de Inicio",value=default_date_8,key="fecha_de_inicio_8")
@@ -83,16 +83,19 @@ def Capacitacion(usuario,puesto):
     fecha_de__finalizacion_8 = placeholder18_8.date_input("Fecha de Finalización",value=default_date_8,key="fecha_de_finalizacion_8")
       
     placeholder19_8 = st.empty()
-    filtro_8 = placeholder19_8.selectbox("Filtro", options=("Todos","Operarios","Propio","Personal Asignado","Reportados"), key="filtro_8")
+    filtro_8 = placeholder19_8.selectbox("Filtro", options=("Todos","Operarios","Profesional Jurídico","Propio","Personal Asignado","Reportados"), key="filtro_8")
 
     if filtro_8=="Todos":
-      data = pd.read_sql(f"select cast(id as integer),marca,usuario,nombre,puesto,supervisor,fecha,tema,observaciones,horas,reporte from capacitaciones where fecha>='{fecha_de__inicio_8}' and fecha<='{fecha_de__finalizacion_8}'", con)
+      data = pd.read_sql(f"select cast(id as integer),marca,usuario,nombre,puesto,supervisor,fecha,tema,horas,observaciones,reporte from capacitaciones where fecha>='{fecha_de__inicio_8}' and fecha<='{fecha_de__finalizacion_8}'", con)
 
     elif filtro_8=="Operarios":
-      data = pd.read_sql(f"select cast(id as integer),marca,usuario,nombre,puesto,supervisor,fecha,tema,observaciones,horas,reporte from capacitaciones where puesto='Operario Catastral' and fecha>='{fecha_de__inicio_8}' and fecha<='{fecha_de__finalizacion_8}'", con)
-      
+      data = pd.read_sql(f"select cast(id as integer),marca,usuario,nombre,puesto,supervisor,fecha,tema,horas,observaciones,reporte from capacitaciones where puesto='Operario Catastral' and fecha>='{fecha_de__inicio_8}' and fecha<='{fecha_de__finalizacion_8}'", con)
+
+    elif filtro_8=="Profesional Jurídico":
+      data = pd.read_sql(f"select cast(id as integer),marca,usuario,nombre,puesto,supervisor,fecha,tema,horas,observaciones,reporte from capacitaciones where puesto='Profesiona Jurídico' and fecha>='{fecha_de__inicio_8}' and fecha<='{fecha_de__finalizacion_8}'", con)
+    
     elif filtro_8=="Propio" :
-      data = pd.read_sql(f"select cast(id as integer),marca,usuario,nombre,puesto,supervisor,fecha,tema,observaciones,horas,reporte from capacitaciones where usuario='{usuario}' and fecha>='{fecha_de__inicio_8}' and fecha<='{fecha_de__finalizacion_8}'", con)
+      data = pd.read_sql(f"select cast(id as integer),marca,usuario,nombre,puesto,supervisor,fecha,tema,horas,observaciones,reporte from capacitaciones where usuario='{usuario}' and fecha>='{fecha_de__inicio_8}' and fecha<='{fecha_de__finalizacion_8}'", con)
 
     elif filtro_8=="Personal Asignado" :
       data = pd.read_sql(f"select cast(id as integer),marca,usuario,nombre,puesto,supervisor,fecha,tema,observaciones,horas,reporte from capacitaciones where supervisor='{nombre_8}' and fecha>='{fecha_de__inicio_8}' and fecha<='{fecha_de__finalizacion_8}'", con)
@@ -151,12 +154,12 @@ def Capacitacion(usuario,puesto):
       data = pd.read_sql(f"select cast(id as integer),marca,usuario,nombre,puesto,supervisor,fecha,tema,observaciones,horas,reporte from capacitaciones where usuario='{usuario}' and fecha>='{fecha_de__inicio_8}' and fecha<='{fecha_de__finalizacion_8}'", con)
 
     elif filtro_8=="Personal Asignado" :
-      data = pd.read_sql(f"select cast(id as integer),marca,usuario,nombre,puesto,supervisor,fecha,tema,observaciones,horas,reporte from capacitaciones where supervisor='{nombre_8}' and fecha>='{fecha_de__inicio_8}' and fecha<='{fecha_de__finalizacion_8}'", con)
+      data = pd.read_sql(f"select cast(id as integer),marca,usuario,nombre,puesto,supervisor,fecha,tema,horas,observaciones,reporte from capacitaciones where supervisor='{nombre_8}' and fecha>='{fecha_de__inicio_8}' and fecha<='{fecha_de__finalizacion_8}'", con)
 
     elif filtro_8=="Personal Reportados" :
-      data = pd.read_sql(f"select cast(id as integer),marca,usuario,nombre,puesto,supervisor,fecha,tema,observaciones,horas,reporte from capacitaciones where reporte='{nombre_8}' and fecha>='{fecha_de__inicio_8}' and fecha<='{fecha_de__finalizacion_8}'", con)
+      data = pd.read_sql(f"select cast(id as integer),marca,usuario,nombre,puesto,supervisor,fecha,tema,horas,observaciones,reporte from capacitaciones where reporte='{nombre_8}' and fecha>='{fecha_de__inicio_8}' and fecha<='{fecha_de__finalizacion_8}'", con)
 
-  elif puesto=="Operario Catastral":
+  elif puesto=="Operario Catastral" or puesto=="Profesional Jurídico":
 
     placeholder19_8 = st.empty()
     capacitacion_historial_8 = placeholder19_8.subheader("Historial")
@@ -169,7 +172,7 @@ def Capacitacion(usuario,puesto):
     placeholder21_8 = st.empty()
     fecha_de__finalizacion_8 = placeholder21_8.date_input("Fecha de Finalización",value=default_date_8,key="fecha_de_finalizacion_8")
       
-    data = pd.read_sql(f"select cast(id as integer),marca,usuario,nombre,puesto,supervisor,fecha,tema,observaciones,horas,reporte from capacitaciones where usuario='{usuario}' and fecha>='{fecha_de__inicio_8}' and fecha<='{fecha_de__finalizacion_8}'", con)
+    data = pd.read_sql(f"select cast(id as integer),marca,usuario,nombre,puesto,supervisor,fecha,tema,horas,observaciones,reporte from capacitaciones where usuario='{usuario}' and fecha>='{fecha_de__inicio_8}' and fecha<='{fecha_de__finalizacion_8}'", con)
 
   placeholder22_8 = st.empty()
   histo_8= placeholder22_8.dataframe(data=data)
@@ -200,7 +203,7 @@ def Capacitacion(usuario,puesto):
       placeholder17_8.empty()
       placeholder18_8.empty()
       placeholder19_8.empty()
-    elif puesto=="Operario Catastral":
+    elif puesto=="Operario Catastral" or puesto=="Profesional Jurídico":
       placeholder19_8.empty()
       placeholder20_8.empty()
       placeholder21_8.empty()
@@ -233,7 +236,7 @@ def Capacitacion(usuario,puesto):
       placeholder17_8.empty()
       placeholder18_8.empty()
       placeholder19_8.empty()
-    elif puesto=="Operario Catastral":
+    elif puesto=="Operario Catastral" or puesto=="Profesional Jurídico":
       placeholder19_8.empty()
       placeholder20_8.empty()
       placeholder21_8.empty()
@@ -266,7 +269,7 @@ def Capacitacion(usuario,puesto):
       placeholder17_8.empty()
       placeholder18_8.empty()
       placeholder19_8.empty()
-    elif puesto=="Operario Catastral":
+    elif puesto=="Operario Catastral" or puesto=="Profesional Jurídico":
       placeholder19_8.empty()
       placeholder20_8.empty()
       placeholder21_8.empty()
@@ -299,7 +302,7 @@ def Capacitacion(usuario,puesto):
       placeholder17_8.empty()
       placeholder18_8.empty()
       placeholder19_8.empty()
-    elif puesto=="Operario Catastral":
+    elif puesto=="Operario Catastral" or puesto=="Profesional Jurídico":
       placeholder19_8.empty()
       placeholder20_8.empty()
       placeholder21_8.empty()
@@ -332,7 +335,7 @@ def Capacitacion(usuario,puesto):
       placeholder17_8.empty()
       placeholder18_8.empty()
       placeholder19_8.empty()
-    elif puesto=="Operario Catastral":
+    elif puesto=="Operario Catastral" or puesto=="Profesional Jurídico":
       placeholder19_8.empty()
       placeholder20_8.empty()
       placeholder21_8.empty()
@@ -369,6 +372,6 @@ def Capacitacion(usuario,puesto):
           supervisor_8= pd.read_sql(f"select supervisor from usuarios where nombre ='{nombre}'",uri)
           supervisor_8 = supervisor_8.loc[0,'supervisor']
           
-          cursor01.execute(f"INSERT INTO capacitaciones (marca,usuario,nombre,puesto,supervisor,fecha,tema,observaciones,horas,reporte)VALUES('{marca_8}','{usuario_8}','{nombre}','{perfil_8}','{puesto_8}','{supervisor_8}','{fecha_8}','{tema_8}','{observaciones_8}','{horas_8}','{nombre_8}')")
+          cursor01.execute(f"INSERT INTO capacitaciones (marca,usuario,nombre,puesto,supervisor,fecha,tema,horas,observaciones,reporte)VALUES('{marca_8}','{usuario_8}','{nombre}','{perfil_8}','{puesto_8}','{supervisor_8}','{fecha_8}','{tema_8}','{horas_8}','{observaciones_8}','{nombre_8}')")
           con.commit()                                                                                               
         st.success('Registro enviado correctamente')
