@@ -1,7 +1,7 @@
 # ----- Librerías ---- #
 
 import streamlit as st
-import Historial, Capacitacion, Otros_Registros, Bonos, Salir, IFI, IFII
+import Historial, Capacitacion, Otros_Registros, Bonos, Salir, FMI, Consulta_Campo
 
 # ----- Procesos 1 ---- #
 
@@ -33,13 +33,10 @@ def Procesos1(usuario,puesto):
         procesos_2 = placeholder7_2.title("Procesos")
 
         placeholder8_2 = st.empty()
-        informacion_final_i_2 = placeholder8_2.button("Información Final I",key="informacion_final_i_2")
+        fmi_2 = placeholder8_2.button("Folios de Matricula Inmobiliaria",key="fmi_2")
 
         placeholder9_2 = st.empty()
-        informacion_final_ii_2 = placeholder9_2.button("Información Final II",key="informacion_final_ii_2")
-
-        placeholder10_2= st.empty()
-        informacion_final_iii_2 = placeholder10_2.button("Información Final III",key="informacion_final_iii_2")
+        consulta_campo_2 = placeholder9_2.button("Consultas de Campo",key="consulta_campo_2")
 
         # ----- Historial ---- #
 
@@ -54,7 +51,6 @@ def Procesos1(usuario,puesto):
             placeholder7_2.empty()
             placeholder8_2.empty()
             placeholder9_2.empty()
-            placeholder10_2.empty()
             st.session_state.Procesos=True
             st.session_state.Historial=True
             Historial.Historial(usuario,puesto)
@@ -72,7 +68,6 @@ def Procesos1(usuario,puesto):
             placeholder7_2.empty()
             placeholder8_2.empty()
             placeholder9_2.empty()
-            placeholder10_2.empty()
             st.session_state.Procesos=True
             st.session_state.Capacitacion=True
             Capacitacion.Capacitacion(usuario,puesto)
@@ -90,7 +85,6 @@ def Procesos1(usuario,puesto):
             placeholder7_2.empty()
             placeholder8_2.empty()
             placeholder9_2.empty()
-            placeholder10_2.empty()
             st.session_state.Procesos=True
             st.session_state.Otros_Registros=True
             Otros_Registros.Otros_Registros(usuario,puesto)
@@ -108,7 +102,6 @@ def Procesos1(usuario,puesto):
             placeholder7_2.empty()
             placeholder8_2.empty()
             placeholder9_2.empty()
-            placeholder10_2.empty()
             st.session_state.Procesos=True
             st.session_state.Bonos=True
             Bonos.Bonos(usuario,puesto)
@@ -126,33 +119,14 @@ def Procesos1(usuario,puesto):
             placeholder7_2.empty()
             placeholder8_2.empty()
             placeholder9_2.empty()
-            placeholder10_2.empty()
             st.session_state.Ingreso= False
             st.session_state.Procesos=True
             st.session_state.Salir=True
             Salir.Salir()
 
-        # ----- IFI ---- #
+        # ----- FMI ---- #
 
-        elif informacion_final_i_2:
-
-            placeholder1_2.empty()
-            placeholder2_2.empty()
-            placeholder3_2.empty()
-            placeholder4_2.empty()
-            placeholder5_2.empty()
-            placeholder6_2.empty()
-            placeholder7_2.empty()
-            placeholder8_2.empty()
-            placeholder9_2.empty()
-            placeholder10_2.empty()
-            st.session_state.Procesos=True
-            st.session_state.IFI=True
-            IFI.IFI(usuario,puesto)
-
-        # ----- IFII ---- #
-
-        elif informacion_final_ii_2:
+        elif fmi_2:
 
             placeholder1_2.empty()
             placeholder2_2.empty()
@@ -163,10 +137,26 @@ def Procesos1(usuario,puesto):
             placeholder7_2.empty()
             placeholder8_2.empty()
             placeholder9_2.empty()
-            placeholder10_2.empty()
             st.session_state.Procesos=True
-            st.session_state.IFII=True
-            IFII.IFII(usuario,puesto)
+            st.session_state.FMI=True
+            FMI.FMI(usuario,puesto)
+
+        # ----- Consultas de Campo ---- #
+
+        elif consultas_campo_2:
+
+            placeholder1_2.empty()
+            placeholder2_2.empty()
+            placeholder3_2.empty()
+            placeholder4_2.empty()
+            placeholder5_2.empty()
+            placeholder6_2.empty()
+            placeholder7_2.empty()
+            placeholder8_2.empty()
+            placeholder9_2.empty()
+            st.session_state.Procesos=True
+            st.session_state.Consulta_Campo=True
+            Consulta_Campo.Consulta_Campo(usuario,puesto)
 
     elif st.session_state.Procesos==True:
 
@@ -182,11 +172,11 @@ def Procesos1(usuario,puesto):
         elif st.session_state.Bonos==True:
             Bonos.Bonos(usuario,puesto)
 
-        elif st.session_state.IFI==True:
-            IFI.IFI(usuario,puesto)
+        elif st.session_state.FMI==True:
+            FMI.FMI(usuario,puesto)
 
-        elif st.session_state.IFII==True:
-            IFII.IFII(usuario,puesto)
+        elif st.session_state.Consulta_Campo==True:
+            Consulta_Campo.Consulta_Campo(usuario,puesto)
             
 # ----- Procesos 2 ---- #
 
@@ -392,10 +382,10 @@ def Procesos3(usuario,puesto):
         registro_2 = placeholder7_2.title("Procesos")
 
         placeholder8_2 = st.empty()
-        informacion_final_i_2 = placeholder8_2.button("Información Final I",key="informacion_final_i_2")
+        fmi_2 = placeholder8_2.button("Folios de Matricula Inmobiliaria",key="fmi_2")
 
         placeholder9_2 = st.empty()
-        informacion_final_ii_2 = placeholder9_2.button("Información Final II",key="informacion_final_ii_2")
+        consulta_campo_2 = placeholder9_2.button("Consultas de Campo",key="consulta_campo_2")
 
         # ----- Historial ---- #
 
@@ -483,26 +473,9 @@ def Procesos3(usuario,puesto):
             st.session_state.Salir=True
             Salir.Salir()
 
-        # ----- IFI ---- #
+        # ----- FMI ---- #
 
-        elif informacion_final_i_2:
-
-            placeholder1_2.empty()
-            placeholder2_2.empty()
-            placeholder3_2.empty()
-            placeholder4_2.empty()
-            placeholder5_2.empty()
-            placeholder6_2.empty()
-            placeholder7_2.empty()
-            placeholder8_2.empty()
-            placeholder9_2.empty()
-            st.session_state.Procesos=True
-            st.session_state.IFI=True
-            IFI.IFI(usuario,puesto)
-
-        # ----- IFII ---- #
-
-        elif informacion_final_ii_2:
+        elif fmi_2:
 
             placeholder1_2.empty()
             placeholder2_2.empty()
@@ -514,8 +487,25 @@ def Procesos3(usuario,puesto):
             placeholder8_2.empty()
             placeholder9_2.empty()
             st.session_state.Procesos=True
-            st.session_state.IFII=True
-            IFII.IFII(usuario,puesto)
+            st.session_state.FMI=True
+            FMI.FMI(usuario,puesto)
+
+        # ----- Consulta Campo ---- #
+
+        elif consulta_campo_2:
+
+            placeholder1_2.empty()
+            placeholder2_2.empty()
+            placeholder3_2.empty()
+            placeholder4_2.empty()
+            placeholder5_2.empty()
+            placeholder6_2.empty()
+            placeholder7_2.empty()
+            placeholder8_2.empty()
+            placeholder9_2.empty()
+            st.session_state.Procesos=True
+            st.session_state.Consulta_Campo=True
+            Consulta_Campo.Consulta_Campo(usuario,puesto)
 
     elif st.session_state.Procesos==True:
 
@@ -531,8 +521,8 @@ def Procesos3(usuario,puesto):
         elif st.session_state.Bonos==True:
             Bonos.Bonos(usuario,puesto)
 
-        elif st.session_state.IFI==True:
-            IFI.IFI(usuario,puesto)
+        elif st.session_state.FMI==True:
+            FMI.FMI(usuario,puesto)
 
-        elif st.session_state.IFII==True:
-            IFII.IFII(usuario,puesto)
+        elif st.session_state.Consulta_Campo==True:
+            Consulta_Campo.Consulta_Campo(usuario,puesto)
