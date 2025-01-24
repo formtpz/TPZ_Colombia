@@ -53,10 +53,10 @@ def Consulta_Campo(usuario,puesto):
   placeholder10_3= st.empty()
   unidad_3= placeholder10_3.text_input("Unidad de Asignación",key="unidad_3")
     
-  placeholder12_3= st.empty()
+  placeholder11_3= st.empty()
   produccion_3= placeholder12_3.number_input("Cantidad de Consultas Realizadas",min_value=0,step=1,key="produccion_3")
 
-  placeholder13_3 = st.empty()
+  placeholder12_3 = st.empty()
   reporte_3 = placeholder13_3.button("Generar Reporte",key="reporte_3")
 
   # ----- Procesos ---- #
@@ -74,7 +74,6 @@ def Consulta_Campo(usuario,puesto):
     placeholder10_3.empty()
     placeholder11_3.empty()
     placeholder12_3.empty()
-    placeholder13_3.empty()
     st.session_state.Procesos=False
     st.session_state.Consulta_Campo=False
 
@@ -109,7 +108,6 @@ def Consulta_Campo(usuario,puesto):
     placeholder10_3.empty()
     placeholder11_3.empty()
     placeholder12_3.empty()
-    placeholder13_3.empty()
     st.session_state.Consulta_Campo=False
     st.session_state.Historial=True
     Historial.Historial(usuario,puesto)   
@@ -129,7 +127,6 @@ def Consulta_Campo(usuario,puesto):
     placeholder10_3.empty()
     placeholder11_3.empty()
     placeholder12_3.empty()
-    placeholder13_3.empty()
     st.session_state.Consulta_Campo=False
     st.session_state.Capacitacion=True
     Capacitacion.Capacitacion(usuario,puesto)
@@ -149,7 +146,6 @@ def Consulta_Campo(usuario,puesto):
     placeholder10_3.empty()
     placeholder11_3.empty()
     placeholder12_3.empty()
-    placeholder13_3.empty()
     st.session_state.Consulta_Campo=False
     st.session_state.Otros_Registros=True
     Otros_Registros.Otros_Registros(usuario,puesto)
@@ -169,7 +165,6 @@ def Consulta_Campo(usuario,puesto):
     placeholder10_3.empty()
     placeholder11_3.empty()
     placeholder12_3.empty()
-    placeholder13_3.empty()
     st.session_state.Consulta_Campo=False
     st.session_state.Bonos=True
     Bonos.Bonos(usuario,puesto)    
@@ -189,7 +184,6 @@ def Consulta_Campo(usuario,puesto):
     placeholder10_3.empty()
     placeholder11_3.empty()
     placeholder12_3.empty()
-    placeholder13_3.empty()
     st.session_state.Ingreso = False
     st.session_state.Consulta_Campo=False
     st.session_state.Salir=True
