@@ -43,30 +43,21 @@ def FMI(usuario,puesto):
   salir_3 = placeholder7_3.button("Salir",key="salir_3")
 
   placeholder8_3 = st.empty()
-  informacion_final_i_3 = placeholder8_3.title("Información Final I")
+  informacion_final_i_3 = placeholder8_3.title("Folios de Matricula Inmobiliaria")
 
-  default_date_3 = datetime.now(pytz.timezone('America/Guatemala'))
+  default_date_3 = datetime.now(pytz.timezone('America/Colombia'))
 
   placeholder9_3= st.empty()
   fecha_3= placeholder9_3.date_input("Fecha",value=default_date_3,key="fecha_3")
 
   placeholder10_3= st.empty()
-  bloque_3= placeholder10_3.text_input("Bloque",key="bloque_3")
+  unidad_3= placeholder10_3.text_input("Unidad de Asignación",key="unidad_3")
     
-  placeholder11_3= st.empty()
-  estado_3= placeholder11_3.selectbox("Estado", options=("En Proceso","Conflicto","Terminado"), key="estado_3")
-       
   placeholder12_3= st.empty()
-  tipo_3= placeholder12_3.selectbox("Tipo", options=("Ordinario","Automatizado","Georreferenciación","Corrección Georreferenciación","Corrección Primera Revisión","Corrección Primera Reinspección"), key="tipo_3")
+  produccion_3= placeholder12_3.number_input("Cantidad de Folios Revisados",min_value=0,step=1,key="produccion_3")
 
-  placeholder13_3= st.empty()
-  predios_3= placeholder13_3.number_input("Cantidad de Predios Producidos",min_value=0,step=1,key="predios_3")
-
-  placeholder14_3= st.empty()
-  horas_3= placeholder14_3.number_input("Cantidad de Horas Trabajadas en el Proceso",min_value=0.0,key="horas_3")
-
-  placeholder15_3 = st.empty()
-  reporte_3 = placeholder15_3.button("Generar Reporte",key="reporte_3")
+  placeholder13_3 = st.empty()
+  reporte_3 = placeholder13_3.button("Generar Reporte",key="reporte_3")
 
   # ----- Procesos ---- #
     
@@ -84,8 +75,6 @@ def FMI(usuario,puesto):
     placeholder11_3.empty()
     placeholder12_3.empty()
     placeholder13_3.empty()
-    placeholder14_3.empty()
-    placeholder15_3.empty()
     st.session_state.Procesos=False
     st.session_state.FMI=False
 
@@ -121,8 +110,6 @@ def FMI(usuario,puesto):
     placeholder11_3.empty()
     placeholder12_3.empty()
     placeholder13_3.empty()
-    placeholder14_3.empty()
-    placeholder15_3.empty()
     st.session_state.FMI=False
     st.session_state.Historial=True
     Historial.Historial(usuario,puesto)   
@@ -143,8 +130,6 @@ def FMI(usuario,puesto):
     placeholder11_3.empty()
     placeholder12_3.empty()
     placeholder13_3.empty()
-    placeholder14_3.empty()
-    placeholder15_3.empty()
     st.session_state.FMI=False
     st.session_state.Capacitacion=True
     Capacitacion.Capacitacion(usuario,puesto)
@@ -165,8 +150,6 @@ def FMI(usuario,puesto):
     placeholder11_3.empty()
     placeholder12_3.empty()
     placeholder13_3.empty()
-    placeholder14_3.empty()
-    placeholder15_3.empty()
     st.session_state.FMI=False
     st.session_state.Otros_Registros=True
     Otros_Registros.Otros_Registros(usuario,puesto)
@@ -187,8 +170,6 @@ def FMI(usuario,puesto):
     placeholder11_3.empty()
     placeholder12_3.empty()
     placeholder13_3.empty()
-    placeholder14_3.empty()
-    placeholder15_3.empty()
     st.session_state.FMI=False
     st.session_state.Bonos=True
     Bonos.Bonos(usuario,puesto)    
@@ -209,8 +190,6 @@ def FMI(usuario,puesto):
     placeholder11_3.empty()
     placeholder12_3.empty()
     placeholder13_3.empty()
-    placeholder14_3.empty()
-    placeholder15_3.empty()
     st.session_state.Ingreso = False
     st.session_state.FMI=False
     st.session_state.Salir=True
@@ -220,17 +199,14 @@ def FMI(usuario,puesto):
 
     cursor01=con.cursor()
 
-    marca_3= datetime.now(pytz.timezone('America/Guatemala')).strftime("%Y-%m-%d %H:%M:%S")
+    marca_3= datetime.now(pytz.timezone('America/Colombia')).strftime("%Y-%m-%d %H:%M:%S")
     
     nombre_3= pd.read_sql(f"select nombre from usuarios where usuario ='{usuario}'",uri)
     nombre_3 = nombre_3.loc[0,'nombre']
       
-    horario_3= pd.read_sql(f"select horario from usuarios where usuario ='{usuario}'",uri)
-    horario_3 = horario_3.loc[0,'horario']
-
     supervisor_3= pd.read_sql(f"select supervisor from usuarios where usuario ='{usuario}'",uri)
     supervisor_3 = supervisor_3.loc[0,'supervisor']
 
-    cursor01.execute(f"INSERT INTO registro (marca,usuario,nombre,puesto,supervisor,proceso,fecha,unidad_asignación,tipo,produccion,aprobados,rechazados,horas)VALUES('{marca_3}','{usuario}','{nombre_3}','{horario_3}','{puesto}','{supervisor_3}','Información Final I','{fecha_3}','{bloque_3}','{estado_3}','{tipo_3}','{predios_3}','{horas_3}')")
+    cursor01.execute(f"INSERT INTO registro (marca,usuario,nombre,puesto,supervisor,proceso,fecha,unidad_asignacion,tipo,produccion,aprobados,rechazados,horas)VALUES('{marca_3}','{usuario}','{nombre_3}','{puesto}','{supervisor_3}','Folios de Matricula Inmobiliaria','{fecha_3}','{unidad_3}','NA','{produccion_3}','0')")
     con.commit()                                                                                                                                 
     st.success('Reporte enviado correctamente')
