@@ -364,7 +364,7 @@ def Historial(usuario,puesto):
       placeholder32_7 = st.empty()
       grafico_horas_total_2 = placeholder32_7.plotly_chart(fig_horas_total_2)
 
-  # ----- Operario Catastral ---- #
+  # ----- Operario Catastral y Profesional Jurídico ---- #
 
   elif puesto=="Operario Catastral" or puesto=="Profesional Jurídico":
 
