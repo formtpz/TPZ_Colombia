@@ -54,10 +54,10 @@ def FMI(usuario,puesto):
   unidad_3= placeholder10_3.text_input("Unidad de Asignación",key="unidad_3")
     
   placeholder11_3= st.empty()
-  produccion_3= placeholder12_3.number_input("Cantidad de Folios Revisados",min_value=0,step=1,key="produccion_3")
+  produccion_3= placeholder11_3.number_input("Cantidad de Folios Revisados",min_value=0,step=1,key="produccion_3")
 
   placeholder12_3 = st.empty()
-  reporte_3 = placeholder13_3.button("Generar Reporte",key="reporte_3")
+  reporte_3 = placeholder12_3.button("Generar Reporte",key="reporte_3")
 
   # ----- Procesos ---- #
     
