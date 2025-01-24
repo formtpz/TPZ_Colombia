@@ -64,7 +64,7 @@ def Historial(usuario,puesto):
     personal_7 = placeholder10_7.selectbox("Personal", options=("Todos","Operarios","Propio","Personal Asignado"), key="filtro_7")
 
     placeholder11_7 = st.empty()
-    proceso_7_s = placeholder11_7.selectbox("Proceso", options=("Todos","Conformación","Control de Calidad Conformación","Validación","Información Final I","Control de Calidad IF I","Información Final II","Información Final III","Digitalización de Planos","Sectores Circulares","Testing","Ubicación"), key="proceso_7_s")
+    proceso_7_s = placeholder11_7.selectbox("Proceso", options=("Todos","Conformación","Control de","ión Final II","Información Final III","Digitalización de Planos","Sectores Circulares","Testing","Ubicación"), key="proceso_7_s")
     
     placeholder12_7 = st.empty()
     tipo_7_s = placeholder12_7.selectbox("Tipo", options=("Todos","Ordinario","Corrección Georreferenciación","Corrección Primera Revisión","Corrección Primera Reinspección"), key="tipo_7_s")
