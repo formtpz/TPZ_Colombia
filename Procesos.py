@@ -169,7 +169,7 @@ def Procesos1(usuario,puesto):
             CC_FMI.CC_FMI(usuario,puesto)
         # ----- Consultas de Campo ---- #
 
-        elif consultas_campo_2:
+        elif consulta_campo_2:
 
             placeholder1_2.empty()
             placeholder2_2.empty()
