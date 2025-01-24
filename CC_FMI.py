@@ -8,7 +8,7 @@ import pytz
 from urllib.parse import urlparse
 import Procesos,Historial,Capacitacion,Otros_Registros,Bonos,Salir
 
-def FMI(usuario,puesto):
+def CC_FMI(usuario,puesto):
 
   # ----- Conexión, Botones y Memoria ---- #
 
@@ -43,7 +43,7 @@ def FMI(usuario,puesto):
   salir_3 = placeholder7_3.button("Salir",key="salir_3")
 
   placeholder8_3 = st.empty()
-  informacion_final_i_3 = placeholder8_3.title("Folios de Matricula Inmobiliaria")
+  informacion_final_i_3 = placeholder8_3.title("Control de Calidad Folios de Matricula Inmobiliaria")
 
   default_date_3 = datetime.now(pytz.timezone('America/Colombia'))
 
@@ -52,12 +52,15 @@ def FMI(usuario,puesto):
 
   placeholder10_3= st.empty()
   unidad_3= placeholder10_3.text_input("Unidad de Asignación",key="unidad_3")
-    
-  placeholder12_3= st.empty()
-  produccion_3= placeholder12_3.number_input("Cantidad de Folios Revisados",min_value=0,step=1,key="produccion_3")
 
-  placeholder13_3 = st.empty()
-  reporte_3 = placeholder13_3.button("Generar Reporte",key="reporte_3")
+  placeholder12_3= st.empty()
+  aprobados_3= placeholder12_3.number_input("Cantidad de Folios Aprobados",min_value=0,step=1,key="aprobados_3")
+
+  placeholder13_3= st.empty()
+  rechazados_3= placeholder13_3.number_input("Cantidad de Folios Rechazados",min_value=0,step=1,key="rechazados_3")
+
+  placeholder14_3 = st.empty()
+  reporte_3 = placeholder14_3.button("Generar Reporte",key="reporte_3")
 
   # ----- Procesos ---- #
     
@@ -75,8 +78,9 @@ def FMI(usuario,puesto):
     placeholder11_3.empty()
     placeholder12_3.empty()
     placeholder13_3.empty()
+    placeholder14_3.empty()
     st.session_state.Procesos=False
-    st.session_state.FMI=False
+    st.session_state.CC_FMI=False
 
     perfil=pd.read_sql(f"select perfil from usuarios where usuario ='{usuario}'",uri)
     perfil= perfil.loc[0,'perfil']
@@ -110,7 +114,8 @@ def FMI(usuario,puesto):
     placeholder11_3.empty()
     placeholder12_3.empty()
     placeholder13_3.empty()
-    st.session_state.FMI=False
+    placeholder14_3.empty()
+    st.session_state.CC_FMI=False
     st.session_state.Historial=True
     Historial.Historial(usuario,puesto)   
 
@@ -130,7 +135,8 @@ def FMI(usuario,puesto):
     placeholder11_3.empty()
     placeholder12_3.empty()
     placeholder13_3.empty()
-    st.session_state.FMI=False
+    placeholder14_3.empty()
+    st.session_state.CC_FMI=False
     st.session_state.Capacitacion=True
     Capacitacion.Capacitacion(usuario,puesto)
 
@@ -150,7 +156,8 @@ def FMI(usuario,puesto):
     placeholder11_3.empty()
     placeholder12_3.empty()
     placeholder13_3.empty()
-    st.session_state.FMI=False
+    placeholder14_3.empty()
+    st.session_state.CC_FMI=False
     st.session_state.Otros_Registros=True
     Otros_Registros.Otros_Registros(usuario,puesto)
 
@@ -170,7 +177,8 @@ def FMI(usuario,puesto):
     placeholder11_3.empty()
     placeholder12_3.empty()
     placeholder13_3.empty()
-    st.session_state.FMI=False
+    placeholder14_3.empty()
+    st.session_state.CC_FMI=False
     st.session_state.Bonos=True
     Bonos.Bonos(usuario,puesto)    
 
@@ -190,8 +198,9 @@ def FMI(usuario,puesto):
     placeholder11_3.empty()
     placeholder12_3.empty()
     placeholder13_3.empty()
+    placeholder14_3.empty()
     st.session_state.Ingreso = False
-    st.session_state.FMI=False
+    st.session_state.CC_FMI=False
     st.session_state.Salir=True
     Salir.Salir()
 
@@ -207,6 +216,6 @@ def FMI(usuario,puesto):
     supervisor_3= pd.read_sql(f"select supervisor from usuarios where usuario ='{usuario}'",uri)
     supervisor_3 = supervisor_3.loc[0,'supervisor']
 
-    cursor01.execute(f"INSERT INTO registro (marca,usuario,nombre,puesto,supervisor,proceso,fecha,unidad_asignacion,tipo,produccion,aprobados,rechazados,horas)VALUES('{marca_3}','{usuario}','{nombre_3}','{puesto}','{supervisor_3}','Folios de Matricula Inmobiliaria','{fecha_3}','{unidad_3}','NA','{produccion_3}','0')")
+    cursor01.execute(f"INSERT INTO registro (marca,usuario,nombre,puesto,supervisor,proceso,fecha,unidad_asignacion,tipo,produccion,aprobados,rechazados,horas)VALUES('{marca_3}','{usuario}','{nombre_3}','{puesto}','{supervisor_3}','Control de Calidad Folios de Matricula Inmobiliaria','{fecha_3}','{unidad_3}','NA','{aprobados_3}'+'{rechazados_3}','{aprobados_3}','{rechazados_3}','0')")
     con.commit()                                                                                                                                 
     st.success('Reporte enviado correctamente')
