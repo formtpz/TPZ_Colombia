@@ -314,7 +314,7 @@ def Historial(usuario,puesto):
     
       nombre_producción=data_2_r.iloc[:,0]
       fecha_producción=data_2_r.iloc[:,1]
-      producción_producción=data_2_r.iloc[:,4]
+      producción_producción=data_2_r.iloc[:,2]
       datos_producción = pd.DataFrame(data={'Nombre':nombre_producción, 'Fecha':fecha_producción,'Producción':producción_producción})
       lista_nombres = datos_producción["Nombre"].unique().tolist()
 
@@ -495,7 +495,7 @@ def Historial(usuario,puesto):
     
       nombre_producción=data_2_r.iloc[:,0]
       fecha_producción=data_2_r.iloc[:,1]
-      producción_producción=data_2_r.iloc[:,4]
+      producción_producción=data_2_r.iloc[:,2]
       datos_producción = pd.DataFrame(data={'Nombre':nombre_producción, 'Fecha':fecha_producción,'Producción':producción_producción})
       lista_nombres = datos_producción["Nombre"].unique().tolist()
 
