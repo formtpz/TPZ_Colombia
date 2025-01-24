@@ -1,7 +1,7 @@
 # ----- Librerías ---- #
 
 import streamlit as st
-import Historial, Capacitacion, Otros_Registros, Bonos, Salir, FMI, Consulta_Campo
+import Historial, Capacitacion, Otros_Registros, Bonos, Salir, FMI, CC_FMI, Consulta_Campo
 
 # ----- Procesos 1 ---- #
 
@@ -36,6 +36,9 @@ def Procesos1(usuario,puesto):
         fmi_2 = placeholder8_2.button("Folios de Matricula Inmobiliaria",key="fmi_2")
 
         placeholder9_2 = st.empty()
+        cc_fmi_2 = placeholder8_2.button("Control de Calidad Folios de Matricula Inmobiliaria",key="cc_fmi_2")
+
+        placeholder10_2 = st.empty()
         consulta_campo_2 = placeholder9_2.button("Consultas de Campo",key="consulta_campo_2")
 
         # ----- Historial ---- #
@@ -51,6 +54,7 @@ def Procesos1(usuario,puesto):
             placeholder7_2.empty()
             placeholder8_2.empty()
             placeholder9_2.empty()
+            placeholder10_2.empty()
             st.session_state.Procesos=True
             st.session_state.Historial=True
             Historial.Historial(usuario,puesto)
@@ -68,6 +72,7 @@ def Procesos1(usuario,puesto):
             placeholder7_2.empty()
             placeholder8_2.empty()
             placeholder9_2.empty()
+            placeholder10_2.empty()
             st.session_state.Procesos=True
             st.session_state.Capacitacion=True
             Capacitacion.Capacitacion(usuario,puesto)
@@ -85,6 +90,7 @@ def Procesos1(usuario,puesto):
             placeholder7_2.empty()
             placeholder8_2.empty()
             placeholder9_2.empty()
+            placeholder10_2.empty()
             st.session_state.Procesos=True
             st.session_state.Otros_Registros=True
             Otros_Registros.Otros_Registros(usuario,puesto)
@@ -102,6 +108,7 @@ def Procesos1(usuario,puesto):
             placeholder7_2.empty()
             placeholder8_2.empty()
             placeholder9_2.empty()
+            placeholder10_2.empty()
             st.session_state.Procesos=True
             st.session_state.Bonos=True
             Bonos.Bonos(usuario,puesto)
@@ -119,6 +126,7 @@ def Procesos1(usuario,puesto):
             placeholder7_2.empty()
             placeholder8_2.empty()
             placeholder9_2.empty()
+            placeholder10_2.empty()
             st.session_state.Ingreso= False
             st.session_state.Procesos=True
             st.session_state.Salir=True
@@ -137,10 +145,28 @@ def Procesos1(usuario,puesto):
             placeholder7_2.empty()
             placeholder8_2.empty()
             placeholder9_2.empty()
+            placeholder10_2.empty()
             st.session_state.Procesos=True
             st.session_state.FMI=True
             FMI.FMI(usuario,puesto)
+        
+        # ----- Control de Calidad FMI ---- #
 
+        elif cc_fmi_2:
+
+            placeholder1_2.empty()
+            placeholder2_2.empty()
+            placeholder3_2.empty()
+            placeholder4_2.empty()
+            placeholder5_2.empty()
+            placeholder6_2.empty()
+            placeholder7_2.empty()
+            placeholder8_2.empty()
+            placeholder9_2.empty()
+            placeholder10_2.empty()
+            st.session_state.Procesos=True
+            st.session_state.CC_FMI=True
+            CC_FMI.CC_FMI(usuario,puesto)
         # ----- Consultas de Campo ---- #
 
         elif consultas_campo_2:
@@ -154,6 +180,7 @@ def Procesos1(usuario,puesto):
             placeholder7_2.empty()
             placeholder8_2.empty()
             placeholder9_2.empty()
+            placeholder10_2.empty()
             st.session_state.Procesos=True
             st.session_state.Consulta_Campo=True
             Consulta_Campo.Consulta_Campo(usuario,puesto)
@@ -174,6 +201,9 @@ def Procesos1(usuario,puesto):
 
         elif st.session_state.FMI==True:
             FMI.FMI(usuario,puesto)
+
+        elif st.session_state.CC_FMI==True:
+            CC_FMI.CC_FMI(usuario,puesto)
 
         elif st.session_state.Consulta_Campo==True:
             Consulta_Campo.Consulta_Campo(usuario,puesto)
@@ -208,10 +238,7 @@ def Procesos2(usuario,puesto):
         registro_2 = placeholder7_2.title("Procesos")
 
         placeholder8_2 = st.empty()
-        cc_conformacion_2 = placeholder8_2.button("Control de Calidad Conformación",key="cc_conformacion_2")
-
-        placeholder9_2 = st.empty()
-        cc_ifi_2 = placeholder9_2.button("Control de Calidad IF I",key="cc_ifi_2")
+        cc_fmi_2 = placeholder8_2.button("Control de Calidad Folios de Matricula Inmobiliaria",key="cc_fmi_2")
 
         # ----- Historial ---- #
 
@@ -225,7 +252,6 @@ def Procesos2(usuario,puesto):
             placeholder6_2.empty()
             placeholder7_2.empty()
             placeholder8_2.empty()
-            placeholder9_2.empty()
             st.session_state.Procesos=True
             st.session_state.Historial=True
             Historial.Historial(usuario,puesto)
@@ -241,7 +267,6 @@ def Procesos2(usuario,puesto):
             placeholder5_2.empty()
             placeholder6_2.empty()
             placeholder7_2.empty()
-            placeholder8_2.empty()
             st.session_state.Procesos=True
             st.session_state.Capacitacion=True
             Capacitacion.Capacitacion(usuario,puesto)
@@ -258,7 +283,6 @@ def Procesos2(usuario,puesto):
             placeholder6_2.empty()
             placeholder7_2.empty()
             placeholder8_2.empty()
-            placeholder9_2.empty()
             st.session_state.Procesos=True
             st.session_state.Otros_Registros=True
             Otros_Registros.Otros_Registros(usuario,puesto)
@@ -275,7 +299,6 @@ def Procesos2(usuario,puesto):
             placeholder6_2.empty()
             placeholder7_2.empty()
             placeholder8_2.empty()
-            placeholder9_2.empty()
             st.session_state.Procesos=True
             st.session_state.Bonos=True
             Bonos.Bonos(usuario,puesto)
@@ -292,32 +315,14 @@ def Procesos2(usuario,puesto):
             placeholder6_2.empty()
             placeholder7_2.empty()
             placeholder8_2.empty()
-            placeholder9_2.empty()
             st.session_state.Ingreso = False
             st.session_state.Procesos=True
             st.session_state.Salir=True
             Salir.Salir()
 
-        # ----- Control de Calidad Conformación ---- #
+        # ----- CC FMI ---- #
 
-        elif cc_conformacion_2:
-
-            placeholder1_2.empty()
-            placeholder2_2.empty()
-            placeholder3_2.empty()
-            placeholder4_2.empty()
-            placeholder5_2.empty()
-            placeholder6_2.empty()
-            placeholder7_2.empty()
-            placeholder8_2.empty()
-            placeholder9_2.empty()
-            st.session_state.Procesos=True
-            st.session_state.CC_Conformacion=True
-            Conformacion.CC_Conformacion(usuario,puesto)
-
-        # ----- Control de Calidad IF I ---- #
-
-        elif cc_ifi_2:
+        elif cc_fmi_2:
 
             placeholder1_2.empty()
             placeholder2_2.empty()
@@ -327,10 +332,9 @@ def Procesos2(usuario,puesto):
             placeholder6_2.empty()
             placeholder7_2.empty()
             placeholder8_2.empty()
-            placeholder9_2.empty()
             st.session_state.Procesos=True
-            st.session_state.CC_IFI=True
-            CC_IFI.CC_IFI(usuario,puesto)
+            st.session_state.CC_FMI=True
+            CC_FMI.CC_FMI(usuario,puesto)
 
     elif st.session_state.Procesos==True:
 
@@ -346,11 +350,8 @@ def Procesos2(usuario,puesto):
         elif st.session_state.Bonos==True:
             Bonos.Bonos(usuario,puesto)
 
-        elif st.session_state.CC_Conformacion==True:
-            CC_Conformacion.CC_Conformacion(usuario,puesto)
-
-        elif st.session_state.CC_IFI==True:
-            CC_IFI.CC_IFI(usuario,puesto)
+        elif st.session_state.CC_FMI==True:
+            CC_FMI.CC_FMI(usuario,puesto)
         
 # ----- Procesos 3 ---- #
 
