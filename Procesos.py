@@ -36,7 +36,7 @@ def Procesos1(usuario,puesto):
         fmi_2 = placeholder8_2.button("Folios de Matricula Inmobiliaria",key="fmi_2")
 
         placeholder9_2 = st.empty()
-        cc_fmi_2 = placeholder8_2.button("Control de Calidad Folios de Matricula Inmobiliaria",key="cc_fmi_2")
+        cc_fmi_2 = placeholder9_2.button("Control de Calidad Folios de Matricula Inmobiliaria",key="cc_fmi_2")
 
         placeholder10_2 = st.empty()
         consulta_campo_2 = placeholder9_2.button("Consultas de Campo",key="consulta_campo_2")
