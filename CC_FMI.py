@@ -45,7 +45,7 @@ def CC_FMI(usuario,puesto):
   placeholder8_3 = st.empty()
   informacion_final_i_3 = placeholder8_3.title("Control de Calidad Folios de Matricula Inmobiliaria")
 
-  default_date_3 = datetime.now(pytz.timezone('America/Colombia'))
+  default_date_3 = datetime.now(pytz.timezone('America/Bogota'))
 
   placeholder9_3= st.empty()
   fecha_3= placeholder9_3.date_input("Fecha",value=default_date_3,key="fecha_3")
@@ -208,7 +208,7 @@ def CC_FMI(usuario,puesto):
 
     cursor01=con.cursor()
 
-    marca_3= datetime.now(pytz.timezone('America/Colombia')).strftime("%Y-%m-%d %H:%M:%S")
+    marca_3= datetime.now(pytz.timezone('America/Bogota')).strftime("%Y-%m-%d %H:%M:%S")
     
     nombre_3= pd.read_sql(f"select nombre from usuarios where usuario ='{usuario}'",uri)
     nombre_3 = nombre_3.loc[0,'nombre']
