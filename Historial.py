@@ -123,7 +123,7 @@ def Historial(usuario,puesto):
       
       data_1_c = pd.read_sql(f"select cast(id as integer),marca,usuario,nombre,puesto,supervisor,fecha,tema,cast(horas as float),observaciones,reporte from capacitaciones where puesto='Operario Catastral' and fecha>='{fecha_de__inicio_7}' and fecha<='{fecha_de__finalizacion_7}'", con)
 
-      data_1_o = pd.read_sql(f"select cast(id as integer),marca,usuario,nombre,puesto,supervisor,fecha,motivo,cast(horas as float),obsservaciones,reporte from otros_registros where puesto='Operario Catastral' and fecha>='{fecha_de__inicio_7}' and fecha<='{fecha_de__finalizacion_7}'", con)
+      data_1_o = pd.read_sql(f"select cast(id as integer),marca,usuario,nombre,puesto,supervisor,fecha,motivo,cast(horas as float),observaciones,reporte from otros_registros where puesto='Operario Catastral' and fecha>='{fecha_de__inicio_7}' and fecha<='{fecha_de__finalizacion_7}'", con)
     
     elif personal_7=="Operarios" and proceso_7_s !="Todos" and tipo_7_s!="Todos":
         
