@@ -299,6 +299,8 @@ def Historial(usuario,puesto):
 
     data_2_r = data_1_r.groupby(["nombre", "fecha"], as_index=False)[["produccion","horas"]].agg(np.sum)
 
+    data_4_r = data_1_r.groupby(["nombre", "semana","proceso"], as_index=False)[["produccion"]].agg(np.sum)
+
     if pivot_r==0:  
 
       placeholder22_7 = st.empty()
@@ -311,7 +313,17 @@ def Historial(usuario,puesto):
 
       placeholder24_7 = st.empty()
       descarga_7_producción = placeholder24_7.download_button("Decargar CSV",data=data_2_r.to_csv(),mime="text/csv",key="descarga_7_producción")
-    
+
+      data_4_r = data_1_r.groupby(["nombre", "semana","proceso"], as_index=False)[["produccion"]].agg(np.sum)
+      data_4_r ["valor esperado"] = [200 if x == 'Folios de Matricula Inmobiliaria' 350 elif x == "Control de Calidad Folios de Matricula Inmobiliaria" else 0 for x in df['proceso']]    
+      data_4_r ["diferencia"] = data_4_r["produccion"] - data_4_r["valor esperado"]
+
+      placeholder23_2_7 = st.empty()
+      historial_7_diferencia= placeholder23_2_7.dataframe(data=data_4_r)
+      
+      placeholder24_2_7 = st.empty()
+      descarga_7_diferencia = placeholder24_2_7.download_button("Decargar CSV",data=data_4_r.to_csv(),mime="text/csv",key="descarga_7_diferencia")
+      
       nombre_producción=data_2_r.iloc[:,0]
       fecha_producción=data_2_r.iloc[:,1]
       producción_producción=data_2_r.iloc[:,2]
@@ -593,6 +605,8 @@ def Historial(usuario,puesto):
       else:
         placeholder23_7.empty()
         placeholder24_7.empty()
+        placeholder23_2_7.empty()
+        placeholder24_2_7.empty()
         placeholder25_7.empty()
         placeholder26_7.empty()
         placeholder29_7.empty()
@@ -705,6 +719,8 @@ def Historial(usuario,puesto):
       else:
         placeholder23_7.empty()
         placeholder24_7.empty()
+        placeholder23_2_7.empty()
+        placeholder24_2_7.empty()
         placeholder25_7.empty()
         placeholder26_7.empty()
         placeholder29_7.empty()
@@ -803,6 +819,8 @@ def Historial(usuario,puesto):
       else:
         placeholder23_7.empty()
         placeholder24_7.empty()
+        placeholder23_2_7.empty()
+        placeholder24_2_7.empty()
         placeholder25_7.empty()
         placeholder26_7.empty()
         placeholder29_7.empty()
@@ -901,6 +919,8 @@ def Historial(usuario,puesto):
       else:
         placeholder23_7.empty()
         placeholder24_7.empty()
+        placeholder23_2_7.empty()
+        placeholder24_2_7.empty()
         placeholder25_7.empty()
         placeholder26_7.empty()
         placeholder29_7.empty()
@@ -1000,6 +1020,8 @@ def Historial(usuario,puesto):
       else:
         placeholder23_7.empty()
         placeholder24_7.empty()
+        placeholder23_2_7.empty()
+        placeholder24_2_7.empty()
         placeholder25_7.empty()
         placeholder26_7.empty()
         placeholder29_7.empty()
