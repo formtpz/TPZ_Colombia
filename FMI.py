@@ -209,7 +209,20 @@ def FMI(usuario,puesto):
       
     supervisor_3= pd.read_sql(f"select supervisor from usuarios where usuario ='{usuario}'",uri)
     supervisor_3 = supervisor_3.loc[0,'supervisor']
-
-    cursor01.execute(f"INSERT INTO registro (marca,usuario,nombre,puesto,supervisor,proceso,fecha,unidad_asignacion,tipo,produccion,aprobados,rechazados,horas)VALUES('{marca_3}','{usuario}','{nombre_3}','{puesto}','{supervisor_3}','Folios de Matricula Inmobiliaria','{fecha_3}','{unidad_3}','{tipo_3}','{produccion_3}','0','0','0')")
+ 
+# creating a dictionary containing a date
+# dict = {'Date':["2015-06-17"]}
+ 
+# converting the dictionary to a dataframe
+# df = pd.DataFrame.from_dict(dict)
+ 
+# converting the date to the required format
+# df['Date'] = pd.to_datetime(df['Date'], errors ='coerce')
+# df.astype('int64').dtypes
+ 
+# extracting the week from the date
+    semana_3 = fecha_3.dt.week
+ 
+    cursor01.execute(f"INSERT INTO registro (marca,usuario,nombre,puesto,supervisor,proceso,fecha,semana,unidad_asignacion,tipo,produccion,aprobados,rechazados,horas)VALUES('{marca_3}','{usuario}','{nombre_3}','{puesto}','{supervisor_3}','Folios de Matricula Inmobiliaria','{fecha_3}','{semana_3}','{unidad_3}','{tipo_3}','{produccion_3}','0','0','0')")
     con.commit()                                                                                                                                 
     st.success('Reporte enviado correctamente')
