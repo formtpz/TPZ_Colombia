@@ -224,7 +224,7 @@ def FMI(usuario,puesto):
 # extracting the week from the date
    # semana_3 = fecha_3.df.week
 
-    semana_3 = datetime.date(fecha_3).isocalendar()[1]
+    semana_3 = fecha_3.isocalendar()[1]
 
     #semana_3 = fecha_3.strftime('%U')
  
