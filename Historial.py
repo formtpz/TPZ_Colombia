@@ -314,7 +314,6 @@ def Historial(usuario,puesto):
       placeholder24_7 = st.empty()
       descarga_7_producción = placeholder24_7.download_button("Decargar CSV",data=data_2_r.to_csv(),mime="text/csv",key="descarga_7_producción")
 
-      data_4_r = data_1_r.groupby(["nombre", "semana","proceso"], as_index=False)[["produccion"]].agg(np.sum)
       data_4_r ["valor esperado"] = [200 if x == 'Folios de Matricula Inmobiliaria' else 0 for x in df['proceso']]    
       data_4_r ["diferencia"] = data_4_r["produccion"] - data_4_r["valor esperado"]
 
