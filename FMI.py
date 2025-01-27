@@ -3,7 +3,7 @@
 import streamlit as st
 import pandas as pd
 import psycopg2
-#from datetime import datetime
+from datetime import datetime
 from datetime import date
 import pytz
 from urllib.parse import urlparse
@@ -224,7 +224,9 @@ def FMI(usuario,puesto):
 # extracting the week from the date
    # semana_3 = fecha_3.dt.week
 
-    semana_3 = datetime.date(fecha_3).isocalendar()[1]
+   # semana_3 = datetime.date(fecha_3).isocalendar()[1]
+
+    semana_3 = df[fecha_3].dt.strftime('%U')
  
     cursor01.execute(f"INSERT INTO registro (marca,usuario,nombre,puesto,supervisor,proceso,fecha,semana,unidad_asignacion,tipo,produccion,aprobados,rechazados,horas)VALUES('{marca_3}','{usuario}','{nombre_3}','{puesto}','{supervisor_3}','Folios de Matricula Inmobiliaria','{fecha_3}','{semana_3}','{unidad_3}','{tipo_3}','{produccion_3}','0','0','0')")
     con.commit()                                                                                                                                 
