@@ -4,6 +4,7 @@ import streamlit as st
 import pandas as pd
 import psycopg2
 from datetime import datetime
+from datetime import date
 import pytz
 from urllib.parse import urlparse
 import Procesos,Historial,Capacitacion,Otros_Registros,Bonos,Salir
