@@ -51,8 +51,8 @@ def Consulta_Campo(usuario,puesto):
   fecha_3= placeholder9_3.date_input("Fecha",value=default_date_3,key="fecha_3")
 
   placeholder10_3= st.empty()
-  unidad_3= placeholder10_3.text_input("Unidad de Asignación",key="unidad_3")
-    
+  unidad_3=placeholder10_3.selectbox("Unidad de Asignación", options=("Cabuyaro – Urbano","Chalán – Urbano","Colombia – Urbano","Cuítiva – Urbano","Iza – Urbano","Los Palmitos – Urbano","Morroa – Urbano","Trinidad – Urbano","San Estanislao – Urbano","San Luis de Cubarral – Urbano","UITU- 1","UITU- 2","UITU- 3","UITU- 4","UITU- 5","UITU- 6","UITU- 7","Zambrano – Urbano"), key="unidad_3")
+
   placeholder11_3= st.empty()
   produccion_3= placeholder11_3.number_input("Cantidad de Consultas Realizadas",min_value=0,step=1,key="produccion_3")
 
