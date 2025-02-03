@@ -155,7 +155,7 @@ def Otros_Registros(usuario,puesto):
     elif filtro_13=="Operarios":
       data = pd.read_sql(f"select cast(id as integer),marca,usuario,nombre,puesto,supervisor,fecha,motivo,horas,observaciones,reporte from otros_registros where puesto='Operario Catastral' and fecha>='{fecha_de__inicio_13}' and fecha<='{fecha_de__finalizacion_13}'", con)
     
-    elif filtro_13=="Operarios":
+    elif filtro_13=="Profesional Jurídico":
       data = pd.read_sql(f"select cast(id as integer),marca,usuario,nombre,puesto,supervisor,fecha,motivo,horas,observaciones,reporte from otros_registros where puesto='Profesional Jurídico' and fecha>='{fecha_de__inicio_13}' and fecha<='{fecha_de__finalizacion_13}'", con)
       
     elif filtro_13=="Propio" :
