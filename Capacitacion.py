@@ -159,7 +159,7 @@ def Capacitacion(usuario,puesto):
     elif filtro_8=="Personal Asignado" :
       data = pd.read_sql(f"select cast(id as integer),marca,usuario,nombre,puesto,supervisor,fecha,tema,horas,observaciones,reporte from capacitaciones where supervisor='{nombre_8}' and fecha>='{fecha_de__inicio_8}' and fecha<='{fecha_de__finalizacion_8}'", con)
 
-    elif filtro_8=="Personal Reportados" :
+    elif filtro_8=="Reportados" :
       data = pd.read_sql(f"select cast(id as integer),marca,usuario,nombre,puesto,supervisor,fecha,tema,horas,observaciones,reporte from capacitaciones where reporte='{nombre_8}' and fecha>='{fecha_de__inicio_8}' and fecha<='{fecha_de__finalizacion_8}'", con)
 
   elif puesto=="Operario Catastral" or puesto=="Profesional Jurídico":
