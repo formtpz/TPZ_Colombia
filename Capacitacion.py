@@ -116,33 +116,36 @@ def Capacitacion(usuario,puesto):
     personal_8= placeholder9_8.multiselect("Personal",data_personal_8,key="personal_8")
 
     default_date_8 = datetime.now(pytz.timezone('America/Guatemala'))
-      
+
     placeholder10_8= st.empty()
-    tema_8=placeholder10_8.selectbox("Tema", options=("Bonos","Criterios IGAC","Información General","QGIS","Reportes y Registros","Sistema de Gestión Empresarial","Otros"), key="tema_8")
-
+    fecha_8= placeholder10_8.date_input("Fecha",value=default_date_8,key="fecha_8")
+      
     placeholder11_8= st.empty()
-    observaciones_8= placeholder11_8.text_input("Observaciones",key="observaciones_8")
-    
+    tema_8=placeholder11_8.selectbox("Tema", options=("Bonos","Criterios IGAC","Información General","QGIS","Reportes y Registros","Sistema de Gestión Empresarial","Otros"), key="tema_8")
+
     placeholder12_8= st.empty()
-    horas_8= placeholder12_8.number_input("Cantidad de Horas de Capacitación Individuales",min_value=0.0,key="horas_8")
+    observaciones_8= placeholder12_8.text_input("Observaciones",key="observaciones_8")
+    
+    placeholder13_8= st.empty()
+    horas_8= placeholder13_8.number_input("Cantidad de Horas de Capacitación Individuales",min_value=0.0,key="horas_8")
 
-    placeholder13_8 = st.empty()
-    reporte_8 = placeholder13_8.button("Generar Reporte",key="reporte_8")
+    placeholder14_8 = st.empty()
+    reporte_8 = placeholder14_8.button("Generar Reporte",key="reporte_8")
 
-    placeholder14_8= st.empty()
-    separador_8 = placeholder14_8.markdown("_____")
-
-    placeholder15_8 = st.empty()
-    capacitacion_historial_8 = placeholder15_8.subheader("Historial")
+    placeholder15_8= st.empty()
+    separador_8 = placeholder15_8.markdown("_____")
 
     placeholder16_8 = st.empty()
-    fecha_de__inicio_8 = placeholder16_8.date_input("Fecha de Inicio",value=default_date_8,key="fecha_de_inicio_8")
+    capacitacion_historial_8 = placeholder16_8.subheader("Historial")
 
     placeholder17_8 = st.empty()
-    fecha_de__finalizacion_8 = placeholder17_8.date_input("Fecha de Finalización",value=default_date_8,key="fecha_de_finalizacion_8")
-      
+    fecha_de__inicio_8 = placeholder17_8.date_input("Fecha de Inicio",value=default_date_8,key="fecha_de_inicio_8")
+
     placeholder18_8 = st.empty()
-    filtro_8 = placeholder18_8.selectbox("Filtro", options=("Todos","Operarios","Personal Jurídico","Propio","Personal Asignado","Reportados"), key="filtro_8")
+    fecha_de__finalizacion_8 = placeholder18_8.date_input("Fecha de Finalización",value=default_date_8,key="fecha_de_finalizacion_8")
+      
+    placeholder19_8 = st.empty()
+    filtro_8 = placeholder19_8.selectbox("Filtro", options=("Todos","Operarios","Personal Jurídico","Propio","Personal Asignado","Reportados"), key="filtro_8")
 
     if filtro_8=="Todos":
       data = pd.read_sql(f"select cast(id as integer),marca,usuario,nombre,puesto,supervisor,fecha,tema,horas,observaciones,reporte from capacitaciones where fecha>='{fecha_de__inicio_8}' and fecha<='{fecha_de__finalizacion_8}'", con)
