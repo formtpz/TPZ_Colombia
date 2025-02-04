@@ -67,7 +67,7 @@ def Otros_Registros(usuario,puesto):
     horas_13= placeholder12_13.number_input("Cantidad de Horas Individuales",min_value=0.0,key="horas_13")
 
     placeholder13_13 = st.empty()
-    observaciones_13 = placeholder13_13.text_input("Observaciones",key="observaciones_13",max_chars=60)
+    observaciones_13 = placeholder13_13.text_input("Observaciones",max_chars=60,key="observaciones_13")
 
     placeholder14_13 = st.empty()
     reporte_13 = placeholder14_13.button("Generar Reporte",key="reporte_13")
