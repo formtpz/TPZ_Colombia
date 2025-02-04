@@ -59,7 +59,7 @@ def Otros_Registros(usuario,puesto):
     default_date_13=datetime.now(pytz.timezone('America/Guatemala'))
 
     placeholder10_13= st.empty()
-    fecha_13= placeholder10_13.date_input("Fecha",value=default_date,key="fecha_13")
+    fecha_13= placeholder10_13.date_input("Fecha",value=default_date,key="fecha")
     fecha_13= placeholder10_13.date_input("Fecha",value=default_date_13,key="fecha_13")
     placeholder11_13= st.empty()
     motivo_13= placeholder11_13.selectbox("Motivo", options=("Entregas","Incapacidad","Fallos en Aplicativo o Conexión","Licencia por Fallecimiento de Familiar","Licencia por Maternidad, Paternidad o Lactancia", "Reunión", "Supervisión", "Vacaciones", "Otros"),key="motivo_13")
