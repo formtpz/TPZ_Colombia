@@ -124,7 +124,7 @@ def Capacitacion(usuario,puesto):
     tema_8=placeholder11_8.selectbox("Tema", options=("Bonos","Criterios IGAC","Información General","QGIS","Reportes y Registros","Sistema de Gestión Empresarial","Otros"), key="tema_8")
 
     placeholder12_8= st.empty()
-    observaciones_8= placeholder12_8.text_input("Observaciones",key="observaciones_8")
+    observaciones_8= placeholder12_8.text_input("Observaciones",max_chars=60,key="observaciones_8")
     
     placeholder13_8= st.empty()
     horas_8= placeholder13_8.number_input("Cantidad de Horas de Capacitación Individuales",min_value=0.0,key="horas_8")
