@@ -184,10 +184,6 @@ def Capacitacion(usuario,puesto):
   placeholder22_8 = st.empty()
   histo_8= placeholder22_8.dataframe(data=data)
 
-  df = pd.DataFrame(np.random.randn(10, 20), columns=("col %d" % i for i in range(20)))
-  st.dataframe(df.style.highlight_max(axis=0))
-
-
   # ----- Procesos ---- #
     
   if procesos_8:
