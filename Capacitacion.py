@@ -187,8 +187,6 @@ def Capacitacion(usuario,puesto):
   df = pd.DataFrame(np.random.randn(10, 20), columns=("col %d" % i for i in range(20)))
   st.dataframe(df.style.highlight_max(axis=0))
 
-  placeholder23_8 = st.empty()
-  descarga_8 = placeholder23_8.download_button("Decargar CSV",data=data.to_csv(),mime="text/csv",key="descarga_8")
 
   # ----- Procesos ---- #
     
@@ -218,7 +216,6 @@ def Capacitacion(usuario,puesto):
       placeholder20_8.empty()
       placeholder21_8.empty()
     placeholder22_8.empty()
-    placeholder23_8.empty()
     st.session_state.Procesos=False
     st.session_state.Capacitacion=False
     Procesos.Procesos(usuario,puesto)
@@ -266,7 +263,6 @@ def Capacitacion(usuario,puesto):
       placeholder20_8.empty()
       placeholder21_8.empty()
     placeholder22_8.empty()
-    placeholder23_8.empty()
     st.session_state.Capacitacion=False
     st.session_state.Historial=True
     Historial.Historial(usuario,puesto)
@@ -299,7 +295,6 @@ def Capacitacion(usuario,puesto):
       placeholder20_8.empty()
       placeholder21_8.empty()
     placeholder22_8.empty()
-    placeholder23_8.empty()
     st.session_state.Capacitacion=False
     st.session_state.Otros_Registros=True
     Otros_Registros.Otros_Registros(usuario,puesto)
@@ -332,7 +327,6 @@ def Capacitacion(usuario,puesto):
       placeholder20_8.empty()
       placeholder21_8.empty()
     placeholder22_8.empty()
-    placeholder23_8.empty()
     st.session_state.Capacitacion=False
     st.session_state.Bonos=True
     Bonos.Bonos(usuario,puesto)
@@ -365,7 +359,6 @@ def Capacitacion(usuario,puesto):
       placeholder20_8.empty()
       placeholder21_8.empty()
     placeholder22_8.empty()
-    placeholder23_8.empty()
     st.session_state.Ingreso=False
     st.session_state.Capacitacion=False
     st.session_state.Salir=True
