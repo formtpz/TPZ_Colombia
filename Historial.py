@@ -246,9 +246,6 @@ def Historial(usuario,puesto):
       placeholder15_7 = st.empty()
       historial_7_reportes=placeholder15_7.dataframe(data=data_1_r)
 
-      placeholder16_7 = st.empty()
-      descarga_7_reportes = placeholder16_7.download_button("Decargar CSV",data=data_1_r.to_csv(),mime="text/csv",key="descarga_7_reportes")
-
     # ----- Resumen de Horas ---- #
 
     placeholder17_7 = st.empty()
@@ -289,9 +286,6 @@ def Historial(usuario,puesto):
       placeholder19_7 = st.empty()
       historial_7_horas= placeholder19_7.dataframe(data=datos_horas)
 
-      placeholder20_7 = st.empty()
-      descarga_7_horas = placeholder20_7.download_button("Decargar CSV",data=datos_horas.to_csv(),mime="text/csv",key="descarga_7_horas")
-
     # ----- Resumen de Producción ---- #
 
     placeholder21_7 = st.empty()
@@ -310,9 +304,6 @@ def Historial(usuario,puesto):
 
       placeholder23_7 = st.empty()
       historial_7_producción= placeholder23_7.dataframe(data=data_2_r)
-
-      placeholder24_7 = st.empty()
-      descarga_7_producción = placeholder24_7.download_button("Decargar CSV",data=data_2_r.to_csv(),mime="text/csv",key="descarga_7_producción")
 
       data_4_r ["valor esperado"] = [200 if x == 'Folios de Matricula Inmobiliaria' else 350 if x == 'Control de Calidad Folios de Matricula Inmobiliaria' else 0 for x in data_4_r['proceso']]    
       data_4_r ["diferencia"] = data_4_r["produccion"] - data_4_r["valor esperado"]
@@ -434,9 +425,6 @@ def Historial(usuario,puesto):
       placeholder37_7 = st.empty()
       historial_7_reportes=placeholder37_7.dataframe(data=data_1_r)
 
-      placeholder38_7 = st.empty()
-      descarga_7_reportes = placeholder38_7.download_button("Decargar CSV",data=data_1_r.to_csv(),mime="text/csv",key="descarga_7_reportes")
-
     # ----- Resumen de Horas ---- #
 
     placeholder39_7 = st.empty()
@@ -476,9 +464,6 @@ def Historial(usuario,puesto):
 
       placeholder41_7 = st.empty()
       historial_7_horas= placeholder41_7.dataframe(data=datos_horas)
-
-      placeholder42_7 = st.empty()
-      descarga_7_horas = placeholder42_7.download_button("Decargar CSV",data=datos_horas.to_csv(),mime="text/csv",key="descarga_7_horas")
 
     # ----- Resumen de Producción ---- #
 
@@ -591,14 +576,12 @@ def Historial(usuario,puesto):
       
       else:
         placeholder15_7.empty()
-        placeholder16_7.empty()
          
       if pivot_r==0 and pivot_c==0 and pivot_o==0:
         placeholder18_7.empty()
         
       else:
         placeholder19_7.empty()
-        placeholder20_7.empty()
 
       if pivot_r==0 or pivot_c==0 or pivot_o==0:
         placeholder30_7.empty()
@@ -613,7 +596,6 @@ def Historial(usuario,puesto):
 
       else:
         placeholder23_7.empty()
-        placeholder24_7.empty()
         placeholder23_2_7.empty()
         placeholder24_2_7.empty()
         placeholder25_7.empty()
@@ -633,14 +615,12 @@ def Historial(usuario,puesto):
       
       else:
         placeholder37_7.empty()
-        placeholder38_7.empty()
          
       if pivot_r==0 and pivot_c==0 and pivot_o==0:
         placeholder40_7.empty()
         
       else:
         placeholder41_7.empty()
-        placeholder42_7.empty()
 
       if pivot_r==0 or pivot_c==0 or pivot_o==0:
         placeholder52_7.empty()
@@ -707,14 +687,12 @@ def Historial(usuario,puesto):
       
       else:
         placeholder15_7.empty()
-        placeholder16_7.empty()
          
       if pivot_r==0 and pivot_c==0 and pivot_o==0:
         placeholder18_7.empty()
         
       else:
         placeholder19_7.empty()
-        placeholder20_7.empty()
 
       if pivot_r==0 or pivot_c==0 or pivot_o==0:
         placeholder30_7.empty()
@@ -729,7 +707,6 @@ def Historial(usuario,puesto):
 
       else:
         placeholder23_7.empty()
-        placeholder24_7.empty()
         placeholder23_2_7.empty()
         placeholder24_2_7.empty()
         placeholder25_7.empty()
@@ -749,14 +726,12 @@ def Historial(usuario,puesto):
       
       else:
         placeholder37_7.empty()
-        placeholder38_7.empty()
          
       if pivot_r==0 and pivot_c==0 and pivot_o==0:
         placeholder40_7.empty()
         
       else:
         placeholder41_7.empty()
-        placeholder42_7.empty()
         
       if pivot_r==0 or pivot_c==0 or pivot_o==0:
         placeholder52_7.empty()
@@ -809,14 +784,12 @@ def Historial(usuario,puesto):
       
       else:
         placeholder15_7.empty()
-        placeholder16_7.empty()
          
       if pivot_r==0 and pivot_c==0 and pivot_o==0:
         placeholder18_7.empty()
         
       else:
         placeholder19_7.empty()
-        placeholder20_7.empty()
 
       if pivot_r==0 or pivot_c==0 or pivot_o==0:
         placeholder30_7.empty()
@@ -831,7 +804,6 @@ def Historial(usuario,puesto):
 
       else:
         placeholder23_7.empty()
-        placeholder24_7.empty()
         placeholder23_2_7.empty()
         placeholder24_2_7.empty()
         placeholder25_7.empty()
@@ -851,14 +823,12 @@ def Historial(usuario,puesto):
       
       else:
         placeholder37_7.empty()
-        placeholder38_7.empty()
          
       if pivot_r==0 and pivot_c==0 and pivot_o==0:
         placeholder40_7.empty()
         
       else:
         placeholder41_7.empty()
-        placeholder42_7.empty()
     
       if pivot_r==0 or pivot_c==0 or pivot_o==0:
         placeholder52_7.empty()
@@ -911,14 +881,12 @@ def Historial(usuario,puesto):
       
       else:
         placeholder15_7.empty()
-        placeholder16_7.empty()
          
       if pivot_r==0 and pivot_c==0 and pivot_o==0:
         placeholder18_7.empty()
         
       else:
         placeholder19_7.empty()
-        placeholder20_7.empty()
 
       if pivot_r==0 or pivot_c==0 or pivot_o==0:
         placeholder30_7.empty()
@@ -933,7 +901,6 @@ def Historial(usuario,puesto):
 
       else:
         placeholder23_7.empty()
-        placeholder24_7.empty()
         placeholder23_2_7.empty()
         placeholder24_2_7.empty()
         placeholder25_7.empty()
@@ -953,14 +920,12 @@ def Historial(usuario,puesto):
       
       else:
         placeholder37_7.empty()
-        placeholder38_7.empty()
          
       if pivot_r==0 and pivot_c==0 and pivot_o==0:
         placeholder40_7.empty()
         
       else:
         placeholder41_7.empty()
-        placeholder42_7.empty()
 
       if pivot_r==0 or pivot_c==0 or pivot_o==0:
         placeholder52_7.empty()
@@ -1013,14 +978,12 @@ def Historial(usuario,puesto):
       
       else:
         placeholder15_7.empty()
-        placeholder16_7.empty()
          
       if pivot_r==0 and pivot_c==0 and pivot_o==0:
         placeholder18_7.empty()
         
       else:
         placeholder19_7.empty()
-        placeholder20_7.empty()
 
       if pivot_r==0 or pivot_c==0 or pivot_o==0:
         placeholder30_7.empty()
@@ -1036,7 +999,6 @@ def Historial(usuario,puesto):
 
       else:
         placeholder23_7.empty()
-        placeholder24_7.empty()
         placeholder23_2_7.empty()
         placeholder24_2_7.empty()
         placeholder25_7.empty()
@@ -1056,15 +1018,13 @@ def Historial(usuario,puesto):
       
       else:
         placeholder37_7.empty()
-        placeholder38_7.empty()
          
       if pivot_r==0 and pivot_c==0 and pivot_o==0:
         placeholder40_7.empty()
         
       else:
         placeholder41_7.empty()
-        placeholder42_7.empty()
-        
+
       if pivot_r==0 or pivot_c==0 or pivot_o==0:
         placeholder52_7.empty()
         
