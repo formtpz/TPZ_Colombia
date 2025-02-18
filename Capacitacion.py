@@ -6,6 +6,7 @@ from datetime import datetime
 from urllib.parse import urlparse
 import pytz
 import Procesos,Historial,Otros_Registros,Bonos,Salir
+import numpy as np
 
 def Capacitacion(usuario,puesto):
 
