@@ -186,7 +186,7 @@ def Capacitacion(usuario,puesto):
   df = pd.DataFrame(np.random.randn(10, 20), columns=("col %d" % i for i in range(20)))
   
   placeholder22_8 = st.empty()
-  histo_8= placeholder22_8.dataframe(data=df))
+  histo_8= placeholder22_8.dataframe(data=df)
 
    # st.dataframe(df.style.highlight_max(axis=0))
 
