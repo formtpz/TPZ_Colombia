@@ -41,8 +41,6 @@ def Capacitacion(usuario,puesto):
   placeholder7_8 = st.empty()
   capacitacion_8 = placeholder7_8.title("Capacitaciones")
 
-  st.success(f'¡Bienvenido!')
-
   if puesto== "Coordinador":
 
     nombre_8= pd.read_sql(f"select nombre from usuarios where usuario='{usuario}'",uri)
@@ -181,7 +179,7 @@ def Capacitacion(usuario,puesto):
     fecha_de__finalizacion_8 = placeholder21_8.date_input("Fecha de Finalización",value=default_date_8,key="fecha_de_finalizacion_8")
       
     data = pd.read_sql(f"select cast(id as integer),marca,usuario,nombre,puesto,supervisor,fecha,tema,horas,observaciones,reporte from capacitaciones where usuario='{usuario}' and fecha>='{fecha_de__inicio_8}' and fecha<='{fecha_de__finalizacion_8}'", con)
-
+    data = pd.DataFrame(data)
   placeholder22_8 = st.empty()
   histo_8= placeholder22_8.dataframe(data=data)
 
