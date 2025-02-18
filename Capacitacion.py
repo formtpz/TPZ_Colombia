@@ -214,8 +214,7 @@ def Capacitacion(usuario,puesto):
     placeholder22_8.empty()
     st.session_state.Procesos=False
     st.session_state.Capacitacion=False
-    Procesos.Procesos(usuario,puesto)
-
+    
     perfil=pd.read_sql(f"select perfil from usuarios where usuario ='{usuario}'",uri)
     perfil= perfil.loc[0,'perfil']
 
