@@ -41,6 +41,8 @@ def Capacitacion(usuario,puesto):
   placeholder7_8 = st.empty()
   capacitacion_8 = placeholder7_8.title("Capacitaciones")
 
+  st.success(f'¡Bienvenido!')
+
   if puesto== "Coordinador":
 
     nombre_8= pd.read_sql(f"select nombre from usuarios where usuario='{usuario}'",uri)
