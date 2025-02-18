@@ -185,9 +185,6 @@ def Otros_Registros(usuario,puesto):
   placeholder23_13 = st.empty()
   histo_13= placeholder23_13.dataframe(data=data)
 
-  placeholder24_13 = st.empty()
-  descarga_13 = placeholder24_13.download_button("Decargar CSV",data=data.to_csv(),mime="text/csv",key="descarga_13")
-
   # ----- Registro ---- #
     
   if procesos_13:
@@ -216,7 +213,6 @@ def Otros_Registros(usuario,puesto):
       placeholder21_13.empty()
       placeholder22_13.empty()
     placeholder23_13.empty()
-    placeholder24_13.empty()
     st.session_state.Procesos=False
     st.session_state.Otros_Registros=False
 
@@ -263,7 +259,6 @@ def Otros_Registros(usuario,puesto):
       placeholder21_13.empty()
       placeholder22_13.empty()
     placeholder23_13.empty()
-    placeholder24_13.empty()
     st.session_state.Otros_Registros=False
     st.session_state.Historial=True
     Historial.Historial(usuario,puesto)
@@ -296,7 +291,6 @@ def Otros_Registros(usuario,puesto):
       placeholder21_13.empty()
       placeholder22_13.empty()
     placeholder23_13.empty()
-    placeholder24_13.empty()
     st.session_state.Otros_Registros=False
     st.session_state.Capacitacion=True
     Capacitacion.Capacitacion(usuario,puesto)
@@ -329,7 +323,6 @@ def Otros_Registros(usuario,puesto):
       placeholder21_13.empty()
       placeholder22_13.empty()
     placeholder23_13.empty()
-    placeholder24_13.empty()
     st.session_state.Otros_Registros=False
     st.session_state.Bonos=True
     Bonos.Bonos(usuario,puesto)
@@ -362,7 +355,6 @@ def Otros_Registros(usuario,puesto):
       placeholder21_13.empty()
       placeholder22_13.empty()
     placeholder23_13.empty()
-    placeholder24_13.empty()
     st.session_state.Ingreso = False
     st.session_state.Otros_Registros=False
     st.session_state.Salir=True
