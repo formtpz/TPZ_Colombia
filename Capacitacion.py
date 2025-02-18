@@ -191,8 +191,8 @@ def Capacitacion(usuario,puesto):
 
    # st.dataframe(df.style.highlight_max(axis=0))
 
-  placeholder22_8 = st.empty()
-  st.dataframe(data=data)
+  #placeholder22_8 = st.empty()
+  #st.dataframe(data=data)
 
   placeholder23_8 = st.empty()
   descarga_8 = placeholder23_8.download_button("Decargar CSV",data=data.to_csv(),mime="text/csv",key="descarga_8")
