@@ -180,8 +180,11 @@ def Capacitacion(usuario,puesto):
       
     data = pd.read_sql(f"select cast(id as integer),marca,usuario,nombre,puesto,supervisor,fecha,tema,horas,observaciones,reporte from capacitaciones where usuario='{usuario}' and fecha>='{fecha_de__inicio_8}' and fecha<='{fecha_de__finalizacion_8}'", con)
 
+ # placeholder22_8 = st.empty()
+ # histo_8= placeholder22_8.dataframe(data=pd.DataFrame(data))
+
   placeholder22_8 = st.empty()
-  histo_8= placeholder22_8.dataframe(data=pd.DataFrame(data))
+  st.dataframe(data=data)
 
   placeholder23_8 = st.empty()
   descarga_8 = placeholder23_8.download_button("Decargar CSV",data=data.to_csv(),mime="text/csv",key="descarga_8")
