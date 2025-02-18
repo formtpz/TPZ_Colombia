@@ -309,10 +309,10 @@ def Historial(usuario,puesto):
       data_4_r ["diferencia"] = data_4_r["produccion"] - data_4_r["valor esperado"]
 
       placeholder23_2_7 = st.empty()
-      historial_7_diferencia= placeholder23_2_7.dataframe(data=data_4_r)
-      
+      historial_7_diferencia= placeholder23_2_7.subheader("Resumen Semanal")  
+    
       placeholder24_2_7 = st.empty()
-      descarga_7_diferencia = placeholder24_2_7.download_button("Decargar CSV",data=data_4_r.to_csv(),mime="text/csv",key="descarga_7_diferencia")
+      descarga_7_diferencia = placeholder24_2_7.    dataframe(data=data_4_r)
       
       nombre_producción=data_2_r.iloc[:,0]
       fecha_producción=data_2_r.iloc[:,1]
