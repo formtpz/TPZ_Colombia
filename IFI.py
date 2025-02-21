@@ -54,7 +54,7 @@ def Precampo(usuario,puesto):
   bloque_3= placeholder10_3.text_input("Unidad de Asignación",key="bloque_3")
        
   placeholder11_3= st.empty()
-  tipo_3= placeholder12_3.selectbox("Tipo", options=("Ordinario","Automatizado","Georreferenciación","Corrección Georreferenciación","Corrección Primera Revisión","Corrección Primera Reinspección"), key="tipo_3")
+  tipo_3= placeholder12_3.selectbox("Tipo", options=("Ordinario","Correción"), key="tipo_3")
 
   placeholder12_3= st.empty()
   predios_3= placeholder13_3.number_input("Cantidad de Predios Producidos",min_value=0,step=1,key="predios_3")
@@ -99,7 +99,6 @@ def Precampo(usuario,puesto):
     elif perfil=="3":  
 
       Procesos.Procesos3(usuario,puesto)       
-
 
   #----- Historial ---- #
     
@@ -216,12 +215,13 @@ def Precampo(usuario,puesto):
     nombre_3= pd.read_sql(f"select nombre from usuarios where usuario ='{usuario}'",uri)
     nombre_3 = nombre_3.loc[0,'nombre']
       
-    horario_3= pd.read_sql(f"select horario from usuarios where usuario ='{usuario}'",uri)
-    horario_3 = horario_3.loc[0,'horario']
-
     supervisor_3= pd.read_sql(f"select supervisor from usuarios where usuario ='{usuario}'",uri)
     supervisor_3 = supervisor_3.loc[0,'supervisor']
+ 
+    semana_3 = fecha_3.isocalendar()[1]
 
-    cursor01.execute(f"INSERT INTO registro (marca,usuario,nombre,horario,puesto,supervisor,proceso,fecha,bloque,estado,tipo,predios,horas)VALUES('{marca_3}','{usuario}','{nombre_3}','{horario_3}','{puesto}','{supervisor_3}','Precampo','{fecha_3}','{unidad_3}','{estado_3}','{tipo_3}','{predios_3}','{horas_3}')")
+    año_3 = fecha_3.isocalendar()[0]
+    
+    cursor01.execute(f"INSERT INTO registro (marca,usuario,nombre,puesto,supervisor,proceso,fecha,semana,año,unidad_asignacion,tipo,produccion,aprobados,rechazados,horas)VALUES('{marca_3}','{usuario}','{nombre_3}','{puesto}','{supervisor_3}','Precampo','{fecha_3}','{semana_3}','{año_3}','{unidad_3}','{tipo_3}','{produccion_3}','0','0','{horas_3}')")
     con.commit()                                                                                                                                 
     st.success('Reporte enviado correctamente')
