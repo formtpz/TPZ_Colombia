@@ -8,7 +8,7 @@ import pytz
 from urllib.parse import urlparse
 import Procesos,Historial,Capacitacion,Otros_Registros,Bonos,Salir
 
-def IFI(usuario,puesto):
+def Precampo(usuario,puesto):
 
   # ----- Conexión, Botones y Memoria ---- #
 
@@ -43,7 +43,7 @@ def IFI(usuario,puesto):
   salir_3 = placeholder7_3.button("Salir",key="salir_3")
 
   placeholder8_3 = st.empty()
-  informacion_final_i_3 = placeholder8_3.title("Información Final I")
+  informacion_final_i_3 = placeholder8_3.title("Precampo")
 
   default_date_3 = datetime.now(pytz.timezone('America/Guatemala'))
 
@@ -51,21 +51,18 @@ def IFI(usuario,puesto):
   fecha_3= placeholder9_3.date_input("Fecha",value=default_date_3,key="fecha_3")
 
   placeholder10_3= st.empty()
-  bloque_3= placeholder10_3.text_input("Bloque",key="bloque_3")
-    
-  placeholder11_3= st.empty()
-  estado_3= placeholder11_3.selectbox("Estado", options=("En Proceso","Conflicto","Terminado"), key="estado_3")
+  bloque_3= placeholder10_3.text_input("Unidad de Asignación",key="bloque_3")
        
-  placeholder12_3= st.empty()
+  placeholder11_3= st.empty()
   tipo_3= placeholder12_3.selectbox("Tipo", options=("Ordinario","Automatizado","Georreferenciación","Corrección Georreferenciación","Corrección Primera Revisión","Corrección Primera Reinspección"), key="tipo_3")
 
-  placeholder13_3= st.empty()
+  placeholder12_3= st.empty()
   predios_3= placeholder13_3.number_input("Cantidad de Predios Producidos",min_value=0,step=1,key="predios_3")
 
-  placeholder14_3= st.empty()
+  placeholder13_3= st.empty()
   horas_3= placeholder14_3.number_input("Cantidad de Horas Trabajadas en el Proceso",min_value=0.0,key="horas_3")
 
-  placeholder15_3 = st.empty()
+  placeholder14_3 = st.empty()
   reporte_3 = placeholder15_3.button("Generar Reporte",key="reporte_3")
 
   # ----- Procesos ---- #
@@ -85,9 +82,8 @@ def IFI(usuario,puesto):
     placeholder12_3.empty()
     placeholder13_3.empty()
     placeholder14_3.empty()
-    placeholder15_3.empty()
     st.session_state.Procesos=False
-    st.session_state.IFI=False
+    st.session_state.Precampo=False
 
     perfil=pd.read_sql(f"select perfil from usuarios where usuario ='{usuario}'",uri)
     perfil= perfil.loc[0,'perfil']
@@ -122,8 +118,7 @@ def IFI(usuario,puesto):
     placeholder12_3.empty()
     placeholder13_3.empty()
     placeholder14_3.empty()
-    placeholder15_3.empty()
-    st.session_state.IFI=False
+    st.session_state.Precampo=False
     st.session_state.Historial=True
     Historial.Historial(usuario,puesto)   
 
@@ -144,8 +139,7 @@ def IFI(usuario,puesto):
     placeholder12_3.empty()
     placeholder13_3.empty()
     placeholder14_3.empty()
-    placeholder15_3.empty()
-    st.session_state.IFI=False
+    st.session_state.Precampo=False
     st.session_state.Capacitacion=True
     Capacitacion.Capacitacion(usuario,puesto)
 
@@ -166,8 +160,7 @@ def IFI(usuario,puesto):
     placeholder12_3.empty()
     placeholder13_3.empty()
     placeholder14_3.empty()
-    placeholder15_3.empty()
-    st.session_state.IFI=False
+    st.session_state.Precampo=False
     st.session_state.Otros_Registros=True
     Otros_Registros.Otros_Registros(usuario,puesto)
 
@@ -188,8 +181,7 @@ def IFI(usuario,puesto):
     placeholder12_3.empty()
     placeholder13_3.empty()
     placeholder14_3.empty()
-    placeholder15_3.empty()
-    st.session_state.IFI=False
+    st.session_state.Precampo=False
     st.session_state.Bonos=True
     Bonos.Bonos(usuario,puesto)    
 
@@ -210,9 +202,8 @@ def IFI(usuario,puesto):
     placeholder12_3.empty()
     placeholder13_3.empty()
     placeholder14_3.empty()
-    placeholder15_3.empty()
     st.session_state.Ingreso = False
-    st.session_state.IFI=False
+    st.session_state.Precampo=False
     st.session_state.Salir=True
     Salir.Salir()
 
@@ -231,6 +222,6 @@ def IFI(usuario,puesto):
     supervisor_3= pd.read_sql(f"select supervisor from usuarios where usuario ='{usuario}'",uri)
     supervisor_3 = supervisor_3.loc[0,'supervisor']
 
-    cursor01.execute(f"INSERT INTO registro (marca,usuario,nombre,horario,puesto,supervisor,proceso,fecha,bloque,estado,tipo,predios,horas)VALUES('{marca_3}','{usuario}','{nombre_3}','{horario_3}','{puesto}','{supervisor_3}','Información Final I','{fecha_3}','{bloque_3}','{estado_3}','{tipo_3}','{predios_3}','{horas_3}')")
+    cursor01.execute(f"INSERT INTO registro (marca,usuario,nombre,horario,puesto,supervisor,proceso,fecha,bloque,estado,tipo,predios,horas)VALUES('{marca_3}','{usuario}','{nombre_3}','{horario_3}','{puesto}','{supervisor_3}','Precampo','{fecha_3}','{unidad_3}','{estado_3}','{tipo_3}','{predios_3}','{horas_3}')")
     con.commit()                                                                                                                                 
     st.success('Reporte enviado correctamente')
