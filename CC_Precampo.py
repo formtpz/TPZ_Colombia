@@ -8,7 +8,7 @@ import pytz
 from urllib.parse import urlparse
 import Procesos,Historial,Capacitacion,Otros_Registros,Bonos,Salir
 
-def CC_FMI(usuario,puesto):
+def CC_Precampo(usuario,puesto):
 
   # ----- Conexión, Botones y Memoria ---- #
 
@@ -43,7 +43,7 @@ def CC_FMI(usuario,puesto):
   salir_3 = placeholder7_3.button("Salir",key="salir_3")
 
   placeholder8_3 = st.empty()
-  informacion_final_i_3 = placeholder8_3.title("Control de Calidad Folios de Matricula Inmobiliaria")
+  informacion_final_i_3 = placeholder8_3.title("Control de Calidad Precampo")
 
   default_date_3 = datetime.now(pytz.timezone('America/Bogota'))
 
@@ -57,10 +57,10 @@ def CC_FMI(usuario,puesto):
   tipo_3= placeholder11_3.selectbox("Tipo", options=("Ordinario","Reinspección"), key="estado_12")
   
   placeholder12_3= st.empty()
-  aprobados_3= placeholder12_3.number_input("Cantidad de Folios Aprobados",min_value=0,step=1,key="aprobados_3")
+  aprobados_3= placeholder12_3.number_input("Cantidad de Predios Aprobados",min_value=0,step=1,key="aprobados_3")
 
   placeholder13_3= st.empty()
-  rechazados_3= placeholder13_3.number_input("Cantidad de Folios Rechazados",min_value=0,step=1,key="rechazados_3")
+  rechazados_3= placeholder13_3.number_input("Cantidad de Predios Rechazados",min_value=0,step=1,key="rechazados_3")
 
   placeholder14_3 = st.empty()
   reporte_3 = placeholder14_3.button("Generar Reporte",key="reporte_3")
