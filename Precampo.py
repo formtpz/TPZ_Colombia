@@ -54,7 +54,7 @@ def Precampo(usuario,puesto):
   municipio_3= placeholder10_3.selectbox("Municipio", options=("Cabuyaro","Chalán","Colombia","Cuítiva","Iza","Los Palmitos","Morroa","Trinidad","San Estanislao","San Luis de Cubarral","Zambrano"), key="municipio_3")
 
   placeholder11_3= st.empty()
-  consecutivo_3= placeholder11_3.number_input("Consecutivo",min_value=0,max_value_50, step=1, key="consecutivo_3")
+  consecutivo_3= placeholder11_3.number_input("Consecutivo",min_value=0,max_value=50, step=1, key="consecutivo_3")
   
   placeholder12_3= st.empty()
   tipo_3= placeholder12_3.selectbox("Tipo", options=("Ordinario","Correción"), key="tipo_3")
