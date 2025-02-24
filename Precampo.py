@@ -51,7 +51,7 @@ def Precampo(usuario,puesto):
   fecha_3= placeholder9_3.date_input("Fecha",value=default_date_3,key="fecha_3")
 
   placeholder10_3= st.empty()
-  bloque_3= placeholder10_3.text_input("Unidad de Asignación",key="bloque_3")
+  municipio_3= placeholder10_3.selectbox("Municipio"options(",key="municipio_3")
        
   placeholder11_3= st.empty()
   tipo_3= placeholder12_3.selectbox("Tipo", options=("Ordinario","Correción"), key="tipo_3")
