@@ -60,7 +60,7 @@ def Precampo(usuario,puesto):
   tipo_3= placeholder12_3.selectbox("Tipo", options=("Ordinario","Correción"), key="tipo_3")
 
   placeholder13_3= st.empty()
-  predios_3= placeholder13_3.number_input("Cantidad de Predios Producidos",min_value=0,step=1,key="predios_3")
+  produccion_3= placeholder13_3.number_input("Cantidad de Predios Producidos",min_value=0,step=1,key="produccion_3")
 
   placeholder14_3= st.empty()
   horas_3= placeholder14_3.number_input("Cantidad de Horas Trabajadas en el Proceso",min_value=0.0,key="horas_3")
