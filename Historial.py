@@ -302,6 +302,9 @@ def Historial(usuario,puesto):
 
     else:
 
+      data_2_r ["rendimiento"] = data_2_r["predios"]/data_2_r["horas"]
+      data_2_r['rendimiento'] *= 8.5 
+      
       placeholder23_7 = st.empty()
       historial_7_producción= placeholder23_7.dataframe(data=data_2_r)
 
@@ -316,8 +319,8 @@ def Historial(usuario,puesto):
       
       nombre_producción=data_2_r.iloc[:,0]
       fecha_producción=data_2_r.iloc[:,1]
-      producción_producción=data_2_r.iloc[:,2]
-      datos_producción = pd.DataFrame(data={'Nombre':nombre_producción, 'Fecha':fecha_producción,'Producción':producción_producción})
+      rendimiento_producción=data_2_r.iloc[:,3]
+      datos_producción = pd.DataFrame(data={'Nombre':nombre_producción, 'Fecha':fecha_producción,'Rendimiento':rendimiento_producción})
       lista_nombres = datos_producción["Nombre"].unique().tolist()
 
       placeholder25_7 = st.empty()
@@ -326,7 +329,7 @@ def Historial(usuario,puesto):
       datos_producción_pivot = {nombre: datos_producción[datos_producción["Nombre"] == nombre] for nombre in nombres}
       fig_producción = go.Figure()
       for nombre, datos_producción in datos_producción_pivot.items():
-        fig_producción = fig_producción.add_trace(go.Scatter(x=datos_producción["Fecha"], y=datos_producción["Producción"], name=nombre))
+        fig_producción = fig_producción.add_trace(go.Scatter(x=datos_producción["Fecha"], y=datos_producción["Rendimiento"], name=nombre))
 
       placeholder26_7 = st.empty()
       grafico_producción= placeholder26_7.plotly_chart(fig_producción)
