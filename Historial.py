@@ -302,7 +302,7 @@ def Historial(usuario,puesto):
 
     else:
 
-      data_2_r ["rendimiento"] = data_2_r["production"]/data_2_r["horas"]
+      data_2_r ["rendimiento"] = data_2_r["produccion"]/data_2_r["horas"]
       data_2_r['rendimiento'] *= 8.5 
       
       placeholder23_7 = st.empty()
