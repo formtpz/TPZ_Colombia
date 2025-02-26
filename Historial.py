@@ -9,7 +9,7 @@ import plotly.graph_objects as go
 import plotly.express as px
 from urllib.parse import urlparse
 uri=st.secrets.db_credentials.URI
-import Procesos,Capacitacion,Otros_Registros,Bonos,Salir
+import Procesos,Capacitacion,Otros_Registros,Bonos_Extras,Salir
 
 def Historial(usuario,puesto):
 
@@ -37,7 +37,7 @@ def Historial(usuario,puesto):
   otros_registros_7 = placeholder4_7.button("Otros Registros",key="otros_registros_7")
 
   placeholder5_7 = st.sidebar.empty()
-  bonos_7 = placeholder5_7.button("Bonos",key="bonos_7")
+  bonos_extras_7 = placeholder5_7.button("Bonos y Horas Extras",key="bonos_extras_7")
 
   placeholder6_7 = st.sidebar.empty()
   salir_7 = placeholder6_7.button("Salir",key="salir_7")
@@ -860,9 +860,9 @@ def Historial(usuario,puesto):
     st.session_state.Otros_Registros=True
     Otros_Registros.Otros_Registros(usuario,puesto)
 
-  # ----- Bonos ---- #
+  # ----- Bonos y Horas Extras ---- #
     
-  elif bonos_7:
+  elif bonos_extras_7:
     placeholder1_7.empty()
     placeholder2_7.empty()
     placeholder3_7.empty()
@@ -954,8 +954,8 @@ def Historial(usuario,puesto):
         placeholder51_7.empty()
 
     st.session_state.Historial=False
-    st.session_state.Bonos=True
-    Bonos.Bonos(usuario,puesto)
+    st.session_state.Bonos_Extras=True
+    Bonos_Extras.Bonos_Extras(usuario,puesto)
    
   # ----- Salir ---- #
     
