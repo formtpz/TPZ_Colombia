@@ -5,7 +5,7 @@ import psycopg2
 from datetime import datetime
 from urllib.parse import urlparse
 import pytz
-import Procesos,Historial,Otros_Registros,Bonos,Salir
+import Procesos,Historial,Otros_Registros,Bonos_Extras,Salir
 import numpy as np
 
 def Capacitacion(usuario,puesto):
@@ -34,7 +34,7 @@ def Capacitacion(usuario,puesto):
   otros_registros_8 = placeholder4_8.button("Otros Registros",key="otros_registros_8")
 
   placeholder5_8 = st.sidebar.empty()
-  bonos_8 = placeholder5_8.button("Bonos",key="bonos_8")
+  bonos_extras_8 = placeholder5_8.button("Bonos y Horas Extras",key="bonos_extra_8")
 
   placeholder6_8 = st.sidebar.empty()
   salir_8 = placeholder6_8.button("Salir",key="salir_8")
@@ -294,9 +294,9 @@ def Capacitacion(usuario,puesto):
     st.session_state.Otros_Registros=True
     Otros_Registros.Otros_Registros(usuario,puesto)
 
-  # ----- Bonos ---- #
+  # ----- Bonos y Horas Extras ---- #
     
-  elif bonos_8:
+  elif bonos_extras_8:
     placeholder1_8.empty()
     placeholder2_8.empty()
     placeholder3_8.empty()
@@ -323,8 +323,8 @@ def Capacitacion(usuario,puesto):
       placeholder21_8.empty()
     placeholder22_8.empty()
     st.session_state.Capacitacion=False
-    st.session_state.Bonos=True
-    Bonos.Bonos(usuario,puesto)
+    st.session_state.Bonos_Extras=True
+    Bonos_Extras.Bonos_Extras(usuario,puesto)
     
   # ----- Salir ---- #
     
