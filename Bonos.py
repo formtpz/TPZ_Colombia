@@ -39,7 +39,7 @@ def Bonos(usuario,puesto):
   salir_9 = placeholder6_9.button("Salir",key="salir_9")
 
   placeholder7_9 = st.empty()
-  registro_de_bonos_9 = placeholder7_9.title("Registro de Bonos")
+  registro_bonos_extras_9 = placeholder7_9.title("Registros de Bonos y Horas Extra")
 
   nombre_9= pd.read_sql(f"select nombre from usuarios where usuario='{usuario}'",uri)
   nombre_9 = nombre_9.loc[0,'nombre']
@@ -56,11 +56,14 @@ def Bonos(usuario,puesto):
     bonos_nuevos_9 = placeholder10_9.file_uploader("Cargar Archivo de Bonos",['csv','xlsx'])
 
     placeholder11_9 = st.empty()
-    cargar_archivos_9 = placeholder11_9.button("Cargar Archivos",key="cargar_archivos_9")
+    extras_nuevas_9 = placeholder11_9.file_uploader("Cargar Archivo de Extras",['csv','xlsx'])
+
+    placeholder12_9 = st.empty()
+    cargar_archivos_9 = placeholder12_9.button("Cargar Archivos",key="cargar_archivos_9")
 
     if cargar_archivos_9:
 
-      if bloques_nuevos_9 is None or bonos_nuevos_9 is None:
+      if bloques_nuevos_9 is None or bonos_nuevos_9 is None or extras_nuevas_9 is None:
 
         st.error('Favor cargar los archivos solicitados')
 
@@ -68,11 +71,11 @@ def Bonos(usuario,puesto):
 
         bloques_nuevos_9=pd.DataFrame(pd.read_excel(bloques_nuevos_9))
         bonos_nuevos_9=pd.DataFrame(pd.read_excel(bonos_nuevos_9))
+        extras_nuevas_9=pd.DataFrame(pd.read_excel(extras_nuevas_9))
 
-        cursor01=con.cursor()
-
-        cursor01.execute('DELETE FROM bloques;',)
-        cursor01.execute('DELETE FROM bonos;',)
+        con.cursor().execute('DELETE FROM bloques;',)
+        con.cursor().execute('DELETE FROM bonos;',)
+        con.cursor().execute('DELETE FROM extras;',)
 
         con.commit()      
 
@@ -82,31 +85,33 @@ def Bonos(usuario,puesto):
     
         bonos_nuevos_9.to_sql(name='bonos', con = engine, if_exists = 'append',index_label='id')
 
+        extras_nuevas_9.to_sql(name='extras', con = engine, if_exists = 'append',index_label='id')
+
         st.success('Archivos Cargados Correctamente')
 
   elif nombre_9=="Gabriel Martin Prieto" or nombre_9=="Madeline Hernandez Gamboa":
-
-    placeholder12_9 = st.empty()
-    titulo_bonos_9 = placeholder12_9.subheader("Bonos")
 
     data_personal_9 = pd.read_sql(f"select nombre from usuarios where estado='Activo'", con)
     placeholder13_9 = st.empty()
     personal_9= placeholder13_9.selectbox("Personal",data_personal_9,key="personal_9")
 
     placeholder14_9 = st.empty()
-    periodo_bonos_9 = placeholder14_9.selectbox("Periodo de Bono", options=("Enero-2025","Febrero-2025","Marzo-2025","Abril-2025","Mayo-2025","Junio-2025","Julio-2025","Agosto-2025","Septiembre-2025","Octubre-2025","Noviembre-2025","Diciembre-2025"), key="periodo_bonos_9")    
+    periodo_9 = placeholder14_9.selectbox("Periodo de Bono", options=("Enero-2025","Febrero-2025","Marzo-2025","Abril-2025","Mayo-2025","Junio-2025","Julio-2025","Agosto-2025","Septiembre-2025","Octubre-2025","Noviembre-2025","Diciembre-2025"), key="periodo_9")    
 
     if personal_9 == "Todos" :
 
-      bonos_9= pd.read_sql(f"select a0,a1,a2,a3,a4,a5,a6,a7,a8,a9,a10,a11,a12,a13,a14,a15,a16,a17,a18,a19,a20,a21,a22,a23,a24,a25,a26,a27,a28,a29,a30,a31,a32,a33,a34,a35,a36,a37,a38,a39,a40,a41,a42,a43,a44,a45,a46,a47,a48,a49,a50,a51,a52,a53,a54,a55,a56,a57,a58,a59,a60,a61,a62,a63,a64,a65,a66,a67,a68,a69,a70,a71,a72,a73,a74,a75,a76,a77,a78,a79,a80,a81,a82,a83,a84,a85,a86,a87,a88,a89,a90,a91,a92,a93,a94,a95,a96,a97,a98,a99,a100,a101,a102,a103 from bonos where a103='{periodo_bonos_9}'", con)
+      placeholder15_9 = st.empty()
+      titulo_bonos_9 = placeholder15_9.subheader("Bonos")
+      
+      bonos_9= pd.read_sql(f"select a0,a1,a2,a3,a4,a5,a6,a7,a8,a9,a10,a11,a12,a13,a14,a15,a16,a17,a18,a19,a20,a21,a22,a23,a24,a25,a26,a27,a28,a29,a30,a31,a32,a33,a34,a35,a36,a37,a38,a39,a40,a41,a42,a43,a44,a45,a46,a47,a48,a49,a50,a51,a52,a53,a54,a55,a56,a57,a58,a59,a60,a61,a62,a63,a64,a65,a66,a67,a68,a69,a70,a71,a72,a73,a74,a75,a76,a77,a78,a79,a80,a81,a82,a83,a84,a85,a86,a87,a88,a89,a90,a91,a92,a93,a94,a95,a96,a97,a98,a99,a100,a101,a102,a103 from bonos where a103='{periodo_9}'", con)
       bonos_9=  pd.DataFrame(data=bonos_9)
 
       pivot1= len(bonos_9.iloc[:,0])
 
       if pivot1==0:
 
-        placeholder15_9 = st.empty()
-        error_9 = placeholder15_9.error('No existen datos para mostrar')
+        placeholder16_9 = st.empty()
+        error_9 = placeholder16_9.error('No existen datos para mostrar')
 
       else:
 
@@ -121,24 +126,52 @@ def Bonos(usuario,puesto):
             otros_bonos_9 = otros_bonos_9 + sum([float(bonos_9.iloc[a,95]),float(bonos_9.iloc[a,96]),float(bonos_9.iloc[a,97]),float(bonos_9.iloc[a,98]),float(bonos_9.iloc[a,99])])
             bonos_total=sum([float(bonos_variables_9),float(bonos_fijos_9),float(otros_bonos_9)])
             
-        placeholder16_9 = st.empty()
-        col1, col2, col3, col4 = placeholder16_9.columns(4)
+        placeholder17_9 = st.empty()
+        col1, col2, col3, col4 = placeholder17_9.columns(4)
         col1.metric("Bonos Variables",bonos_variables_9)
         col2.metric("Bonos Fijos",bonos_fijos_9)
         col3.metric("Otros Bonos",otros_bonos_9)
         col4.metric("Total",bonos_total)
 
-    else:
-    
-      bonos_9= pd.read_sql(f"select a0,a1,a2,a3,a4,a5,a6,a7,a8,a9,a10,a11,a12,a13,a14,a15,a16,a17,a18,a19,a20,a21,a22,a23,a24,a25,a26,a27,a28,a29,a30,a31,a32,a33,a34,a35,a36,a37,a38,a39,a40,a41,a42,a43,a44,a45,a46,a47,a48,a49,a50,a51,a52,a53,a54,a55,a56,a57,a58,a59,a60,a61,a62,a63,a64,a65,a66,a67,a68,a69,a70,a71,a72,a73,a74,a75,a76,a77,a78,a79,a80,a81,a82,a83,a84,a85,a86,a87,a88,a89,a90,a91,a92,a93,a94,a95,a96,a97,a98,a99,a100,a101,a102,a103 from bonos where a1='{personal_9}' and a103='{periodo_bonos_9}'", con)
-      bonos_9=  pd.DataFrame(data=bonos_9)
+      placeholder18_9 = st.empty()
+      titulo_extras_9 = placeholder18_9.subheader("Horas Extra")
+      
+      extras_9= pd.read_sql(f"select marca,usuario,nombre,puesto,supervisor,tipo_reporte,justificacion,fecha,horas,semana,dia,fecha_corte,fecha_bono from extras where tipo_reporte="Extra" and fecha_bono='{periodo_9}'", con)
+      extras_9=  pd.DataFrame(data=extras_9)
 
-      pivot2= len(bonos_9.iloc[:,0])
+      pivot2= len(extras _9.iloc[:,0])
 
       if pivot2==0:
 
-        placeholder17_9 = st.empty()
-        error_9 = placeholder17_9.error('No existen datos para mostrar')
+        placeholder19_9 = st.empty()
+        error_9 = placeholder19_9.error('No existen datos para mostrar')
+      
+      else:
+
+        total_extras_9=0
+        
+        for b in range(0,pivot2):
+
+            total_extras_9 = total_extras_9 + [float(extras_9.iloc[a,8])
+
+        placeholder20_9 = st.empty()
+        col1 = placeholder20_9.columns(1)
+        col1.metric("Total de Horas Extra",total_extras_9)
+
+    else:
+
+      placeholder21_9 = st.empty()
+      titulo_bonos_9 = placeholder21_9.subheader("Bonos")
+      
+      bonos_9= pd.read_sql(f"select a0,a1,a2,a3,a4,a5,a6,a7,a8,a9,a10,a11,a12,a13,a14,a15,a16,a17,a18,a19,a20,a21,a22,a23,a24,a25,a26,a27,a28,a29,a30,a31,a32,a33,a34,a35,a36,a37,a38,a39,a40,a41,a42,a43,a44,a45,a46,a47,a48,a49,a50,a51,a52,a53,a54,a55,a56,a57,a58,a59,a60,a61,a62,a63,a64,a65,a66,a67,a68,a69,a70,a71,a72,a73,a74,a75,a76,a77,a78,a79,a80,a81,a82,a83,a84,a85,a86,a87,a88,a89,a90,a91,a92,a93,a94,a95,a96,a97,a98,a99,a100,a101,a102,a103 from bonos where a1='{personal_9}' and a103='{periodo_9}'", con)
+      bonos_9=  pd.DataFrame(data=bonos_9)
+
+      pivot3= len(bonos_9.iloc[:,0])
+
+      if pivot3==0:
+
+        placeholder22_9 = st.empty()
+        error_9 = placeholder22_9.error('No existen datos para mostrar')
 
       else:
 
@@ -148,8 +181,8 @@ def Bonos(usuario,puesto):
         bonos_fijos_9 = sum([float(bonos_9.iloc[0,75]),float(bonos_9.iloc[0,76]),float(bonos_9.iloc[0,77]),float(bonos_9.iloc[0,78]),float(bonos_9.iloc[0,79]),float(bonos_9.iloc[0,80]),float(bonos_9.iloc[0,81]),float(bonos_9.iloc[0,82]),float(bonos_9.iloc[0,83])])
         otros_bonos_9 = sum([float(bonos_9.iloc[0,95]),float(bonos_9.iloc[0,96]),float(bonos_9.iloc[0,97]),float(bonos_9.iloc[0,98]),float(bonos_9.iloc[0,99])])
 
-        placeholder18_9 = st.empty()
-        col1, col2, col3, col4 = placeholder18_9.columns(4)
+        placeholder23_9 = st.empty()
+        col1, col2, col3, col4 = placeholder23_9.columns(4)
         col1.metric("Bonos Variables",bonos_variables_9)
         col2.metric("Bonos Fijos",bonos_fijos_9)
         col3.metric("Otros Bonos",otros_bonos_9)
@@ -279,11 +312,8 @@ def Bonos(usuario,puesto):
         bonos_procesos_9.iloc[7,9] = bonos_9.iloc[0,83]
         bonos_procesos_9.iloc[8,9] = bonos_9.iloc[0,93]
 
-        placeholder19_9 = st.empty()
-        dataframe_bonos_procesos_9=placeholder19_9.dataframe(data=bonos_procesos_9)
-
-        placeholder20_9 = st.empty()
-        descarga_procesos_9 = placeholder20_9.download_button("Decargar CSV",data=bonos_procesos_9.to_csv(),mime="text/csv",key="descarga_procesos_9")
+        placeholder24_9 = st.empty()
+        dataframe_bonos_procesos_9=placeholder24_9.dataframe(data=bonos_procesos_9)
 
         # Otros Bonos #
 
@@ -302,29 +332,56 @@ def Bonos(usuario,puesto):
         otros_bonos_9.iloc[7,1] = bonos_9.iloc[0,101]
         otros_bonos_9.iloc[8,1] = bonos_9.iloc[0,102]
 
-        placeholder21_9 = st.empty()
-        dataframe_otros_bonos_9=placeholder21_9.dataframe(data=otros_bonos_9)
+        placeholder25_9 = st.empty()
+        dataframe_otros_bonos_9=placeholder25_9.dataframe(data=otros_bonos_9)
 
-        placeholder22_9 = st.empty()
-        descarga_otros_bonos_9 = placeholder22_9.download_button("Decargar CSV",data=otros_bonos_9.to_csv(),mime="text/csv",key="descarga_otros_bonos_9")
+      placeholder26_9 = st.empty()
+      titulo_extras_9 = placeholder26_9.subheader("Horas Extra")
+      
+      extras_9= pd.read_sql(f"select marca,usuario,nombre,puesto,supervisor,tipo_reporte,justificacion,fecha,horas,semana,dia,fecha_corte,fecha_bono from extras where tipo_reporte="Extra" and fecha_bono='{periodo_9}'", con)
+      extras_9=  pd.DataFrame(data=extras_9)
 
+      pivot4= len(extras _9.iloc[:,0])
+
+      if pivot4==0:
+
+        placeholder27_9 = st.empty()
+        error_9 = placeholder27_9.error('No existen datos para mostrar')
+      
+      else:
+
+        total_extras_9=0
+        
+        for b in range(0,pivot4):
+
+            total_extras_9 = total_extras_9 + [float(extras_9.iloc[a,8])
+
+        placeholder28_9 = st.empty()
+        col1 = placeholder28_9.columns(1)
+        col1.metric("Total de Horas Extra",total_extras_9)
+        
+        data_extras=pd.read_sql(f"select marca,usuario,nombre,puesto,supervisor,tipo_reporte,justificacion,fecha,horas,semana,dia,fecha_corte,fecha_bono from extras where tipo_reporte="Extra" and fecha_bono='{periodo_9}' and nombre=",'{personal_9}'",con)
+
+        placeholder29_9 = st.empty()
+        historial_9_extras=placeholder29_9.dataframe(data=data_extras)
+  
   else:
     
-    placeholder23_9 = st.empty()
-    titulo_bonos_9 = placeholder23_9.subheader("Bonos")
+    placeholder30_9 = st.empty()
+    periodo_9 = placeholder30_9.selectbox("Periodo",options=("Enero-2025","Febrero-2025","Marzo-2025","Abril-2025","Mayo-2025","Junio-2025","Julio-2025","Agosto-2025","Septiembre-2025","Octubre-2025","Noviembre-2025","Diciembre-2025"), key="periodo_bonos_9")    
 
-    placeholder24_9 = st.empty()
-    periodo_bonos_9 = placeholder24_9.selectbox("Periodo de Bono",options=("Enero-2025","Febrero-2025","Marzo-2025","Abril-2025","Mayo-2025","Junio-2025","Julio-2025","Agosto-2025","Septiembre-2025","Octubre-2025","Noviembre-2025","Diciembre-2025"), key="periodo_bonos_9")    
-
-    bonos_9= pd.read_sql(f"select a0,a1,a2,a3,a4,a5,a6,a7,a8,a9,a10,a11,a12,a13,a14,a15,a16,a17,a18,a19,a20,a21,a22,a23,a24,a25,a26,a27,a28,a29,a30,a31,a32,a33,a34,a35,a36,a37,a38,a39,a40,a41,a42,a43,a44,a45,a46,a47,a48,a49,a50,a51,a52,a53,a54,a55,a56,a57,a58,a59,a60,a61,a62,a63,a64,a65,a66,a67,a68,a69,a70,a71,a72,a73,a74,a75,a76,a77,a78,a79,a80,a81,a82,a83,a84,a85,a86,a87,a88,a89,a90,a91,a92,a93,a94,a95,a96,a97,a98,a99,a100,a101,a102,a103 from bonos where a0='{usuario}' and a103='{periodo_bonos_9}'", con)
+    placeholder31_9 = st.empty()
+    titulo_bonos_9 = placeholder31_9.subheader("Bonos")
+    
+    bonos_9= pd.read_sql(f"select a0,a1,a2,a3,a4,a5,a6,a7,a8,a9,a10,a11,a12,a13,a14,a15,a16,a17,a18,a19,a20,a21,a22,a23,a24,a25,a26,a27,a28,a29,a30,a31,a32,a33,a34,a35,a36,a37,a38,a39,a40,a41,a42,a43,a44,a45,a46,a47,a48,a49,a50,a51,a52,a53,a54,a55,a56,a57,a58,a59,a60,a61,a62,a63,a64,a65,a66,a67,a68,a69,a70,a71,a72,a73,a74,a75,a76,a77,a78,a79,a80,a81,a82,a83,a84,a85,a86,a87,a88,a89,a90,a91,a92,a93,a94,a95,a96,a97,a98,a99,a100,a101,a102,a103 from bonos where a0='{usuario}' and a103='{periodo_9}'", con)
     bonos_9=  pd.DataFrame(data=bonos_9)
 
-    pivot3= len(bonos_9.iloc[:,0])
+    pivot5= len(bonos_9.iloc[:,0])
 
-    if pivot3==0:
+    if pivot5==0:
 
-      placeholder25_9 = st.empty()
-      error_9 = placeholder25_9.error('No existen datos para mostrar')
+      placeholder31_9 = st.empty()
+      error_9 = placeholder31_9.error('No existen datos para mostrar')
 
     else:
 
@@ -334,8 +391,8 @@ def Bonos(usuario,puesto):
       bonos_fijos_9 = sum([float(bonos_9.iloc[0,75]),float(bonos_9.iloc[0,76]),float(bonos_9.iloc[0,77]),float(bonos_9.iloc[0,78]),float(bonos_9.iloc[0,79]),float(bonos_9.iloc[0,80]),float(bonos_9.iloc[0,81]),float(bonos_9.iloc[0,82]),float(bonos_9.iloc[0,83])])
       otros_bonos_9 = sum([float(bonos_9.iloc[0,95]),float(bonos_9.iloc[0,96]),float(bonos_9.iloc[0,97]),float(bonos_9.iloc[0,98]),float(bonos_9.iloc[0,99])])
 
-      placeholder26_9 = st.empty()
-      col1, col2, col3, col4 = placeholder26_9.columns(4)
+      placeholder32_9 = st.empty()
+      col1, col2, col3, col4 = placeholder32_9.columns(4)
       col1.metric("Bonos Variables",bonos_variables_9)
       col2.metric("Bonos Fijos",bonos_fijos_9)
       col3.metric("Otros Bonos",otros_bonos_9)
@@ -465,11 +522,8 @@ def Bonos(usuario,puesto):
       bonos_procesos_9.iloc[7,9] = bonos_9.iloc[0,83]
       bonos_procesos_9.iloc[8,9] = bonos_9.iloc[0,93]
 
-      placeholder27_9 = st.empty()
-      dataframe_bonos_procesos_9=placeholder27_9.dataframe(data=bonos_procesos_9)
-
-      placeholder28_9 = st.empty()
-      descarga_procesos_9 = placeholder28_9.download_button("Decargar CSV",data=bonos_procesos_9.to_csv(),mime="text/csv",key="descarga_procesos_9")
+      placeholder33_9 = st.empty()
+      dataframe_bonos_procesos_9=placeholder33_9.dataframe(data=bonos_procesos_9)
 
       # Otros Bonos #
 
@@ -488,23 +542,22 @@ def Bonos(usuario,puesto):
       otros_bonos_9.iloc[7,1] = bonos_9.iloc[0,101]
       otros_bonos_9.iloc[8,1] = bonos_9.iloc[0,102]
 
+      placeholder34_9 = st.empty()
+      dataframe_otros_bonos_9=placeholder34_9.dataframe(data=otros_bonos_9)
 
-      placeholder29_9 = st.empty()
-      dataframe_otros_bonos_9=placeholder29_9.dataframe(data=otros_bonos_9)
-
-      placeholder30_9 = st.empty()
-      descarga_otros_bonos_9 = placeholder30_9.download_button("Decargar CSV",data=otros_bonos_9.to_csv(),mime="text/csv",key="descarga_otros_bonos_9")
+      placeholder35_9 = st.empty()
+      descarga_otros_bonos_9 = placeholder35_9.download_button("Decargar CSV",data=otros_bonos_9.to_csv(),mime="text/csv",key="descarga_otros_bonos_9")
     
-    placeholder31_9= st.empty()
-    separador_9 = placeholder31_9.markdown("_____")
+    placeholder36_9= st.empty()
+    separador_9 = placeholder36_9.markdown("_____")
     
     # Bloques #
 
-    placeholder32_9 = st.empty()
-    titulo_bloques_9 = placeholder32_9.subheader("Bloques")
+    placeholder37_9 = st.empty()
+    titulo_bloques_9 = placeholder37_9.subheader("Bloques")
 
-    placeholder33_9 = st.empty()
-    periodo_bloques_9 = placeholder33_9.selectbox("Fecha de Producción", options=("Todos","Marzo-2023","Abril-2023","Mayo-2023","Junio-2023","Julio-2023","Agosto-2023","Septiembre-2023","Octubre-2023","Noviembre-2023","Diciembre-2023","Enero-2024","Febrero-2024","Marzo-2024","Abril-2024","Mayo-2024","Junio-2024","Julio-2024","Agosto-2024","Septiembre-2024","Septiembre-2024-Caso Especial","Octubre-2024","Noviembre-2024","Diciembre-2024","Enero-2025","Enero-2025 Caso Especial","Febrero-2025","Marzo-2025","Abril-2025","Mayo-2025","Junio-2025","Julio-2025","Agosto-2025","Septiembre-2025","Octubre-2025","Noviembre-2025","Diciembre-2025"), key="periodo_bloques_9")    
+    placeholder38_9 = st.empty()
+    periodo_bloques_9 = placeholder38_9.selectbox("Fecha de Producción", options=("Todos","Marzo-2023","Abril-2023","Mayo-2023","Junio-2023","Julio-2023","Agosto-2023","Septiembre-2023","Octubre-2023","Noviembre-2023","Diciembre-2023","Enero-2024","Febrero-2024","Marzo-2024","Abril-2024","Mayo-2024","Junio-2024","Julio-2024","Agosto-2024","Septiembre-2024","Septiembre-2024-Caso Especial","Octubre-2024","Noviembre-2024","Diciembre-2024","Enero-2025","Enero-2025 Caso Especial","Febrero-2025","Marzo-2025","Abril-2025","Mayo-2025","Junio-2025","Julio-2025","Agosto-2025","Septiembre-2025","Octubre-2025","Noviembre-2025","Diciembre-2025"), key="periodo_bloques_9")    
 
     if periodo_bloques_9=="Todos":
 
@@ -516,21 +569,49 @@ def Bonos(usuario,puesto):
       bloques_9= pd.read_sql(f"select usuario,nombre,supervisor,proceso,tipo_revision,bloque_distrito,produccion_segun_reporte,horas,produccion_estandar,produccion_rechazada_primera_revision,produccion_aprobada_primera_revision,porcentage_error,produccion_penalizada,produccion_limpia,ratio_limpio_predio_por_dia,primera_reinspeccion,segunda_reinspeccion,porcentage_penalizacion_ratio,ratio_penalizado_predio_por_dia,fecha_produccion,fecha_corte,fecha_bono from bloques where usuario='{usuario}' and fecha_produccion='{periodo_bloques_9}'", con)
       bloques_9=  pd.DataFrame(data=bloques_9)
 
-    pivot4= len(bloques_9.iloc[:,1])
+    pivot6= len(bloques_9.iloc[:,1])
 
-    if pivot4 ==0:
+    if pivot6 ==0:
 
-      placeholder34_9 = st.empty()
-      error_9 = placeholder34_9.error('No existen datos para mostrar')
+      placeholder39_9 = st.empty()
+      error_9 = placeholder39_9.error('No existen datos para mostrar')
 
     else:
 
-      placeholder35_9 = st.empty()
-      dataframe_bloques_9=placeholder35_9.dataframe(data=bloques_9)
+      placeholder40_9 = st.empty()
+      dataframe_bloques_9=placeholder40_9.dataframe(data=bloques_9)
 
-      placeholder36_9 = st.empty()
-      descarga_bloques_9 = placeholder36_9.download_button("Decargar CSV",data=bloques_9.to_csv(),mime="text/csv",key="descarga_bloques_9")
+      placeholder26_9 = st.empty()
+      titulo_extras_9 = placeholder26_9.subheader("Horas Extra")
+      
+      extras_9= pd.read_sql(f"select marca,usuario,nombre,puesto,supervisor,tipo_reporte,justificacion,fecha,horas,semana,dia,fecha_corte,fecha_bono from extras where nombre='{nombre_9} and tipo_reporte="Extra" and fecha_bono='{periodo_9}'", con)
+      extras_9=  pd.DataFrame(data=extras_9)
 
+      pivot4= len(extras _9.iloc[:,0])
+
+      if pivot4==0:
+
+        placeholder27_9 = st.empty()
+        error_9 = placeholder27_9.error('No existen datos para mostrar')
+      
+      else:
+
+        total_extras_9=0
+        
+        for b in range(0,pivot4):
+
+            total_extras_9 = total_extras_9 + [float(extras_9.iloc[a,8])
+
+        placeholder28_9 = st.empty()
+        col1 = placeholder28_9.columns(1)
+        col1.metric("Total de Horas Extra",total_extras_9)
+        
+        data_extras=pd.read_sql(f"select marca,usuario,nombre,puesto,supervisor,tipo_reporte,justificacion,fecha,horas,semana,dia,fecha_corte,fecha_bono from extras where tipo_reporte="Extra" and fecha_bono='{periodo_9}' and nombre=",'{personal_9}'",con)
+
+        placeholder29_9 = st.empty()
+        historial_9_extras=placeholder29_9.dataframe(data=data_extras)
+
+  
   # ----- Procesos ---- #
     
   if procesos_9:
