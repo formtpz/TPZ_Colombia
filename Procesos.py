@@ -24,7 +24,7 @@ def Procesos1(usuario,puesto):
         otros_registros_2 = placeholder4_2.button("Otros Registros",key="otros_registros_2")
 
         placeholder5_2 = st.sidebar.empty()
-        bonos_extras__2 = placeholder5_2.button("Bonos y Horas Extras",key="bonos_2")
+        bonos_extras__2 = placeholder5_2.button("Bonos y Horas Extras",key="bonos_extras_2")
 
         placeholder6_2 = st.sidebar.empty()
         salir_2 = placeholder6_2.button("Salir",key="salir_2")
@@ -295,7 +295,7 @@ def Procesos2(usuario,puesto):
         otros_registros_2 = placeholder4_2.button("Otros Registros",key="otros_registros_2")
 
         placeholder5_2 = st.sidebar.empty()
-        bonos_extras_2 = placeholder5_2.button("Bonos y Horas Extras",key="bonos_2")
+        bonos_extras_2 = placeholder5_2.button("Bonos y Horas Extras",key="bonos_extras_2")
 
         placeholder6_2 = st.sidebar.empty()
         salir_2 = placeholder6_2.button("Salir",key="salir_2")
@@ -470,7 +470,7 @@ def Procesos3(usuario,puesto):
         otros_registros_2 = placeholder4_2.button("Otros Registros",key="otros_registros_2")
 
         placeholder5_2 = st.sidebar.empty()
-        bonos_extras_2 = placeholder5_2.button("Bonos y Horas Extras",key="bonos_2")
+        bonos_extras_2 = placeholder5_2.button("Bonos y Horas Extras",key="bonos_extras_2")
 
         placeholder6_2 = st.sidebar.empty()
         salir_2 = placeholder6_2.button("Salir",key="salir_2")
