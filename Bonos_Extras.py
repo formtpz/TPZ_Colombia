@@ -7,7 +7,7 @@ from urllib.parse import urlparse
 import Procesos,Historial,Capacitacion,Otros_Registros,Salir
 from sqlalchemy import create_engine
 
-def Bonos(usuario,puesto):
+def Bonos_Extras(usuario,puesto):
 
   # ----- Conexión, Botones y Memoria ---- #
 
