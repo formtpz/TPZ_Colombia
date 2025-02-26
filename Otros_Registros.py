@@ -7,7 +7,7 @@ from urllib.parse import urlparse
 
 import pytz
 
-import Procesos,Historial,Capacitacion,Bonos,Salir
+import Procesos,Historial,Capacitacion,Bonos_Extras,Salir
 
 def Otros_Registros(usuario,puesto):
 
@@ -35,7 +35,7 @@ def Otros_Registros(usuario,puesto):
   capacitacion_13 = placeholder4_13.button("Capacitaciones",key="capacitacion_13")
 
   placeholder5_13 = st.sidebar.empty()
-  bonos_13 = placeholder5_13.button("Bonos",key="bonos_13")
+  bonos_extras_13 = placeholder5_13.button("Bonos y Horas Extra",key="bonos-extras_13")
 
   placeholder6_13 = st.sidebar.empty()
   salir_13 = placeholder6_13.button("Salir",key="salir_13")
@@ -295,9 +295,9 @@ def Otros_Registros(usuario,puesto):
     st.session_state.Capacitacion=True
     Capacitacion.Capacitacion(usuario,puesto)
 
-  # ----- Bonos ---- #
+  # ----- Bonos y Horas Extras ---- #
 
-  elif bonos_13:
+  elif bonos_Extras_13:
     placeholder1_13.empty()
     placeholder2_13.empty()
     placeholder3_13.empty()
@@ -324,8 +324,8 @@ def Otros_Registros(usuario,puesto):
       placeholder22_13.empty()
     placeholder23_13.empty()
     st.session_state.Otros_Registros=False
-    st.session_state.Bonos=True
-    Bonos.Bonos(usuario,puesto)
+    st.session_state.Bonos_Extras=True
+    Bonos_Extras.Bonos_Extras(usuario,puesto)
     
   # ----- Salir ---- #
     
