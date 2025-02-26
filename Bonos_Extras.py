@@ -360,7 +360,7 @@ def Bonos_Extras(usuario,puesto):
         col1 = placeholder28_9.columns(1)
         col1.metric("Total de Horas Extra",total_extras_9)
         
-        data_extras=pd.read_sql(f"select marca,usuario,nombre,puesto,supervisor,tipo_reporte,justificacion,fecha,horas,semana,dia,fecha_corte,fecha_bono from extras where tipo_reporte='Extra' and fecha_bono='{periodo_9}' and nombre=",'{personal_9}'",con)
+        data_extras=pd.read_sql(f"select marca,usuario,nombre,puesto,supervisor,tipo_reporte,justificacion,fecha,horas,semana,dia,fecha_corte,fecha_bono from extras where tipo_reporte='Extra' and fecha_bono='{periodo_9}' and nombre='{personal_9}'",con)
 
         placeholder29_9 = st.empty()
         historial_9_extras=placeholder29_9.dataframe(data=data_extras)
