@@ -6,7 +6,7 @@ import psycopg2
 from datetime import datetime
 import pytz
 from urllib.parse import urlparse
-import Procesos,Historial,Capacitacion,Otros_Registros,Bonos,Salir
+import Procesos,Historial,Capacitacion,Otros_Registros,Bonos_Extras,Salir
 
 def CC_Precampo(usuario,puesto):
 
@@ -37,7 +37,7 @@ def CC_Precampo(usuario,puesto):
   otros_registros_3 = placeholder5_3.button("Otros Registros",key="otros_registros_3")
 
   placeholder6_3 = st.sidebar.empty()
-  bonos_3 = placeholder6_3.button("Bonos",key="bonos_3")
+  bonos_extras_3 = placeholder6_3.button("Bonos y Extras",key="bonos_extras_3")
 
   placeholder7_3 = st.sidebar.empty()
   salir_3 = placeholder7_3.button("Salir",key="salir_3")
@@ -177,9 +177,9 @@ def CC_Precampo(usuario,puesto):
     st.session_state.Otros_Registros=True
     Otros_Registros.Otros_Registros(usuario,puesto)
 
-  # ----- Bonos ---- #
+  # ----- Bonos y Horas Extras ---- #
     
-  elif bonos_3:
+  elif bonos_extras_3:
     placeholder1_3.empty()
     placeholder2_3.empty()
     placeholder3_3.empty()
@@ -197,8 +197,8 @@ def CC_Precampo(usuario,puesto):
     placeholder15_3.empty()
     placeholder16_3.empty()
     st.session_state.CC_FMI=False
-    st.session_state.Bonos=True
-    Bonos.Bonos(usuario,puesto)    
+    st.session_state.Bonos_Extras=True
+    Bonos_Extras.Bonos_Extras(usuario,puesto)    
 
     # ----- Salir ---- #
     
