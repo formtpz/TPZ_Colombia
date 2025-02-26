@@ -160,7 +160,7 @@ def FMI(usuario,puesto):
 
   # ----- Bonos y Horas Extras ---- #
     
-  elif bonos_3:
+  elif bonos_extras_3:
     placeholder1_3.empty()
     placeholder2_3.empty()
     placeholder3_3.empty()
