@@ -93,7 +93,7 @@ def Salir():
                         st.session_state.Historial=False
                         st.session_state.Capacitacion=False
                         st.session_state.Otros_Registros=False
-                        st.session_state.Bonos=False
+                        st.session_state.Bonos_Extras=False
                         st.session_state.Salir=False
                         st.session_state.FMI=False
                         st.session_state.CC_FMI=False
