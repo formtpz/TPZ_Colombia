@@ -297,7 +297,7 @@ def Otros_Registros(usuario,puesto):
 
   # ----- Bonos y Horas Extras ---- #
 
-  elif bonos_Extras_13:
+  elif bonos_extras_13:
     placeholder1_13.empty()
     placeholder2_13.empty()
     placeholder3_13.empty()
