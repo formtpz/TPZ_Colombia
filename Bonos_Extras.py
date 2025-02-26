@@ -354,7 +354,7 @@ def Bonos_Extras(usuario,puesto):
         
         for b in range(0,pivot4):
 
-            total_extras_9 = total_extras_9 + [float(extras_9.iloc[a,8])
+            total_extras_9 = total_extras_9 + float(extras_9.iloc[a,8])
 
         placeholder28_9 = st.empty()
         col1 = placeholder28_9.columns(1)
@@ -587,7 +587,7 @@ def Bonos_Extras(usuario,puesto):
       extras_9= pd.read_sql(f"select marca,usuario,nombre,puesto,supervisor,tipo_reporte,justificacion,fecha,horas,semana,dia,fecha_corte,fecha_bono from extras where nombre='{nombre_9} and tipo_reporte='Extra'  and fecha_bono='{periodo_9}'", con)
       extras_9=  pd.DataFrame(data=extras_9)
 
-      pivot4= len(extras _9.iloc[:,0])
+      pivot4= len(extras_9.iloc[:,0])
 
       if pivot4==0:
 
@@ -600,7 +600,7 @@ def Bonos_Extras(usuario,puesto):
         
         for b in range(0,pivot4):
 
-            total_extras_9 = total_extras_9 + [float(extras_9.iloc[a,8])
+            total_extras_9 = total_extras_9 + float(extras_9.iloc[a,8])
 
         placeholder28_9 = st.empty()
         col1 = placeholder28_9.columns(1)
