@@ -1,7 +1,7 @@
 # ----- Librerías ---- #
 
 import streamlit as st
-import Historial, Capacitacion, Otros_Registros, Bonos, Salir, FMI, CC_FMI, Consulta_Campo, Precampo, CC_Precampo
+import Historial, Capacitacion, Otros_Registros, Bonos_Extras, Salir, FMI, CC_FMI, Consulta_Campo, Precampo, CC_Precampo
 
 # ----- Procesos 1 ---- #
 
@@ -24,7 +24,7 @@ def Procesos1(usuario,puesto):
         otros_registros_2 = placeholder4_2.button("Otros Registros",key="otros_registros_2")
 
         placeholder5_2 = st.sidebar.empty()
-        bonos_2 = placeholder5_2.button("Bonos",key="bonos_2")
+        bonos_extras__2 = placeholder5_2.button("Bonos y Horas Extras",key="bonos_2")
 
         placeholder6_2 = st.sidebar.empty()
         salir_2 = placeholder6_2.button("Salir",key="salir_2")
@@ -107,9 +107,9 @@ def Procesos1(usuario,puesto):
             st.session_state.Otros_Registros=True
             Otros_Registros.Otros_Registros(usuario,puesto)
 
-        # ----- Bonos ---- #
+        # ----- Bonos y Horas Extras ---- #
 
-        elif bonos_2:
+        elif bonos_extras_2:
 
             placeholder1_2.empty()
             placeholder2_2.empty()
@@ -124,8 +124,8 @@ def Procesos1(usuario,puesto):
             placeholder11_2.empty()
             placeholder12_2.empty()
             st.session_state.Procesos=True
-            st.session_state.Bonos=True
-            Bonos.Bonos(usuario,puesto)
+            st.session_state.Bonos_Extras=True
+            Bonos_Extras.Bonos_Extras(usuario,puesto)
 
         # ----- Salir ---- #
 
@@ -259,8 +259,8 @@ def Procesos1(usuario,puesto):
         elif st.session_state.Otros_Registros==True:
             Otros_Registros.Otros_Registros(usuario,puesto)
 
-        elif st.session_state.Bonos==True:
-            Bonos.Bonos(usuario,puesto)
+        elif st.session_state.Bonos_Extras==True:
+            Bonos_Extras.Bonos_Extras(usuario,puesto)
 
         elif st.session_state.FMI==True:
             FMI.FMI(usuario,puesto)
@@ -295,7 +295,7 @@ def Procesos2(usuario,puesto):
         otros_registros_2 = placeholder4_2.button("Otros Registros",key="otros_registros_2")
 
         placeholder5_2 = st.sidebar.empty()
-        bonos_2 = placeholder5_2.button("Bonos",key="bonos_2")
+        bonos_extras_2 = placeholder5_2.button("Bonos y Horas Extras",key="bonos_2")
 
         placeholder6_2 = st.sidebar.empty()
         salir_2 = placeholder6_2.button("Salir",key="salir_2")
@@ -360,9 +360,9 @@ def Procesos2(usuario,puesto):
             st.session_state.Otros_Registros=True
             Otros_Registros.Otros_Registros(usuario,puesto)
 
-        # ----- Bonos ---- #
+        # ----- Bonos y Horas Extras ---- #
 
-        elif bonos_2:
+        elif bonos_extras_2:
 
             placeholder1_2.empty()
             placeholder2_2.empty()
@@ -374,8 +374,8 @@ def Procesos2(usuario,puesto):
             placeholder8_2.empty()
             placeholder9_2.empty()
             st.session_state.Procesos=True
-            st.session_state.Bonos=True
-            Bonos.Bonos(usuario,puesto)
+            st.session_state.Bonos_Extras=True
+            Bonos_Extras.Bonos_Extras(usuario,puesto)
 
         # ----- Salir ---- #
 
@@ -440,8 +440,8 @@ def Procesos2(usuario,puesto):
         elif st.session_state.Otros_Registros==True:
             Otros_Registros.Otros_Registros(usuario,puesto)
 
-        elif st.session_state.Bonos==True:
-            Bonos.Bonos(usuario,puesto)
+        elif st.session_state.Bonos_Extras==True:
+            Bonos_Extras.Bonos_Extras(usuario,puesto)
 
         elif st.session_state.CC_FMI==True:
             CC_FMI.CC_FMI(usuario,puesto)
@@ -470,7 +470,7 @@ def Procesos3(usuario,puesto):
         otros_registros_2 = placeholder4_2.button("Otros Registros",key="otros_registros_2")
 
         placeholder5_2 = st.sidebar.empty()
-        bonos_2 = placeholder5_2.button("Bonos",key="bonos_2")
+        bonos_extras_2 = placeholder5_2.button("Bonos y Horas Extras",key="bonos_2")
 
         placeholder6_2 = st.sidebar.empty()
         salir_2 = placeholder6_2.button("Salir",key="salir_2")
@@ -541,9 +541,9 @@ def Procesos3(usuario,puesto):
             st.session_state.Otros_Registros=True
             Otros_Registros.Otros_Registros(usuario,puesto)
 
-        # ----- Bonos ---- #
+        # ----- Bonos y Horas Extras ---- #
 
-        elif bonos_2:
+        elif bonos_extras_2:
 
             placeholder1_2.empty()
             placeholder2_2.empty()
@@ -556,8 +556,8 @@ def Procesos3(usuario,puesto):
             placeholder9_2.empty()
             placeholder10_2.empty()
             st.session_state.Procesos=True
-            st.session_state.Bonos=True
-            Bonos.Bonos(usuario,puesto)
+            st.session_state.Bonos_Extras=True
+            Bonos_Extras.Bonos_Extras(usuario,puesto)
 
         # ----- Salir ---- #
 
@@ -643,8 +643,8 @@ def Procesos3(usuario,puesto):
         elif st.session_state.Otros_Registros==True:
             Otros_Registros.Otros_Registros(usuario,puesto)
 
-        elif st.session_state.Bonos==True:
-            Bonos.Bonos(usuario,puesto)
+        elif st.session_state.Bonos_Extras==True:
+            Bonos_Extras.Bonos_Extras(usuario,puesto)
 
         elif st.session_state.FMI==True:
             FMI.FMI(usuario,puesto)
