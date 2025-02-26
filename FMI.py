@@ -7,7 +7,7 @@ from datetime import datetime
 from datetime import date
 import pytz
 from urllib.parse import urlparse
-import Procesos,Historial,Capacitacion,Otros_Registros,Bonos,Salir
+import Procesos,Historial,Capacitacion,Otros_Registros,Bonos_Extras,Salir
 
 def FMI(usuario,puesto):
 
@@ -38,7 +38,7 @@ def FMI(usuario,puesto):
   otros_registros_3 = placeholder5_3.button("Otros Registros",key="otros_registros_3")
 
   placeholder6_3 = st.sidebar.empty()
-  bonos_3 = placeholder6_3.button("Bonos",key="bonos_3")
+  bonos_extras_3 = placeholder6_3.button("Bonos y Horas Extra",key="bonos_extra_3")
 
   placeholder7_3 = st.sidebar.empty()
   salir_3 = placeholder7_3.button("Salir",key="salir_3")
@@ -158,7 +158,7 @@ def FMI(usuario,puesto):
     st.session_state.Otros_Registros=True
     Otros_Registros.Otros_Registros(usuario,puesto)
 
-  # ----- Bonos ---- #
+  # ----- Bonos y Horas Extras ---- #
     
   elif bonos_3:
     placeholder1_3.empty()
@@ -175,8 +175,8 @@ def FMI(usuario,puesto):
     placeholder12_3.empty()
     placeholder13_3.empty()
     st.session_state.FMI=False
-    st.session_state.Bonos=True
-    Bonos.Bonos(usuario,puesto)    
+    st.session_state.Bonos_Extras=True
+    Bonos_Extras.Bonos_Extras(usuario,puesto)    
 
     # ----- Salir ---- #
     
