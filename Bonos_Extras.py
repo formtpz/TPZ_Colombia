@@ -936,7 +936,7 @@ def Bonos_Extras(usuario,puesto):
       else:
 
         placeholder42_9.empty()
-        placeholder432_9.empty()
+        placeholder43_9.empty()
         
     st.session_state.Bonos_Extras=False
     st.session_state.Capacitacion=True
