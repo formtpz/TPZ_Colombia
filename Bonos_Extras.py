@@ -578,9 +578,9 @@ def Bonos_Extras(usuario,puesto):
 
     placeholder40_9 = st.empty()
     titulo_extras_9 = placeholder40_9.subheader("Horas Extras")
-      
-    extras_9= pd.read_sql(f"select marca,usuario,nombre,puesto,supervisor,tipo_reporte,justificacion,fecha,horas,semana,dia,fecha_corte,fecha_bono from extras where nombre='{nombre_9} and tipo_reporte='Extra' and fecha_bono='{periodo_9}'", con)
-    extras_9=  pd.DataFrame(data=extras_9)
+
+    extras_9= pd.read_sql(f"select marca,usuario,nombre,puesto,supervisor,tipo_reporte,justificacion,fecha,horas,semana,dia,fecha_corte,fecha_bono from extras where tipo_reporte='Extra' and fecha_bono='{periodo_9}'", con)
+    extras_9= pd.DataFrame(data=extras_9)
 
     pivot7= len(extras_9.iloc[:,0])
 
