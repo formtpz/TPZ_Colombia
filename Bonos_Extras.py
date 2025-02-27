@@ -633,10 +633,10 @@ def Bonos_Extras(usuario,puesto):
       placeholder14_9.empty()
 
       if personal_9=="Todos":
-
-         placeholder15_9.empty()
-         placeholder18_9.empty()       
-
+        
+        placeholder15_9.empty()
+        placeholder18_9.empty()       
+        
         if pivot1==0:
         
           placeholder16_9.empty()
