@@ -709,7 +709,7 @@ def Bonos_Extras(usuario,puesto):
         placeholder432_9.empty()
         
     st.session_state.Procesos=False
-    st.session_state.Bonos=False
+    st.session_state.Bonos_Extras=False
 
     perfil=pd.read_sql(f"select perfil from usuarios where usuario ='{usuario}'",uri)
     perfil= perfil.loc[0,'perfil']
@@ -830,7 +830,7 @@ def Bonos_Extras(usuario,puesto):
         placeholder42_9.empty()
         placeholder432_9.empty()
 
-    st.session_state.Bonos=False
+    st.session_state.Bonos_Extras=False
     st.session_state.Historial=True
     Historial.Historial(usuario,puesto)
 
@@ -938,7 +938,7 @@ def Bonos_Extras(usuario,puesto):
         placeholder42_9.empty()
         placeholder432_9.empty()
         
-    st.session_state.Bonos=False
+    st.session_state.Bonos_Extras=False
     st.session_state.Capacitacion=True
     Capacitacion.Capacitacion(usuario,puesto)
 
@@ -1046,7 +1046,7 @@ def Bonos_Extras(usuario,puesto):
         placeholder42_9.empty()
         placeholder432_9.empty() 
         
-    st.session_state.Bonos=False
+    st.session_state.Bonos_Extras=False
     st.session_state.Otros_Registros=True
     Otros_Registros.Otros_Registros(usuario,puesto)
 
@@ -1156,6 +1156,6 @@ def Bonos_Extras(usuario,puesto):
         placeholder432_9.empty()
   
     st.session_state.Ingreso = False
-    st.session_state.Bonos=False
+    st.session_state.Bonos_Extras=False
     st.session_state.Salir=True
     Salir.Salir()
