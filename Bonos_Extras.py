@@ -581,35 +581,35 @@ def Bonos_Extras(usuario,puesto):
       placeholder40_9 = st.empty()
       dataframe_bloques_9=placeholder40_9.dataframe(data=bloques_9)
 
-      placeholder26_9 = st.empty()
-      titulo_extras_9 = placeholder26_9.subheader("Horas Extra")
+    placeholder26_9 = st.empty()
+    titulo_extras_9 = placeholder26_9.subheader("Horas Extra")
       
-      extras_9= pd.read_sql(f"select marca,usuario,nombre,puesto,supervisor,tipo_reporte,justificacion,fecha,horas,semana,dia,fecha_corte,fecha_bono from extras where nombre='{nombre_9} and tipo_reporte='Extra'  and fecha_bono='{periodo_9}'", con)
-      extras_9=  pd.DataFrame(data=extras_9)
+    extras_9= pd.read_sql(f"select marca,usuario,nombre,puesto,supervisor,tipo_reporte,justificacion,fecha,horas,semana,dia,fecha_corte,fecha_bono from extras where nombre='{nombre_9} and tipo_reporte='Extra'  and fecha_bono='{periodo_9}'", con)
+    extras_9=  pd.DataFrame(data=extras_9)
 
-      pivot4= len(extras_9.iloc[:,0])
+    pivot7= len(extras_9.iloc[:,0])
 
-      if pivot4==0:
+    if pivot7==0:
 
-        placeholder27_9 = st.empty()
-        error_9 = placeholder27_9.error('No existen datos para mostrar')
+      placeholder27_9 = st.empty()
+      error_9 = placeholder27_9.error('No existen datos para mostrar')
       
-      else:
+    else:
 
-        total_extras_9=0
+      total_extras_9=0
         
-        for b in range(0,pivot4):
+      for b in range(0,pivot4):
 
-            total_extras_9 = total_extras_9 + float(extras_9.iloc[a,8])
+        total_extras_9 = total_extras_9 + float(extras_9.iloc[a,8])
 
-        placeholder28_9 = st.empty()
-        col1 = placeholder28_9.columns(1)
-        col1.metric("Total de Horas Extra",total_extras_9)
+      placeholder28_9 = st.empty()
+      col1 = placeholder28_9.columns(1)
+      col1.metric("Total de Horas Extra",total_extras_9)
         
-        data_extras=pd.read_sql(f"select marca,usuario,nombre,puesto,supervisor,tipo_reporte,justificacion,fecha,horas,semana,dia,fecha_corte,fecha_bono from extras where tipo_reporte='Extra'  and fecha_bono='{periodo_9}' and nombre='{personal_9}'",con)
+      data_extras=pd.read_sql(f"select marca,usuario,nombre,puesto,supervisor,tipo_reporte,justificacion,fecha,horas,semana,dia,fecha_corte,fecha_bono from extras where tipo_reporte='Extra'  and fecha_bono='{periodo_9}' and nombre='{personal_9}'",con)
 
-        placeholder29_9 = st.empty()
-        historial_9_extras=placeholder29_9.dataframe(data=data_extras)
+      placeholder29_9 = st.empty()
+      historial_9_extras=placeholder29_9.dataframe(data=data_extras)
 
   
   # ----- Procesos ---- #
