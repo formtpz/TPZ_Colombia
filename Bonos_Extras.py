@@ -544,8 +544,7 @@ def Bonos_Extras(usuario,puesto):
 
       placeholder35_9 = st.empty()
       dataframe_otros_bonos_9=placeholder35_9.dataframe(data=otros_bonos_9)
-  
-    
+
     # Bloques #
 
     placeholder36_9 = st.empty()
@@ -595,7 +594,7 @@ def Bonos_Extras(usuario,puesto):
         
       for b in range(0,pivot7):
 
-        total_extras_9 = total_extras_9 + float(extras_9.iloc[a,8])
+        total_extras_9 = total_extras_9 + float(extras_9.iloc[b,8])
 
       placeholder42_9 = st.empty()
       col1 = placeholder42_9.columns(1)
