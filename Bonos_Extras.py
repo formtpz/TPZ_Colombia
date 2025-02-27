@@ -357,7 +357,6 @@ def Bonos_Extras(usuario,puesto):
             total_extras_9 = total_extras_9 + float(extras_9.iloc[b,8])
 
         placeholder28_9 = st.empty()
-
         total = placeholder28_9.metric("Total de Horas Extra",total_extras_9)
         
         data_extras=pd.read_sql(f"select marca,usuario,nombre,puesto,supervisor,tipo_reporte,justificacion,fecha,horas,semana,dia,fecha_corte,fecha_bono from extras where tipo_reporte='Extra' and fecha_bono='{periodo_9}' and nombre='{personal_9}'",con)
@@ -597,7 +596,7 @@ def Bonos_Extras(usuario,puesto):
         total_extras_9 = total_extras_9 + float(extras_9.iloc[b,8])
 
       placeholder42_9 = st.empty()
-      total = placeholder28_9.metric("Total de Horas Extra",total_extras_9)
+      total = placeholder42_9.metric("Total de Horas Extra",total_extras_9)
         
       data_extras=pd.read_sql(f"select marca,usuario,nombre,puesto,supervisor,tipo_reporte,justificacion,fecha,horas,semana,dia,fecha_corte,fecha_bono from extras where tipo_reporte='Extra' and fecha_bono='{periodo_9}' and nombre='{personal_9}'",con)
 
