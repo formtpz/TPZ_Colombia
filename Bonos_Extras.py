@@ -354,7 +354,7 @@ def Bonos_Extras(usuario,puesto):
         
         for b in range(0,pivot4):
 
-            total_extras_9 = total_extras_9 + float(extras_9.iloc[a,8])
+            total_extras_9 = total_extras_9 + float(extras_9.iloc[b,8])
 
         placeholder28_9 = st.empty()
         col1 = placeholder28_9.columns(1)
