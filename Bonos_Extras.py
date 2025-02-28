@@ -95,7 +95,7 @@ def Bonos_Extras(usuario,puesto):
     #Todos = pd.Series(['Todos','Todos'], dtype="string")
     #data_personal_9=data_personal_9.append(Todos,ignore_index=True)
 
-    Todo = pd.Series(['Todos','Todos'])
+    Todo = pd.Series(["Todos","Todos"])
     data_personal_9 = pd.concat([data_personal_9,Todo])
 
     placeholder13_9 = st.empty()
