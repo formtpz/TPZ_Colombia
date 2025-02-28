@@ -158,8 +158,7 @@ def Bonos_Extras(usuario,puesto):
             total_extras_9 = total_extras_9 + float(extras_9.iloc[b,8])
 
         placeholder20_9 = st.empty()
-        col1 = placeholder20_9.columns(1)
-        col1.metric("Total de Horas Extra",total_extras_9)
+        total = placeholder20_9.metric("Total de Horas Extra",total_extras_9)
 
     else:
 
