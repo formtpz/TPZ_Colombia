@@ -92,7 +92,7 @@ def Bonos_Extras(usuario,puesto):
   elif nombre_9=="Gabriel Martin Prieto" or nombre_9=="Madeline Hernandez Gamboa":
 
     data_personal_9 = pd.read_sql(f"select nombre from usuarios where estado='Activo'", con)
-    Todo = pd.Series(["Todos"])
+    Todo = pd.DataFrame({"nombre": ["Todos"]})
     data_personal_9 = pd.concat([data_personal_9,Todo],ignore_index=True)
 
     placeholder13_9 = st.empty()
