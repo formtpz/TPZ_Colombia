@@ -93,7 +93,7 @@ def Bonos_Extras(usuario,puesto):
 
     data_personal_9 = pd.read_sql(f"select nombre from usuarios where estado='Activo'", con)
     Todo = pd.Series(["Todos"])
-    data_personal_9 = pd.concat([data_personal_9,Todo],ignore_index=True))
+    data_personal_9 = pd.concat([data_personal_9,Todo],ignore_index=True)
 
     placeholder13_9 = st.empty()
     personal_9= placeholder13_9.selectbox("Personal",data_personal_9,key="personal_9")
