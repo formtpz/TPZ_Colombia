@@ -268,6 +268,9 @@ def Procesos1(usuario,puesto):
         elif st.session_state.CC_FMI==True:
             CC_FMI.CC_FMI(usuario,puesto)
 
+        elif st.session_state.Consulta_Campo==True:
+            Consulta_Campo-Consulta_Campo(usuario,puesto)
+
         elif st.session_state.Precampo==True:
             Precampo.Precampo(usuario,puesto)
 
