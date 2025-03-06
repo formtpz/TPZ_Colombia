@@ -49,15 +49,18 @@ def Consulta_Campo(usuario,puesto):
 
   placeholder9_3= st.empty()
   fecha_3= placeholder9_3.date_input("Fecha",value=default_date_3,key="fecha_3")
-
+  
   placeholder10_3= st.empty()
-  unidad_3=placeholder10_3.selectbox("Unidad de Asignación", options=("Cabuyaro – Urbano","Chalán – Urbano","Colombia – Urbano","Cuítiva – Urbano","Iza – Urbano","Los Palmitos – Urbano","Morroa – Urbano","Trinidad – Urbano","San Estanislao – Urbano","San Luis de Cubarral – Urbano","UITU- 1","UITU- 2","UITU- 3","UITU- 4","UITU- 5","UITU- 6","UITU- 7","Zambrano – Urbano"), key="unidad_3")
-
+  municipio_3= placeholder10_3.selectbox("Municipio", options=("Cabuyaro","Chalán","Colombia","Cuítiva","Iza","Los Palmitos","Morroa","Trinidad","San Estanislao","San Luis de Cubarral","Zambrano"), key="municipio_3")
+  
   placeholder11_3= st.empty()
-  produccion_3= placeholder11_3.number_input("Cantidad de Consultas Realizadas",min_value=0,step=1,key="produccion_3")
+  unidad_inter_3=placeholder11_3.selectbox("Unidad de Intervención", options=("UITR-1","UITR-2","UITR-3","UITR-4","UITR-5","UITR-6","UITR-7","UITR-8","UITR-9","UITR-10","UITR-11","UITR-12","UITR-13","UITR-14","UITR-15","UITR-16","UITR-17","UITR-18","UITR-19","UITR-20","UITU-1","UIU-2","UITU-3","UITU-4","UITU-5","UITU-6","UITU-7","UITU-8","UITU-9","UITU-10","UITU-11","UITU-12","UITU-13","UITU-14","UITU-15","UTU-16","UITU-17","UITU- 18","UITU-19","UITU-20"), key="unidad_inter_3")
 
-  placeholder12_3 = st.empty()
-  reporte_3 = placeholder12_3.button("Generar Reporte",key="reporte_3")
+  placeholder12_3= st.empty()
+  produccion_3= placeholder12_3.number_input("Cantidad de Consultas Realizadas",min_value=0,step=1,key="produccion_3")
+
+  placeholder13_3 = st.empty()
+  reporte_3 = placeholder13_3.button("Generar Reporte",key="reporte_3")
 
   # ----- Procesos ---- #
     
@@ -74,6 +77,7 @@ def Consulta_Campo(usuario,puesto):
     placeholder10_3.empty()
     placeholder11_3.empty()
     placeholder12_3.empty()
+    placeholder13_3.empty()
     st.session_state.Procesos=False
     st.session_state.Consulta_Campo=False
 
@@ -108,6 +112,7 @@ def Consulta_Campo(usuario,puesto):
     placeholder10_3.empty()
     placeholder11_3.empty()
     placeholder12_3.empty()
+    placeholder13_3.empty()
     st.session_state.Consulta_Campo=False
     st.session_state.Historial=True
     Historial.Historial(usuario,puesto)   
@@ -127,6 +132,7 @@ def Consulta_Campo(usuario,puesto):
     placeholder10_3.empty()
     placeholder11_3.empty()
     placeholder12_3.empty()
+    placeholder13_3.empty()
     st.session_state.Consulta_Campo=False
     st.session_state.Capacitacion=True
     Capacitacion.Capacitacion(usuario,puesto)
@@ -146,6 +152,7 @@ def Consulta_Campo(usuario,puesto):
     placeholder10_3.empty()
     placeholder11_3.empty()
     placeholder12_3.empty()
+    placeholder13_3.empty()
     st.session_state.Consulta_Campo=False
     st.session_state.Otros_Registros=True
     Otros_Registros.Otros_Registros(usuario,puesto)
@@ -165,6 +172,7 @@ def Consulta_Campo(usuario,puesto):
     placeholder10_3.empty()
     placeholder11_3.empty()
     placeholder12_3.empty()
+    placeholder13_3.empty()
     st.session_state.Consulta_Campo=False
     st.session_state.Bonos_Extras=True
     Bonos_Extras.Bonos_Extras(usuario,puesto)    
@@ -184,6 +192,7 @@ def Consulta_Campo(usuario,puesto):
     placeholder10_3.empty()
     placeholder11_3.empty()
     placeholder12_3.empty()
+    placeholder13_3.empty()
     st.session_state.Ingreso = False
     st.session_state.Consulta_Campo=False
     st.session_state.Salir=True
