@@ -204,6 +204,8 @@ def Consulta_Campo(usuario,puesto):
     semana_3 = fecha_3.isocalendar()[1]
 
     año_3 = fecha_3.isocalendar()[0]
+
+    unidad_3=municipio_3+'-'+unidad_inter_3
     
     cursor01.execute(f"INSERT INTO registro (marca,usuario,nombre,puesto,supervisor,proceso,fecha,semana,año,unidad_asignacion,tipo,produccion,aprobados,rechazados,horas)VALUES('{marca_3}','{usuario}','{nombre_3}','{puesto}','{supervisor_3}','Cosultas de Campo','{fecha_3}','{semana_3}','{año_3}','{unidad_3}','Ordinario','{produccion_3}','0','0','0')")
     con.commit()                                                                                                                                 
