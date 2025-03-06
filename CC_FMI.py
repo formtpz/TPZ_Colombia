@@ -57,7 +57,7 @@ def CC_FMI(usuario,puesto):
   unidad_inter_3=placeholder11_3.selectbox("Unidad de Intervención", options=("UITR-1","UITR-2","UITR-3","UITR-4","UITR-5","UITR-6","UITR-7","UITR-8","UITR-9","UITR-10","UITR-11","UITR-12","UITR-13","UITR-14","UITR-15","UITR-16","UITR-17","UITR-18","UITR-19","UITR-20","UITU-1","UIU-2","UITU-3","UITU-4","UITU-5","UITU-6","UITU-7","UITU-8","UITU-9","UITU-10","UITU-11","UITU-12","UITU-13","UITU-14","UITU-15","UTU-16","UITU-17","UITU- 18","UITU-19","UITU-20"), key="unidad_inter_3")
   
   placeholder12_3= st.empty()
-  tipo_3= placeholder12.selectbox("Tipo", options=("Ordinario","Reinspección"), key="estado_12")
+  tipo_3= placeholder12.selectbox("Tipo", options=("Ordinario","Reinspección"), key="tipo_3")
   
   placeholder13_3= st.empty()
   aprobados_3= placeholder13_3.number_input("Cantidad de Folios Aprobados",min_value=0,step=1,key="aprobados_3")
