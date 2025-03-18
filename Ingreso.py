@@ -20,6 +20,9 @@ footer = """
     color: tomato;
 }
 </style>
+<div class='footer'>
+  <p>Your Footer Content Here © 2023</p>
+</div>
 """
 
 st.markdown(footer, unsafe_allow_html=True)
