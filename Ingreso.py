@@ -15,13 +15,12 @@ footer = """
 <style>
 .footer:after {
     position: relative;
-    width: 100%;
     display:block;
     color: tomato;
     text-align: left;
 }
 </style>
-<div class='footer:after'>
+<div class='footer'>
   <p>V.1.3 Copyrigth @ 2025 Telespazio Argentina S.A.</p>
 </div>
 """
