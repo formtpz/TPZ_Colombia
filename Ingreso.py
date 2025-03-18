@@ -16,13 +16,11 @@ footer = """
 .footer {
     position: relative;
     left: 0;
-    bottom: 0;
+    bottom: 100;
     width: 100%;
     color: tomato;
     text-align: left;
     clear: both;
-    height: 150px;
-    margin-top: -50px;
 
 }
 </style>
