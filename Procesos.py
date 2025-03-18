@@ -1,8 +1,7 @@
 # ----- Librerías ---- #
 
 import streamlit as st
-import CC_Validacion
-
+import Historial, Capacitacion, Otros_Registros, Bonos_Extras, Salir, FMI, CC_FMI, Consulta_Campo, Precampo, CC_Precampo, Validacion
 
 def Procesos1(usuario,puesto):
 
