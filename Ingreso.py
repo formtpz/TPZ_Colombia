@@ -25,13 +25,24 @@ st.set_page_config(page_title="Formularios TPZ",page_icon=img,layout="wide")
       #  </style>
        # """
 
-footer_html = """
-<div style='text-align: center;'>
-  <p>Developed with ❤️ using Streamlit</p>
+
+
+footer = """
+<style>
+.footer {
+    position: relative;
+    display: block;
+    color: tomato;
+    text-align: center;
+}
+</style>
+<div class='footer'>
+  <p>Your Footer Content Here © 2023</p>
 </div>
 """
 
-st.markdown(footer_html, unsafe_allow_html=True)
+st.markdown(footer, unsafe_allow_html=True)
+
 
 # ----- Conexión, Botones y Memoria ---- #
 
