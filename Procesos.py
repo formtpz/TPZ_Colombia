@@ -46,9 +46,6 @@ def Procesos1(usuario,puesto):
         placeholder12_2 = st.empty()
         cc_precampo_2 = placeholder12_2.button("Control de Calidad Precampo",key="cc_precampo_2")
 
-        placeholder13_2 = st.empty()
-        validacion_2 = placeholder13_2.button("Validación",key="validacion_2")
-
         # ----- Historial ---- #
 
         if historial_2:
