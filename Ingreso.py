@@ -18,7 +18,6 @@ footer = """
     left: 0;
     bottom: 0;
     width: 100%;
-    background-color: #000;
     color: tomato;
     text-align: left;
 }
