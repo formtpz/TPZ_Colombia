@@ -23,7 +23,7 @@ footer = """
 }
 </style>
 <div class='footer'>
-  <p>Your Footer Content Here © 2023</p>
+  <p>V.1.2 Copyrigth @ 2025 Telespazio Argentina S.A.</p>
 </div>
 """
 
