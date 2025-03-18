@@ -517,6 +517,24 @@ def Procesos2(usuario,puesto):
             st.session_state.Procesos=True
             st.session_state.CC_Precampo=True
             CC_Precampo.CC_Precampo(usuario,puesto)
+            
+        # ----- CC_Validación ---- #
+
+        elif cc_validacion_2:
+
+            placeholder1_2.empty()
+            placeholder2_2.empty()
+            placeholder3_2.empty()
+            placeholder4_2.empty()
+            placeholder5_2.empty()
+            placeholder6_2.empty()
+            placeholder7_2.empty()
+            placeholder8_2.empty()
+            placeholder9_2.empty()
+            placeholder10_2.empty()
+            st.session_state.Procesos=True
+            st.session_state.CC_Validacion=True
+            CC_Validacion.CC_Validacion(usuario,puesto)
 
     elif st.session_state.Procesos==True:
 
