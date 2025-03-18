@@ -27,19 +27,18 @@ footer = """
 """
 
 hide_menu_style = """
-        <style>
-        .footer:{
-            display: block;
-            position: relative;
-            color: tomato;
-        }
-        </style>
+<style>
+.footer:{
+    display: block;
+    position: relative;
+    color: tomato;
+}
+</style>
 
-        <div class='footer'>
-        <p>V.1.3 Copyrigth @ 2025 Telespazio Argentina S.A.</p>
-        </div>
-        
-        """
+<div class='footer'>
+    <p>V.1.3 Copyrigth @ 2025 Telespazio Argentina S.A.</p>
+</div>    
+"""
 st.markdown(hide_menu_style, unsafe_allow_html=True)
 
 
