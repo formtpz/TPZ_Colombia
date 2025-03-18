@@ -31,7 +31,7 @@ footer_html = """
 </div>
 """
 
-st.markdown(hide_menu_style, unsafe_allow_html=True)
+st.markdown(footer_html, unsafe_allow_html=True)
 
 # ----- Conexión, Botones y Memoria ---- #
 
