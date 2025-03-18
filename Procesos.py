@@ -49,7 +49,7 @@ def Procesos1(usuario,puesto):
         validacion_2 = placeholder13_2.button("Validación",key="validacion_2")
 
         placeholder14_2 = st.empty()
-        cc_validacion_2 = placeholder14_2.button("Control de Calidad Validacion",key="cc_validacion_2")
+        cc_validacion_2 = placeholder14_2.button("Control de Calidad Validación",key="cc_validacion_2")
 
         # ----- Historial ---- #
 
