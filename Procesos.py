@@ -316,7 +316,7 @@ def Procesos1(usuario,puesto):
             st.session_state.Procesos=True
             st.session_state.CC_Validacion=True
             CC_Validacion.CC_Validacion(usuario,puesto)
-    
+
     elif st.session_state.Procesos==True:
 
         if st.session_state.Historial==True:
