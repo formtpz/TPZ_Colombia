@@ -11,51 +11,22 @@ img=Image.open('logoicon.png')
 
 st.set_page_config(page_title="Formularios TPZ",page_icon=img,layout="wide")
 
-#footer = """
-#<style>
-#.footer:after {
-#    position: relative;
-#    # width: 100%;
-#    display:block;
-#   color: tomato;
- #   text-align: left;
-#}
-#</style>
-#<div class='footer'>
-#  <p>V.1.3 Copyrigth @ 2025 Telespazio Argentina S.A.</p>
-#</div>
+footer = """
+<style>
+.footer:after {
+    position: relative;
+    width: 100%;
+    display:block;
+    color: tomato;
+    text-align: left;
+}
+</style>
+<div class='footer'>
+  <p>V.1.3 Copyrigth @ 2025 Telespazio Argentina S.A.</p>
+</div>
 """
 
-#st.markdown(footer, unsafe_allow_html=True)
-
-
-#hide_menu_style = """
- #       <style>
-  #      #MainMenu {visibility: hidden;}
-   #     footer {visibility:visible;}
-    #    footer:after{
-     #       content:'V.1.2 Copyrigth @ 2025 Telespazio Argentina S.A.';
-      #      display: block;
-       #     position: relative;
-        #    color: tomato;
-        #}
-        #</style>
-
-
-hide_menu_style = """
-        <style>
-        MainMenu {visibility: hidden;}
-        footer {visibility:visible;}
-        footer:after{
-            content:'V.1.2 Copyrigth @ 2025 Telespazio Argentina S.A.';
-            display: block;
-            position: relative;
-            color: tomato;
-        }
-        </style>
-        """
-
-st.markdown(hide_menu_style, unsafe_allow_html=True)
+st.markdown(footer, unsafe_allow_html=True)
 
 
 # ----- Conexión, Botones y Memoria ---- #
