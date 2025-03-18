@@ -13,7 +13,7 @@ st.set_page_config(page_title="Formularios TPZ",page_icon=img,layout="wide")
 
 hide_menu_style = """
         <style>
-        #MainMenu {visibility: hidden;}
+        #MainMenu {visibility: visible;}
         footer {visibility:visible;}
         footer:after{
             content:'V.1.3 Copyrigth @ 2025 Telespazio Argentina S.A.';
