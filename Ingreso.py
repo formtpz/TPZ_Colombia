@@ -19,8 +19,8 @@ footer = """
     bottom: 0;
     width: 100%;
     background-color: #000;
-    color: white;
-    text-align: center;
+    color: tomato;
+    text-align: left;
 }
 </style>
 <div class='footer'>
