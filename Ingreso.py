@@ -18,6 +18,7 @@ footer = """
     left: 0;
     bottom: 0;
     width: 100%;
+    display:block;
     color: tomato;
     text-align: left;
 }
