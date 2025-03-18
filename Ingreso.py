@@ -21,7 +21,7 @@ footer = """
     color: tomato;
     text-align: left;
     clear: both;
-    height: 10px;
+    height: 150px;
     margin-top: -50px;
 
 }
