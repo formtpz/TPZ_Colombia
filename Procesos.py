@@ -50,6 +50,9 @@ def Procesos1(usuario,puesto):
         placeholder13_2 = st.empty()
         validacion_2 = placeholder13_2.button("Validación",key="validacion_2")
 
+        placeholder14_2 = st.empty()
+        cc_validacion_2 = placeholder14_2.button("Control de Calidad Validación",key="cc_validacion_2")
+
         # ----- Historial ---- #
 
         if historial_2:
@@ -67,6 +70,7 @@ def Procesos1(usuario,puesto):
             placeholder11_2.empty()
             placeholder12_2.empty()
             placeholder13_2.empty()
+            placeholder14_2.empty()
             st.session_state.Procesos=True
             st.session_state.Historial=True
             Historial.Historial(usuario,puesto)
@@ -88,6 +92,7 @@ def Procesos1(usuario,puesto):
             placeholder11_2.empty()
             placeholder12_2.empty()
             placeholder13_2.empty()
+            placeholder14_2.empty()
             st.session_state.Procesos=True
             st.session_state.Capacitacion=True
             Capacitacion.Capacitacion(usuario,puesto)
@@ -109,6 +114,7 @@ def Procesos1(usuario,puesto):
             placeholder11_2.empty()
             placeholder12_2.empty()
             placeholder13_2.empty()
+            placeholder14_2.empty()
             st.session_state.Procesos=True
             st.session_state.Otros_Registros=True
             Otros_Registros.Otros_Registros(usuario,puesto)
@@ -130,6 +136,7 @@ def Procesos1(usuario,puesto):
             placeholder11_2.empty()
             placeholder12_2.empty()
             placeholder13_2.empty()
+            placeholder14_2.empty()
             st.session_state.Procesos=True
             st.session_state.Bonos_Extras=True
             Bonos_Extras.Bonos_Extras(usuario,puesto)
@@ -151,6 +158,7 @@ def Procesos1(usuario,puesto):
             placeholder11_2.empty()
             placeholder12_2.empty()
             placeholder13_2.empty()
+            placeholder14_2.empty()
             st.session_state.Ingreso= False
             st.session_state.Procesos=True
             st.session_state.Salir=True
@@ -173,6 +181,7 @@ def Procesos1(usuario,puesto):
             placeholder11_2.empty()
             placeholder12_2.empty()
             placeholder13_2.empty()
+            placeholder14_2.empty()
             st.session_state.Procesos=True
             st.session_state.FMI=True
             FMI.FMI(usuario,puesto)
@@ -194,6 +203,7 @@ def Procesos1(usuario,puesto):
             placeholder11_2.empty()
             placeholder12_2.empty()
             placeholder13_2.empty()
+            placeholder14_2.empty()
             st.session_state.Procesos=True
             st.session_state.CC_FMI=True
             CC_FMI.CC_FMI(usuario,puesto)
@@ -215,6 +225,7 @@ def Procesos1(usuario,puesto):
             placeholder11_2.empty()
             placeholder12_2.empty()
             placeholder13_2.empty()
+            placeholder14_2.empty()
             st.session_state.Procesos=True
             st.session_state.Consulta_Campo=True
             Consulta_Campo.Consulta_Campo(usuario,puesto)
@@ -236,6 +247,7 @@ def Procesos1(usuario,puesto):
             placeholder11_2.empty()
             placeholder12_2.empty()
             placeholder13_2.empty()
+            placeholder14_2.empty()
             st.session_state.Procesos=True
             st.session_state.Precampo=True
             Precampo.Precampo(usuario,puesto)
@@ -257,6 +269,7 @@ def Procesos1(usuario,puesto):
             placeholder11_2.empty()
             placeholder12_2.empty()
             placeholder13_2.empty()
+            placeholder14_2.empty()
             st.session_state.Procesos=True
             st.session_state.CC_Precampo=True
             CC_Precampo.CC_Precampo(usuario,puesto)
@@ -278,10 +291,33 @@ def Procesos1(usuario,puesto):
             placeholder11_2.empty()
             placeholder12_2.empty()
             placeholder13_2.empty()
+            placeholder14_2.empty()
             st.session_state.Procesos=True
             st.session_state.Validacion=True
             Validacion.Validacion(usuario,puesto)
 
+        # ----- CC_Validación ---- #
+
+        elif cc_validacion_2:
+
+            placeholder1_2.empty()
+            placeholder2_2.empty()
+            placeholder3_2.empty()
+            placeholder4_2.empty()
+            placeholder5_2.empty()
+            placeholder6_2.empty()
+            placeholder7_2.empty()
+            placeholder8_2.empty()
+            placeholder9_2.empty()
+            placeholder10_2.empty()
+            placeholder11_2.empty()
+            placeholder12_2.empty()
+            placeholder13_2.empty()
+            placeholder14_2.empty()
+            st.session_state.Procesos=True
+            st.session_state.CC_Validacion=True
+            Validacion.CC_Validacion(usuario,puesto)
+    
     elif st.session_state.Procesos==True:
 
         if st.session_state.Historial==True:
@@ -313,6 +349,9 @@ def Procesos1(usuario,puesto):
 
         elif st.session_state.Validacion==True:
             Validacion.Validacion(usuario,puesto)
+
+        elif st.session_state.CC_Validacion==True:
+            CC_Validacion.CC_Validacion(usuario,puesto)
             
 # ----- Procesos 2 ---- #
 
@@ -349,6 +388,9 @@ def Procesos2(usuario,puesto):
         placeholder9_2 = st.empty()
         cc_precampo_2 = placeholder9_2.button("Control de Calidad Precampo",key="cc_precampo_2")
 
+        placeholder10_2 = st.empty()
+        cc_validacion_2 = placeholder10_2.button("Control de Calidad Validación",key="cc_validacion_2")
+
         # ----- Historial ---- #
 
         if historial_2:
@@ -362,6 +404,7 @@ def Procesos2(usuario,puesto):
             placeholder7_2.empty()
             placeholder8_2.empty()
             placeholder9_2.empty()
+            placeholder10_2.empty()
             st.session_state.Procesos=True
             st.session_state.Historial=True
             Historial.Historial(usuario,puesto)
@@ -379,6 +422,7 @@ def Procesos2(usuario,puesto):
             placeholder7_2.empty()
             placeholder8_2.empty()
             placeholder9_2.empty()
+            placeholder10_2.empty()
             st.session_state.Procesos=True
             st.session_state.Capacitacion=True
             Capacitacion.Capacitacion(usuario,puesto)
@@ -396,6 +440,7 @@ def Procesos2(usuario,puesto):
             placeholder7_2.empty()
             placeholder8_2.empty()
             placeholder9_2.empty()
+            placeholder10_2.empty()
             st.session_state.Procesos=True
             st.session_state.Otros_Registros=True
             Otros_Registros.Otros_Registros(usuario,puesto)
@@ -413,6 +458,7 @@ def Procesos2(usuario,puesto):
             placeholder7_2.empty()
             placeholder8_2.empty()
             placeholder9_2.empty()
+            placeholder10_2.empty()
             st.session_state.Procesos=True
             st.session_state.Bonos_Extras=True
             Bonos_Extras.Bonos_Extras(usuario,puesto)
@@ -430,6 +476,7 @@ def Procesos2(usuario,puesto):
             placeholder7_2.empty()
             placeholder8_2.empty()
             placeholder9_2.empty()
+            placeholder10_2.empty()
             st.session_state.Ingreso = False
             st.session_state.Procesos=True
             st.session_state.Salir=True
@@ -448,6 +495,7 @@ def Procesos2(usuario,puesto):
             placeholder7_2.empty()
             placeholder8_2.empty()
             placeholder9_2.empty()
+            placeholder10_2.empty()
             st.session_state.Procesos=True
             st.session_state.CC_FMI=True
             CC_FMI.CC_FMI(usuario,puesto)
@@ -465,6 +513,7 @@ def Procesos2(usuario,puesto):
             placeholder7_2.empty()
             placeholder8_2.empty()
             placeholder9_2.empty()
+            placeholder10_2.empty()
             st.session_state.Procesos=True
             st.session_state.CC_Precampo=True
             CC_Precampo.CC_Precampo(usuario,puesto)
@@ -488,6 +537,9 @@ def Procesos2(usuario,puesto):
 
         elif st.session_state.CC_Precampo==True:
             CC_Precampo.CC_Precampo(usuario,puesto)
+
+        elif st.session_state.CC_Validacion==True:
+            CC_Validacion.CC_Validacion(usuario,puesto)
         
 # ----- Procesos 3 ---- #
 
