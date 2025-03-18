@@ -30,7 +30,7 @@ hide_menu_style = """
         <style>
         MainMenu {visibility: hidden;}
         footer {visibility:visible;}
-        footer:{
+        .footer:{
             content:'V.1.2 Copyrigth @ 2025 Telespazio Argentina S.A.';
             display: block;
             position: relative;
