@@ -19,7 +19,9 @@ footer = """
     position: relative;
     color: tomato;
 }
+</style>
 """
+
 st.markdown(footer, unsafe_allow_html=True)
 
 
