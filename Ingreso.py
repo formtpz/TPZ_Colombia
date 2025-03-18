@@ -20,7 +20,7 @@ footer = """
     color: tomato;
 }
 </style>
-<div class='footer'>
+<div class='footer:after'>
   <p>Your Footer Content Here © 2023</p>
 </div>
 """
