@@ -14,7 +14,7 @@ st.set_page_config(page_title="Formularios TPZ",page_icon=img,layout="wide")
 footer = """
 <style>
 .footer:after {
-    position: fixed;
+    position: relative;
     left: 0;
     bottom: 0;
     width: 100%;
@@ -23,7 +23,7 @@ footer = """
 }
 </style>
 <div class='footer'>
-  <p>V.1.2 Copyrigth @ 2025 Telespazio Argentina S.A.</p>
+  <p>V.1.3 Copyrigth @ 2025 Telespazio Argentina S.A.</p>
 </div>
 """
 
