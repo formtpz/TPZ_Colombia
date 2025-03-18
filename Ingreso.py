@@ -26,7 +26,21 @@ footer = """
 </div>
 """
 
-st.markdown(footer, unsafe_allow_html=True)
+hide_menu_style = """
+        <style>
+        #MainMenu {visibility: hidden;}
+        footer {visibility:visible;}
+        footer:after{
+            content:'V.1.2 Copyrigth @ 2025 Telespazio Argentina S.A.';
+            display: block;
+            position: relative;
+            color: tomato;
+        }
+        </style>
+        """
+
+st.markdown(hide_menu_style, unsafe_allow_html=True)
+
 
 
 # ----- Conexión, Botones y Memoria ---- #
