@@ -28,10 +28,7 @@ footer = """
 
 hide_menu_style = """
         <style>
-        MainMenu {visibility: hidden;}
-        footer {visibility:visible;}
         .footer:{
-            content:'V.1.2 Copyrigth @ 2025 Telespazio Argentina S.A.';
             display: block;
             position: relative;
             color: tomato;
@@ -43,7 +40,6 @@ hide_menu_style = """
         </div>
         
         """
-
 st.markdown(hide_menu_style, unsafe_allow_html=True)
 
 
