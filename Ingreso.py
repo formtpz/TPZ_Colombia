@@ -16,7 +16,7 @@ footer = """
 .footer {
     position: relative;
     left: 0;
-    bottom: 100;
+    bottom: 200;
     width: 100%;
     color: tomato;
     text-align: left;
