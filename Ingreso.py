@@ -22,7 +22,7 @@ footer = """
     text-align: left;
     clear: both;
     #height: 200px;
-    margin-top: -100px;
+    margin-top: -10px;
 
 }
 </style>
