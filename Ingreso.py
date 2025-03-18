@@ -20,10 +20,14 @@ footer = """
     width: 100%;
     color: tomato;
     text-align: left;
+    clear: both;
+    height: 200px;
+    margin-top: -200px;
+
 }
 </style>
 <div class='footer'>
-  <p>V.1.2 Copyrigth @ 2025 Telespazio Argentina S.A.'</p>
+  <p>V.1.2 Copyrigth @ 2025 Telespazio Argentina S.A.</p>
 </div>
 """
 
