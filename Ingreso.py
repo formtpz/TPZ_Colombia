@@ -26,7 +26,7 @@ footer = """
 </div>
 """
 
-hide_menu_style = """
+footer = """
 <style>
 .footer:{
     display: block;
@@ -39,7 +39,7 @@ hide_menu_style = """
     <p>V.1.3 Copyrigth @ 2025 Telespazio Argentina S.A.</p>
 </div>    
 """
-st.markdown(hide_menu_style, unsafe_allow_html=True)
+st.markdown(footer, unsafe_allow_html=True)
 
 
 # ----- Conexión, Botones y Memoria ---- #
