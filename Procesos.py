@@ -536,7 +536,7 @@ def Procesos2(usuario,puesto):
         elif st.session_state.CC_Precampo==True:
             CC_Precampo.CC_Precampo(usuario,puesto)
 
-        elif st.session_state.CC_Validacion=True:
+        elif st.session_state.CC_Validacion==True:
             CC_Validacion.CC_Validacion(usuario,puesto)
 
 # ----- Procesos 3 ---- #
