@@ -12,22 +12,22 @@ img=Image.open('logoicon.png')
 st.set_page_config(page_title="Formularios TPZ",page_icon=img,layout="wide")
 
 footer = """
-        <style>
-        #MainMenu {visibility: hidden;}
-        footer {visibility:visible;}
-       footer:after{
-            content:'V.1.3 Copyrigth @ 2025 Telespazio Argentina S.A.';
-            visibility: visible;
-            display: block;
-            position: relative;
-            color: tomato;
-       }
-       </style>
-        """
-
-
+<style>
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #000;
+    color: white;
+    text-align: center;
+}
+</style>
+<div class='footer'>
+  <p>Your Footer Content Here © 2023</p>
+</div>
+"""
 st.markdown(footer, unsafe_allow_html=True)
-
 
 # ----- Conexión, Botones y Memoria ---- #
 
