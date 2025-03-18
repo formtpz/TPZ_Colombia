@@ -16,7 +16,7 @@ hide_menu_style = """
         #MainMenu {visibility: hidden;}
         footer {visibility:visible;}
         footer:after{
-            content:'V.1.2 Copyrigth @ 2025 Telespazio Argentina S.A.';
+            content:'V.1.3 Copyrigth @ 2025 Telespazio Argentina S.A.';
             display: block;
             position: relative;
             color: tomato;
