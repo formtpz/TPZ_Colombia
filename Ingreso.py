@@ -104,19 +104,19 @@ if iniciar_sesion_1:
                 placeholder3_1.empty()
                 placeholder4_1.empty()
 
-                #st.session_state.Procesos=False
-                #st.session_state.Historial=False
-                #st.session_state.Capacitacion=False
-                #st.session_state.Otros_Registros=False
-                #st.session_state.Bonos_Extras=False
-                #st.session_state.Salir=False
-                #st.session_state.FMI=False
-                #st.session_state.CC_FMI=False
-                #st.session_state.Consulta_Campo=False
-                #st.session_state.Precampo=False
-                #st.session_state.CC_Precampo=False
+                st.session_state.Procesos=False
                 st.session_state.Historial=False
-                #st.session_state.CC_Validacion=False
+                st.session_state.Capacitacion=False
+                st.session_state.Otros_Registros=False
+                st.session_state.Bonos_Extras=False
+                st.session_state.Salir=False
+                st.session_state.FMI=False
+                st.session_state.CC_FMI=False
+                st.session_state.Consulta_Campo=False
+                st.session_state.Precampo=False
+                st.session_state.CC_Precampo=False
+                st.session_state.Validacion=False
+                st.session_state.CC_Validacion=False
                     
                 puesto=pd.read_sql(f"select puesto from usuarios where usuario ='{usuario}'",uri)
                 puesto= puesto.loc[0,'puesto']
