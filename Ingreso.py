@@ -11,19 +11,25 @@ img=Image.open('logoicon.png')
 
 st.set_page_config(page_title="Formularios TPZ",page_icon=img,layout="wide")
 
-hide_menu_style = """
-        <style>
-        #MainMenu {visibility: hidden;}
-        footer {visibility:visible;}
-        footer:after{
-            content:'V.1.3 Copyrigth @ 2025 Telespazio Argentina S.A.';
-            visibility: visible;
-            display: block;
-            position: relative;
-            color: tomato;
-        }
-        </style>
-        """
+#hide_menu_style = """
+#        <style>
+#        #MainMenu {visibility: hidden;}
+##        footer {visibility:visible;}
+ #       footer:after{
+ #           content:'V.1.3 Copyrigth @ 2025 Telespazio Argentina S.A.';
+ #           visibility: visible;
+  ##          display: block;
+   ##         position: relative;
+    #        color: tomato;
+     #  }
+      #  </style>
+       # """
+
+footer_html = """
+<div style='text-align: center;'>
+  <p>Developed with ❤️ using Streamlit</p>
+</div>
+"""
 
 st.markdown(hide_menu_style, unsafe_allow_html=True)
 
