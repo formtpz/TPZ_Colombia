@@ -1,7 +1,7 @@
 # ----- Librerías ---- #
 
 import streamlit as st
-import Historial, Capacitacion, Otros_Registros, Bonos_Extras, Salir, FMI, CC_FMI, Consulta_Campo, Precampo, CC_Precampo, CC_Validacion
+import Paulina #Historial, Capacitacion, Otros_Registros, Bonos_Extras, Salir, FMI, CC_FMI, Consulta_Campo, Precampo, CC_Precampo, CC_Validacion
 
 def Procesos1(usuario,puesto):
 
