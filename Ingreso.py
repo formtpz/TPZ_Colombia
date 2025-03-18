@@ -18,7 +18,7 @@ footer = """
     left: 0;
     bottom: 0;
     width: 100%;
-    color: white;
+    color: tomato;
     text-align: left;
 }
 </style>
