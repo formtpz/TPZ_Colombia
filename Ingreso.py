@@ -115,6 +115,7 @@ if iniciar_sesion_1:
                 st.session_state.Consulta_Campo=False
                 st.session_state.Precampo=False
                 st.session_state.CC_Precampo=False
+                st.session_state.Validacion=False
 
                 puesto=pd.read_sql(f"select puesto from usuarios where usuario ='{usuario}'",uri)
                 puesto= puesto.loc[0,'puesto']
