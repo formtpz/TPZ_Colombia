@@ -315,7 +315,7 @@ def Procesos1(usuario,puesto):
             placeholder14_2.empty()
             st.session_state.Procesos=True
             st.session_state.CC_Validacion=True
-            CC_Validacion.CC_Validacion(usuario,puesto)
+             CC_Validacion.CC_Validacion(usuario,puesto)
     
     elif st.session_state.Procesos==True:
 
