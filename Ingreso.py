@@ -21,8 +21,8 @@ footer = """
     color: tomato;
     text-align: left;
     clear: both;
-    height: 200px;
-    #margin-top: -200px;
+    #height: 200px;
+    margin-top: -200px;
 
 }
 </style>
