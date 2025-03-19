@@ -15,7 +15,7 @@ st.set_page_config(page_title="Formularios TPZ",page_icon=img,layout="wide")
 hide_streamlit_style = """
                 <style>
                 div[data-testid="stToolbar"] {
-                visibility: visible;
+                visibility: hidden;
                 height: 0%;
                 position: fixed;
                 }
