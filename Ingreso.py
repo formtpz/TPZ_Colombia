@@ -14,12 +14,15 @@ st.set_page_config(page_title="Formularios TPZ",page_icon=img,layout="wide")
 hide_menu= """
 <style>
 .footer {
-   display: block;
+
    position: fixed;
+   left: 0;
    bottom: 0;
+   width: 100%;
    color: tomato;
+   text-align: left;
    padding:5px;
-   top: 3px
+   top: 3px;
 
 }
 </style>
