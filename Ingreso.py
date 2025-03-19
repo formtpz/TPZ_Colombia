@@ -20,7 +20,7 @@ hide_menu= """
       bottom: 0;
       width: 100%;
       color: tomato;
-      text-align: left;
+      text-align: center;
 }
 </style>
 <div class='footer'>
