@@ -20,7 +20,7 @@ hide_streamlit_style = """
                 position: fixed;
                 }
                 div[data-testid="stDecoration"] {
-                visibility: visible;
+                visibility: hidden;
                 height: 0%;
                 position: fixed;
                 }
