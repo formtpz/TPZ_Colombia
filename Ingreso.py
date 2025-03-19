@@ -20,7 +20,7 @@ hide_streamlit_style = """
                 position: fixed;
                 }
                 div[data-testid="stDecoration"] {
-                visibility: hidden;
+                visibility: visible;
                 height: 0%;
                 position: fixed;
                 }
@@ -30,7 +30,7 @@ hide_streamlit_style = """
                 position: fixed;
                 }
                 #MainMenu {
-                visibility: visible;
+                visibility: hidden;
                 height: 0%;
                 }
                 header {
