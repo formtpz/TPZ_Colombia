@@ -44,6 +44,14 @@ hide_streamlit_style = """
                 footer {
                 visibility: hidden;
                 }
+
+                footer:after{
+                  content:'V.1.2 Copyrigth @ 2025 Telespazio Argentina S.A.';
+                  display: block;
+                  position: relative;
+                  color: tomato;
+                }
+                
                 </style>
                 """
 st.markdown(hide_streamlit_style, unsafe_allow_html=True)
