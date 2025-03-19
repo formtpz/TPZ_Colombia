@@ -182,8 +182,8 @@ st.markdown(
   """
   <style>
   .footer {
-      position: sticky;
-      top:0;
+      position: absolute;
+      bottom:0;
       width:100;
       text-aling:center;
       color: tomato;
