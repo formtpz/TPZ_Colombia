@@ -35,10 +35,8 @@ hide_streamlit_style = """
                 }
                 header {
                 visibility: visible;
-                <h1>A heading here</h1>
                 content:'V.1.2 Copyrigth @ 2025 Telespazio Argentina S.A.';
                 display: block;
-                position: fixed;
                 color: tomato;
                 height: 0%;
 
