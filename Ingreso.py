@@ -40,12 +40,6 @@ hide_streamlit_style = """
                 """
 st.markdown(hide_streamlit_style, unsafe_allow_html=True)
 
-
-
-
-
-
-
 # ----- Conexión, Botones y Memoria ---- #
 
 uri=st.secrets.db_credentials.URI
@@ -176,14 +170,11 @@ if pivot!=1:
      st.subheader("Para soporte técnico favor escribir a basilio.nunez@telespazio.com")
 
 
-
-
 st.markdown(
   """
   <style>
   .footer {
       position: fixed;
-      bottom:0;
       width:100%;
       text-aling:center;
       color: tomato;
