@@ -15,10 +15,14 @@ footer = """
 <style>
 .footer {
     #position: ;
-    position: relative;
-    min-height: 100%;
+    #position: relative;
+    #min-height: 100%;
+    position: fixed;
     left: 0;
-    bottom: 300;
+    bottom: 0;
+    width: 100%;
+    #left: 0;
+    #bottom: 300;
     width: 100%;
     color: tomato;
     text-align: left;
