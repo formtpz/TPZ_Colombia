@@ -34,19 +34,19 @@ hide_streamlit_style = """
                 height: 0%;
                 }
                 header {
-                #visibility: visible;
-                background: url('http://www.autodatz.com/wp-content/uploads/2017/05/Old-Car-Wallpapers-Hd-36-with-Old-Car-Wallpapers-Hd.jpg');
-              	text-align: center;
-              	width: 100%;
-              	height: auto;
-              	background-size: cover;
-              	background-attachment: fixed;
-              	position: relative;
-              	overflow: hidden;
-              	border-radius: 0 0 85% 85% / 30%;
-                #content:'V.1.2 Copyrigth @ 2025 Telespazio Argentina S.A.';
-                #color: tomato;
-                #background-color: aquamarine
+                  #visibility: visible;
+                  background: url('http://www.autodatz.com/wp-content/uploads/2017/05/Old-Car-Wallpapers-Hd-36-with-Old-Car-Wallpapers-Hd.jpg');
+                	text-align: center;
+                	width: 100%;
+                	height: auto;
+                	background-size: cover;
+                	background-attachment: fixed;
+                	position: relative;
+                	overflow: hidden;
+                	border-radius: 0 0 85% 85% / 30%;
+                  #content:'V.1.2 Copyrigth @ 2025 Telespazio Argentina S.A.';
+                  #color: tomato;
+                  #background-color: aquamarine
                 }
                 footer {
                 visibility: hidden;
