@@ -26,6 +26,8 @@ footer = """
     width: 100%;
     color: tomato;
     text-align: left;
+    padding:5px;
+    top: 3px;
 
 }
 </style>
