@@ -42,24 +42,6 @@ st.markdown(hide_streamlit_style, unsafe_allow_html=True)
 
 
 
-st.markdown(
-  """
-  <style>
-  .footer {
-      position: relative;
-      bottom:0;
-      width:100;
-      text-aling:center;
-      color: tomato;
-      margin-top:auto
-  }      
-  </style>
-  <div class="footer">
-      <p> wfbwrbrtbtbtrbrtbt4brtbtrbtrbrtb </p>
-  </div>
-  """, unsafe_allow_html=True)
-
-
 
 
 
@@ -192,3 +174,24 @@ if pivot!=1:
      st.subheader("En caso de dudas favor revisar el siguiente video tutorial")
 
      st.subheader("Para soporte técnico favor escribir a basilio.nunez@telespazio.com")
+
+
+
+
+st.markdown(
+  """
+  <style>
+  .footer {
+      position: relative;
+      bottom:0;
+      width:100;
+      text-aling:center;
+      color: tomato;
+      margin-top:auto
+  }      
+  </style>
+  <div class="footer">
+      <p> wfbwrbrtbtbtrbrtbt4brtbtrbtrbrtb </p>
+  </div>
+  """, unsafe_allow_html=True)
+
