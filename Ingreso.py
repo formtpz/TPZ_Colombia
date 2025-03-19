@@ -15,9 +15,10 @@ hide_menu= """
 <style>
 .footer {
 
-      position: fixed;
-      bottom: 0;
-      width: 100%;
+      margin-top:auto;
+      #position: fixed;
+     # bottom: 0;
+     # width: 100%;
       color: tomato;
       text-align: center;
 }
