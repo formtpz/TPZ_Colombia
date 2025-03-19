@@ -38,12 +38,30 @@ hide_streamlit_style = """
                 height: 0%;
                 }
                 footer {
-                visibility: hidden;
-                height: 0%;
+                visibility: visible;
+                content:'V.1.2 Copyrigth @ 2025 Telespazio Argentina S.A.';
+                display: block;
+                position: relative;
+                color: tomato;
+                #height: 0%;
                 }
                 </style>
                 """
 st.markdown(hide_streamlit_style, unsafe_allow_html=True)
+
+
+#hide_menu_style = """
+#        <style>
+#        #MainMenu {visibility: hidden;}
+#        footer {visibility:visible;}
+#        footer:after{
+#            content:'V.1.2 Copyrigth @ 2025 Telespazio Argentina S.A.';
+#            display: block;
+#            position: relative;
+#            color: tomato;
+#        }
+#        </style>
+#        """
 
 #hide_menu= """
 #<style>
