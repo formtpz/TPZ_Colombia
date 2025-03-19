@@ -14,7 +14,9 @@ st.set_page_config(page_title="Formularios TPZ",page_icon=img,layout="wide")
 footer = """
 <style>
 .footer {
-    position: fixed;
+    #position: ;
+    position: relative;
+    min-height: 100%;
     left: 0;
     bottom: 300;
     width: 100%;
