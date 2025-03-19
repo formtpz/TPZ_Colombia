@@ -15,7 +15,7 @@ hide_menu= """
 <style>
 .footer {
 
-      margin-bottom:auto;
+      margin-top:auto;
       #position: fixed;
       #bottom: 0;
       #width: 100%;
