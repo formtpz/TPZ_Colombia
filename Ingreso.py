@@ -25,7 +25,7 @@ hide_streamlit_style = """
                 position: fixed;
                 }
                 div[data-testid="stStatusWidget"] {
-                visibility: hidden;
+                visibility: visible;
                 height: 0%;
                 position: fixed;
                 }
