@@ -53,7 +53,7 @@ st.markdown(
       color: tomato;
   }      
   </style>
-  <div class="footer:after">
+  <div class=".footer:after">
       <p> wfbwrbrtbtbtrbrtbt4brtbtrbtrbrtb </p>
   </div>
   """, unsafe_allow_html=True)
