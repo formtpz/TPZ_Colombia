@@ -22,8 +22,14 @@ hide_menu= """
    padding:5px;
    top: 3px;
 }
-<style>
+
+</style>
+<div class='footer'>
+  <p>V.1.2 Copyrigth @ 2025 Telespazio Argentina S.A.</p>
+</div>
 """
+
+
 #footer = """
 #<style>
 #.footer {
