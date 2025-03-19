@@ -29,32 +29,38 @@ hide_streamlit_style = """
                 height: 0%;
                 position: fixed;
                 }
-                #MainMenu {
+                MainMenu {
                 visibility: hidden;
                 height: 0%;
                 }
                 header {
-                  #visibility: visible;
-
-                  #content:'V.1.2 Copyrigth @ 2025 Telespazio Argentina S.A.';
-                  color:tomato
-                  #background-color: aquamarine
-                  
-                }
-                footer {
                 visibility: hidden;
-                }
-
-                footer:after{
-                  content:'V.1.2 Copyrigth @ 2025 Telespazio Argentina S.A.';
-                  display: block;
-                  position: relative;
-                  color: tomato;
-                }
-                
+                height: 0%;
                 </style>
                 """
 st.markdown(hide_streamlit_style, unsafe_allow_html=True)
+
+
+
+prueba = """
+         <style>
+         .footer {
+            position: fixed;
+            left: 0;
+            bottom:0;
+            color: tomato;
+          }      
+          </style>
+          < div class="footer">
+            <p> wfbwrbrtbtbtrbrtbt4brtbtrbtrbrtb <p>
+          </div class>
+          """
+st.markdown(prueba, unsafe_allow_html=True)
+
+
+
+
+
 
 # ----- Conexión, Botones y Memoria ---- #
 
