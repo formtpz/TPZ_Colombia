@@ -51,7 +51,7 @@ footer:after{
 #</div>
 #"""
 
-st.markdown(hidden_menu, unsafe_allow_html=True)
+st.markdown(hide_menu, unsafe_allow_html=True)
 
 #st.footer(text="Imprint: My Company", activate=True)
 
