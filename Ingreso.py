@@ -43,7 +43,7 @@ hide_streamlit_style = """
                 display: block;
                 position: relative;
                 color: tomato;
-                #height: 0%;
+                height: 0%;
                 }
                 </style>
                 """
