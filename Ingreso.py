@@ -15,47 +15,18 @@ hide_menu= """
 <style>
 .footer {
 
-   position: fixed;
-   left: 0;
-   bottom: 0;
-   width: 100%;
-   color: tomato;
-   text-align: left;
-   padding:5px;
-   top: 3px;
-
+      position: fixed;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      color: tomato;
+      text-align: left;
 }
 </style>
 <div class='footer'>
    <p>V.1.3 Copyrigth @ 2025 Telespazio Argentina S.A.</p>
 </div>
 """
-
-
-#footer = """
-#<style>
-#.footer {
-#    #position: ;
-#    #position: relative;
-#    #min-height: 100%;
-#    position: fixed;
-#    left: 0;
-#    bottom: 0;
-#   width: 100%;
-#    #left: 0;
-#    #bottom: 300;
-#    width: 100%;
-#    color: tomato;
-#    text-align: left;
-#    padding:5px;
-#    top: 3px;
-
-#}
-#</style>
-#<div class='footer'>
-#  <p>V.1.2 Copyrigth @ 2025 Telespazio Argentina S.A.</p>
-#</div>
-#"""
 
 st.markdown(hide_menu, unsafe_allow_html=True)
 
