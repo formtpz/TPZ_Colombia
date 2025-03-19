@@ -45,7 +45,7 @@ st.markdown(hide_streamlit_style, unsafe_allow_html=True)
 st.markdown(
   """
   <style>
-  .footer:after {
+  footer:after {
       position: relative;
       bottom:0;
       width:100;
@@ -53,7 +53,7 @@ st.markdown(
       color: tomato;
   }      
   </style>
-  <div class=".footer:after">
+  <div class="footer:after">
       <p> wfbwrbrtbtbtrbrtbt4brtbtrbtrbrtb </p>
   </div>
   """, unsafe_allow_html=True)
