@@ -16,9 +16,9 @@ hide_menu= """
 .footer {
 
       margin-top:auto;
-      #position: fixed;
-     # bottom: 0;
-     # width: 100%;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
       color: tomato;
       text-align: center;
 }
