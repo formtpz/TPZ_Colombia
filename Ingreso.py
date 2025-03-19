@@ -170,21 +170,21 @@ if pivot!=1:
      st.subheader("Para soporte técnico favor escribir a basilio.nunez@telespazio.com")
 
 
-st.markdown(
-  """
-  <style>
-  .footer {
-      position: fixed;
-      width:100%;
-      text-aling:center;
-      color: tomato;
-      margin-top:auto
-  }      
-  </style>
-  <div class="footer">
-      <p> wfbwrbrtbtbtrbrtbt4brtbtrbtrbrtb </p>
-  </div>
-  """, unsafe_allow_html=True)
+#st.markdown(
+#  """
+#  <style>
+#  .footer {
+#      position: fixed;
+#      width:100%;
+#      text-aling:center;
+#      color: tomato;
+#      margin-top:auto
+#  }      
+#  </style>
+#  <div class="footer">
+#      <p> wfbwrbrtbtbtrbrtbt4brtbtrbtrbrtb </p>
+#  </div>
+#  """, unsafe_allow_html=True)
 
 
 hide_menu_style = """
