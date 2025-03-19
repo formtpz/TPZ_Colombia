@@ -35,20 +35,15 @@ hide_streamlit_style = """
                 }
                 header {
                 visibility: visible;
-                content:'V.1.2 Copyrigth @ 2025 Telespazio Argentina S.A.';
-                display: block;
-                position: relative;
-                color: tomato;
-                height: 0%;
-                height: 0%;
-                }
-                footer {
-                visibility: visible;
                   content:'V.1.2 Copyrigth @ 2025 Telespazio Argentina S.A.';
                   display: block;
-                  position: relative;
+                  position: fixed;
                   color: tomato;
                   height: 0%;
+
+                }
+                footer {
+                visibility: hidden;
                 }
                 </style>
                 """
