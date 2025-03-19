@@ -11,24 +11,58 @@ img=Image.open('logoicon.png')
 
 st.set_page_config(page_title="Formularios TPZ",page_icon=img,layout="wide")
 
-hide_menu= """
-<style>
-.footer {
 
-      margin-top:auto;
-      #position: fixed;
-      #bottom: 0;
-      #width: 100%;
-      #color: tomato;
-      #text-align: center;
-}
-</style>
-<div class='footer'>
-   <p>V.1.3 Copyrigth @ 2025 Telespazio Argentina S.A.</p>
-</div>
-"""
+hide_streamlit_style = """
+                <style>
+                div[data-testid="stToolbar"] {
+                visibility: hidden;
+                height: 0%;
+                position: fixed;
+                }
+                div[data-testid="stDecoration"] {
+                visibility: hidden;
+                height: 0%;
+                position: fixed;
+                }
+                div[data-testid="stStatusWidget"] {
+                visibility: hidden;
+                height: 0%;
+                position: fixed;
+                }
+                #MainMenu {
+                visibility: hidden;
+                height: 0%;
+                }
+                header {
+                visibility: hidden;
+                height: 0%;
+                }
+                footer {
+                visibility: hidden;
+                height: 0%;
+                }
+                </style>
+                """
+st.markdown(hide_streamlit_style, unsafe_allow_html=True)
 
-st.markdown(hide_menu, unsafe_allow_html=True)
+#hide_menu= """
+#<style>
+#.footer {
+
+#      margin-top:auto;
+#      #position: fixed;
+#      #bottom: 0;
+#      #width: 100%;
+#     #color: tomato;
+#      #text-align: center;
+#}
+#</style>
+#<div class='footer'>
+#   <p>V.1.3 Copyrigth @ 2025 Telespazio Argentina S.A.</p>
+#</div>
+#"""
+
+#st.markdown(hide_menu, unsafe_allow_html=True)
 
 #st.footer(text="Imprint: My Company", activate=True)
 
