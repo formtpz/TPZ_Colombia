@@ -54,7 +54,7 @@ prueba = """
           </style>
           < div class="footer">
             <p> wfbwrbrtbtbtrbrtbt4brtbtrbtrbrtb <p>
-          </div class>
+          </div>
           """
 st.markdown(prueba, unsafe_allow_html=True)
 
