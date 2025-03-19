@@ -45,7 +45,7 @@ st.markdown(hide_streamlit_style, unsafe_allow_html=True)
 st.markdown(
   """
   <style>
-  .footer {
+  .footer:after {
       position: relative;
       bottom:0;
       width:100;
