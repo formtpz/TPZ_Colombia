@@ -37,6 +37,7 @@ hide_streamlit_style = """
                 visibility: visible;
                 content:'V.1.2 Copyrigth @ 2025 Telespazio Argentina S.A.';
                 color: tomato;
+                background-color: aquamarine
                 }
                 footer {
                 visibility: hidden;
