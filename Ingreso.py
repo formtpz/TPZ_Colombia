@@ -25,7 +25,7 @@ hide_streamlit_style = """
                 position: fixed;
                 }
                 div[data-testid="stStatusWidget"] {
-                visibility:hidden;
+                visibility:visible;
                 height: 0%;
                 position: fixed;
                 }
@@ -35,22 +35,10 @@ hide_streamlit_style = """
                 }
                 header {
                   #visibility: visible;
-                  background: url('http://www.autodatz.com/wp-content/uploads/2017/05/Old-Car-Wallpapers-Hd-36-with-Old-Car-Wallpapers-Hd.jpg');
-                	text-align: center;
-                	width: 100%;
-                	height: auto;
-                	background-size: cover;
-                	background-attachment: fixed;
-                	position: relative;
-                	overflow: hidden;
-                	border-radius: 0 0 85% 85% / 30%;
-                  #content:'V.1.2 Copyrigth @ 2025 Telespazio Argentina S.A.';
-                  #color: tomato;
-                  #background-color: aquamarine
 
-                  <header>
-	                <div class="overlay">
-                  <h1>Simply The Best</h1>
+                  #content:'V.1.2 Copyrigth @ 2025 Telespazio Argentina S.A.';
+                  color: aquamarine
+                  #background-color: aquamarine
                   
                 }
                 footer {
