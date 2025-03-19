@@ -47,6 +47,11 @@ hide_streamlit_style = """
                   #content:'V.1.2 Copyrigth @ 2025 Telespazio Argentina S.A.';
                   #color: tomato;
                   #background-color: aquamarine
+
+                  <header>
+	                <div class="overlay">
+                  <h1>Simply The Best</h1>
+                  
                 }
                 footer {
                 visibility: hidden;
