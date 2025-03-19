@@ -16,11 +16,11 @@ hide_menu= """
 .footer {
 
       margin-bottom:auto;
-      position: fixed;
-      bottom: 0;
-      width: 100%;
-      color: tomato;
-      text-align: center;
+      #position: fixed;
+      #bottom: 0;
+      #width: 100%;
+      #color: tomato;
+      #text-align: center;
 }
 </style>
 <div class='footer'>
