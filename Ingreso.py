@@ -42,21 +42,21 @@ st.markdown(hide_streamlit_style, unsafe_allow_html=True)
 
 
 
-prueba = """
-         <style>
-         .footer {
-            position: fixed;
-            left: 0;
-            bottom:0;
-            width:100;
-            color: tomato;
-          }      
-          </style>
-          < div class="footer">
-            <p> wfbwrbrtbtbtrbrtbt4brtbtrbtrbrtb </p>
-          </div>
-          """
-st.markdown(prueba, unsafe_allow_html=True)
+st.markdown(
+  """
+  <style>
+  .footer {
+      position: fixed;
+      left: 0;
+      bottom:0;
+      width:100;
+      color: tomato;
+  }      
+  </style>
+  <div class="footer">
+      <p> wfbwrbrtbtbtrbrtbt4brtbtrbtrbrtb </p>
+  </div>
+  """, unsafe_allow_html=True)
 
 
 
