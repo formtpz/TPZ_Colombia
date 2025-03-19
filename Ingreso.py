@@ -30,7 +30,7 @@ hide_streamlit_style = """
                 position: fixed;
                 }
                 #MainMenu {
-                visibility: hidden;
+                visibility: visible;
                 height: 0%;
                 }
                 header {
