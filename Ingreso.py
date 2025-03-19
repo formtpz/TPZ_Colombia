@@ -183,7 +183,7 @@ st.markdown(
   <style>
   .footer {
       position: sticky;
-      bottom:0;
+      top:0;
       width:100;
       text-aling:center;
       color: tomato;
