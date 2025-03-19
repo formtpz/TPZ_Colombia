@@ -187,7 +187,6 @@ st.markdown(
       width:100;
       text-aling:center;
       color: tomato;
-      margin-top:auto
   }      
   </style>
   <div class="footer">
