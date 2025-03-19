@@ -16,6 +16,7 @@ hide_menu= """
 .footer {
    display: block;
    position: sticky
+   bottom: 0;
    color: tomato;
    padding:5px;
    top: 3px;
