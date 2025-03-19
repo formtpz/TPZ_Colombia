@@ -182,7 +182,7 @@ st.markdown(
   """
   <style>
   .footer {
-      position: relative;
+      position: sticky;
       bottom:0;
       width:100;
       text-aling:center;
