@@ -36,7 +36,7 @@ footer = """
 
 st.markdown(footer, unsafe_allow_html=True)
 
-st.footer(text="Imprint: My Company", activate=True)
+#st.footer(text="Imprint: My Company", activate=True)
 
 # ----- Conexión, Botones y Memoria ---- #
 
