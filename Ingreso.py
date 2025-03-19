@@ -50,6 +50,7 @@ st.markdown(
       left: 0;
       bottom:0;
       width:100;
+      text-aling:center;
       color: tomato;
   }      
   </style>
