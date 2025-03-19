@@ -16,7 +16,6 @@ hide_menu= """
 .footer {
 
       position: fixed;
-      left: 0;
       bottom: 0;
       width: 100%;
       color: tomato;
