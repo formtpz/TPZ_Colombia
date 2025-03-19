@@ -35,6 +35,11 @@ hide_streamlit_style = """
                 }
                 header {
                 visibility: visible;
+                  padding: 60px;
+                  text-align: center;
+                  background: #1abc9c;
+                  color: white;
+                  font-size: 30px;
                   content:'V.1.2 Copyrigth @ 2025 Telespazio Argentina S.A.';
                   display: block;
                   position: fixed;
