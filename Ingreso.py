@@ -35,11 +35,7 @@ hide_streamlit_style = """
                 }
                 header {
                 visibility: visible;
-                  padding: 60px;
-                  text-align: center;
-                  background: #1abc9c;
-                  color: white;
-                  font-size: 30px;
+                  <h1>A heading here</h1>
                   content:'V.1.2 Copyrigth @ 2025 Telespazio Argentina S.A.';
                   display: block;
                   position: fixed;
@@ -53,41 +49,6 @@ hide_streamlit_style = """
                 </style>
                 """
 st.markdown(hide_streamlit_style, unsafe_allow_html=True)
-
-
-#hide_menu_style = """
-#        <style>
-#        #MainMenu {visibility: hidden;}
-#        footer {visibility:visible;}
-#        footer:after{
-#            content:'V.1.2 Copyrigth @ 2025 Telespazio Argentina S.A.';
-#            display: block;
-#            position: relative;
-#            color: tomato;
-#        }
-#        </style>
-#        """
-
-#hide_menu= """
-#<style>
-#.footer {
-
-#      margin-top:auto;
-#      #position: fixed;
-#      #bottom: 0;
-#      #width: 100%;
-#     #color: tomato;
-#      #text-align: center;
-#}
-#</style>
-#<div class='footer'>
-#   <p>V.1.3 Copyrigth @ 2025 Telespazio Argentina S.A.</p>
-#</div>
-#"""
-
-#st.markdown(hide_menu, unsafe_allow_html=True)
-
-#st.footer(text="Imprint: My Company", activate=True)
 
 # ----- Conexión, Botones y Memoria ---- #
 
