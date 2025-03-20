@@ -189,14 +189,12 @@ if pivot!=1:
 
 hide_menu_style = """
         <style>
-        #MainMenu {visibility: hidden;}
-        footer {visibility:visible;}
-        footer:after{
+        MainMenu {visibility: hidden;}
+        footer {visibility:visible;
             content:'V.1.2 Copyrigth @ 2025 Telespazio Argentina S.A.';
             display: block;
             position: relative;
             color: tomato;
-        }
         </style>
         """
 
