@@ -149,7 +149,7 @@ footer = """
         width: 100%;
         background-color: #f1f1f1;
         text-align: center;
-        padding: 6px;
+        padding: 4px;
         font-size: 12px;
         color: #555;
      }
