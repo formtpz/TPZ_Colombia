@@ -141,30 +141,25 @@ if pivot!=1:
      st.subheader("Para soporte técnico favor escribir a basilio.nunez@telespazio.com")
 
 
-footer = """
+footer_style = """
     <style>
-    .footer {
-        position: fixed;
-        bottom: 0;
-        left: 0;
-        width: 100%;
-        background-color: #f1f1f1;
-        text-align: center;
-        padding: 10px;
-        font-size: 12px;
-        color: #555;
-    }
-    .footer a {
-        color: #0073e6;
-        text-decoration: none;
-    }
-    .footer a:hover {
-        text-decoration: underline;
-    }
+        .footer {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background-color: #f1f1f1;
+            color: black;
+            text-align: center;
+            padding: 10px;
+            font-size: 14px;
+        }
     </style>
     <div class="footer">
-        <p>Made with ❤️ by Your Name | <a href="https://www.yourwebsite.com">Visit my website</a></p>
+        <p>© 2025 Telespazio Argentina S.A. | All Rights Reserved</p>
     </div>
 """
 
-st.markdown(footer, unsafe_allow_html=True)
+# Inject CSS into the app
+st.markdown(footer_style, unsafe_allow_html=True)
+
