@@ -140,7 +140,6 @@ if pivot!=1:
 
      st.subheader("Para soporte técnico favor escribir a basilio.nunez@telespazio.com")
 
-
 footer_style = """
     <style>
         .footer {
@@ -154,12 +153,14 @@ footer_style = """
             padding: 10px;
             font-size: 14px;
         }
+        .footer a {
+            color: tomato;
+            text-decoration: none;
+            font-weight: bold;
+        }
     </style>
     <div class="footer">
-        <p>© 2025 Telespazio Argentina S.A. | All Rights Reserved</p>
+        <p>© 2025 Telespazio Argentina S.A. | <a href="https://www.telespazio.com/en" target="_blank">Visit our website</a></p>
     </div>
 """
-
-# Inject CSS into the app
-st.markdown(footer_style, unsafe_allow_html=True)
 
