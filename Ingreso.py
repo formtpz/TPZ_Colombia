@@ -187,14 +187,30 @@ if pivot!=1:
 #  """, unsafe_allow_html=True)
 
 
+#hide_menu_style = """
+#        <style>
+#        MainMenu {visibility: hidden;}
+#        footer {visibility:visible;
+#            content:'V.1.2 Copyrigth @ 2025 Telespazio Argentina S.A.';
+#            display: block;
+#            position: relative;
+#            color: tomato;
+#        </style>
+#        """
+
+#st.markdown(hide_menu_style, unsafe_allow_html=True)
+
+
 hide_menu_style = """
         <style>
-        MainMenu {visibility: hidden;}
-        footer {visibility:visible;
-            content:'V.1.2 Copyrigth @ 2025 Telespazio Argentina S.A.';
+        #MainMenu {visibility: hidden;}
+        footer {visibility: visible; display: block; color: tomato; text-align: center;}
+        footer::after {
+            content: 'V.1.2 Copyright @ 2025 Telespazio Argentina S.A.';
             display: block;
-            position: relative;
+            margin-top: 10px;
             color: tomato;
+        }
         </style>
         """
 
