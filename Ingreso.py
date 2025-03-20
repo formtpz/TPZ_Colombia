@@ -147,6 +147,7 @@ footer_style = """
         
         footer {visibility: hidden;}
         .custom-footer {
+            background-color: white
             color: tomato;
             text-align: center;
             padding: 20px 0;
