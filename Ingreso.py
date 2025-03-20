@@ -140,27 +140,51 @@ if pivot!=1:
 
      st.subheader("Para soporte técnico favor escribir a basilio.nunez@telespazio.com")
 
-footer_style = """
+#footer_style = """
+#    <style>
+#        .footer {
+#            position: fixed;
+#            bottom: 0;
+#            left: 0;
+#            width: 100%;
+#            background-color: #f1f1f1;
+#            color: black;
+#            text-align: center;
+#            padding: 10px;
+#            font-size: 14px;
+#        }
+#        .footer a {
+#            color: tomato;
+#            text-decoration: none;
+#            font-weight: bold;
+#        }
+#    </style>
+#    <div class="footer">
+#        <p> V.1.3 © 2025 Telespazio Argentina S.A. | <a href="https://www.telespazio.com/en" target="_blank">Visit our website</a></p>
+#    </div>
+#"""
+#st.markdown(footer_style, unsafe_allow_html=True)
+
+
+footer = """
     <style>
-        .footer {
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            background-color: #f1f1f1;
-            color: black;
-            text-align: center;
-            padding: 10px;
-            font-size: 14px;
-        }
-        .footer a {
-            color: tomato;
-            text-decoration: none;
-            font-weight: bold;
-        }
+    .footer {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        background-color: #f1f1f1;
+        text-align: center;
+        padding: 10px;
+        font-size: 12px;
+        color: #555;
+    }
     </style>
     <div class="footer">
-        <p> V.1.3 © 2025 Telespazio Argentina S.A. | <a href="https://www.telespazio.com/en" target="_blank">Visit our website</a></p>
+        <p>Created with ❤️ by Your Name | <a href="https://www.yourwebsite.com" target="_blank">Your Website</a></p>
     </div>
 """
-st.markdown(footer_style, unsafe_allow_html=True)
+st.markdown(footer, unsafe_allow_html=True)
+
+
+
