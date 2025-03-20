@@ -201,18 +201,73 @@ if pivot!=1:
 #st.markdown(hide_menu_style, unsafe_allow_html=True)
 
 
-hide_menu_style = """
+#hide_menu_style = """
+#        <style>
+#        footer {visibility: visible; display: block; color: tomato; text-align: center;}
+#        footer::after {
+#            content: 'V.1.2 Copyright @ 2025 Telespazio Argentina S.A.';
+#            position: relative;
+#            display: block;
+#            margin-top: 10px;
+#            color: tomato;
+#        }
+#        </style>
+#        """
+
+#st.markdown(hide_menu_style, unsafe_allow_html=True)
+
+
+
+footer_style = """
         <style>
-        footer {visibility: visible; display: block; color: tomato; text-align: center;}
-        footer::after {
-            content: 'V.1.2 Copyright @ 2025 Telespazio Argentina S.A.';
-            position: relative;
-            display: block;
-            margin-top: 10px;
+        /* Hide the default Streamlit footer */
+        footer {visibility: hidden;}
+        
+        /* Custom footer styles */
+        .custom-footer {
+            background-color: #282828;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Optional: Add a hover effect on the footer text */
+        .custom-footer:hover {
+            background-color: #404040;
+            cursor: pointer;
+        }
+
+        /* Add copyright text */
+        .custom-footer p {
+            margin: 0;
+            font-size: 14px;
+        }
+
+        /* Link styles */
+        .custom-footer a {
             color: tomato;
+            text-decoration: none;
+        }
+        
+        .custom-footer a:hover {
+            text-decoration: underline;
         }
         </style>
         """
 
-st.markdown(hide_menu_style, unsafe_allow_html=True)
+# Inject the footer style and content
+footer_content = """
+        <div class="custom-footer">
+            <p>V.1.2 &copy; 2025 Telespazio Argentina S.A. | <a href="https://www.telespazio.com" target="_blank">Visit our website</a></p>
+        </div>
+        """
+
+# Inject the CSS and footer content
+st.markdown(footer_style, unsafe_allow_html=True)
+st.markdown(footer_content, unsafe_allow_html=True)
 
