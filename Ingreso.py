@@ -206,6 +206,7 @@ hide_menu_style = """
         footer {visibility: visible; display: block; color: tomato; text-align: center;}
         footer::after {
             content: 'V.1.2 Copyright @ 2025 Telespazio Argentina S.A.';
+            position: relative;
             display: block;
             margin-top: 10px;
             color: tomato;
