@@ -20,7 +20,7 @@ footer_style = """
         .custom-footer {
             background-color: #282828;
             color: white;
-            text-align: left;
+            text-align: center;
             padding: 20px 0;
             position: fixed;
             bottom: 0;
