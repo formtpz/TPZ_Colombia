@@ -57,7 +57,7 @@ def Validacion(usuario,puesto):
   consecutivo_3= placeholder11_3.number_input("Número de Paquete",min_value=0,max_value=600, step=1, key="consecutivo_3")
   
   placeholder12_3= st.empty()
-  tipo_3= placeholder12_3.selectbox("Tipo", options=("Ordinario","Correción"), key="tipo_3")
+  tipo_3= placeholder12_3.selectbox("Tipo", options=("Ordinario","Corrección"), key="tipo_3")
 
   placeholder13_3= st.empty()
   produccion_3= placeholder13_3.number_input("Cantidad de Predios Producidos",min_value=0,step=1,key="produccion_3")
