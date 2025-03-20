@@ -158,12 +158,6 @@ if pivot!=1:
 #            text-decoration: none;
 #            font-weight: bold;
 #        }
-#    </style>
-#    <div class="footer">
-#        <p> V.1.3 © 2025 Telespazio Argentina S.A. | <a href="https://www.telespazio.com/en" target="_blank">Visit our website</a></p>
-#    </div>
-#"""
-#st.markdown(footer_style, unsafe_allow_html=True)
 
 
 footer = """
@@ -178,10 +172,14 @@ footer = """
         padding: 10px;
         font-size: 12px;
         color: #555;
+     .footer a {
+        color: tomato;
+        text-decoration: none;
+        font-weight: bold;
     }
     </style>
     <div class="footer">
-        <p>Created with ❤️ by Your Name | <a href="https://www.yourwebsite.com" target="_blank">Your Website</a></p>
+        <p>V.1.3 © 2025 Telespazio Argentina S.A. | <a href="https://www.telespazio.com/en" target="_blank">Visit our website</a></p>
     </div>
 """
 st.markdown(footer, unsafe_allow_html=True)
