@@ -140,26 +140,6 @@ if pivot!=1:
 
      st.subheader("Para soporte técnico favor escribir a basilio.nunez@telespazio.com")
 
-#footer_style = """
-#    <style>
-#        .footer {
-#            position: fixed;
-#            bottom: 0;
-#            left: 0;
-#            width: 100%;
-#            background-color: #f1f1f1;
-#            color: black;
-#            text-align: center;
-#            padding: 10px;
-#            font-size: 14px;
-#        }
-#        .footer a {
-#            color: tomato;
-#            text-decoration: none;
-#            font-weight: bold;
-#        }
-
-
 footer = """
     <style>
     .footer {
