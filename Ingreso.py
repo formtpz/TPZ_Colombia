@@ -163,4 +163,4 @@ footer_style = """
         <p>© 2025 Telespazio Argentina S.A. | <a href="https://www.telespazio.com/en" target="_blank">Visit our website</a></p>
     </div>
 """
-
+st.markdown(footer_style, unsafe_allow_html=True)
