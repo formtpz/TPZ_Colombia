@@ -157,11 +157,8 @@ footer = """
         color: tomato;
         text-decoration: none;
         font-weight: bold;
-     ]
-      footer a:hover {
-            text-decoration: underline;
      }
-        
+
     </style>
     <div class="footer">
         <p>V.1.3 © 2025 Telespazio Argentina S.A. | <a href="https://www.telespazio.com/en" target="_blank">Visit our website</a></p>
