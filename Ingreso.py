@@ -11,34 +11,59 @@ img=Image.open('logoicon.png')
 
 st.set_page_config(page_title="Formularios TPZ",page_icon=img,layout="wide")
 
+footer_style = """
+        <style>
+        /* Hide the default Streamlit footer */
+        footer {visibility: hidden;}
+        
+        /* Custom footer styles */
+        .custom-footer {
+            background-color: #282828;
+            color: white;
+            text-align: left;
+            padding: 20px 0;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            font-family: Arial, sans-serif;
+        }
 
-hide_streamlit_style = """
-                <style>
-                div[data-testid="stToolbar"] {
-                visibility: hidden;
-                height: 0%;
-                position: fixed;
-                }
-                div[data-testid="stDecoration"] {
-                visibility: hidden;
-                height: 0%;
-                position: fixed;
-                }
-                div[data-testid="stStatusWidget"] {
-                visibility:visible;
-                height: 0%;
-                position: fixed;
-                }
-                MainMenu {
-                visibility: hidden;
-                height: 0%;
-                }
-                header {
-                visibility: hidden;
-                height: 0%;
-                </style>
-                """
-st.markdown(hide_streamlit_style, unsafe_allow_html=True)
+        /* Optional: Add a hover effect on the footer text */
+        .custom-footer:hover {
+            background-color: #404040;
+            cursor: pointer;
+        }
+
+        /* Add copyright text */
+        .custom-footer p {
+            margin: 0;
+            font-size: 14px;
+        }
+
+        /* Link styles */
+        .custom-footer a {
+            color: tomato;
+            text-decoration: none;
+        }
+        
+        .custom-footer a:hover {
+            text-decoration: underline;
+        }
+        </style>
+        """
+
+# Inject the footer style and content
+footer_content = """
+        <div class="custom-footer">
+            <p>V.1.2 &copy; 2025 Telespazio Argentina S.A. | <a href="https://www.telespazio.com" target="_blank">Visit our website</a></p>
+        </div>
+        """
+
+# Inject the CSS and footer content
+st.markdown(footer_style, unsafe_allow_html=True)
+st.markdown(footer_content, unsafe_allow_html=True)
+
 
 # ----- Conexión, Botones y Memoria ---- #
 
@@ -168,106 +193,3 @@ if pivot!=1:
      st.subheader("En caso de dudas favor revisar el siguiente video tutorial")
 
      st.subheader("Para soporte técnico favor escribir a basilio.nunez@telespazio.com")
-
-
-#st.markdown(
-#  """
-#  <style>
-#  .footer {
-#      position: fixed;
-#      width:100%;
-#      text-aling:center;
-#      color: tomato;
-#      margin-top:auto
-#  }      
-#  </style>
-#  <div class="footer">
-#      <p> wfbwrbrtbtbtrbrtbt4brtbtrbtrbrtb </p>
-#  </div>
-#  """, unsafe_allow_html=True)
-
-
-#hide_menu_style = """
-#        <style>
-#        MainMenu {visibility: hidden;}
-#        footer {visibility:visible;
-#            content:'V.1.2 Copyrigth @ 2025 Telespazio Argentina S.A.';
-#            display: block;
-#            position: relative;
-#            color: tomato;
-#        </style>
-#        """
-
-#st.markdown(hide_menu_style, unsafe_allow_html=True)
-
-
-#hide_menu_style = """
-#        <style>
-#        footer {visibility: visible; display: block; color: tomato; text-align: center;}
-#        footer::after {
-#            content: 'V.1.2 Copyright @ 2025 Telespazio Argentina S.A.';
-#            position: relative;
-#            display: block;
-#            margin-top: 10px;
-#            color: tomato;
-#        }
-#        </style>
-#        """
-
-#st.markdown(hide_menu_style, unsafe_allow_html=True)
-
-
-
-footer_style = """
-        <style>
-        /* Hide the default Streamlit footer */
-        footer {visibility: hidden;}
-        
-        /* Custom footer styles */
-        .custom-footer {
-            background-color: #282828;
-            color: white;
-            text-align: center;
-            padding: 20px 0;
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            font-family: Arial, sans-serif;
-        }
-
-        /* Optional: Add a hover effect on the footer text */
-        .custom-footer:hover {
-            background-color: #404040;
-            cursor: pointer;
-        }
-
-        /* Add copyright text */
-        .custom-footer p {
-            margin: 0;
-            font-size: 14px;
-        }
-
-        /* Link styles */
-        .custom-footer a {
-            color: tomato;
-            text-decoration: none;
-        }
-        
-        .custom-footer a:hover {
-            text-decoration: underline;
-        }
-        </style>
-        """
-
-# Inject the footer style and content
-footer_content = """
-        <div class="custom-footer">
-            <p>V.1.2 &copy; 2025 Telespazio Argentina S.A. | <a href="https://www.telespazio.com" target="_blank">Visit our website</a></p>
-        </div>
-        """
-
-# Inject the CSS and footer content
-st.markdown(footer_style, unsafe_allow_html=True)
-st.markdown(footer_content, unsafe_allow_html=True)
-
