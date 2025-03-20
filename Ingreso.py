@@ -144,13 +144,10 @@ if pivot!=1:
 
 footer_style = """
         <style>
-        /* Hide the default Streamlit footer */
-        footer {visibility: hidden;}
         
-        /* Custom footer styles */
+        footer {visibility: hidden;}
         .custom-footer {
-            background-color: #282828;
-            color: white;
+            color: tomato;
             text-align: center;
             padding: 20px 0;
             position: fixed;
