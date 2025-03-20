@@ -149,8 +149,8 @@ footer = """
         width: 100%;
         background-color: #f1f1f1;
         text-align: center;
-        padding: 4px;
-        font-size: 12px;
+        padding: 2px;
+        font-size: 10px;
         color: #555;
      }
      .footer a {
