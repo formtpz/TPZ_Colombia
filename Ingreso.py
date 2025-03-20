@@ -46,35 +46,6 @@ hide_streamlit_style = """
                 """
 st.markdown(hide_streamlit_style, unsafe_allow_html=True)
 
-# ----- Pie de Página ---- #
-
-footer = """
-    <style>
-    .footer {
-        position: fixed;
-        bottom: 0;
-        left: 0;
-        width: 100%;
-        background-color: #f1f1f1;
-        text-align: center;
-        padding: 2px;
-        font-size: 12px;
-        color: #555;
-     }
-     .footer a {
-        color: tomato;
-        text-decoration: none;
-        font-weight: bold;
-     }
-
-    </style>
-    <div class="footer">
-        <p>V.1.3 © 2025 Telespazio Argentina S.A. | <a href="https://www.telespazio.com/en" target="_blank">Visit our website</a></p>
-    </div>
-"""
-st.markdown(footer, unsafe_allow_html=True)
-
-
 # ----- Conexión, Botones y Memoria ---- #
 
 uri=st.secrets.db_credentials.URI
@@ -203,3 +174,32 @@ if pivot!=1:
      st.subheader("En caso de dudas favor revisar el siguiente video tutorial")
 
      st.subheader("Para soporte técnico favor escribir a basilio.nunez@telespazio.com")
+
+
+# ----- Pie de Página ---- #
+
+footer = """
+    <style>
+    .footer {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        background-color: #f1f1f1;
+        text-align: center;
+        padding: 2px;
+        font-size: 12px;
+        color: #555;
+     }
+     .footer a {
+        color: tomato;
+        text-decoration: none;
+        font-weight: bold;
+     }
+
+    </style>
+    <div class="footer">
+        <p>V.1.3 © 2025 Telespazio Argentina S.A. | <a href="https://www.telespazio.com/en" target="_blank">Visit our website</a></p>
+    </div>
+"""
+st.markdown(footer, unsafe_allow_html=True)
