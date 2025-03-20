@@ -141,55 +141,30 @@ if pivot!=1:
      st.subheader("Para soporte técnico favor escribir a basilio.nunez@telespazio.com")
 
 
+footer = """
+    <style>
+    .footer {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        background-color: #f1f1f1;
+        text-align: center;
+        padding: 10px;
+        font-size: 12px;
+        color: #555;
+    }
+    .footer a {
+        color: #0073e6;
+        text-decoration: none;
+    }
+    .footer a:hover {
+        text-decoration: underline;
+    }
+    </style>
+    <div class="footer">
+        <p>Made with ❤️ by Your Name | <a href="https://www.yourwebsite.com">Visit my website</a></p>
+    </div>
+"""
 
-footer_style = """
-        <style>
-        
-        footer {visibility: hidden;}
-        .custom-footer {
-            background-color: white
-            color: tomato;
-            text-align: center;
-            padding: 20px 0;
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            font-family: Arial, sans-serif;
-        }
-
-        /* Optional: Add a hover effect on the footer text */
-        .custom-footer:hover {
-            background-color: #404040;
-            cursor: pointer;
-        }
-
-        /* Add copyright text */
-        .custom-footer p {
-            margin: 0;
-            font-size: 14px;
-        }
-
-        /* Link styles */
-        .custom-footer a {
-            color: tomato;
-            text-decoration: none;
-        }
-        
-        .custom-footer a:hover {
-            text-decoration: underline;
-        }
-        </style>
-        """
-
-# Inject the footer style and content
-footer_content = """
-        <div class="custom-footer">
-            <p>V.1.2 &copy; 2025 Telespazio Argentina S.A. | <a href="https://www.telespazio.com" target="_blank">Visit our website</a></p>
-        </div>
-        """
-
-# Inject the CSS and footer content
-st.markdown(footer_style, unsafe_allow_html=True)
-st.markdown(footer_content, unsafe_allow_html=True)
-
+st.markdown(footer, unsafe_allow_html=True)
