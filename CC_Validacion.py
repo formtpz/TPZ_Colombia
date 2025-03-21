@@ -45,7 +45,7 @@ def CC_Validacion(usuario,puesto):
   placeholder8_3 = st.empty()
   informacion_final_i_3 = placeholder8_3.title("Control de Calidad Validación")
 
-  default_date_3 = datetime.now(pytz.timezone('America/Bogota'))
+  default_date_3 = datetime.now(pytz.timezone('America/Guatemala'))
 
   placeholder9_3= st.empty()
   fecha_3= placeholder9_3.date_input("Fecha",value=default_date_3,key="fecha_3")
