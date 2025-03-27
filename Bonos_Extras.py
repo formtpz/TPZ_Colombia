@@ -566,7 +566,7 @@ def Bonos_Extras(usuario,puesto):
     titulo_bloques_9 = placeholder36_9.subheader("Bloques")
 
     placeholder37_9 = st.empty()
-    periodo_bloques_9 = placeholder37_9.selectbox("Fecha de Producción", options=("Todos","Marzo-2023","Abril-2023","Mayo-2023","Junio-2023","Julio-2023","Agosto-2023","Septiembre-2023","Octubre-2023","Noviembre-2023","Diciembre-2023","Enero-2024","Febrero-2024","Marzo-2024","Abril-2024","Mayo-2024","Junio-2024","Julio-2024","Agosto-2024","Septiembre-2024","Septiembre-2024-Caso Especial","Octubre-2024","Noviembre-2024","Diciembre-2024","Enero-2025","Enero-2025 Caso Especial","Febrero-2025","Marzo-2025","Abril-2025","Mayo-2025","Junio-2025","Julio-2025","Agosto-2025","Septiembre-2025","Octubre-2025","Noviembre-2025","Diciembre-2025"), key="periodo_bloques_9")    
+    periodo_bloques_9 = placeholder37_9.selectbox("Fecha de Producción", options=("Todos","Enero-2025","Enero-2025 Caso Especial","Febrero-2025","Marzo-2025","Abril-2025","Mayo-2025","Junio-2025","Julio-2025","Agosto-2025","Septiembre-2025","Octubre-2025","Noviembre-2025","Diciembre-2025"), key="periodo_bloques_9")    
 
     if periodo_bloques_9=="Todos":
 
