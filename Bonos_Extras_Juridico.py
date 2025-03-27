@@ -625,21 +625,21 @@ def Bonos_Extras(usuario,puesto):
 
   elif puesto == "Profesional Jurídico":
     
-    placeholder43_9 = st.empty()
-    periodo_9 = placeholder43_9.selectbox("Periodo",options=("Enero-2025","Febrero-2025","Marzo-2025","Abril-2025","Mayo-2025","Junio-2025","Julio-2025","Agosto-2025","Septiembre-2025","Octubre-2025","Noviembre-2025","Diciembre-2025"), key="periodo_bonos_9")    
-
     placeholder44_9 = st.empty()
-    titulo_bonos_9 = placeholder44_9.subheader("Bonos")
+    periodo_9 = placeholder44_9.selectbox("Periodo",options=("Enero-2025","Febrero-2025","Marzo-2025","Abril-2025","Mayo-2025","Junio-2025","Julio-2025","Agosto-2025","Septiembre-2025","Octubre-2025","Noviembre-2025","Diciembre-2025"), key="periodo_bonos_9")    
+
+    placeholder45_9 = st.empty()
+    titulo_bonos_9 = placeholder45_9.subheader("Bonos")
     
     bonos_juridico_9= pd.read_sql(f"select a0,a1,a2,a3,a4,a5,a6,a7,a8,a9,a10,a11,a12,a13,a14,a15,a16,a17,a18,a19,a20,a21,a22,a23,a24 from bonos where a0='{usuario}' and a24='{periodo_9}'", con)
     bonos__juridico9=  pd.DataFrame(data=bonos_9)
 
-    pivot6= len(bonos_9.iloc[:,0])
+    pivot8= len(bonos_9.iloc[:,0])
 
-    if pivot6==0:
+    if pivot8==0:
 
-      placeholder45_9 = st.empty()
-      error_9 = placeholder45_9.error('No existen datos para mostrar')
+      placeholder46_9 = st.empty()
+      error_9 = placeholder46_9.error('No existen datos para mostrar')
 
     else:
 
@@ -683,139 +683,39 @@ def Bonos_Extras(usuario,puesto):
       bonos_procesos_9.iloc[5,3] = " "
       bonos_procesos_9.iloc[6,3] = " "
 
-      placeholder46_9 = st.empty()
-      dataframe_bonos_procesos_9=placeholder46_9.dataframe(data=bonos_procesos_9)
+      placeholder47_9 = st.empty()
+      dataframe_bonos_procesos_9=placeholder47_9.dataframe(data=bonos_procesos_9)
 
     # Bloques #
 
-    placeholder47_9 = st.empty()
-    titulo_bloques_9 = placeholder47_9.subheader("Bloques")
-
     placeholder48_9 = st.empty()
-    periodo_bloques_9 = placeholder48_9.selectbox("Fecha de Producción", options=("Todos","Marzo-2023","Abril-2023","Mayo-2023","Junio-2023","Julio-2023","Agosto-2023","Septiembre-2023","Octubre-2023","Noviembre-2023","Diciembre-2023","Enero-2024","Febrero-2024","Marzo-2024","Abril-2024","Mayo-2024","Junio-2024","Julio-2024","Agosto-2024","Septiembre-2024","Septiembre-2024-Caso Especial","Octubre-2024","Noviembre-2024","Diciembre-2024","Enero-2025","Enero-2025 Caso Especial","Febrero-2025","Marzo-2025","Abril-2025","Mayo-2025","Junio-2025","Julio-2025","Agosto-2025","Septiembre-2025","Octubre-2025","Noviembre-2025","Diciembre-2025"), key="periodo_bloques_9")    
+    titulo_bloques_9 = placeholder48_9.subheader("Bloques")
+
+    placeholder49_9 = st.empty()
+    periodo_bloques_9 = placeholder49_9.selectbox("Fecha de Producción", options=("Todos","Marzo-2023","Abril-2023","Mayo-2023","Junio-2023","Julio-2023","Agosto-2023","Septiembre-2023","Octubre-2023","Noviembre-2023","Diciembre-2023","Enero-2024","Febrero-2024","Marzo-2024","Abril-2024","Mayo-2024","Junio-2024","Julio-2024","Agosto-2024","Septiembre-2024","Septiembre-2024-Caso Especial","Octubre-2024","Noviembre-2024","Diciembre-2024","Enero-2025","Enero-2025 Caso Especial","Febrero-2025","Marzo-2025","Abril-2025","Mayo-2025","Junio-2025","Julio-2025","Agosto-2025","Septiembre-2025","Octubre-2025","Noviembre-2025","Diciembre-2025"), key="periodo_bloques_9")    
 
     if periodo_bloques_9=="Todos":
 
-      bloques_9= pd.read_sql(f"select usuario,nombre,supervisor,proceso,tipo_revision,bloque_distrito,produccion_segun_reporte,horas,produccion_estandar,produccion_rechazada_primera_revision,produccion_aprobada_primera_revision,porcentage_error,produccion_penalizada,produccion_limpia,ratio_limpio_predio_por_dia,primera_reinspeccion,segunda_reinspeccion,porcentage_penalizacion_ratio,ratio_penalizado_predio_por_dia,fecha_produccion,fecha_corte,fecha_bono from bloques where usuario='{usuario}'", con)
+      bloques_9= pd.read_sql(f"select nombre,supervisor,proceso,unidad_asignacion,tipo_revision,produccion_segun_reporte,produccion_rechazada_primera_revision,produccion_aprobada_primera_revision,porcentage_error,produccion_penalizada,produccion_limpia,fecha_produccion,fecha_corte,fecha_bono from bloques where nombre='{usuario}'", con)
       bloques_9=  pd.DataFrame(data=bloques_9)
     
     else:
 
-      bloques_9= pd.read_sql(f"select usuario,nombre,supervisor,proceso,tipo_revision,bloque_distrito,produccion_segun_reporte,horas,produccion_estandar,produccion_rechazada_primera_revision,produccion_aprobada_primera_revision,porcentage_error,produccion_penalizada,produccion_limpia,ratio_limpio_predio_por_dia,primera_reinspeccion,segunda_reinspeccion,porcentage_penalizacion_ratio,ratio_penalizado_predio_por_dia,fecha_produccion,fecha_corte,fecha_bono from bloques where usuario='{usuario}' and fecha_produccion='{periodo_bloques_9}'", con)
+      bloques_9= pd.read_sql(f"select nombre,supervisor,proceso,unidad_asignacion,tipo_revision,produccion_segun_reporte,produccion_rechazada_primera_revision,produccion_aprobada_primera_revision,porcentage_error,produccion_penalizada,produccion_limpia,fecha_produccion,fecha_corte,fecha_bono from bloques where nombre='{usuario}' and fecha_produccion='{periodo_bloques_9}'", con)
       bloques_9=  pd.DataFrame(data=bloques_9)
+    
 
-    pivot6= len(bloques_9.iloc[:,1])
+    pivot9= len(bloques_9.iloc[:,1])
 
-    if pivot6 ==0:
+    if pivot9 ==0:
 
-      placeholder38_9 = st.empty()
-      error_9 = placeholder38_9.error('No existen datos para mostrar')
+      placeholder50_9 = st.empty()
+      error_9 = placeholder50_9.error('No existen datos para mostrar')
 
     else:
 
-      placeholder39_9 = st.empty()
-      dataframe_bloques_9=placeholder39_9.dataframe(data=bloques_9)
-
-    placeholder40_9 = st.empty()
-    titulo_extras_9 = placeholder40_9.subheader("Horas Extras")
-
-    extras_9= pd.read_sql(f"select marca,usuario,nombre,puesto,supervisor,tipo_reporte,justificacion,fecha,horas,semana,dia,fecha_corte,fecha_bono from extras where nombre='{nombre_9}'and tipo_reporte='Extra' and fecha_bono='{periodo_9}'", con)
-    extras_9= pd.DataFrame(data=extras_9)
-
-    pivot7= len(extras_9.iloc[:,0])
-
-    if pivot7==0:
-
-      placeholder41_9 = st.empty()
-      error_9 = placeholder41_9.error('No existen datos para mostrar')
-      
-    else:
-
-      total_extras_9=0
-        
-      for b in range(0,pivot7):
-
-        total_extras_9 = total_extras_9 + float(extras_9.iloc[b,8])
-
-      placeholder42_9 = st.empty()
-      total = placeholder42_9.metric("Total de Horas Extra",total_extras_9)
-        
-      data_extras=pd.read_sql(f"select marca,usuario,nombre,puesto,supervisor,tipo_reporte,justificacion,fecha,horas,semana,dia,fecha_corte,fecha_bono from extras where tipo_reporte='Extra' and fecha_bono='{periodo_9}' and nombre='{nombre_9}'",con)
-
-      placeholder43_9 = st.empty()
-      historial_9_extras=placeholder43_9.dataframe(data=data_extras)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
+      placeholder51_9 = st.empty()
+      dataframe_bloques_9=placeholder51_9.dataframe(data=bloques_9)
   
   # ----- Procesos ---- #
     
@@ -834,9 +734,11 @@ def Bonos_Extras(usuario,puesto):
       placeholder8_9.empty()
       placeholder9_9.empty()
       placeholder10_9.empty()
+      placeholder9_9_J.empty()
+      placeholder10_9_J.empty()
       placeholder11_9.empty()
       placeholder12_9.empty()
-    
+        
     elif nombre_9== "Gabriel Martin Prieto" or nombre_9=="Madeline Hernandez Gamboa":
 
       placeholder13_9.empty()
@@ -887,7 +789,7 @@ def Bonos_Extras(usuario,puesto):
           placeholder28_9.empty()
           placeholder29_9.empty()
 
-    else:
+    elif puesto== "Operario Catastral": 
       
       placeholder30_9.empty()
       placeholder31_9.empty()
@@ -921,7 +823,30 @@ def Bonos_Extras(usuario,puesto):
 
         placeholder42_9.empty()
         placeholder43_9.empty()
-        
+
+    elif puesto== "Profesional Jurídico": 
+      
+      placeholder44_9.empty()
+      placeholder45_9.empty()
+      placeholder48_9.empty()
+      placeholder49_9.empty()
+
+      if pivot8==0:
+
+        placeholder46_9.empty()
+
+      else:
+
+        placeholder47_9.empty()
+
+      if pivot9==0:
+
+        placeholder50_9.empty()
+
+      else:
+
+        placeholder51_9.empty()
+    
     st.session_state.Procesos=False
     st.session_state.Bonos_Extras=False
 
@@ -943,6 +868,8 @@ def Bonos_Extras(usuario,puesto):
   # ----- Historial ---- #
     
   elif historial_9:
+
+
     placeholder1_9.empty()
     placeholder2_9.empty()
     placeholder3_9.empty()
@@ -956,9 +883,11 @@ def Bonos_Extras(usuario,puesto):
       placeholder8_9.empty()
       placeholder9_9.empty()
       placeholder10_9.empty()
+      placeholder9_9_J.empty()
+      placeholder10_9_J.empty()
       placeholder11_9.empty()
       placeholder12_9.empty()
-    
+        
     elif nombre_9== "Gabriel Martin Prieto" or nombre_9=="Madeline Hernandez Gamboa":
 
       placeholder13_9.empty()
@@ -1009,7 +938,7 @@ def Bonos_Extras(usuario,puesto):
           placeholder28_9.empty()
           placeholder29_9.empty()
 
-    else:
+    elif puesto== "Operario Catastral": 
       
       placeholder30_9.empty()
       placeholder31_9.empty()
@@ -1044,6 +973,29 @@ def Bonos_Extras(usuario,puesto):
         placeholder42_9.empty()
         placeholder43_9.empty()
 
+    elif puesto== "Profesional Jurídico": 
+      
+      placeholder44_9.empty()
+      placeholder45_9.empty()
+      placeholder48_9.empty()
+      placeholder49_9.empty()
+
+      if pivot8==0:
+
+        placeholder46_9.empty()
+
+      else:
+
+        placeholder47_9.empty()
+
+      if pivot9==0:
+
+        placeholder50_9.empty()
+
+      else:
+
+        placeholder51_9.empty()
+ 
     st.session_state.Bonos_Extras=False
     st.session_state.Historial=True
     Historial.Historial(usuario,puesto)
@@ -1051,6 +1003,8 @@ def Bonos_Extras(usuario,puesto):
   # ----- Capacitación ---- #
     
   elif capacitacion_9:
+
+
     placeholder1_9.empty()
     placeholder2_9.empty()
     placeholder3_9.empty()
@@ -1064,9 +1018,11 @@ def Bonos_Extras(usuario,puesto):
       placeholder8_9.empty()
       placeholder9_9.empty()
       placeholder10_9.empty()
+      placeholder9_9_J.empty()
+      placeholder10_9_J.empty()
       placeholder11_9.empty()
       placeholder12_9.empty()
-    
+        
     elif nombre_9== "Gabriel Martin Prieto" or nombre_9=="Madeline Hernandez Gamboa":
 
       placeholder13_9.empty()
@@ -1117,7 +1073,7 @@ def Bonos_Extras(usuario,puesto):
           placeholder28_9.empty()
           placeholder29_9.empty()
 
-    else:
+    elif puesto== "Operario Catastral": 
       
       placeholder30_9.empty()
       placeholder31_9.empty()
@@ -1151,7 +1107,30 @@ def Bonos_Extras(usuario,puesto):
 
         placeholder42_9.empty()
         placeholder43_9.empty()
-        
+
+    elif puesto== "Profesional Jurídico": 
+      
+      placeholder44_9.empty()
+      placeholder45_9.empty()
+      placeholder48_9.empty()
+      placeholder49_9.empty()
+
+      if pivot8==0:
+
+        placeholder46_9.empty()
+
+      else:
+
+        placeholder47_9.empty()
+
+      if pivot9==0:
+
+        placeholder50_9.empty()
+
+      else:
+
+        placeholder51_9.empty()
+    
     st.session_state.Bonos_Extras=False
     st.session_state.Capacitacion=True
     Capacitacion.Capacitacion(usuario,puesto)
@@ -1159,107 +1138,7 @@ def Bonos_Extras(usuario,puesto):
   # ----- Otros Registros ---- #
     
   elif otros_registros_9:
-    placeholder1_9.empty()
-    placeholder2_9.empty()
-    placeholder3_9.empty()
-    placeholder4_9.empty()
-    placeholder5_9.empty()   
-    placeholder6_9.empty()
-    placeholder7_9.empty()
-
-    if nombre_9=="Basilio Antonio Salazar Nunez":
-
-      placeholder8_9.empty()
-      placeholder9_9.empty()
-      placeholder10_9.empty()
-      placeholder11_9.empty()
-      placeholder12_9.empty()
-    
-    elif nombre_9== "Gabriel Martin Prieto" or nombre_9=="Madeline Hernandez Gamboa":
-
-      placeholder13_9.empty()
-      placeholder14_9.empty()
-
-      if personal_9=="Todos":
-        
-        placeholder15_9.empty()
-        placeholder18_9.empty()       
-        
-        if pivot1==0:
-        
-          placeholder16_9.empty()
-      
-        else:
-
-          placeholder17_9.empty()
-
-        if pivot2==0:
-        
-          placeholder19_9.empty()
-      
-        else:
-
-          placeholder20_9.empty()
-
-      else:
-
-        placeholder21_9.empty()
-        placeholder26_9.empty()       
-        
-        if pivot3==0:
-
-          placeholder22_9.empty()
-
-        else:
-
-          placeholder23_9.empty()
-          placeholder24_9.empty()
-          placeholder25_9.empty()
-
-        if pivot4==0:
-
-          placeholder27_9.empty()
-
-        else:
-
-          placeholder28_9.empty()
-          placeholder29_9.empty()
-
-    else:
-      
-      placeholder30_9.empty()
-      placeholder31_9.empty()
-      placeholder40_9.empty()
-      placeholder36_9.empty()
-      placeholder37_9.empty()
-
-      if pivot5==0:
-
-        placeholder32_9.empty()
-
-      else:
-
-        placeholder33_9.empty()
-        placeholder34_9.empty()
-        placeholder35_9.empty()
-
-      if pivot6==0:
-
-        placeholder38_9.empty()
-
-      else:
-
-        placeholder39_9.empty()
-
-      if pivot7==0:
-
-        placeholder41_9.empty()
-
-      else:
-
-        placeholder42_9.empty()
-        placeholder43_9.empty() 
-        
+ 
     st.session_state.Bonos_Extras=False
     st.session_state.Otros_Registros=True
     Otros_Registros.Otros_Registros(usuario,puesto)
@@ -1267,7 +1146,8 @@ def Bonos_Extras(usuario,puesto):
   # ----- Salir ---- #
     
   elif salir_9:
-    
+
+  
     placeholder1_9.empty()
     placeholder2_9.empty()
     placeholder3_9.empty()
@@ -1281,9 +1161,11 @@ def Bonos_Extras(usuario,puesto):
       placeholder8_9.empty()
       placeholder9_9.empty()
       placeholder10_9.empty()
+      placeholder9_9_J.empty()
+      placeholder10_9_J.empty()
       placeholder11_9.empty()
       placeholder12_9.empty()
-    
+        
     elif nombre_9== "Gabriel Martin Prieto" or nombre_9=="Madeline Hernandez Gamboa":
 
       placeholder13_9.empty()
@@ -1334,7 +1216,7 @@ def Bonos_Extras(usuario,puesto):
           placeholder28_9.empty()
           placeholder29_9.empty()
 
-    else:
+    elif puesto== "Operario Catastral": 
       
       placeholder30_9.empty()
       placeholder31_9.empty()
@@ -1368,7 +1250,30 @@ def Bonos_Extras(usuario,puesto):
 
         placeholder42_9.empty()
         placeholder43_9.empty()
-  
+
+    elif puesto== "Profesional Jurídico": 
+      
+      placeholder44_9.empty()
+      placeholder45_9.empty()
+      placeholder48_9.empty()
+      placeholder49_9.empty()
+
+      if pivot8==0:
+
+        placeholder46_9.empty()
+
+      else:
+
+        placeholder47_9.empty()
+
+      if pivot9==0:
+
+        placeholder50_9.empty()
+
+      else:
+
+        placeholder51_9.empty()  
+ 
     st.session_state.Ingreso = False
     st.session_state.Bonos_Extras=False
     st.session_state.Salir=True
