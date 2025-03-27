@@ -58,12 +58,18 @@ def Bonos_Extras(usuario,puesto):
     placeholder11_9 = st.empty()
     extras_nuevas_9 = placeholder11_9.file_uploader("Cargar Archivo de Extras",['csv','xlsx'])
 
+    placeholder9_9_J = st.empty()
+    unidades_nuevas_9 = placeholder9_9_J.file_uploader("Cargar Archivo de Unidades Jurídicas",['csv','xlsx'])
+
+    placeholder10_9_J = st.empty()
+    bonos_nuevos_juridico_9 = placeholder10_9_J.file_uploader("Cargar Archivo de Bonos Jurídicos",['csv','xlsx'])
+
     placeholder12_9 = st.empty()
     cargar_archivos_9 = placeholder12_9.button("Cargar Archivos",key="cargar_archivos_9")
 
     if cargar_archivos_9:
 
-      if bloques_nuevos_9 is None or bonos_nuevos_9 is None or extras_nuevas_9 is None:
+      if bloques_nuevos_9 is None or bonos_nuevos_9 is None or extras_nuevas_9 is None or unidades_nuevas_9 is None or bonos_nuevos_juridico_9 is None :
 
         st.error('Favor cargar los archivos solicitados')
 
@@ -72,10 +78,14 @@ def Bonos_Extras(usuario,puesto):
         bloques_nuevos_9=pd.DataFrame(pd.read_excel(bloques_nuevos_9))
         bonos_nuevos_9=pd.DataFrame(pd.read_excel(bonos_nuevos_9))
         extras_nuevas_9=pd.DataFrame(pd.read_excel(extras_nuevas_9))
+        unidades_nuevas_9 = pd.DataFrame(pd.read_excel(unidades_nuevas_9))
+        bonos_nuevos_juridico_9 = pd.DataFrame(pd.read_excel(bonos_nuevos_juridico_9))
 
         con.cursor().execute('DELETE FROM bloques;',)
         con.cursor().execute('DELETE FROM bonos;',)
         con.cursor().execute('DELETE FROM extras;',)
+        con.cursor().execute('DELETE FROM unidades;',)
+        con.cursor().execute('DELETE FROM bonos_juridico;',)
 
         con.commit()      
 
@@ -86,6 +96,10 @@ def Bonos_Extras(usuario,puesto):
         bonos_nuevos_9.to_sql(name='bonos', con = engine, if_exists = 'append',index_label='id')
 
         extras_nuevas_9.to_sql(name='extras', con = engine, if_exists = 'append',index_label='id')
+
+        unidades_nuevas_9.to_sql(name='unidades', con = engine, if_exists = 'append',index_label='id')
+
+        bonos_nuevos_juridico_9.to_sql(name='bonos_juridico', con = engine, if_exists = 'append',index_label='id')
 
         st.success('Archivos Cargados Correctamente')
 
@@ -366,7 +380,7 @@ def Bonos_Extras(usuario,puesto):
         placeholder29_9 = st.empty()
         historial_9_extras=placeholder29_9.dataframe(data=data_extras)
   
-  else:
+  elif puesto == "Operario Catastral":
     
     placeholder30_9 = st.empty()
     periodo_9 = placeholder30_9.selectbox("Periodo",options=("Enero-2025","Febrero-2025","Marzo-2025","Abril-2025","Mayo-2025","Junio-2025","Julio-2025","Agosto-2025","Septiembre-2025","Octubre-2025","Noviembre-2025","Diciembre-2025"), key="periodo_bonos_9")    
@@ -604,6 +618,204 @@ def Bonos_Extras(usuario,puesto):
 
       placeholder43_9 = st.empty()
       historial_9_extras=placeholder43_9.dataframe(data=data_extras)
+
+
+
+
+
+  elif puesto == "Profesional Jurídico":
+    
+    placeholder43_9 = st.empty()
+    periodo_9 = placeholder43_9.selectbox("Periodo",options=("Enero-2025","Febrero-2025","Marzo-2025","Abril-2025","Mayo-2025","Junio-2025","Julio-2025","Agosto-2025","Septiembre-2025","Octubre-2025","Noviembre-2025","Diciembre-2025"), key="periodo_bonos_9")    
+
+    placeholder44_9 = st.empty()
+    titulo_bonos_9 = placeholder44_9.subheader("Bonos")
+    
+    bonos_juridico_9= pd.read_sql(f"select a0,a1,a2,a3,a4,a5,a6,a7,a8,a9,a10,a11,a12,a13,a14,a15,a16,a17,a18,a19,a20,a21,a22,a23,a24 from bonos where a0='{usuario}' and a24='{periodo_9}'", con)
+    bonos__juridico9=  pd.DataFrame(data=bonos_9)
+
+    pivot6= len(bonos_9.iloc[:,0])
+
+    if pivot6==0:
+
+      placeholder45_9 = st.empty()
+      error_9 = placeholder45_9.error('No existen datos para mostrar')
+
+    else:
+
+      # Procesos #
+      
+      variables_1_9=["Producción (Según Reportes)","Producción Limpia","Producción (Estándar)","Bono (COP)","Bonificación Otras Funciones (COP)","Observaciones","Bonificación Total (COP)"]								
+
+      fmi_9=[0]*7
+      cc_fmi_9=[0]*7
+      consultas_campo_9=[0]*7
+
+      bonos_procesos_9= pd.DataFrame(data={"Variables":variables_1_9,"Folios de Matricula Inmobiliaria":fmi_9,"CC Folios de Matricula Inmobiliaria":cc_fmi_9,"Consultas de Campo":consultas_campo_9})
+
+      # Folios de Matricula Inmobiliaria #
+      
+      bonos_procesos_9.iloc[0,1] = bonos_juridico_9.iloc[0,4]
+      bonos_procesos_9.iloc[1,1] = bonos_juridico_9.iloc[0,8]
+      bonos_procesos_9.iloc[2,1] = bonos_juridico_9.iloc[0,12]
+      bonos_procesos_9.iloc[3,1] = bonos_juridico_9.iloc[0,16]
+      bonos_procesos_9.iloc[4,1] = bonos_juridico_9.iloc[0,20]
+      bonos_procesos_9.iloc[5,1] = bonos_juridico_9.iloc[0,22]
+      bonos_procesos_9.iloc[6,1] = bonos_juridico_9.iloc[0,23]
+
+      # CC_Folios de Matricula Inmobiliaria #
+      
+      bonos_procesos_9.iloc[0,2] = bonos_juridico_9.iloc[0,5]
+      bonos_procesos_9.iloc[1,2] = bonos_juridico_9.iloc[0,9]
+      bonos_procesos_9.iloc[2,2] = bonos_juridico_9.iloc[0,13]
+      bonos_procesos_9.iloc[3,2] = bonos_juridico_9.iloc[0,17]
+      bonos_procesos_9.iloc[4,2] = " "
+      bonos_procesos_9.iloc[5,2] = " "
+      bonos_procesos_9.iloc[6,2] = " "
+
+      # Consultas de Campo #
+      
+      bonos_procesos_9.iloc[0,3] = bonos_juridico_9.iloc[0,6]
+      bonos_procesos_9.iloc[1,3] = bonos_juridico_9.iloc[0,10]
+      bonos_procesos_9.iloc[2,3] = bonos_juridico_9.iloc[0,13]
+      bonos_procesos_9.iloc[3,3] = bonos_juridico_9.iloc[0,15]
+      bonos_procesos_9.iloc[4,3] = " "
+      bonos_procesos_9.iloc[5,3] = " "
+      bonos_procesos_9.iloc[6,3] = " "
+
+      placeholder46_9 = st.empty()
+      dataframe_bonos_procesos_9=placeholder46_9.dataframe(data=bonos_procesos_9)
+
+    # Bloques #
+
+    placeholder47_9 = st.empty()
+    titulo_bloques_9 = placeholder47_9.subheader("Bloques")
+
+    placeholder48_9 = st.empty()
+    periodo_bloques_9 = placeholder48_9.selectbox("Fecha de Producción", options=("Todos","Marzo-2023","Abril-2023","Mayo-2023","Junio-2023","Julio-2023","Agosto-2023","Septiembre-2023","Octubre-2023","Noviembre-2023","Diciembre-2023","Enero-2024","Febrero-2024","Marzo-2024","Abril-2024","Mayo-2024","Junio-2024","Julio-2024","Agosto-2024","Septiembre-2024","Septiembre-2024-Caso Especial","Octubre-2024","Noviembre-2024","Diciembre-2024","Enero-2025","Enero-2025 Caso Especial","Febrero-2025","Marzo-2025","Abril-2025","Mayo-2025","Junio-2025","Julio-2025","Agosto-2025","Septiembre-2025","Octubre-2025","Noviembre-2025","Diciembre-2025"), key="periodo_bloques_9")    
+
+    if periodo_bloques_9=="Todos":
+
+      bloques_9= pd.read_sql(f"select usuario,nombre,supervisor,proceso,tipo_revision,bloque_distrito,produccion_segun_reporte,horas,produccion_estandar,produccion_rechazada_primera_revision,produccion_aprobada_primera_revision,porcentage_error,produccion_penalizada,produccion_limpia,ratio_limpio_predio_por_dia,primera_reinspeccion,segunda_reinspeccion,porcentage_penalizacion_ratio,ratio_penalizado_predio_por_dia,fecha_produccion,fecha_corte,fecha_bono from bloques where usuario='{usuario}'", con)
+      bloques_9=  pd.DataFrame(data=bloques_9)
+    
+    else:
+
+      bloques_9= pd.read_sql(f"select usuario,nombre,supervisor,proceso,tipo_revision,bloque_distrito,produccion_segun_reporte,horas,produccion_estandar,produccion_rechazada_primera_revision,produccion_aprobada_primera_revision,porcentage_error,produccion_penalizada,produccion_limpia,ratio_limpio_predio_por_dia,primera_reinspeccion,segunda_reinspeccion,porcentage_penalizacion_ratio,ratio_penalizado_predio_por_dia,fecha_produccion,fecha_corte,fecha_bono from bloques where usuario='{usuario}' and fecha_produccion='{periodo_bloques_9}'", con)
+      bloques_9=  pd.DataFrame(data=bloques_9)
+
+    pivot6= len(bloques_9.iloc[:,1])
+
+    if pivot6 ==0:
+
+      placeholder38_9 = st.empty()
+      error_9 = placeholder38_9.error('No existen datos para mostrar')
+
+    else:
+
+      placeholder39_9 = st.empty()
+      dataframe_bloques_9=placeholder39_9.dataframe(data=bloques_9)
+
+    placeholder40_9 = st.empty()
+    titulo_extras_9 = placeholder40_9.subheader("Horas Extras")
+
+    extras_9= pd.read_sql(f"select marca,usuario,nombre,puesto,supervisor,tipo_reporte,justificacion,fecha,horas,semana,dia,fecha_corte,fecha_bono from extras where nombre='{nombre_9}'and tipo_reporte='Extra' and fecha_bono='{periodo_9}'", con)
+    extras_9= pd.DataFrame(data=extras_9)
+
+    pivot7= len(extras_9.iloc[:,0])
+
+    if pivot7==0:
+
+      placeholder41_9 = st.empty()
+      error_9 = placeholder41_9.error('No existen datos para mostrar')
+      
+    else:
+
+      total_extras_9=0
+        
+      for b in range(0,pivot7):
+
+        total_extras_9 = total_extras_9 + float(extras_9.iloc[b,8])
+
+      placeholder42_9 = st.empty()
+      total = placeholder42_9.metric("Total de Horas Extra",total_extras_9)
+        
+      data_extras=pd.read_sql(f"select marca,usuario,nombre,puesto,supervisor,tipo_reporte,justificacion,fecha,horas,semana,dia,fecha_corte,fecha_bono from extras where tipo_reporte='Extra' and fecha_bono='{periodo_9}' and nombre='{nombre_9}'",con)
+
+      placeholder43_9 = st.empty()
+      historial_9_extras=placeholder43_9.dataframe(data=data_extras)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
   
   # ----- Procesos ---- #
     
