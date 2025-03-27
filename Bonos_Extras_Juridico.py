@@ -619,10 +619,6 @@ def Bonos_Extras(usuario,puesto):
       placeholder43_9 = st.empty()
       historial_9_extras=placeholder43_9.dataframe(data=data_extras)
 
-
-
-
-
   elif puesto == "Profesional Jurídico":
     
     placeholder44_9 = st.empty()
