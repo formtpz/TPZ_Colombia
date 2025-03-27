@@ -692,12 +692,12 @@ def Bonos_Extras(usuario,puesto):
 
     if periodo_bloques_9=="Todos":
 
-      bloques_9= pd.read_sql(f"select nombre,supervisor,proceso,unidad_asignacion,tipo_revision,produccion_segun_reporte,produccion_rechazada_primera_revision,produccion_aprobada_primera_revision,porcentage_error,produccion_penalizada,produccion_limpia,fecha_produccion,fecha_corte,fecha_bono from bloques where nombre='{usuario}'", con)
+      bloques_9= pd.read_sql(f"select nombre,supervisor,proceso,unidad_asignacion,tipo_revision,produccion_segun_reporte,produccion_rechazada_primera_revision,produccion_aprobada_primera_revision,porcentage_error,produccion_penalizada,produccion_limpia,fecha_produccion,fecha_bono from bloques where nombre='{usuario}'", con)
       bloques_9=  pd.DataFrame(data=bloques_9)
     
     else:
 
-      bloques_9= pd.read_sql(f"select nombre,supervisor,proceso,unidad_asignacion,tipo_revision,produccion_segun_reporte,produccion_rechazada_primera_revision,produccion_aprobada_primera_revision,porcentage_error,produccion_penalizada,produccion_limpia,fecha_produccion,fecha_corte,fecha_bono from bloques where nombre='{usuario}' and fecha_produccion='{periodo_bloques_9}'", con)
+      bloques_9= pd.read_sql(f"select nombre,supervisor,proceso,unidad_asignacion,tipo_revision,produccion_segun_reporte,produccion_rechazada_primera_revision,produccion_aprobada_primera_revision,porcentage_error,produccion_penalizada,produccion_limpia,fecha_produccion,fecha_bono from bloques where nombre='{usuario}' and fecha_produccion='{periodo_bloques_9}'", con)
       bloques_9=  pd.DataFrame(data=bloques_9)
     
 
