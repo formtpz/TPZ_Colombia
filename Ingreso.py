@@ -167,7 +167,7 @@ if pivot!=1:
     
      st.image(Image.open("logo.png"))
 
-     st.title("Telespazio Argentinazzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz S.A.")
+     st.title("Telespazio Argentina S.A.")
 
      st.header("Aplicación de uso exclusivo para el personal de Telespazio Argentina S.A.")
 
