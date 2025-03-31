@@ -383,7 +383,7 @@ def Bonos_Extras(usuario,puesto):
         placeholder29_9 = st.empty()
         historial_9_extras=placeholder29_9.dataframe(data=data_extras)
   
-  elif perfil_9 == 2:
+  elif perfil_9 == "2":
     
     placeholder30_9 = st.empty()
     periodo_9 = placeholder30_9.selectbox("Periodo",options=("Enero-2025","Febrero-2025","Marzo-2025","Abril-2025","Mayo-2025","Junio-2025","Julio-2025","Agosto-2025","Septiembre-2025","Octubre-2025","Noviembre-2025","Diciembre-2025"), key="periodo_bonos_9")    
@@ -622,7 +622,7 @@ def Bonos_Extras(usuario,puesto):
       placeholder43_9 = st.empty()
       historial_9_extras=placeholder43_9.dataframe(data=data_extras)
 
-  elif perfil_9 == 3:
+  elif perfil_9 == "3":
     
     placeholder44_9 = st.empty()
     periodo_9 = placeholder44_9.selectbox("Periodo",options=("Enero-2025","Febrero-2025","Marzo-2025","Abril-2025","Mayo-2025","Junio-2025","Julio-2025","Agosto-2025","Septiembre-2025","Octubre-2025","Noviembre-2025","Diciembre-2025"), key="periodo_bonos_9")    
