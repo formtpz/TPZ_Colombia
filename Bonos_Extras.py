@@ -676,8 +676,8 @@ def Bonos_Extras(usuario,puesto):
       
       bonos_procesos_9.iloc[0,3] = bonos_juridico_9.iloc[0,6]
       bonos_procesos_9.iloc[1,3] = bonos_juridico_9.iloc[0,10]
-      bonos_procesos_9.iloc[2,3] = bonos_juridico_9.iloc[0,13]
-      bonos_procesos_9.iloc[3,3] = bonos_juridico_9.iloc[0,15]
+      bonos_procesos_9.iloc[2,3] = bonos_juridico_9.iloc[0,14]
+      bonos_procesos_9.iloc[3,3] = bonos_juridico_9.iloc[0,18]
       bonos_procesos_9.iloc[4,3] = " "
       bonos_procesos_9.iloc[5,3] = " "
       bonos_procesos_9.iloc[6,3] = " "
