@@ -728,7 +728,7 @@ def Bonos_Extras(usuario,puesto):
     placeholder6_9.empty()
     placeholder7_9.empty()
 
-    if nombre_9=="Basilio Antonio Salazar Nunez":
+    if nombre_9=="Basilio Antonio Salazar Nunez" or nombre_9=="Brandon Felipe Mata Ortega":
 
       placeholder8_9.empty()
       placeholder9_9.empty()
@@ -788,7 +788,7 @@ def Bonos_Extras(usuario,puesto):
           placeholder28_9.empty()
           placeholder29_9.empty()
 
-    elif puesto== "Operario Catastral": 
+    elif perfil_9== "2": 
       
       placeholder30_9.empty()
       placeholder31_9.empty()
@@ -823,7 +823,7 @@ def Bonos_Extras(usuario,puesto):
         placeholder42_9.empty()
         placeholder43_9.empty()
 
-    elif puesto== "Profesional Jurídico": 
+    elif perfil_9== "3": 
       
       placeholder44_9.empty()
       placeholder45_9.empty()
@@ -868,7 +868,6 @@ def Bonos_Extras(usuario,puesto):
     
   elif historial_9:
 
-
     placeholder1_9.empty()
     placeholder2_9.empty()
     placeholder3_9.empty()
@@ -877,7 +876,7 @@ def Bonos_Extras(usuario,puesto):
     placeholder6_9.empty()
     placeholder7_9.empty()
 
-    if nombre_9=="Basilio Antonio Salazar Nunez":
+    if nombre_9=="Basilio Antonio Salazar Nunez" or nombre_9=="Brandon Felipe Mata Ortega":
 
       placeholder8_9.empty()
       placeholder9_9.empty()
@@ -937,7 +936,7 @@ def Bonos_Extras(usuario,puesto):
           placeholder28_9.empty()
           placeholder29_9.empty()
 
-    elif puesto== "Operario Catastral": 
+    elif perfil_9== "2": 
       
       placeholder30_9.empty()
       placeholder31_9.empty()
@@ -972,7 +971,7 @@ def Bonos_Extras(usuario,puesto):
         placeholder42_9.empty()
         placeholder43_9.empty()
 
-    elif puesto== "Profesional Jurídico": 
+    elif perfil_9== "3": 
       
       placeholder44_9.empty()
       placeholder45_9.empty()
@@ -994,7 +993,7 @@ def Bonos_Extras(usuario,puesto):
       else:
 
         placeholder51_9.empty()
- 
+    
     st.session_state.Bonos_Extras=False
     st.session_state.Historial=True
     Historial.Historial(usuario,puesto)
@@ -1002,7 +1001,6 @@ def Bonos_Extras(usuario,puesto):
   # ----- Capacitación ---- #
     
   elif capacitacion_9:
-
 
     placeholder1_9.empty()
     placeholder2_9.empty()
@@ -1012,7 +1010,7 @@ def Bonos_Extras(usuario,puesto):
     placeholder6_9.empty()
     placeholder7_9.empty()
 
-    if nombre_9=="Basilio Antonio Salazar Nunez":
+    if nombre_9=="Basilio Antonio Salazar Nunez" or nombre_9=="Brandon Felipe Mata Ortega":
 
       placeholder8_9.empty()
       placeholder9_9.empty()
@@ -1072,7 +1070,7 @@ def Bonos_Extras(usuario,puesto):
           placeholder28_9.empty()
           placeholder29_9.empty()
 
-    elif puesto== "Operario Catastral": 
+    elif perfil_9== "2": 
       
       placeholder30_9.empty()
       placeholder31_9.empty()
@@ -1107,7 +1105,7 @@ def Bonos_Extras(usuario,puesto):
         placeholder42_9.empty()
         placeholder43_9.empty()
 
-    elif puesto== "Profesional Jurídico": 
+    elif perfil_9== "3": 
       
       placeholder44_9.empty()
       placeholder45_9.empty()
@@ -1138,15 +1136,6 @@ def Bonos_Extras(usuario,puesto):
     
   elif otros_registros_9:
  
-    st.session_state.Bonos_Extras=False
-    st.session_state.Otros_Registros=True
-    Otros_Registros.Otros_Registros(usuario,puesto)
-
-  # ----- Salir ---- #
-    
-  elif salir_9:
-
-  
     placeholder1_9.empty()
     placeholder2_9.empty()
     placeholder3_9.empty()
@@ -1155,7 +1144,7 @@ def Bonos_Extras(usuario,puesto):
     placeholder6_9.empty()
     placeholder7_9.empty()
 
-    if nombre_9=="Basilio Antonio Salazar Nunez":
+    if nombre_9=="Basilio Antonio Salazar Nunez" or nombre_9=="Brandon Felipe Mata Ortega":
 
       placeholder8_9.empty()
       placeholder9_9.empty()
@@ -1215,7 +1204,7 @@ def Bonos_Extras(usuario,puesto):
           placeholder28_9.empty()
           placeholder29_9.empty()
 
-    elif puesto== "Operario Catastral": 
+    elif perfil_9== "2": 
       
       placeholder30_9.empty()
       placeholder31_9.empty()
@@ -1250,7 +1239,7 @@ def Bonos_Extras(usuario,puesto):
         placeholder42_9.empty()
         placeholder43_9.empty()
 
-    elif puesto== "Profesional Jurídico": 
+    elif perfil_9== "3": 
       
       placeholder44_9.empty()
       placeholder45_9.empty()
@@ -1271,8 +1260,142 @@ def Bonos_Extras(usuario,puesto):
 
       else:
 
-        placeholder51_9.empty()  
- 
+        placeholder51_9.empty()
+    
+    st.session_state.Bonos_Extras=False
+    st.session_state.Otros_Registros=True
+    Otros_Registros.Otros_Registros(usuario,puesto)
+
+  # ----- Salir ---- #
+    
+  elif salir_9:
+
+    placeholder1_9.empty()
+    placeholder2_9.empty()
+    placeholder3_9.empty()
+    placeholder4_9.empty()
+    placeholder5_9.empty()   
+    placeholder6_9.empty()
+    placeholder7_9.empty()
+
+    if nombre_9=="Basilio Antonio Salazar Nunez" or nombre_9=="Brandon Felipe Mata Ortega":
+
+      placeholder8_9.empty()
+      placeholder9_9.empty()
+      placeholder10_9.empty()
+      placeholder9_9_J.empty()
+      placeholder10_9_J.empty()
+      placeholder11_9.empty()
+      placeholder12_9.empty()
+        
+    elif nombre_9== "Gabriel Martin Prieto" or nombre_9=="Madeline Hernandez Gamboa":
+
+      placeholder13_9.empty()
+      placeholder14_9.empty()
+
+      if personal_9=="Todos":
+        
+        placeholder15_9.empty()
+        placeholder18_9.empty()       
+        
+        if pivot1==0:
+        
+          placeholder16_9.empty()
+      
+        else:
+
+          placeholder17_9.empty()
+
+        if pivot2==0:
+        
+          placeholder19_9.empty()
+      
+        else:
+
+          placeholder20_9.empty()
+
+      else:
+
+        placeholder21_9.empty()
+        placeholder26_9.empty()       
+        
+        if pivot3==0:
+
+          placeholder22_9.empty()
+
+        else:
+
+          placeholder23_9.empty()
+          placeholder24_9.empty()
+          placeholder25_9.empty()
+
+        if pivot4==0:
+
+          placeholder27_9.empty()
+
+        else:
+
+          placeholder28_9.empty()
+          placeholder29_9.empty()
+
+    elif perfil_9== "2": 
+      
+      placeholder30_9.empty()
+      placeholder31_9.empty()
+      placeholder40_9.empty()
+      placeholder36_9.empty()
+      placeholder37_9.empty()
+
+      if pivot5==0:
+
+        placeholder32_9.empty()
+
+      else:
+
+        placeholder33_9.empty()
+        placeholder34_9.empty()
+        placeholder35_9.empty()
+
+      if pivot6==0:
+
+        placeholder38_9.empty()
+
+      else:
+
+        placeholder39_9.empty()
+
+      if pivot7==0:
+
+        placeholder41_9.empty()
+
+      else:
+
+        placeholder42_9.empty()
+        placeholder43_9.empty()
+
+    elif perfil_9== "3": 
+      
+      placeholder44_9.empty()
+      placeholder45_9.empty()
+      placeholder48_9.empty()
+      placeholder49_9.empty()
+
+      if pivot8==0:
+
+        placeholder46_9.empty()
+
+      else:
+
+        placeholder47_9.empty()
+
+      if pivot9==0:
+
+        placeholder50_9.empty()
+
+      else:
+
+        placeholder51_9.empty()
+    
     st.session_state.Ingreso = False
     st.session_state.Bonos_Extras=False
     st.session_state.Salir=True
