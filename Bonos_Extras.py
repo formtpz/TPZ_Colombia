@@ -644,7 +644,7 @@ def Bonos_Extras(usuario,puesto):
 
       # Procesos #
       
-      variables_1_9=["Producción (Según Reportes)","Producción Limpia","Producción (Estándar)","Bono (COP)","Bonificación Otras Funciones (COP)","Observaciones","Bonificación Total (COP)"]								
+      variables_1_9=["Producción (Según Reportes)","Producción (Limpia)","Producción (Estándar)","Bono (COP)","Bonificación Otras Funciones (COP)","Observaciones","Bonificación Total (COP)"]								
 
       fmi_9=[0]*7
       cc_fmi_9=[0]*7
