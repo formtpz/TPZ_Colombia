@@ -137,6 +137,7 @@ if iniciar_sesion_1:
                 st.session_state.CC_Precampo=False
                 st.session_state.Validacion=False
                 st.session_state.CC_Validacion=False
+                st.session_state.Revision_Campo=False
                     
                 puesto=pd.read_sql(f"select puesto from usuarios where usuario ='{usuario}'",uri)
                 puesto= puesto.loc[0,'puesto']
@@ -199,7 +200,7 @@ footer = """
 
     </style>
     <div class="footer">
-        <p>V.1.3 © 2025 Telespazio Argentina S.A. | <a href="https://www.telespazio.com/en" target="_blank">Visit our website</a></p>
+        <p>V.1.4 © 2025 Telespazio Argentina S.A. | <a href="https://www.telespazio.com/en" target="_blank">Visit our website</a></p>
     </div>
 """
 st.markdown(footer, unsafe_allow_html=True)
