@@ -43,7 +43,7 @@ def Preparacion_Insumos(usuario,puesto):
   salir_3 = placeholder7_3.button("Salir",key="salir_3")
 
   placeholder8_3 = st.empty()
-  Preparacion_Insumos_3 = placeholder8_3.title("Preparación de Insumos")
+  preparacion_insumos_3 = placeholder8_3.title("Preparación de Insumos")
 
   default_date_3 = datetime.now(pytz.timezone('America/Guatemala'))
 
