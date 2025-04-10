@@ -43,7 +43,7 @@ def Precampo(usuario,puesto):
   salir_3 = placeholder7_3.button("Salir",key="salir_3")
 
   placeholder8_3 = st.empty()
-  informacion_final_i_3 = placeholder8_3.title("Precampo")
+  Preparacion_Insumos_3 = placeholder8_3.title("Preparación de Insumos")
 
   default_date_3 = datetime.now(pytz.timezone('America/Guatemala'))
 
@@ -54,19 +54,13 @@ def Precampo(usuario,puesto):
   municipio_3= placeholder10_3.selectbox("Municipio", options=("Cabuyaro","Chalán","Colombia","Cuítiva","Iza","Los Palmitos","Morroa","Trinidad","San Estanislao","San Luis de Cubarral","Zambrano"), key="municipio_3")
 
   placeholder11_3= st.empty()
-  consecutivo_3= placeholder11_3.number_input("Consecutivo",min_value=0,max_value=50, step=1, key="consecutivo_3")
-  
+  produccion_3= placeholder11_3.number_input("Cantidad de Predios Producidos",min_value=0,step=1,key="produccion_3")
+
   placeholder12_3= st.empty()
-  tipo_3= placeholder12_3.selectbox("Tipo", options=("Ordinario","Corrección"), key="tipo_3")
+  horas_3= placeholder12_3.number_input("Cantidad de Horas Trabajadas en el Proceso",min_value=0.0,key="horas_3")
 
-  placeholder13_3= st.empty()
-  produccion_3= placeholder13_3.number_input("Cantidad de Predios Producidos",min_value=0,step=1,key="produccion_3")
-
-  placeholder14_3= st.empty()
-  horas_3= placeholder14_3.number_input("Cantidad de Horas Trabajadas en el Proceso",min_value=0.0,key="horas_3")
-
-  placeholder15_3 = st.empty()
-  reporte_3 = placeholder15_3.button("Generar Reporte",key="reporte_3")
+  placeholder13_3 = st.empty()
+  reporte_3 = placeholder13_3.button("Generar Reporte",key="reporte_3")
 
   # ----- Procesos ---- #
     
@@ -84,10 +78,8 @@ def Precampo(usuario,puesto):
     placeholder11_3.empty()
     placeholder12_3.empty()
     placeholder13_3.empty()
-    placeholder14_3.empty()
-    placeholder15_3.empty()
     st.session_state.Procesos=False
-    st.session_state.Precampo=False
+    st.session_state.Preparacion_Insumos=False
 
     perfil=pd.read_sql(f"select perfil from usuarios where usuario ='{usuario}'",uri)
     perfil= perfil.loc[0,'perfil']
@@ -120,9 +112,7 @@ def Precampo(usuario,puesto):
     placeholder11_3.empty()
     placeholder12_3.empty()
     placeholder13_3.empty()
-    placeholder14_3.empty()
-    placeholder15_3.empty()
-    st.session_state.Precampo=False
+    st.session_state.Preparacion_Insumos=False
     st.session_state.Historial=True
     Historial.Historial(usuario,puesto)   
 
@@ -142,9 +132,7 @@ def Precampo(usuario,puesto):
     placeholder11_3.empty()
     placeholder12_3.empty()
     placeholder13_3.empty()
-    placeholder14_3.empty()
-    placeholder15_3.empty()
-    st.session_state.Precampo=False
+    st.session_state.Preparacion_Insumos=False
     st.session_state.Capacitacion=True
     Capacitacion.Capacitacion(usuario,puesto)
 
@@ -164,9 +152,7 @@ def Precampo(usuario,puesto):
     placeholder11_3.empty()
     placeholder12_3.empty()
     placeholder13_3.empty()
-    placeholder14_3.empty()
-    placeholder15_3.empty()
-    st.session_state.Precampo=False
+    st.session_state.Preparacion_Insumos=False
     st.session_state.Otros_Registros=True
     Otros_Registros.Otros_Registros(usuario,puesto)
 
@@ -186,9 +172,7 @@ def Precampo(usuario,puesto):
     placeholder11_3.empty()
     placeholder12_3.empty()
     placeholder13_3.empty()
-    placeholder14_3.empty()
-    placeholder15_3.empty()
-    st.session_state.Precampo=False
+    st.session_state.Preparacion_Insumos=False
     st.session_state.Bonos_Extras=True
     Bonos_Extras.Bonos_Extras(usuario,puesto)    
 
@@ -208,10 +192,8 @@ def Precampo(usuario,puesto):
     placeholder11_3.empty()
     placeholder12_3.empty()
     placeholder13_3.empty()
-    placeholder14_3.empty()
-    placeholder15_3.empty()
     st.session_state.Ingreso = False
-    st.session_state.Precampo=False
+    st.session_state.Preparacion_Insumos=False
     st.session_state.Salir=True
     Salir.Salir()
 
@@ -230,9 +212,7 @@ def Precampo(usuario,puesto):
     semana_3 = fecha_3.isocalendar()[1]
 
     año_3 = fecha_3.isocalendar()[0]
-
-    unidad_3=municipio_3+'-'+str(consecutivo_3)
     
-    cursor01.execute(f"INSERT INTO registro (marca,usuario,nombre,puesto,supervisor,proceso,fecha,semana,año,unidad_asignacion,tipo,produccion,aprobados,rechazados,horas)VALUES('{marca_3}','{usuario}','{nombre_3}','{puesto}','{supervisor_3}','Precampo','{fecha_3}','{semana_3}','{año_3}','{unidad_3}','{tipo_3}','{produccion_3}','0','0','{horas_3}')")
+    cursor01.execute(f"INSERT INTO registro (marca,usuario,nombre,puesto,supervisor,proceso,fecha,semana,año,unidad_asignacion,tipo,produccion,aprobados,rechazados,horas)VALUES('{marca_3}','{usuario}','{nombre_3}','{puesto}','{supervisor_3}','Preparacion_Insumos','{fecha_3}','{semana_3}','{año_3}','{municipio_3}','No Aplica','{produccion_3}','0','0','{horas_3}')")
     con.commit()                                                                                                                                 
     st.success('Reporte enviado correctamente')
