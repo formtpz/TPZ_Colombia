@@ -300,7 +300,7 @@ def Procesos1(usuario,puesto):
             
         # ----- Preparación de Insumos ---- #
 
-        elif revision_campo_2:
+        elif preparacion_insumos_2:
 
             placeholder1_2.empty()
             placeholder2_2.empty()
@@ -632,7 +632,7 @@ def Procesos2(usuario,puesto):
 
         # ----- Preparación de Insumos ---- #
 
-        elif revision_campo_2:
+        elif preparacion_insumos_2:
 
             placeholder1_2.empty()
             placeholder2_2.empty()
