@@ -1,7 +1,7 @@
 # ----- Librerías ---- #
 
 import streamlit as st
-import Historial, Capacitacion, Otros_Registros, Bonos_Extras, Salir, FMI, CC_FMI, Consulta_Campo, Precampo, CC_Precampo, Preparacion_Campo, Revision_Campo, Validacion, CC_Validacion
+import Historial, Capacitacion, Otros_Registros, Bonos_Extras, Salir, FMI, CC_FMI, Consulta_Campo, Precampo, CC_Precampo, Preparacion_Insumos, Revision_Campo, Validacion, CC_Validacion
 
 def Procesos1(usuario,puesto):
 
@@ -46,7 +46,7 @@ def Procesos1(usuario,puesto):
         cc_precampo_2 = placeholder12_2.button("Control de Calidad Precampo",key="cc_precampo_2")
         
         placeholder13_2 = st.empty()
-        preparacion_campo_2 = placeholder13_2.button("Preparación de Campo",key="preparacion_campo_2") 
+        Preparacion_Insumos_2 = placeholder13_2.button("Preparación de Campo",key="Preparacion_Insumos_2") 
         
         placeholder14_2 = st.empty()
         revision_campo_2 = placeholder14_2.button("Revisión de Campo",key="revision_campo_2")
@@ -319,8 +319,8 @@ def Procesos1(usuario,puesto):
             placeholder15_2.empty()
             placeholder16_2.empty()
             st.session_state.Procesos=True
-            st.session_state.Preparacion_Campo=True
-            Preparacion_Campo.Preparacion_Campo(usuario,puesto)
+            st.session_state.Preparacion_Insumos=True
+            Preparacion_Insumos.Preparacion_Insumos(usuario,puesto)
 
           # ----- Revisión de Campo ---- #
 
@@ -423,8 +423,8 @@ def Procesos1(usuario,puesto):
         elif st.session_state.CC_Precampo==True:
             CC_Precampo.CC_Precampo(usuario,puesto)
 
-        elif st.session_state.Preparacion_Campo==True:
-            Preparacion_Campo.Preparacion_Campo(usuario,puesto)
+        elif st.session_state.Preparacion_Insumos==True:
+            Preparacion_Insumos.Preparacion_Insumos(usuario,puesto)
             
         elif st.session_state.Revision_Campo==True:
             Revision_Campo.Revision_Campo(usuario,puesto)
@@ -471,7 +471,7 @@ def Procesos2(usuario,puesto):
         cc_precampo_2 = placeholder9_2.button("Control de Calidad Precampo",key="cc_precampo_2")
 
         placeholder10_2 = st.empty()
-        preparacion_campo_2 = placeholder10_2.button("Preparación de Campo",key="preparacion_campo_2")
+        Preparacion_Insumos_2 = placeholder10_2.button("Preparación de Campo",key="Preparacion_Insumos_2")
 
         placeholder11_2 = st.empty()
         revision_campo_2 = placeholder11_2.button("Revisión de Campo",key="revision_campo_2")
@@ -713,8 +713,8 @@ def Procesos2(usuario,puesto):
         elif st.session_state.CC_Precampo==True:
             CC_Precampo.CC_Precampo(usuario,puesto)
 
-        elif st.session_state.Preparacion_Campo==True:
-            Preparacion_Campo.Preparacion_Campo(usuario,puesto)
+        elif st.session_state.Preparacion_Insumos==True:
+            Preparacion_Insumos.Preparacion_Insumos(usuario,puesto)
         
         elif st.session_state.Revision_Campo==True:
             Revision_Campo.Revision_Campo(usuario,puesto)
