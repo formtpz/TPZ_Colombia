@@ -8,7 +8,7 @@ import pytz
 from urllib.parse import urlparse
 import Procesos,Historial,Capacitacion,Otros_Registros,Bonos_Extras,Salir
 
-def Precampo(usuario,puesto):
+def Preparacion_Insumos(usuario,puesto):
 
   # ----- Conexión, Botones y Memoria ---- #
 
