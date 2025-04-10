@@ -46,7 +46,7 @@ def Procesos1(usuario,puesto):
         cc_precampo_2 = placeholder12_2.button("Control de Calidad Precampo",key="cc_precampo_2")
         
         placeholder13_2 = st.empty()
-        Preparacion_Insumos_2 = placeholder13_2.button("Preparación de Insumos",key="Preparacion_Insumos_2") 
+        preparacion_insumos_2 = placeholder13_2.button("Preparación de Insumos",key="preparacion_insumos_2") 
         
         placeholder14_2 = st.empty()
         revision_campo_2 = placeholder14_2.button("Revisión de Campo",key="revision_campo_2")
@@ -298,7 +298,7 @@ def Procesos1(usuario,puesto):
             st.session_state.CC_Precampo=True
             CC_Precampo.CC_Precampo(usuario,puesto)
             
-        # ----- Preparación de Campo ---- #
+        # ----- Preparación de Insumos ---- #
 
         elif revision_campo_2:
 
@@ -471,7 +471,7 @@ def Procesos2(usuario,puesto):
         cc_precampo_2 = placeholder9_2.button("Control de Calidad Precampo",key="cc_precampo_2")
 
         placeholder10_2 = st.empty()
-        Preparacion_Insumos_2 = placeholder10_2.button("Preparación de Campo",key="Preparacion_Insumos_2")
+        preparacion_insumos_2 = placeholder10_2.button("Preparación de Campo",key="preparacion_insumos_2")
 
         placeholder11_2 = st.empty()
         revision_campo_2 = placeholder11_2.button("Revisión de Campo",key="revision_campo_2")
@@ -629,6 +629,27 @@ def Procesos2(usuario,puesto):
             st.session_state.Procesos=True
             st.session_state.CC_Precampo=True
             CC_Precampo.CC_Precampo(usuario,puesto)
+
+        # ----- Preparación de Insumos ---- #
+
+        elif revision_campo_2:
+
+            placeholder1_2.empty()
+            placeholder2_2.empty()
+            placeholder3_2.empty()
+            placeholder4_2.empty()
+            placeholder5_2.empty()
+            placeholder6_2.empty()
+            placeholder7_2.empty()
+            placeholder8_2.empty()
+            placeholder9_2.empty()
+            placeholder10_2.empty()
+            placeholder11_2.empty()
+            placeholder12_2.empty()
+            placeholder13_2.empty()
+            st.session_state.Procesos=True
+            st.session_state.Preparacion_Insumos=True
+            Preparacion_Insumos.Preparacion_Insumos(usuario,puesto)
 
          # ----- Revisión de Campo ---- #
 
