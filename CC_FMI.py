@@ -43,7 +43,7 @@ def CC_FMI(usuario,puesto):
   salir_3 = placeholder7_3.button("Salir",key="salir_3")
 
   placeholder8_3 = st.empty()
-  informacion_final_i_3 = placeholder8_3.title("Control de Calidad Folios de Matricula Inmobiliaria")
+  control_calidad_fmi_3 = placeholder8_3.title("Control de Calidad Folios de Matricula Inmobiliaria")
 
   default_date_3 = datetime.now(pytz.timezone('America/Bogota'))
 
