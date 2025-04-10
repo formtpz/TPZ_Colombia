@@ -67,7 +67,7 @@ def Historial(usuario,puesto):
     proceso_7_s = placeholder11_7.selectbox("Proceso", options=("Todos","Control de Calidad Folios de Matricula Inmobiliaria","Consultas de Campo","Folios de Matricula Inmobiliaria","Precampo", "Control de Calidad Precampo","Revisión de Campo","Validación","Control de Calidad Validación"), key="proceso_7_s")
     
     placeholder12_7 = st.empty()
-    tipo_7_s = placeholder12_7.selectbox("Tipo", options=("Todos","Ordinario","Corrección","Reinspección","Primera Reinspección","Segunda Reinspección"), key="tipo_7_s")
+    tipo_7_s = placeholder12_7.selectbox("Tipo", options=("Todos","Ordinario","Corrección","Inspección","Reinspección","Primera Reinspección","Segunda Reinspección"), key="tipo_7_s")
 
     if personal_7=="Todos" and proceso_7_s=="Todos" and tipo_7_s=="Todos":
       
@@ -377,7 +377,7 @@ def Historial(usuario,puesto):
     proceso_7_o = placeholder33_7.selectbox("Proceso", options=("Todos","Control de Calidad Folios de Matricula Inmobiliaria","Consultas de Campo","Folios de Matricula Inmobiliaria","Precampo", "Control de Calidad Precampo","Revisión de Campo","Validación","Control de Calidad Validación"), key="proceso_7_s")
     
     placeholder34_7 = st.empty()
-    tipo_7_o = placeholder34_7.selectbox("Tipo", options=("Todos","Ordinario","Corrección","Reinspección","Primera Reinspección","Segunda Reinspección"), key="tipo_7_s")
+    tipo_7_o = placeholder34_7.selectbox("Tipo", options=("Todos","Ordinario","Corrección","Inspección","Reinspección","Primera Reinspección","Segunda Reinspección"), key="tipo_7_s")
 
     if proceso_7_o =="Todos" and tipo_7_o=="Todos":
         
