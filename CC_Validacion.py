@@ -43,7 +43,7 @@ def CC_Validacion(usuario,puesto):
   salir_3 = placeholder7_3.button("Salir",key="salir_3")
 
   placeholder8_3 = st.empty()
-  informacion_final_i_3 = placeholder8_3.title("Control de Calidad Validación")
+  control_calidad_validacion_3 = placeholder8_3.title("Control de Calidad Validación")
 
   default_date_3 = datetime.now(pytz.timezone('America/Guatemala'))
 
