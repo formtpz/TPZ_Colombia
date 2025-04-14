@@ -57,7 +57,7 @@ def CC_Precampo(usuario,puesto):
   consecutivo_3= placeholder11_3.number_input("Consecutivo",min_value=0,max_value=50, step=1, key="consecutivo_3")
 
   placeholder12_3= st.empty()
-  tipo_3= placeholder12_3.selectbox("Tipo", options=("Ordinario","Reinspección"), key="tipo_3")
+  tipo_3= placeholder12_3.selectbox("Tipo", options=("Inspección","Primera Reinspección","Segunda Reinspección"), key="tipo_3")
   
   placeholder13_3= st.empty()
   aprobados_3= placeholder13_3.number_input("Cantidad de Predios Aprobados",min_value=0,step=1,key="aprobados_3")
