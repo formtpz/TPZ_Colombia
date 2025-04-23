@@ -54,7 +54,7 @@ def Revision_Campo(usuario,puesto):
   municipio_3= placeholder10_3.selectbox("Municipio", options=("Cabuyaro","Chalán","Colombia","Cuítiva","Iza","Los Palmitos","Morroa","Trinidad","San Estanislao","San Luis de Cubarral","Zambrano"), key="municipio_3")
 
   placeholder11_3= st.empty()
-  consecutivo_3= placeholder11_3.number_input("Número de Paquete",min_value=0,max_value=699, step=1, key="consecutivo_3")
+  consecutivo_3= placeholder11_3.text_input("Número de Paquete",max_char=4,key="consecutivo_3")
 
   placeholder12_3= st.empty()
   tipo_3= placeholder12_3.selectbox("Tipo", options=("Inspección","Primera Reinspección","Segunda Reinspección","Reproceso Inspección","Reproceso Primera Reinspección"), key="tipo_3")
@@ -242,7 +242,7 @@ def Revision_Campo(usuario,puesto):
 
     año_3 = fecha_3.isocalendar()[0]
 
-    unidad_3=municipio_3+'-'+'Paquete'+'-'+str(consecutivo_3)
+    unidad_3=municipio_3+'-'+'Paquete'+'-'+consecutivo_3
 
     cursor01.execute(f"INSERT INTO registro (marca,usuario,nombre,puesto,supervisor,proceso,fecha,semana,año,unidad_asignacion,tipo,produccion,aprobados,rechazados,horas)VALUES('{marca_3}','{usuario}','{nombre_3}','{puesto}','{supervisor_3}','Revisión de Campo','{fecha_3}','{semana_3}','{año_3}','{unidad_3}','{tipo_3}','{produccion_3}','{aprobados_3}','{rechazados_3}','{horas_3}')")
     con.commit()                                                                                                                                 
