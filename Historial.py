@@ -67,7 +67,7 @@ def Historial(usuario,puesto):
     proceso_7_s = placeholder11_7.selectbox("Proceso", options=("Todos","Control de Calidad Folios de Matricula Inmobiliaria","Consultas de Campo","Folios de Matricula Inmobiliaria","Precampo","Control de Calidad Precampo","Preparación de Insumos","Revisión de Campo","Validación","Control de Calidad Validación"), key="proceso_7_s")
     
     placeholder12_7 = st.empty()
-    tipo_7_s = placeholder12_7.selectbox("Tipo", options=("Todos","Ordinario","Corrección","Corrección Inspección","Corrección Primera Reinspección","Inspección","Reinspección","Primera Reinspección","Segunda Reinspección","Reproceso Inspección","Reproceso Primera Reinspección"), key="tipo_7_s")
+    tipo_7_s = placeholder12_7.selectbox("Tipo", options=("Todos","Ordinario","Reproceso Ordinario","Corrección","Corrección Inspección","Reproceso Corrección Inspección","Corrección Primera Reinspección","Reproceso Corrección Primera Reinspección","Inspección","Reinspección","Primera Reinspección","Segunda Reinspección","Reproceso Inspección","Reproceso Primera Reinspección","Reproceso Segunda Reinspección"), key="tipo_7_s")
 
     if personal_7=="Todos" and proceso_7_s=="Todos" and tipo_7_s=="Todos":
       
