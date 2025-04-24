@@ -57,7 +57,7 @@ def CC_Validacion(usuario,puesto):
   consecutivo_3= placeholder11_3.text_input("Número de Paquete",max_chars=4, key="consecutivo_3")
 
   placeholder12_3= st.empty()
-  tipo_3= placeholder12_3.selectbox("Tipo", options=("Inspección","Primera Reinspección","Segunda Reinspección"), key="tipo_3")
+  tipo_3= placeholder12_3.selectbox("Tipo", options=("Inspección","Primera Reinspección","Segunda Reinspección","Reproceso Inspección","Reproceso Primera Reinspección"," Reproceso Segunda Reinspección"), key="tipo_3")
   
   placeholder13_3= st.empty()
   aprobados_3= placeholder13_3.number_input("Cantidad de Predios Aprobados",min_value=0,step=1,key="aprobados_3")
