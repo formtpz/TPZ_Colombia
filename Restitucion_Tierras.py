@@ -75,7 +75,7 @@ def Restitucion_Tierras(usuario,puesto):
     placeholder11_3.empty()
     placeholder12_3.empty()
     st.session_state.Procesos=False
-    st.session_state.Consulta_Campo=False
+    st.session_state.Restitucion_Tierras=False
 
     perfil=pd.read_sql(f"select perfil from usuarios where usuario ='{usuario}'",uri)
     perfil= perfil.loc[0,'perfil']
@@ -108,7 +108,7 @@ def Restitucion_Tierras(usuario,puesto):
     placeholder10_3.empty()
     placeholder11_3.empty()
     placeholder12_3.empty()
-    st.session_state.Consulta_Campo=False
+    st.session_state.Restitucion_Tierras=False
     st.session_state.Historial=True
     Historial.Historial(usuario,puesto)   
 
@@ -127,7 +127,7 @@ def Restitucion_Tierras(usuario,puesto):
     placeholder10_3.empty()
     placeholder11_3.empty()
     placeholder12_3.empty()
-    st.session_state.Consulta_Campo=False
+    st.session_state.Restitucion_Tierras=False
     st.session_state.Capacitacion=True
     Capacitacion.Capacitacion(usuario,puesto)
 
@@ -146,7 +146,7 @@ def Restitucion_Tierras(usuario,puesto):
     placeholder10_3.empty()
     placeholder11_3.empty()
     placeholder12_3.empty()
-    st.session_state.Consulta_Campo=False
+    st.session_state.Restitucion_Tierras=False
     st.session_state.Otros_Registros=True
     Otros_Registros.Otros_Registros(usuario,puesto)
 
@@ -165,7 +165,7 @@ def Restitucion_Tierras(usuario,puesto):
     placeholder10_3.empty()
     placeholder11_3.empty()
     placeholder12_3.empty()
-    st.session_state.Consulta_Campo=False
+    st.session_state.Restitucion_Tierras=False
     st.session_state.Bonos_Extras=True
     Bonos_Extras.Bonos_Extras(usuario,puesto)    
 
@@ -185,7 +185,7 @@ def Restitucion_Tierras(usuario,puesto):
     placeholder11_3.empty()
     placeholder12_3.empty()
     st.session_state.Ingreso = False
-    st.session_state.Consulta_Campo=False
+    st.session_state.Restitucion_Tierras=False
     st.session_state.Salir=True
     Salir.Salir()
 
