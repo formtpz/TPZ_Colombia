@@ -444,6 +444,12 @@ def Procesos1(usuario,puesto):
             placeholder10_2.empty()
             placeholder11_2.empty()
             placeholder12_2.empty()
+            placeholder13_2.empty()
+            placeholder14_2.empty()
+            placeholder15_2.empty()
+            placeholder16_2.empty()
+            placeholder17_2.empty()
+            placeholder18_2.empty()
             st.session_state.Procesos=True
             st.session_state.Restitucion_Tierras=True
             Restitucion_Tierras.Restitucion_Tierras(usuario,puesto)
@@ -464,6 +470,12 @@ def Procesos1(usuario,puesto):
             placeholder10_2.empty()
             placeholder11_2.empty()
             placeholder12_2.empty()
+            placeholder13_2.empty()
+            placeholder14_2.empty()
+            placeholder15_2.empty()
+            placeholder16_2.empty()
+            placeholder17_2.empty()
+            placeholder18_2.empty()
             st.session_state.Procesos=True
             st.session_state.Revision_Segregados=True
             Revision_Segregados.Revision_Segregados(usuario,puesto)
