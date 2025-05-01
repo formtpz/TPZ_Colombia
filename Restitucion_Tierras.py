@@ -8,7 +8,7 @@ import pytz
 from urllib.parse import urlparse
 import Procesos,Historial,Capacitacion,Otros_Registros,Bonos_Extras,Salir
 
-def Consulta_Campo(usuario,puesto):
+def Restitucion_Tierras(usuario,puesto):
 
   # ----- Conexión, Botones y Memoria ---- #
 
@@ -43,7 +43,7 @@ def Consulta_Campo(usuario,puesto):
   salir_3 = placeholder7_3.button("Salir",key="salir_3")
 
   placeholder8_3 = st.empty()
-  consulta_campo_3 = placeholder8_3.title("Consultas de Campo")
+  restitucion_tierras_3 = placeholder8_3.title("Restitución de Tierras")
 
   default_date_3 = datetime.now(pytz.timezone('America/Bogota'))
 
@@ -54,13 +54,10 @@ def Consulta_Campo(usuario,puesto):
   municipio_3= placeholder10_3.selectbox("Municipio", options=("Cabuyaro","Chalán","Colombia","Cuítiva","Iza","Los Palmitos","Morroa","Trinidad","San Estanislao","San Luis de Cubarral","Zambrano"), key="municipio_3")
   
   placeholder11_3= st.empty()
-  unidad_inter_3=placeholder11_3.selectbox("Unidad de Intervención", options=("UITR-1","UITR-2","UITR-3","UITR-4","UITR-5","UITR-6","UITR-7","UITR-8","UITR-9","UITR-10","UITR-11","UITR-12","UITR-13","UITR-14","UITR-15","UITR-16","UITR-17","UITR-18","UITR-19","UITR-20","UITR-21","UITR-22","UITR-22","UITR-23","UITR-24","UITR-25","UITU-1","UITU-2","UITU-3","UITU-4","UITU-5","UITU-6","UITU-7","UITU-8","UITU-9","UITU-10","UITU-11","UITU-12","UITU-13","UITU-14","UITU-15","UTU-16","UITU-17","UITU- 18","UITU-19","UITU-20","UITU-21","UITU-22","UITU-22","UITU-23","UITU-24","UITU-25","Sin Geometría"), key="unidad_inter_3")
+  produccion_3= placeholder11_3.number_input("Cantidad de Predios Revisados",min_value=0,step=1,key="produccion_3")
 
-  placeholder12_3= st.empty()
-  produccion_3= placeholder12_3.number_input("Cantidad de Consultas Realizadas",min_value=0,step=1,key="produccion_3")
-
-  placeholder13_3 = st.empty()
-  reporte_3 = placeholder13_3.button("Generar Reporte",key="reporte_3")
+  placeholder12_3 = st.empty()
+  reporte_3 = placeholder12_3.button("Generar Reporte",key="reporte_3")
 
   # ----- Procesos ---- #
     
@@ -77,7 +74,6 @@ def Consulta_Campo(usuario,puesto):
     placeholder10_3.empty()
     placeholder11_3.empty()
     placeholder12_3.empty()
-    placeholder13_3.empty()
     st.session_state.Procesos=False
     st.session_state.Consulta_Campo=False
 
@@ -112,7 +108,6 @@ def Consulta_Campo(usuario,puesto):
     placeholder10_3.empty()
     placeholder11_3.empty()
     placeholder12_3.empty()
-    placeholder13_3.empty()
     st.session_state.Consulta_Campo=False
     st.session_state.Historial=True
     Historial.Historial(usuario,puesto)   
@@ -132,7 +127,6 @@ def Consulta_Campo(usuario,puesto):
     placeholder10_3.empty()
     placeholder11_3.empty()
     placeholder12_3.empty()
-    placeholder13_3.empty()
     st.session_state.Consulta_Campo=False
     st.session_state.Capacitacion=True
     Capacitacion.Capacitacion(usuario,puesto)
@@ -152,7 +146,6 @@ def Consulta_Campo(usuario,puesto):
     placeholder10_3.empty()
     placeholder11_3.empty()
     placeholder12_3.empty()
-    placeholder13_3.empty()
     st.session_state.Consulta_Campo=False
     st.session_state.Otros_Registros=True
     Otros_Registros.Otros_Registros(usuario,puesto)
@@ -172,7 +165,6 @@ def Consulta_Campo(usuario,puesto):
     placeholder10_3.empty()
     placeholder11_3.empty()
     placeholder12_3.empty()
-    placeholder13_3.empty()
     st.session_state.Consulta_Campo=False
     st.session_state.Bonos_Extras=True
     Bonos_Extras.Bonos_Extras(usuario,puesto)    
@@ -192,7 +184,6 @@ def Consulta_Campo(usuario,puesto):
     placeholder10_3.empty()
     placeholder11_3.empty()
     placeholder12_3.empty()
-    placeholder13_3.empty()
     st.session_state.Ingreso = False
     st.session_state.Consulta_Campo=False
     st.session_state.Salir=True
@@ -213,9 +204,7 @@ def Consulta_Campo(usuario,puesto):
     semana_3 = fecha_3.isocalendar()[1]
 
     año_3 = fecha_3.isocalendar()[0]
-
-    unidad_3=municipio_3+'-'+unidad_inter_3
     
-    cursor01.execute(f"INSERT INTO registro (marca,usuario,nombre,puesto,supervisor,proceso,fecha,semana,año,unidad_asignacion,tipo,produccion,aprobados,rechazados,horas)VALUES('{marca_3}','{usuario}','{nombre_3}','{puesto}','{supervisor_3}','Cosultas de Campo','{fecha_3}','{semana_3}','{año_3}','{unidad_3}','Ordinario','{produccion_3}','0','0','0')")
+    cursor01.execute(f"INSERT INTO registro (marca,usuario,nombre,puesto,supervisor,proceso,fecha,semana,año,unidad_asignacion,tipo,produccion,aprobados,rechazados,horas)VALUES('{marca_3}','{usuario}','{nombre_3}','{puesto}','{supervisor_3}','Restitución de Tierras','{fecha_3}','{semana_3}','{año_3}','{municipio_3}','Ordinario','{produccion_3}','0','0','0')")
     con.commit()                                                                                                                                 
     st.success('Reporte enviado correctamente')
