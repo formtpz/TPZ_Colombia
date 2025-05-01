@@ -63,7 +63,6 @@ def Procesos1(usuario,puesto):
         placeholder18_2 = st.empty()
         revision_segregados_2 = placeholder18_2.button("Revisión de Predios Segregados",key="revision_segregados_2")
 
-
         # ----- Historial ---- #
 
         if historial_2:
@@ -451,7 +450,7 @@ def Procesos1(usuario,puesto):
 
         # ----- Revisión de Predios Segredados ---- #
 
-        elif revision_segredados_2:
+        elif revision_segregados_2:
 
             placeholder1_2.empty()
             placeholder2_2.empty()
