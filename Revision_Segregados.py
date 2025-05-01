@@ -8,7 +8,7 @@ import pytz
 from urllib.parse import urlparse
 import Procesos,Historial,Capacitacion,Otros_Registros,Bonos_Extras,Salir
 
-def Restitucion_Tierras(usuario,puesto):
+def Revision_Segregados(usuario,puesto):
 
   # ----- Conexión, Botones y Memoria ---- #
 
@@ -43,7 +43,7 @@ def Restitucion_Tierras(usuario,puesto):
   salir_3 = placeholder7_3.button("Salir",key="salir_3")
 
   placeholder8_3 = st.empty()
-  restitucion_tierras_3 = placeholder8_3.title("Restitución de Tierras")
+  revision_segregados_3 = placeholder8_3.title("Revisión de Predios Segregados")
 
   default_date_3 = datetime.now(pytz.timezone('America/Bogota'))
 
@@ -75,7 +75,7 @@ def Restitucion_Tierras(usuario,puesto):
     placeholder11_3.empty()
     placeholder12_3.empty()
     st.session_state.Procesos=False
-    st.session_state.Restitucion_Tierras=False
+    st.session_state.Revision_Segregados=False
 
     perfil=pd.read_sql(f"select perfil from usuarios where usuario ='{usuario}'",uri)
     perfil= perfil.loc[0,'perfil']
@@ -108,7 +108,7 @@ def Restitucion_Tierras(usuario,puesto):
     placeholder10_3.empty()
     placeholder11_3.empty()
     placeholder12_3.empty()
-    st.session_state.Restitucion_Tierras=False
+    st.session_state.Revision_Segregados=False
     st.session_state.Historial=True
     Historial.Historial(usuario,puesto)   
 
@@ -127,7 +127,7 @@ def Restitucion_Tierras(usuario,puesto):
     placeholder10_3.empty()
     placeholder11_3.empty()
     placeholder12_3.empty()
-    st.session_state.Restitucion_Tierras=False
+    st.session_state.Revision_Segregados=False
     st.session_state.Capacitacion=True
     Capacitacion.Capacitacion(usuario,puesto)
 
@@ -146,7 +146,7 @@ def Restitucion_Tierras(usuario,puesto):
     placeholder10_3.empty()
     placeholder11_3.empty()
     placeholder12_3.empty()
-    st.session_state.Restitucion_Tierras=False
+    st.session_state.Revision_Segregados=False
     st.session_state.Otros_Registros=True
     Otros_Registros.Otros_Registros(usuario,puesto)
 
@@ -165,7 +165,7 @@ def Restitucion_Tierras(usuario,puesto):
     placeholder10_3.empty()
     placeholder11_3.empty()
     placeholder12_3.empty()
-    st.session_state.Restitucion_Tierras=False
+    st.session_state.Revision_Segregados=False
     st.session_state.Bonos_Extras=True
     Bonos_Extras.Bonos_Extras(usuario,puesto)    
 
@@ -185,7 +185,7 @@ def Restitucion_Tierras(usuario,puesto):
     placeholder11_3.empty()
     placeholder12_3.empty()
     st.session_state.Ingreso = False
-    st.session_state.Restitucion_Tierras=False
+    st.session_state.Revision_Segregados=False
     st.session_state.Salir=True
     Salir.Salir()
 
@@ -205,6 +205,6 @@ def Restitucion_Tierras(usuario,puesto):
 
     año_3 = fecha_3.isocalendar()[0]
     
-    cursor01.execute(f"INSERT INTO registro (marca,usuario,nombre,puesto,supervisor,proceso,fecha,semana,año,unidad_asignacion,tipo,produccion,aprobados,rechazados,horas)VALUES('{marca_3}','{usuario}','{nombre_3}','{puesto}','{supervisor_3}','Restitución de Tierras','{fecha_3}','{semana_3}','{año_3}','{municipio_3}','Ordinario','{produccion_3}','0','0','0')")
+    cursor01.execute(f"INSERT INTO registro (marca,usuario,nombre,puesto,supervisor,proceso,fecha,semana,año,unidad_asignacion,tipo,produccion,aprobados,rechazados,horas)VALUES('{marca_3}','{usuario}','{nombre_3}','{puesto}','{supervisor_3}','Revisión de Predios Segregados','{fecha_3}','{semana_3}','{año_3}','{municipio_3}','Ordinario','{produccion_3}','0','0','0')")
     con.commit()                                                                                                                                 
     st.success('Reporte enviado correctamente')
