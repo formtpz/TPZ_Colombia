@@ -435,7 +435,7 @@ def Procesos1(usuario,puesto):
         elif st.session_state.CC_Validacion==True:
             CC_Validacion.CC_Validacion(usuario,puesto)
             
-# ----- Procesos 2 ---- #
+# ----- Procesos 2 (Gabinete) ---- #
 
 def Procesos2(usuario,puesto):
 
@@ -746,7 +746,7 @@ def Procesos2(usuario,puesto):
         elif st.session_state.CC_Validacion==True:
             CC_Validacion.CC_Validacion(usuario,puesto)
 
-# ----- Procesos 3 ---- #
+# ----- Procesos 3 (Jurídicos) ---- #
 
 def Procesos3(usuario,puesto):
 
@@ -783,6 +783,13 @@ def Procesos3(usuario,puesto):
 
         placeholder10_2 = st.empty()
         consulta_campo_2 = placeholder10_2.button("Consultas de Campo",key="consulta_campo_2")
+
+        placeholder11_2 = st.empty()
+        restitucion_tierras_2 = placeholder11_2.button("Restitución de Tierras",key="restitucion_tierras_2")
+
+        placeholder12_2 = st.empty()
+        revision_segregados_2 = placeholder12_2.button("Revisión de Predios Segregados",key="revision_segregados_2")
+              
               
        # ----- Historial ---- #
 
@@ -798,6 +805,8 @@ def Procesos3(usuario,puesto):
             placeholder8_2.empty()
             placeholder9_2.empty()
             placeholder10_2.empty()
+            placeholder11_2.empty()
+            placeholder12_2.empty()
             st.session_state.Procesos=True
             st.session_state.Historial=True
             Historial.Historial(usuario,puesto)
@@ -816,6 +825,8 @@ def Procesos3(usuario,puesto):
             placeholder8_2.empty()
             placeholder9_2.empty()
             placeholder10_2.empty()
+            placeholder11_2.empty()
+            placeholder12_2.empty()
             st.session_state.Procesos=True
             st.session_state.Capacitacion=True
             Capacitacion.Capacitacion(usuario,puesto)
@@ -834,6 +845,8 @@ def Procesos3(usuario,puesto):
             placeholder8_2.empty()
             placeholder9_2.empty()
             placeholder10_2.empty()
+            placeholder11_2.empty()
+            placeholder12_2.empty()
             st.session_state.Procesos=True
             st.session_state.Otros_Registros=True
             Otros_Registros.Otros_Registros(usuario,puesto)
@@ -852,6 +865,8 @@ def Procesos3(usuario,puesto):
             placeholder8_2.empty()
             placeholder9_2.empty()
             placeholder10_2.empty()
+            placeholder11_2.empty()
+            placeholder12_2.empty()
             st.session_state.Procesos=True
             st.session_state.Bonos_Extras=True
             Bonos_Extras.Bonos_Extras(usuario,puesto)
@@ -870,6 +885,8 @@ def Procesos3(usuario,puesto):
             placeholder8_2.empty()
             placeholder9_2.empty()
             placeholder10_2.empty()
+            placeholder11_2.empty()
+            placeholder12_2.empty()
             st.session_state.Ingreso = False
             st.session_state.Procesos = True
             st.session_state.Salir=True
@@ -889,6 +906,8 @@ def Procesos3(usuario,puesto):
             placeholder8_2.empty()
             placeholder9_2.empty()
             placeholder10_2.empty()
+            placeholder11_2.empty()
+            placeholder12_2.empty()
             st.session_state.Procesos=True
             st.session_state.FMI=True
             FMI.FMI(usuario,puesto)
@@ -907,6 +926,8 @@ def Procesos3(usuario,puesto):
             placeholder8_2.empty()
             placeholder9_2.empty()
             placeholder10_2.empty()
+            placeholder11_2.empty()
+            placeholder12_2.empty()
             st.session_state.Procesos=True
             st.session_state.CC_FMI=True
             CC_FMI.CC_FMI(usuario,puesto)
@@ -925,10 +946,53 @@ def Procesos3(usuario,puesto):
             placeholder8_2.empty()
             placeholder9_2.empty()
             placeholder10_2.empty()
+            placeholder11_2.empty()
+            placeholder12_2.empty()
             st.session_state.Procesos=True
             st.session_state.Consulta_Campo=True
             Consulta_Campo.Consulta_Campo(usuario,puesto)
-      
+        
+
+        # ----- Restitución de Tierras ---- #
+
+        elif restitucion_tierras_2:
+
+            placeholder1_2.empty()
+            placeholder2_2.empty()
+            placeholder3_2.empty()
+            placeholder4_2.empty()
+            placeholder5_2.empty()
+            placeholder6_2.empty()
+            placeholder7_2.empty()
+            placeholder8_2.empty()
+            placeholder9_2.empty()
+            placeholder10_2.empty()
+            placeholder11_2.empty()
+            placeholder12_2.empty()
+            st.session_state.Procesos=True
+            st.session_state.Restitucion_Tierras=True
+            Restitucion_Tierras.Restitucion_Tierras(usuario,puesto)
+
+        # ----- Revisión de Predios Segredados ---- #
+
+        elif revison_segredados_2:
+
+            placeholder1_2.empty()
+            placeholder2_2.empty()
+            placeholder3_2.empty()
+            placeholder4_2.empty()
+            placeholder5_2.empty()
+            placeholder6_2.empty()
+            placeholder7_2.empty()
+            placeholder8_2.empty()
+            placeholder9_2.empty()
+            placeholder10_2.empty()
+            placeholder11_2.empty()
+            placeholder12_2.empty()
+            st.session_state.Procesos=True
+            st.session_state.Revision_Segregados=True
+            Revision_Segregados.Revision_Segregadoss(usuario,puesto)
+    
     elif st.session_state.Procesos==True:
 
         if st.session_state.Historial==True:
@@ -952,3 +1016,8 @@ def Procesos3(usuario,puesto):
         elif st.session_state.Consulta_Campo==True:
             Consulta_Campo.Consulta_Campo(usuario,puesto)
 
+        elif st.session_state.Restitucion_Tierras==True:
+            Restitucion_Tierras.Restitucion_Tierras(usuario,puesto)
+
+        elif st.session_state.Revision_Segregados==True:
+            Revision_Segregados.Revision_Segregados(usuario,puesto)
