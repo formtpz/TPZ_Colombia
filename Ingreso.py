@@ -133,6 +133,8 @@ if iniciar_sesion_1:
                 st.session_state.FMI=False
                 st.session_state.CC_FMI=False
                 st.session_state.Consulta_Campo=False
+                st.session_state.Restitucion_Tierras=False
+                st.session_state.Revision_Segregados=False
                 st.session_state.Precampo=False 
                 st.session_state.CC_Precampo=False
                 st.session_state.Preparacion_Insumos=False
@@ -201,7 +203,7 @@ footer = """
 
     </style>
     <div class="footer">
-        <p>V.1.4 © 2025 Telespazio Argentina S.A. | <a href="https://www.telespazio.com/en" target="_blank">Visit our website</a></p>
+        <p>V.1.5 © 2025 Telespazio Argentina S.A. | <a href="https://www.telespazio.com/en" target="_blank">Visit our website</a></p>
     </div>
 """
 st.markdown(footer, unsafe_allow_html=True)
