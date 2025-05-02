@@ -47,7 +47,7 @@ def Bonos_Extras(usuario,puesto):
   perfil_9= pd.read_sql(f"select perfil from usuarios where usuario='{usuario}'",uri)
   perfil_9 = perfil_9.loc[0,'perfil']
   
-  if nombre_9=="Basilio Antonio Salazar Nunez" or nombre_9=="Brandon Felipe Mata Ortega":
+  if nombre_9=="Basilio Antonio Salazar Nunez" or nombre_9=="Brandon Felipe Mata Ortega" or nombre_9=="Evelyn Burgos Chavarría":
 
     placeholder8_9 = st.empty()
     archivos = placeholder8_9.subheader("Archivos")
@@ -382,6 +382,160 @@ def Bonos_Extras(usuario,puesto):
 
         placeholder29_9 = st.empty()
         historial_9_extras=placeholder29_9.dataframe(data=data_extras)
+
+
+
+  
+    elif nombre_9=="Ignacio Aguglino":
+
+    data_personal_9 = pd.read_sql(f"select nombre from usuarios where estado='Activo'", con)
+    Todo = pd.DataFrame({"nombre": ["Todos"]})
+    data_personal_9 = pd.concat([data_personal_9,Todo],ignore_index=True)
+
+    placeholder101_9 = st.empty()
+    personal_9= placeholder101_9.selectbox("Personal",data_personal_9,key="personal_9")
+
+    placeholder102_9 = st.empty()
+    periodo_9 = placeholder102_9.selectbox("Periodo de Bono", options=("Enero-2025","Febrero-2025","Marzo-2025","Abril-2025","Mayo-2025","Junio-2025","Julio-2025","Agosto-2025","Septiembre-2025","Octubre-2025","Noviembre-2025","Diciembre-2025"), key="periodo_9")    
+
+    if personal_9 == "Todos" :
+
+      placeholder15_9 = st.empty()
+      titulo_bonos_9 = placeholder15_9.subheader("Bonos")
+      
+      bonos_9= pd.read_sql(f"select a0,a1,a2,a3,a4,a5,a6,a7,a8,a9,a10,a11,a12,a13,a14,a15,a16,a17,a18,a19,a20,a21,a22,a23,a24,a25,a26,a27,a28,a29,a30,a31,a32,a33,a34,a35,a36,a37,a38,a39,a40,a41,a42,a43,a44,a45,a46,a47,a48,a49,a50,a51,a52,a53,a54,a55,a56,a57,a58,a59,a60,a61,a62,a63,a64,a65,a66,a67,a68,a69,a70,a71,a72,a73,a74,a75,a76,a77,a78,a79,a80,a81,a82,a83,a84,a85,a86,a87,a88,a89,a90,a91,a92,a93,a94,a95,a96,a97,a98,a99,a100,a101,a102,a103 from bonos where a103='{periodo_9}'", con)
+      bonos_9=  pd.DataFrame(data=bonos_9)
+
+      pivot1= len(bonos_9.iloc[:,0])
+
+      if pivot1==0:
+
+        placeholder16_9 = st.empty()
+        error_9 = placeholder16_9.error('No existen datos para mostrar')
+
+      else:
+
+        bonos_variables_9=0
+        bonos_fijos_9=0
+        otros_bonos_9=0
+        
+        for a in range(0,pivot1):
+
+            bonos_variables_9 = bonos_variables_9 + sum([float(bonos_9.iloc[a,65]),float(bonos_9.iloc[a,66]),float(bonos_9.iloc[a,67]),float(bonos_9.iloc[a,68]),float(bonos_9.iloc[a,69]),float(bonos_9.iloc[a,70]),float(bonos_9.iloc[a,71]),float(bonos_9.iloc[a,72]),float(bonos_9.iloc[a,73])])
+            bonos_fijos_9 = bonos_fijos_9 + sum([float(bonos_9.iloc[a,75]),float(bonos_9.iloc[a,76]),float(bonos_9.iloc[a,77]),float(bonos_9.iloc[a,78]),float(bonos_9.iloc[a,79]),float(bonos_9.iloc[a,80]),float(bonos_9.iloc[a,81]),float(bonos_9.iloc[a,82]),float(bonos_9.iloc[a,83])])
+            otros_bonos_9 = otros_bonos_9 + sum([float(bonos_9.iloc[a,95]),float(bonos_9.iloc[a,96]),float(bonos_9.iloc[a,97]),float(bonos_9.iloc[a,98]),float(bonos_9.iloc[a,99])])
+            bonos_total=sum([float(bonos_variables_9),float(bonos_fijos_9),float(otros_bonos_9)])
+            
+        placeholder17_9 = st.empty()
+        col1, col2, col3, col4 = placeholder17_9.columns(4)
+        col1.metric("Bonos Variables",bonos_variables_9)
+        col2.metric("Bonos Fijos",bonos_fijos_9)
+        col3.metric("Otros Bonos",otros_bonos_9)
+        col4.metric("Total",bonos_total)
+
+
+    else:
+    
+      placeholder45_9 = st.empty()
+      titulo_bonos_9 = placeholder45_9.subheader("Bonos")
+      
+      bonos_juridico_9= pd.read_sql(f"select a0,a1,a2,a3,a4,a5,a6,a7,a8,a9,a10,a11,a12,a13,a14,a15,a16,a17,a18,a19,a20,a21,a22,a23,a24 from bonos_juridico where a0='{usuario}' and a24='{periodo_9}'", con)
+      bonos_juridico_9=  pd.DataFrame(data=bonos_juridico_9)
+  
+      pivot8= len(bonos_juridico_9.iloc[:,0])
+  
+      if pivot8==0:
+  
+        placeholder46_9 = st.empty()
+        error_9 = placeholder46_9.error('No existen datos para mostrar')
+  
+      else:
+  
+        # Procesos #
+        
+        variables_1_9=["Producción (Según Reportes)","Producción (Limpia)","Producción (Estándar)","Bono (COP)","Bonificación Otras Funciones (COP)","Observaciones","Bonificación Total (COP)"]								
+  
+        fmi_9=[0]*7
+        cc_fmi_9=[0]*7
+        consultas_campo_9=[0]*7
+  
+        bonos_procesos_9= pd.DataFrame(data={"Variables":variables_1_9,"Folios de Matricula Inmobiliaria":fmi_9,"CC Folios de Matricula Inmobiliaria":cc_fmi_9,"Consultas de Campo":consultas_campo_9})
+  
+        # Folios de Matricula Inmobiliaria #
+        
+        bonos_procesos_9.iloc[0,1] = bonos_juridico_9.iloc[0,4]
+        bonos_procesos_9.iloc[1,1] = bonos_juridico_9.iloc[0,8]
+        bonos_procesos_9.iloc[2,1] = bonos_juridico_9.iloc[0,12]
+        bonos_procesos_9.iloc[3,1] = bonos_juridico_9.iloc[0,16]
+        bonos_procesos_9.iloc[4,1] = bonos_juridico_9.iloc[0,20]
+        bonos_procesos_9.iloc[5,1] = bonos_juridico_9.iloc[0,22]
+        bonos_procesos_9.iloc[6,1] = bonos_juridico_9.iloc[0,23]
+  
+        # CC_Folios de Matricula Inmobiliaria #
+        
+        bonos_procesos_9.iloc[0,2] = bonos_juridico_9.iloc[0,5]
+        bonos_procesos_9.iloc[1,2] = bonos_juridico_9.iloc[0,9]
+        bonos_procesos_9.iloc[2,2] = bonos_juridico_9.iloc[0,13]
+        bonos_procesos_9.iloc[3,2] = bonos_juridico_9.iloc[0,17]
+        bonos_procesos_9.iloc[4,2] = " "
+        bonos_procesos_9.iloc[5,2] = " "
+        bonos_procesos_9.iloc[6,2] = " "
+  
+        # Consultas de Campo #
+        
+        bonos_procesos_9.iloc[0,3] = bonos_juridico_9.iloc[0,6]
+        bonos_procesos_9.iloc[1,3] = bonos_juridico_9.iloc[0,10]
+        bonos_procesos_9.iloc[2,3] = bonos_juridico_9.iloc[0,14]
+        bonos_procesos_9.iloc[3,3] = bonos_juridico_9.iloc[0,18]
+        bonos_procesos_9.iloc[4,3] = " "
+        bonos_procesos_9.iloc[5,3] = " "
+        bonos_procesos_9.iloc[6,3] = " "
+  
+        placeholder47_9 = st.empty()
+        dataframe_bonos_procesos_9=placeholder47_9.dataframe(data=bonos_procesos_9)
+  
+      # Unidades #
+  
+      placeholder48_9 = st.empty()
+      titulo_bloques_9 = placeholder48_9.subheader("Unidades de Asignación")
+  
+      placeholder49_9 = st.empty()
+      periodo_bloques_9 = placeholder49_9.selectbox("Fecha de Producción", options=("Todos","Enero-2025","Febrero-2025","Marzo-2025","Abril-2025","Mayo-2025","Junio-2025","Julio-2025","Agosto-2025","Septiembre-2025","Octubre-2025","Noviembre-2025","Diciembre-2025"), key="periodo_bloques_9")    
+  
+      if periodo_bloques_9=="Todos":
+  
+        bloques_9= pd.read_sql(f"select nombre,supervisor,proceso,unidad_asignacion,tipo_revision,produccion_segun_reporte,produccion_rechazada_primera_revision,produccion_aprobada_primera_revision,porcentage_error,produccion_penalizada,produccion_limpia,fecha_produccion,fecha_bono from unidades where nombre='{usuario}'", con)
+        bloques_9=  pd.DataFrame(data=bloques_9)
+      
+      else:
+  
+        bloques_9= pd.read_sql(f"select nombre,supervisor,proceso,unidad_asignacion,tipo_revision,produccion_segun_reporte,produccion_rechazada_primera_revision,produccion_aprobada_primera_revision,porcentage_error,produccion_penalizada,produccion_limpia,fecha_produccion,fecha_bono from unidades where nombre='{usuario}' and fecha_produccion='{periodo_bloques_9}'", con)
+        bloques_9=  pd.DataFrame(data=bloques_9)
+      
+  
+      pivot9= len(bloques_9.iloc[:,1])
+  
+      if pivot9 ==0:
+  
+        placeholder50_9 = st.empty()
+        error_9 = placeholder50_9.error('No existen datos para mostrar')
+  
+      else:
+  
+        placeholder51_9 = st.empty()
+        dataframe_bloques_9=placeholder51_9.dataframe(data=bloques_9)
+
+
+
+
+
+
+
+
+
+
+
+
   
   elif perfil_9 == "2":
     
@@ -685,7 +839,7 @@ def Bonos_Extras(usuario,puesto):
       placeholder47_9 = st.empty()
       dataframe_bonos_procesos_9=placeholder47_9.dataframe(data=bonos_procesos_9)
 
-    # Bloques #
+    # Unidades #
 
     placeholder48_9 = st.empty()
     titulo_bloques_9 = placeholder48_9.subheader("Unidades de Asignación")
