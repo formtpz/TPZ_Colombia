@@ -419,7 +419,8 @@ def Bonos_Extras(usuario,puesto):
         
         placeholder105_9 = st.empty()
         col1 = placeholder105_9.columns(1)
-        col1.metric("Total Bonos Jurídicos (COP)", float(bonos_total.iloc[0,1]))
+        col1.metric("Total Bonos Jurídicos (COP)",10)    
+         #col1.metric("Total Bonos Jurídicos (COP)", float(bonos_total.iloc[0,1]))   
 
     else:
     
