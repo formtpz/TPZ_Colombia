@@ -405,7 +405,7 @@ def Bonos_Extras(usuario,puesto):
       bonos_juridico_9= pd.read_sql(f"select a0,a1,a2,a3,a4,a5,a6,a7,a8,a9,a10,a11,a12,a13,a14,a15,a16,a17,a18,a19,a20,a21,a22,a23,a24 from bonos_juridico where a24='{periodo_9}'", con)
       bonos_juridico_9=  pd.DataFrame(data=bonos_juridico_9)
       
-      pivot101= len(bonos_9.iloc[:,0])
+      pivot101= len(bonos_juridico_9.iloc[:,0])
 
       if pivot101==0:
 
