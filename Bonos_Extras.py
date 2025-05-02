@@ -415,28 +415,26 @@ def Bonos_Extras(usuario,puesto):
 
       else:
 
-        data_2_r = data_1_r.groupby(["nombre", "fecha"], as_index=False)[["horas"]].agg(np.sum)
-
-        bonos_total=sum([float(bonos_variables_9),float(bonos_fijos_9),float(otros_bonos_9)])
-            
-        placeholder17_9 = st.empty()
-        col1 = placeholder17_9.columns(4)
-        col4.metric("Total Bonos Jurídicos (COP)",bonos_total)
+        bonos_total = bonos_juridico_9.groupby(["a24"], as_index=False)[["a23"]].agg(np.sum)
+        
+        placeholder105_9 = st.empty()
+        col1 = placeholder105_9.columns(4)
+        col4.metric("Total Bonos Jurídicos (COP)",bonos_total.loc[0, 'a23'])
 
     else:
     
-      placeholder45_9 = st.empty()
-      titulo_bonos_9 = placeholder45_9.subheader("Bonos")
+      placeholder106_9 = st.empty()
+      titulo_bonos_9 = placeholder106_9.subheader("Bonos")
       
-      bonos_juridico_9= pd.read_sql(f"select a0,a1,a2,a3,a4,a5,a6,a7,a8,a9,a10,a11,a12,a13,a14,a15,a16,a17,a18,a19,a20,a21,a22,a23,a24 from bonos_juridico where a0='{usuario}' and a24='{periodo_9}'", con)
+      bonos_juridico_9= pd.read_sql(f"select a0,a1,a2,a3,a4,a5,a6,a7,a8,a9,a10,a11,a12,a13,a14,a15,a16,a17,a18,a19,a20,a21,a22,a23,a24 from bonos_juridico where a0='{personal_9}' and a24='{periodo_9}'", con)
       bonos_juridico_9=  pd.DataFrame(data=bonos_juridico_9)
   
-      pivot8= len(bonos_juridico_9.iloc[:,0])
+      pivot102= len(bonos_juridico_9.iloc[:,0])
   
-      if pivot8==0:
+      if pivot102==0:
   
-        placeholder46_9 = st.empty()
-        error_9 = placeholder46_9.error('No existen datos para mostrar')
+        placeholder107_9 = st.empty()
+        error_9 = placeholder107_9.error('No existen datos para mostrar')
   
       else:
   
@@ -480,20 +478,20 @@ def Bonos_Extras(usuario,puesto):
         bonos_procesos_9.iloc[5,3] = " "
         bonos_procesos_9.iloc[6,3] = " "
   
-        placeholder47_9 = st.empty()
-        dataframe_bonos_procesos_9=placeholder47_9.dataframe(data=bonos_procesos_9)
+        placeholder108_9 = st.empty()
+        dataframe_bonos_procesos_9=placeholder108_9.dataframe(data=bonos_procesos_9)
   
       # Unidades #
   
-      placeholder48_9 = st.empty()
-      titulo_bloques_9 = placeholder48_9.subheader("Unidades de Asignación")
+      placeholder109_9 = st.empty()
+      titulo_bloques_9 = placeholder109_9.subheader("Unidades de Asignación")
   
-      placeholder49_9 = st.empty()
-      periodo_bloques_9 = placeholder49_9.selectbox("Fecha de Producción", options=("Todos","Enero-2025","Febrero-2025","Marzo-2025","Abril-2025","Mayo-2025","Junio-2025","Julio-2025","Agosto-2025","Septiembre-2025","Octubre-2025","Noviembre-2025","Diciembre-2025"), key="periodo_bloques_9")    
+      placeholder110_9 = st.empty()
+      periodo_bloques_9 = placeholder110_9.selectbox("Fecha de Producción", options=("Todos","Enero-2025","Febrero-2025","Marzo-2025","Abril-2025","Mayo-2025","Junio-2025","Julio-2025","Agosto-2025","Septiembre-2025","Octubre-2025","Noviembre-2025","Diciembre-2025"), key="periodo_bloques_9")    
   
       if periodo_bloques_9=="Todos":
   
-        bloques_9= pd.read_sql(f"select nombre,supervisor,proceso,unidad_asignacion,tipo_revision,produccion_segun_reporte,produccion_rechazada_primera_revision,produccion_aprobada_primera_revision,porcentage_error,produccion_penalizada,produccion_limpia,fecha_produccion,fecha_bono from unidades where nombre='{usuario}'", con)
+        bloques_9= pd.read_sql(f"select nombre,supervisor,proceso,unidad_asignacion,tipo_revision,produccion_segun_reporte,produccion_rechazada_primera_revision,produccion_aprobada_primera_revision,porcentage_error,produccion_penalizada,produccion_limpia,fecha_produccion,fecha_bono from unidades where nombre='{personal_9}'", con)
         bloques_9=  pd.DataFrame(data=bloques_9)
       
       else:
@@ -502,17 +500,17 @@ def Bonos_Extras(usuario,puesto):
         bloques_9=  pd.DataFrame(data=bloques_9)
       
   
-      pivot9= len(bloques_9.iloc[:,1])
+      pivot103= len(bloques_9.iloc[:,1])
   
-      if pivot9 ==0:
+      if pivot103 ==0:
   
-        placeholder50_9 = st.empty()
-        error_9 = placeholder50_9.error('No existen datos para mostrar')
+        placeholder111_9 = st.empty()
+        error_9 = placeholder111_9.error('No existen datos para mostrar')
   
       else:
   
-        placeholder51_9 = st.empty()
-        dataframe_bloques_9=placeholder51_9.dataframe(data=bloques_9)
+        placeholder112_9 = st.empty()
+        dataframe_bloques_9=placeholder112_9.dataframe(data=bloques_9)
 
 
 
