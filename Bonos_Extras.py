@@ -416,7 +416,7 @@ def Bonos_Extras(usuario,puesto):
       else:
         
         placeholder105_9 = st.empty()
-        total = placeholder105_9.metric(label="Total Bonos Jurídicos (COP)", value= bonos_juridico_9['a23'].sum())   
+        total = placeholder105_9.metric(label="Total Bonos Jurídicos (COP)", value= pd.to_numeric(bonos_juridico_9['a23']).sum())   
 
     else:
     
