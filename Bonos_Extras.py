@@ -384,9 +384,8 @@ def Bonos_Extras(usuario,puesto):
         historial_9_extras=placeholder29_9.dataframe(data=data_extras)
 
 
-
   
-    elif nombre_9=="Ignacio Aguglino":
+  elif nombre_9=="Ignacio Aguglino":
 
     data_personal_9 = pd.read_sql(f"select nombre from usuarios where estado='Activo'", con)
     Todo = pd.DataFrame({"nombre": ["Todos"]})
