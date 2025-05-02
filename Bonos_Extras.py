@@ -418,10 +418,7 @@ def Bonos_Extras(usuario,puesto):
         bonos_total = bonos_juridico_9.groupby(["a24"], as_index=False)[["a23"]].agg(np.sum)
         
         placeholder105_9 = st.empty()
-        total = placeholder105_9.metric(label="Total Bonos Jurídicos (COP)", value=10)
-        #col1.metric("Total Bonos Jurídicos (COP)",10)    
-        #col1.metric("Total Bonos Jurídicos (COP)", float(bonos_total.iloc[0,1]))   
-   # st.metric(label="Temperature", value="70 °F", delta="1.2 °F")
+        total = placeholder105_9.metric(label="Total Bonos Jurídicos (COP)", value, float(bonos_total.iloc[0,1]))   
 
     else:
     
