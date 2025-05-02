@@ -400,18 +400,18 @@ def Bonos_Extras(usuario,puesto):
 
     if personal_9 == "Todos" :
 
-      placeholder15_9 = st.empty()
-      titulo_bonos_9 = placeholder15_9.subheader("Bonos")
+      placeholder103_9 = st.empty()
+      titulo_bonos_9 = placeholder103_9.subheader("Bonos")
       
-      bonos_9= pd.read_sql(f"select a0,a1,a2,a3,a4,a5,a6,a7,a8,a9,a10,a11,a12,a13,a14,a15,a16,a17,a18,a19,a20,a21,a22,a23,a24,a25,a26,a27,a28,a29,a30,a31,a32,a33,a34,a35,a36,a37,a38,a39,a40,a41,a42,a43,a44,a45,a46,a47,a48,a49,a50,a51,a52,a53,a54,a55,a56,a57,a58,a59,a60,a61,a62,a63,a64,a65,a66,a67,a68,a69,a70,a71,a72,a73,a74,a75,a76,a77,a78,a79,a80,a81,a82,a83,a84,a85,a86,a87,a88,a89,a90,a91,a92,a93,a94,a95,a96,a97,a98,a99,a100,a101,a102,a103 from bonos where a103='{periodo_9}'", con)
-      bonos_9=  pd.DataFrame(data=bonos_9)
+      bonos_juridico_9= pd.read_sql(f"select a0,a1,a2,a3,a4,a5,a6,a7,a8,a9,a10,a11,a12,a13,a14,a15,a16,a17,a18,a19,a20,a21,a22,a23,a24 from bonos_juridico where a24='{periodo_9}'", con)
+      bonos_juridico_9=  pd.DataFrame(data=bonos_juridico_9)
+      
+      pivot101= len(bonos_9.iloc[:,0])
 
-      pivot1= len(bonos_9.iloc[:,0])
+      if pivot101==0:
 
-      if pivot1==0:
-
-        placeholder16_9 = st.empty()
-        error_9 = placeholder16_9.error('No existen datos para mostrar')
+        placeholder104_9 = st.empty()
+        error_9 = placeholder104_9.error('No existen datos para mostrar')
 
       else:
 
@@ -419,7 +419,7 @@ def Bonos_Extras(usuario,puesto):
         bonos_fijos_9=0
         otros_bonos_9=0
         
-        for a in range(0,pivot1):
+        for a in range(0,pivot101):
 
             bonos_variables_9 = bonos_variables_9 + sum([float(bonos_9.iloc[a,65]),float(bonos_9.iloc[a,66]),float(bonos_9.iloc[a,67]),float(bonos_9.iloc[a,68]),float(bonos_9.iloc[a,69]),float(bonos_9.iloc[a,70]),float(bonos_9.iloc[a,71]),float(bonos_9.iloc[a,72]),float(bonos_9.iloc[a,73])])
             bonos_fijos_9 = bonos_fijos_9 + sum([float(bonos_9.iloc[a,75]),float(bonos_9.iloc[a,76]),float(bonos_9.iloc[a,77]),float(bonos_9.iloc[a,78]),float(bonos_9.iloc[a,79]),float(bonos_9.iloc[a,80]),float(bonos_9.iloc[a,81]),float(bonos_9.iloc[a,82]),float(bonos_9.iloc[a,83])])
