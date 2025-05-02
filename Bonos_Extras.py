@@ -935,7 +935,7 @@ def Bonos_Extras(usuario,puesto):
         placeholder109_9.empty()
         placeholder110_9.empty()
         
-        if pivot102=0:
+        if pivot102==0:
 
           placeholder107_9.empty()
 
