@@ -416,7 +416,7 @@ def Bonos_Extras(usuario,puesto):
       else:
 
         bonos_total = bonos_juridico_9.groupby(["a24"], as_index=False)[["a23"]].agg(np.sum)
-        
+        bonos_total=  pd.DataFrame(data=bonos_total)
         placeholder105_9 = st.empty()
         total = placeholder105_9.metric(label="Total Bonos Jurídicos (COP)", value=float(bonos_total.iloc[0,1]))   
 
