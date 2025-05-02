@@ -383,8 +383,6 @@ def Bonos_Extras(usuario,puesto):
 
         placeholder29_9 = st.empty()
         historial_9_extras=placeholder29_9.dataframe(data=data_extras)
-
-
   
   elif nombre_9=="Ignacio Aguglino":
 
@@ -509,18 +507,6 @@ def Bonos_Extras(usuario,puesto):
         placeholder112_9 = st.empty()
         dataframe_bloques_9=placeholder112_9.dataframe(data=bloques_9)
 
-
-
-
-
-
-
-
-
-
-
-
-  
   elif perfil_9 == "2":
     
     placeholder30_9 = st.empty()
@@ -925,6 +911,45 @@ def Bonos_Extras(usuario,puesto):
 
           placeholder28_9.empty()
           placeholder29_9.empty()
+
+    elif nombre_9== "Iganacio Aguglino":
+
+      placeholder101_9.empty()
+      placeholder102_9.empty()
+
+      if personal_9=="Todos":
+        
+        placeholder103_9.empty()
+    
+        if pivot101==0:
+        
+          placeholder104_9.empty()
+      
+        else:
+
+          placeholder105_9.empty()
+
+      else:
+
+        placeholder106_9.empty()
+        placeholder109_9.empty()
+        placeholder110_9.empty()
+        
+        if pivot102=0:
+
+          placeholder107_9.empty()
+
+        else:
+
+          placeholder108_9.empty()
+
+        if pivot103==0:
+
+          placeholder111_9.empty()
+
+        else:
+
+          placeholder112_9.empty()
 
     elif perfil_9== "2": 
       
