@@ -415,24 +415,13 @@ def Bonos_Extras(usuario,puesto):
 
       else:
 
-        bonos_variables_9=0
-        bonos_fijos_9=0
-        otros_bonos_9=0
-        
-        for a in range(0,pivot101):
+        data_2_r = data_1_r.groupby(["nombre", "fecha"], as_index=False)[["horas"]].agg(np.sum)
 
-            bonos_variables_9 = bonos_variables_9 + sum([float(bonos_9.iloc[a,65]),float(bonos_9.iloc[a,66]),float(bonos_9.iloc[a,67]),float(bonos_9.iloc[a,68]),float(bonos_9.iloc[a,69]),float(bonos_9.iloc[a,70]),float(bonos_9.iloc[a,71]),float(bonos_9.iloc[a,72]),float(bonos_9.iloc[a,73])])
-            bonos_fijos_9 = bonos_fijos_9 + sum([float(bonos_9.iloc[a,75]),float(bonos_9.iloc[a,76]),float(bonos_9.iloc[a,77]),float(bonos_9.iloc[a,78]),float(bonos_9.iloc[a,79]),float(bonos_9.iloc[a,80]),float(bonos_9.iloc[a,81]),float(bonos_9.iloc[a,82]),float(bonos_9.iloc[a,83])])
-            otros_bonos_9 = otros_bonos_9 + sum([float(bonos_9.iloc[a,95]),float(bonos_9.iloc[a,96]),float(bonos_9.iloc[a,97]),float(bonos_9.iloc[a,98]),float(bonos_9.iloc[a,99])])
-            bonos_total=sum([float(bonos_variables_9),float(bonos_fijos_9),float(otros_bonos_9)])
+        bonos_total=sum([float(bonos_variables_9),float(bonos_fijos_9),float(otros_bonos_9)])
             
         placeholder17_9 = st.empty()
-        col1, col2, col3, col4 = placeholder17_9.columns(4)
-        col1.metric("Bonos Variables",bonos_variables_9)
-        col2.metric("Bonos Fijos",bonos_fijos_9)
-        col3.metric("Otros Bonos",otros_bonos_9)
-        col4.metric("Total",bonos_total)
-
+        col1 = placeholder17_9.columns(4)
+        col4.metric("Total Bonos Jurídicos (COP)",bonos_total)
 
     else:
     
