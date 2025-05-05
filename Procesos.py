@@ -1065,7 +1065,7 @@ def Procesos3(usuario,puesto):
 
         # ----- Revisión de Predios Segredados ---- #
 
-        elif revision_segredados_2:
+        elif revision_segregados_2:
 
             placeholder1_2.empty()
             placeholder2_2.empty()
