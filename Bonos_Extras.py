@@ -1028,7 +1028,9 @@ def Bonos_Extras(usuario,puesto):
       Procesos.Procesos3(usuario,puesto)
 
   # ----- Historial ---- #
-  
+
+  if procesos_9:
+    
     placeholder1_9.empty()
     placeholder2_9.empty()
     placeholder3_9.empty()
