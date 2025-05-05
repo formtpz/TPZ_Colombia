@@ -1065,7 +1065,7 @@ def Procesos3(usuario,puesto):
 
         # ----- Revisión de Predios Segredados ---- #
 
-        elif revison_segredados_2:
+        elif revision_segredados_2:
 
             placeholder1_2.empty()
             placeholder2_2.empty()
@@ -1081,7 +1081,7 @@ def Procesos3(usuario,puesto):
             placeholder12_2.empty()
             st.session_state.Procesos=True
             st.session_state.Revision_Segregados=True
-            Revision_Segregados.Revision_Segregadoss(usuario,puesto)
+            Revision_Segregados.Revision_Segregados(usuario,puesto)
     
     elif st.session_state.Procesos==True:
 
