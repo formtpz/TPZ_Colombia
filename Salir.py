@@ -142,4 +142,4 @@ def Salir():
 
             st.subheader("En caso de dudas favor revisar el siguiente video tutorial")
 
-            st.subheader("Para soporte técnico favor escribir a basilio.nunez@telespazio.com")
+            st.subheader("Para soporte técnico favor escribir a evelyn.burgos@tpzco.com")
