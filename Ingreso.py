@@ -177,7 +177,7 @@ if pivot!=1:
 
      st.subheader("En caso de dudas favor revisar el siguiente video tutorial")
 
-     st.subheader("Para soporte técnico favor escribir a basilio.nunez@telespazio.com")
+     st.subheader("Para soporte técnico favor escribir a evelyn.burgos@tpzco.com")
 
 
 # ----- Pie de Página ---- #
@@ -203,7 +203,7 @@ footer = """
 
     </style>
     <div class="footer">
-        <p>V.1.5 © 2025 Telespazio Argentina S.A. | <a href="https://www.telespazio.com/en" target="_blank">Visit our website</a></p>
+        <p>V.1.6 © 2025 Telespazio Argentina S.A. | <a href="https://www.telespazio.com/en" target="_blank">Visit our website</a></p>
     </div>
 """
 st.markdown(footer, unsafe_allow_html=True)
