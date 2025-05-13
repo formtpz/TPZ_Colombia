@@ -43,7 +43,7 @@ def Postcampo_CC_FMI(usuario,puesto):
   salir_3 = placeholder7_3.button("Salir",key="salir_3")
 
   placeholder8_3 = st.empty()
-  postcampo_control_calidad_fmi_3 = placeholder8_3.title("Postcampo Control de Calidad Folios de Matricula Inmobiliaria")
+  postcampo_control_calidad_fmi_3 = placeholder8_3.title("Postcampo Control de Calidad FMI")
 
   default_date_3 = datetime.now(pytz.timezone('America/Bogota'))
 
