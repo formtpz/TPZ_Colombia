@@ -44,7 +44,7 @@ def Postcampo_FMI(usuario,puesto):
   salir_3 = placeholder7_3.button("Salir",key="salir_3")
 
   placeholder8_3 = st.empty()
-  fmi_3 = placeholder8_3.title("Postcampo Folios de Matricula Inmobiliaria")
+  postcampo_fmi_3 = placeholder8_3.title("Postcampo Folios de Matricula Inmobiliaria")
 
   default_date_3 = datetime.now(pytz.timezone('America/Bogota'))
 
