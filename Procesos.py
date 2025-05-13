@@ -260,6 +260,8 @@ def Procesos1(usuario,puesto):
             placeholder16_2.empty()
             placeholder17_2.empty()
             placeholder18_2.empty()
+            placeholder19_2.empty()
+            placeholder20_2.empty()
             st.session_state.Procesos=True
             st.session_state.CC_FMI=True
             CC_FMI.CC_FMI(usuario,puesto)
