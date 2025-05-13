@@ -8,7 +8,7 @@ import pytz
 from urllib.parse import urlparse
 import Procesos,Historial,Capacitacion,Otros_Registros,Bonos_Extras,Salir
 
-def CC_Postcampo_FMI(usuario,puesto):
+def Postcampo_CC_FMI(usuario,puesto):
 
   # ----- Conexión, Botones y Memoria ---- #
 
@@ -43,7 +43,7 @@ def CC_Postcampo_FMI(usuario,puesto):
   salir_3 = placeholder7_3.button("Salir",key="salir_3")
 
   placeholder8_3 = st.empty()
-  control_calidad_postcampo_fmi_3 = placeholder8_3.title("Postcampo Control de Calidad Folios de Matricula Inmobiliaria")
+  postcampo_control_calidad_fmi_3 = placeholder8_3.title("Postcampo Control de Calidad Folios de Matricula Inmobiliaria")
 
   default_date_3 = datetime.now(pytz.timezone('America/Bogota'))
 
@@ -87,7 +87,7 @@ def CC_Postcampo_FMI(usuario,puesto):
     placeholder14_3.empty()
     placeholder15_3.empty()
     st.session_state.Procesos=False
-    st.session_state.CC_Postcampo_FMI=False
+    st.session_state.Postcampo_CC_FMI=False
 
     perfil=pd.read_sql(f"select perfil from usuarios where usuario ='{usuario}'",uri)
     perfil= perfil.loc[0,'perfil']
@@ -123,7 +123,7 @@ def CC_Postcampo_FMI(usuario,puesto):
     placeholder13_3.empty()
     placeholder14_3.empty()
     placeholder15_3.empty()
-    st.session_state.CC_Postcampo_FMI=False
+    st.session_state.Postcampo_CC_FMI=False
     st.session_state.Historial=True
     Historial.Historial(usuario,puesto)   
 
@@ -145,7 +145,7 @@ def CC_Postcampo_FMI(usuario,puesto):
     placeholder13_3.empty()
     placeholder14_3.empty()
     placeholder15_3.empty()
-    st.session_state.CC_Postcampo_FMI=False
+    st.session_state.Postcampo_CC_FMI=False
     st.session_state.Capacitacion=True
     Capacitacion.Capacitacion(usuario,puesto)
 
@@ -167,7 +167,7 @@ def CC_Postcampo_FMI(usuario,puesto):
     placeholder13_3.empty()
     placeholder14_3.empty()
     placeholder15_3.empty()
-    st.session_state.CC_Postcampo_FMI=False
+    st.session_state.Postcampo_CC_FMI=False
     st.session_state.Otros_Registros=True
     Otros_Registros.Otros_Registros(usuario,puesto)
 
@@ -189,7 +189,7 @@ def CC_Postcampo_FMI(usuario,puesto):
     placeholder13_3.empty()
     placeholder14_3.empty()
     placeholder15_3.empty()
-    st.session_state.CC_Postcampo_FMI=False
+    st.session_state.Postcampo_CC_FMI=False
     st.session_state.Bonos_Extras=True
     Bonos_Extras.Bonos_Extras(usuario,puesto)    
 
@@ -212,7 +212,7 @@ def CC_Postcampo_FMI(usuario,puesto):
     placeholder14_3.empty()
     placeholder15_3.empty()
     st.session_state.Ingreso = False
-    st.session_state.CC_Postcampo_FMI=False
+    st.session_state.Postcampo_CC_FMI=False
     st.session_state.Salir=True
     Salir.Salir()
 
