@@ -97,6 +97,8 @@ def Salir():
                         st.session_state.Salir=False
                         st.session_state.FMI=False
                         st.session_state.CC_FMI=False
+                        st.session_state.Postcampo_FMI=False
+                        st.session_state.Postcampo_CC_FMI=False
                         st.session_state.Restitucion_Tierras=False
                         st.session_state.Revision_Segregados=False
                         st.session_state.Consulta_Campo=False
