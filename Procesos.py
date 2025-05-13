@@ -1187,7 +1187,7 @@ def Procesos3(usuario,puesto):
             placeholder14_2.empty()
             st.session_state.Procesos=True
             st.session_state.Postcampo_CC_FMI=True
-            Poscampo_CC_FMI.Postcampo_CC_FMI(usuario,puesto)
+            Postcampo_CC_FMI.Postcampo_CC_FMI(usuario,puesto)
             
         # ----- Consulta Campo ---- #
 
