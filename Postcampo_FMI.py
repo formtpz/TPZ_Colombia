@@ -22,8 +22,8 @@ def Postcampo_FMI(usuario,puesto):
   port_id = result.port
   con = psycopg2.connect(host=hostname,dbname= database,user= username,password=pwd,port= port_id)
 
-  placeholder1_3= st.sidebar.empty()
-  titulo= placeholder1_3.title("Menú")
+  placeholder1_3 = st.sidebar.empty()
+  titulo = placeholder1_3.title("Menú")
 
   placeholder2_3 = st.sidebar.empty()
   procesos_3 = placeholder2_3.button("Procesos",key="procesos_3")
