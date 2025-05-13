@@ -9,7 +9,7 @@ import pytz
 from urllib.parse import urlparse
 import Procesos,Historial,Capacitacion,Otros_Registros,Bonos_Extras,Salir
 
-def FMI(usuario,puesto):
+def Postcampo_FMI(usuario,puesto):
 
   # ----- Conexión, Botones y Memoria ---- #
 
@@ -44,7 +44,7 @@ def FMI(usuario,puesto):
   salir_3 = placeholder7_3.button("Salir",key="salir_3")
 
   placeholder8_3 = st.empty()
-  fmi_3 = placeholder8_3.title("Folios de Matricula Inmobiliaria")
+  fmi_3 = placeholder8_3.title("Postcampo Folios de Matricula Inmobiliaria")
 
   default_date_3 = datetime.now(pytz.timezone('America/Bogota'))
 
@@ -84,7 +84,7 @@ def FMI(usuario,puesto):
     placeholder13_3.empty()
     placeholder14_3.empty()
     st.session_state.Procesos=False
-    st.session_state.FMI=False
+    st.session_state.Postcampo_FMI=False
 
     perfil=pd.read_sql(f"select perfil from usuarios where usuario ='{usuario}'",uri)
     perfil= perfil.loc[0,'perfil']
@@ -119,7 +119,7 @@ def FMI(usuario,puesto):
     placeholder12_3.empty()
     placeholder13_3.empty()
     placeholder14_3.empty()
-    st.session_state.FMI=False
+    st.session_state.Postcampo_FMI=False
     st.session_state.Historial=True
     Historial.Historial(usuario,puesto)   
 
@@ -140,7 +140,7 @@ def FMI(usuario,puesto):
     placeholder12_3.empty()
     placeholder13_3.empty()
     placeholder14_3.empty()
-    st.session_state.FMI=False
+    st.session_state.Postcampo_FMI=False
     st.session_state.Capacitacion=True
     Capacitacion.Capacitacion(usuario,puesto)
 
@@ -161,7 +161,7 @@ def FMI(usuario,puesto):
     placeholder12_3.empty()
     placeholder13_3.empty()
     placeholder14_3.empty()
-    st.session_state.FMI=False
+    st.session_state.Postcampo_FMI=False
     st.session_state.Otros_Registros=True
     Otros_Registros.Otros_Registros(usuario,puesto)
 
@@ -182,7 +182,7 @@ def FMI(usuario,puesto):
     placeholder12_3.empty()
     placeholder13_3.empty()
     placeholder14_3.empty()
-    st.session_state.FMI=False
+    st.session_state.Postcampo_FMI=False
     st.session_state.Bonos_Extras=True
     Bonos_Extras.Bonos_Extras(usuario,puesto)    
 
@@ -204,7 +204,7 @@ def FMI(usuario,puesto):
     placeholder13_3.empty()
     placeholder14_3.empty()
     st.session_state.Ingreso = False
-    st.session_state.FMI=False
+    st.session_state.Postcampo_FMI=False
     st.session_state.Salir=True
     Salir.Salir()
 
@@ -226,6 +226,6 @@ def FMI(usuario,puesto):
 
     unidad_3=municipio_3+'-'+unidad_inter_3
 
-    cursor01.execute(f"INSERT INTO registro (marca,usuario,nombre,puesto,supervisor,proceso,fecha,semana,año,unidad_asignacion,tipo,produccion,aprobados,rechazados,horas)VALUES('{marca_3}','{usuario}','{nombre_3}','{puesto}','{supervisor_3}','Folios de Matricula Inmobiliaria','{fecha_3}','{semana_3}','{año_3}','{unidad_3}','{tipo_3}','{produccion_3}','0','0','0')")
+    cursor01.execute(f"INSERT INTO registro (marca,usuario,nombre,puesto,supervisor,proceso,fecha,semana,año,unidad_asignacion,tipo,produccion,aprobados,rechazados,horas)VALUES('{marca_3}','{usuario}','{nombre_3}','{puesto}','{supervisor_3}','Postcampo Folios de Matricula Inmobiliaria','{fecha_3}','{semana_3}','{año_3}','{unidad_3}','{tipo_3}','{produccion_3}','0','0','0')")
     con.commit()                                                                                                                                 
     st.success('Reporte enviado correctamente')
