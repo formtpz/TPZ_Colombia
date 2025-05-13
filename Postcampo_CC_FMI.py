@@ -43,7 +43,7 @@ def Postcampo_CC_FMI(usuario,puesto):
   salir_3 = placeholder7_3.button("Salir",key="salir_3")
 
   placeholder8_3 = st.empty()
-  postcampo_cc_fmi_3 = placeholder8_3.title("Postcampo Control de Calidad Folios de Matricula Inmobiliaria")
+  postcampo_control_calidad_fmi_3 = placeholder8_3.title("Postcampo Control de Calidad Folios de Matricula Inmobiliaria")
 
   default_date_3 = datetime.now(pytz.timezone('America/Bogota'))
 
@@ -236,6 +236,6 @@ def Postcampo_CC_FMI(usuario,puesto):
 
     unidad_3=municipio_3+'-'+unidad_inter_3
     
-    cursor01.execute(f"INSERT INTO registro (marca,usuario,nombre,puesto,supervisor,proceso,fecha,semana,año,unidad_asignacion,tipo,produccion,aprobados,rechazados,horas)VALUES('{marca_3}','{usuario}','{nombre_3}','{puesto}','{supervisor_3}','Postcampo Control de Calidad Folios de Matricula Inmobiliaria','{fecha_3}','{semana_3}','{año_3}','{unidad_3}','{tipo_3}','{produccion_3}','{aprobados_3}','{rechazados_3}','0')")
+    cursor01.execute(f"INSERT INTO registro (marca,usuario,nombre,puesto,supervisor,proceso,fecha,semana,año,unidad_asignacion,tipo,produccion,aprobados,rechazados,horas)VALUES('{marca_3}','{usuario}','{nombre_3}','{puesto}','{supervisor_3}','Postcampo Control de Calidad FMI','{fecha_3}','{semana_3}','{año_3}','{unidad_3}','{tipo_3}','{produccion_3}','{aprobados_3}','{rechazados_3}','0')")
     con.commit()                                                                                                                                 
     st.success('Reporte enviado correctamente')
