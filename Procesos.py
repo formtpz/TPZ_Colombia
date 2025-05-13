@@ -40,7 +40,7 @@ def Procesos1(usuario,puesto):
         postcampo_fmi_2 = placeholder10_2.button("Postcampo Folios de Matricula Inmobiliaria",key="postcampo_fmi_2")
 
         placeholder11_2 = st.empty()
-        postcampo_cc_fmi_2 = placeholder11_2.button("Postcampo Control de Calidad Folios de Matricula Inmobiliaria",key="postcampo_cc_fmi_2")
+        postcampo_cc_fmi_2 = placeholder11_2.button("Postcampo Control de Calidad FMI",key="postcampo_cc_fmi_2")
 
         placeholder12_2 = st.empty()
         consulta_campo_2 = placeholder12_2.button("Consultas de Campo",key="consulta_campo_2")
@@ -979,7 +979,7 @@ def Procesos3(usuario,puesto):
         postcampo_fmi_2 = placeholder10_2.button("Postcampo Folios de Matricula Inmobiliaria",key="postcampo_fmi_2")
 
         placeholder11_2 = st.empty()
-        postcampo_cc_fmi_2 = placeholder11_2.button("Postcampo Control de Calidad Folios de Matricula Inmobiliaria",key="postcampo_cc_fmi_2")
+        postcampo_cc_fmi_2 = placeholder11_2.button("Postcampo Control de Calidad FMI",key="postcampo_cc_fmi_2")
 
         placeholder12_2 = st.empty()
         consulta_campo_2 = placeholder12_2.button("Consultas de Campo",key="consulta_campo_2")
