@@ -60,7 +60,7 @@ def Precampo(usuario,puesto):
   tipo_3= placeholder12_3.selectbox("Tipo", options=("Ordinario","Corrección Inspección","Corrección Primera Reinspección","Reproceso Ordinario","Reproceso Corrección Inspección","Reproceso Corrección Primera Reinspección"), key="tipo_3")
 
   placeholder13_3= st.empty()
-  produccion_3= placeholder13_3.number_input("Cantidad de Predios Producidos (si corresponden a F valen la mitad, ej: 10 = 5 predios)",min_value=0,step=1,key="produccion_3")
+  produccion_3= placeholder13_3.number_input("Cantidad de Predios Producidos (si corresponden a F reportar la mitad, ej: 10 = 5 predios)",min_value=0,step=1,key="produccion_3")
 
   placeholder14_3= st.empty()
   horas_3= placeholder14_3.number_input("Cantidad de Horas Trabajadas en el Proceso",min_value=0.0,key="horas_3")
