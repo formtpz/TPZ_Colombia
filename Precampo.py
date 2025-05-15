@@ -54,13 +54,13 @@ def Precampo(usuario,puesto):
   municipio_3= placeholder10_3.selectbox("Municipio", options=("Cabuyaro","Chalán","Colombia","Cuítiva","Iza","Los Palmitos","Morroa","Trinidad","San Estanislao","San Luis de Cubarral","Zambrano"), key="municipio_3")
 
   placeholder11_3= st.empty()
-  consecutivo_3= placeholder11_3.text_input("Consecutivo (nota: reportes de F, indicar luego del consecutivo una f; ej: 10f)",max_chars=3,key="consecutivo_3")
+  consecutivo_3= placeholder11_3.text_input("Consecutivo" ,max_chars=3,key="consecutivo_3")
   
   placeholder12_3= st.empty()
   tipo_3= placeholder12_3.selectbox("Tipo", options=("Ordinario","Corrección Inspección","Corrección Primera Reinspección","Reproceso Ordinario","Reproceso Corrección Inspección","Reproceso Corrección Primera Reinspección"), key="tipo_3")
 
   placeholder13_3= st.empty()
-  produccion_3= placeholder13_3.number_input("Cantidad de Predios Producidos (si corresponden a F reportar la mitad, ej: 10 = 5 predios)",min_value=0,step=1,key="produccion_3")
+  produccion_3= placeholder13_3.number_input("Cantidad de Predios Producidos (si contienen F, reportar la mitad, ej: 10 ordinarios + 10 f = 15 predios)",min_value=0,step=1,key="produccion_3")
 
   placeholder14_3= st.empty()
   horas_3= placeholder14_3.number_input("Cantidad de Horas Trabajadas en el Proceso",min_value=0.0,key="horas_3")
