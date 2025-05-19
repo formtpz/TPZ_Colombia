@@ -63,7 +63,7 @@ def Precampo(usuario,puesto):
   produccion_3= placeholder13_3.number_input("Cantidad de Predios Producidos (si contienen F, reportar la mitad, ej: 10 ordinarios + 10 f = 15 predios)",min_value=0.0,key="produccion_3")
 
   placeholder14_3= st.empty()
-  horas_3= placeholder14_3.number_input("Cantidad de Horas Trabajadas en el Proceso",min_value=0.0,key="horas_3")
+  horas_3= placeholder14_3.number_input("Cantidad de Horas Trabajadas en el Proceso",min_value=0.5,key="horas_3")
 
   placeholder15_3 = st.empty()
   reporte_3 = placeholder15_3.button("Generar Reporte",key="reporte_3")
