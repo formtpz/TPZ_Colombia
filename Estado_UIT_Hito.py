@@ -8,7 +8,7 @@ import pytz
 from urllib.parse import urlparse
 import Procesos,Historial,Capacitacion,Otros_Registros,Bonos_Extras,Salir
 
-def Restitucion_Tierras(usuario,puesto):
+def Estado_UIT_Hito(usuario,puesto):
 
   # ----- Conexión, Botones y Memoria ---- #
 
@@ -43,21 +43,27 @@ def Restitucion_Tierras(usuario,puesto):
   salir_3 = placeholder7_3.button("Salir",key="salir_3")
 
   placeholder8_3 = st.empty()
-  restitucion_tierras_3 = placeholder8_3.title("Restitución de Tierras")
+  estado_uit_hito_3 = placeholder8_3.title("Estado del Hito y UIT's")
 
-  default_date_3 = datetime.now(pytz.timezone('America/Bogota'))
+  default_date_3 = datetime.now(pytz.timezone('America/Guatemala'))
 
   placeholder9_3= st.empty()
-  fecha_3= placeholder9_3.date_input("Fecha",value=default_date_3,key="fecha_3")
-  
+  lote_3= placeholder9_3.selectbox("Lote",options=("1","2","3") key="lote_3")
+                                  
   placeholder10_3= st.empty()
   municipio_3= placeholder10_3.selectbox("Municipio", options=("Cabuyaro","Chalán","Colombia","Cuítiva","Iza","Los Palmitos","Morroa","Trinidad","San Estanislao","San Luis de Cubarral","Zambrano"), key="municipio_3")
   
   placeholder11_3= st.empty()
-  produccion_3= placeholder11_3.number_input("Cantidad de Predios Revisados",min_value=0,step=1,key="produccion_3")
-
-  placeholder12_3 = st.empty()
-  reporte_3 = placeholder12_3.button("Generar Reporte",key="reporte_3")
+  hito_3= placeholder11_3.selectbox("Hito",options=("1","2","3","4","5","6","7","8","9"9,"10") key="hito_3") 
+  
+  placeholder12_3= st.empty()
+  uit_3= placeholder12_3.text_input("UIT",max_chars=20,key="uit_3")
+  
+  placeholder13_3= st.empty()
+  estado_3= placeholder13_3.selectbox("Lote",options=("En Proceso","Finalizado") key="estado_3")
+   
+  placeholder14_3 = st.empty()
+  reporte_3 = placeholder14_3.button("Generar Reporte",key="reporte_3")
 
   # ----- Procesos ---- #
     
@@ -74,8 +80,10 @@ def Restitucion_Tierras(usuario,puesto):
     placeholder10_3.empty()
     placeholder11_3.empty()
     placeholder12_3.empty()
+    placeholder13_3.empty()
+    placeholder14_3.empty()
     st.session_state.Procesos=False
-    st.session_state.Restitucion_Tierras=False
+    st.session_state.estado_uit_hito=False
 
     perfil=pd.read_sql(f"select perfil from usuarios where usuario ='{usuario}'",uri)
     perfil= perfil.loc[0,'perfil']
@@ -108,7 +116,9 @@ def Restitucion_Tierras(usuario,puesto):
     placeholder10_3.empty()
     placeholder11_3.empty()
     placeholder12_3.empty()
-    st.session_state.Restitucion_Tierras=False
+    placeholder13_3.empty()
+    placeholder14_3.empty()
+    st.session_state.estado_uit_hito=False
     st.session_state.Historial=True
     Historial.Historial(usuario,puesto)   
 
@@ -127,7 +137,9 @@ def Restitucion_Tierras(usuario,puesto):
     placeholder10_3.empty()
     placeholder11_3.empty()
     placeholder12_3.empty()
-    st.session_state.Restitucion_Tierras=False
+    placeholder13_3.empty()
+    placeholder14_3.empty()
+    st.session_state.estado_uit_hito=False
     st.session_state.Capacitacion=True
     Capacitacion.Capacitacion(usuario,puesto)
 
@@ -146,7 +158,9 @@ def Restitucion_Tierras(usuario,puesto):
     placeholder10_3.empty()
     placeholder11_3.empty()
     placeholder12_3.empty()
-    st.session_state.Restitucion_Tierras=False
+    placeholder13_3.empty()
+    placeholder14_3.empty()
+    st.session_state.estado_uit_hito=False
     st.session_state.Otros_Registros=True
     Otros_Registros.Otros_Registros(usuario,puesto)
 
@@ -165,7 +179,9 @@ def Restitucion_Tierras(usuario,puesto):
     placeholder10_3.empty()
     placeholder11_3.empty()
     placeholder12_3.empty()
-    st.session_state.Restitucion_Tierras=False
+    placeholder13_3.empty()
+    placeholder14_3.empty()
+    st.session_state.estado_uit_hito=False
     st.session_state.Bonos_Extras=True
     Bonos_Extras.Bonos_Extras(usuario,puesto)    
 
@@ -184,8 +200,10 @@ def Restitucion_Tierras(usuario,puesto):
     placeholder10_3.empty()
     placeholder11_3.empty()
     placeholder12_3.empty()
+    placeholder13_3.empty()
+    placeholder14_3.empty()
     st.session_state.Ingreso = False
-    st.session_state.Restitucion_Tierras=False
+    st.session_state.estado_uit_hito=False
     st.session_state.Salir=True
     Salir.Salir()
 
@@ -193,7 +211,7 @@ def Restitucion_Tierras(usuario,puesto):
 
     cursor01=con.cursor()
 
-    marca_3= datetime.now(pytz.timezone('America/Bogota')).strftime("%Y-%m-%d %H:%M:%S")
+    marca_3= datetime.now(pytz.timezone('America/Guatemala')).strftime("%Y-%m-%d %H:%M:%S")
     
     nombre_3= pd.read_sql(f"select nombre from usuarios where usuario ='{usuario}'",uri)
     nombre_3 = nombre_3.loc[0,'nombre']
@@ -205,6 +223,6 @@ def Restitucion_Tierras(usuario,puesto):
 
     año_3 = fecha_3.isocalendar()[0]
     
-    cursor01.execute(f"INSERT INTO registro (marca,usuario,nombre,puesto,supervisor,proceso,fecha,semana,año,unidad_asignacion,tipo,produccion,aprobados,rechazados,horas)VALUES('{marca_3}','{usuario}','{nombre_3}','{puesto}','{supervisor_3}','Restitución de Tierras','{fecha_3}','{semana_3}','{año_3}','{municipio_3}','Ordinario','{produccion_3}','0','0','0')")
+    cursor01.execute(f"INSERT INTO registro (marca,usuario,nombre,puesto,supervisor,proceso,fecha,semana,año,unidad_asignacion,tipo,produccion,aprobados,rechazados,horas,uit,hito,lote)VALUES('{marca_3}','{usuario}','{nombre_3}','{puesto}','{supervisor_3}','Estado UIT Hito','{fecha_3}','{semana_3}','{año_3}','{municipio_3}','0','0','0','0','0','{uit_3}','{hito_3}','{lote_3}','{estado_3}')")
     con.commit()                                                                                                                                 
     st.success('Reporte enviado correctamente')
