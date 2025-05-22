@@ -228,7 +228,7 @@ def Revision_Campo(usuario,puesto):
 
     cursor01=con.cursor()
 
-    marca_3= datetime.now(pytz.timezone('America/Bogota')).strftime("%Y-%m-%d %H:%M:%S")
+    marca_3= datetime.now(pytz.timezone('America/Guatemala')).strftime("%Y-%m-%d %H:%M:%S")
     
     nombre_3= pd.read_sql(f"select nombre from usuarios where usuario ='{usuario}'",uri)
     nombre_3 = nombre_3.loc[0,'nombre']
