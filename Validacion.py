@@ -63,7 +63,7 @@ def Validacion(usuario,puesto):
   uit_3= placeholder13_3.text_input("UIT", max_chars=40, key="uit_3")
   
   placeholder14_3= st.empty()
-  paquete_3= placeholder14_3.text_input("Número de Paquete",max_chars=4,key="paquete_3")
+  paquete_3= placeholder14_3.text_input("Número de Paquete",max_chars=40,key="paquete_3")
   
   placeholder15_3= st.empty()
   tipo_3= placeholder15_3.selectbox("Tipo", options=("Ordinario","Corrección Inspección","Corrección Primera Reinspección","Reproceso Ordinario"," Reproceso Corrección Inspección"," Reproceso Corrección Primera Reinspección"), key="tipo_3")
