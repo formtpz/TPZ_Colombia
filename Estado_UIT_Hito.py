@@ -48,7 +48,7 @@ def Estado_UIT_Hito(usuario,puesto):
   default_date_3 = datetime.now(pytz.timezone('America/Guatemala'))
 
   placeholder9_3= st.empty()
-  lote_3= placeholder9_3.selectbox("Lote",options=("1","2","3") key="lote_3")
+  lote_3= placeholder9_3.selectbox("Lote",options=("1","2","3"), key="lote_3")
                                   
   placeholder10_3= st.empty()
   municipio_3= placeholder10_3.selectbox("Municipio", options=("Cabuyaro","Chalán","Colombia","Cuítiva","Iza","Los Palmitos","Morroa","Trinidad","San Estanislao","San Luis de Cubarral","Zambrano"), key="municipio_3")
