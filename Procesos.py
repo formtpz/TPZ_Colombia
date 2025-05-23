@@ -1,7 +1,7 @@
 # ----- Librerías ---- #
 
 import streamlit as st
-import Historial, Capacitacion, Otros_Registros, Bonos_Extras, Salir, FMI, CC_FMI, Postcampo_FMI, Postcampo_CC_FMI, Consulta_Campo,Restitucion_Tierras,Revision_Segregados, Precampo, CC_Precampo, Preparacion_Insumos, Revision_Campo, Validacion, CC_Validacion
+import Historial, Capacitacion, Otros_Registros, Bonos_Extras, Salir, FMI, CC_FMI, Postcampo_FMI, Postcampo_CC_FMI, Consulta_Campo,Restitucion_Tierras,Estado_UIT_Hito,Revision_Segregados, Precampo, CC_Precampo, Preparacion_Insumos, Revision_Campo, Validacion, CC_Validacion
 
 def Procesos1(usuario,puesto):
 
@@ -69,6 +69,9 @@ def Procesos1(usuario,puesto):
         placeholder20_2 = st.empty()
         revision_segregados_2 = placeholder20_2.button("Revisión de Predios Segregados",key="revision_segregados_2")
 
+        placeholder21_2 = st.empty()
+        estado_uit_hito_2 = placeholder21_2.button("Revisión de Predios Segregados",key="estado_uit_hito_2")
+
         # ----- Historial ---- #
 
         if historial_2:
@@ -93,6 +96,7 @@ def Procesos1(usuario,puesto):
             placeholder18_2.empty()
             placeholder19_2.empty()
             placeholder20_2.empty()
+            placeholder21_2.empty()
             st.session_state.Procesos=True
             st.session_state.Historial=True
             Historial.Historial(usuario,puesto)
@@ -121,6 +125,7 @@ def Procesos1(usuario,puesto):
             placeholder18_2.empty()
             placeholder19_2.empty()
             placeholder20_2.empty()
+            placeholder21_2.empty()
             st.session_state.Procesos=True
             st.session_state.Capacitacion=True
             Capacitacion.Capacitacion(usuario,puesto)
@@ -149,6 +154,7 @@ def Procesos1(usuario,puesto):
             placeholder18_2.empty()
             placeholder19_2.empty()
             placeholder20_2.empty()
+            placeholder21_2.empty()
             st.session_state.Procesos=True
             st.session_state.Otros_Registros=True
             Otros_Registros.Otros_Registros(usuario,puesto)
@@ -177,6 +183,7 @@ def Procesos1(usuario,puesto):
             placeholder18_2.empty()
             placeholder19_2.empty()
             placeholder20_2.empty()
+            placeholder21_2.empty()
             st.session_state.Procesos=True
             st.session_state.Bonos_Extras=True
             Bonos_Extras.Bonos_Extras(usuario,puesto)
@@ -205,6 +212,7 @@ def Procesos1(usuario,puesto):
             placeholder18_2.empty()
             placeholder19_2.empty()
             placeholder20_2.empty()
+            placeholder21_2.empty()
             st.session_state.Ingreso= False
             st.session_state.Procesos=True
             st.session_state.Salir=True
@@ -234,6 +242,7 @@ def Procesos1(usuario,puesto):
             placeholder18_2.empty()
             placeholder19_2.empty()
             placeholder20_2.empty()
+            placeholder21_2.empty()
             st.session_state.Procesos=True
             st.session_state.FMI=True
             FMI.FMI(usuario,puesto)
@@ -262,6 +271,7 @@ def Procesos1(usuario,puesto):
             placeholder18_2.empty()
             placeholder19_2.empty()
             placeholder20_2.empty()
+            placeholder21_2.empty()
             st.session_state.Procesos=True
             st.session_state.CC_FMI=True
             CC_FMI.CC_FMI(usuario,puesto)
@@ -290,6 +300,7 @@ def Procesos1(usuario,puesto):
             placeholder18_2.empty()
             placeholder19_2.empty()
             placeholder20_2.empty()
+            placeholder21_2.empty()
             st.session_state.Procesos=True
             st.session_state.Postcampo_FMI=True
             Postcampo_FMI.Postcampo_FMI(usuario,puesto)
@@ -318,6 +329,7 @@ def Procesos1(usuario,puesto):
             placeholder18_2.empty()
             placeholder19_2.empty()
             placeholder20_2.empty()
+            placeholder21_2.empty()
             st.session_state.Procesos=True
             st.session_state.Postcampo_CC_FMI=True
             Postcampo_CC_FMI.Postcampo_CC_FMI(usuario,puesto)
@@ -348,6 +360,7 @@ def Procesos1(usuario,puesto):
             placeholder18_2.empty()
             placeholder19_2.empty()
             placeholder20_2.empty()
+            placeholder21_2.empty()
             st.session_state.Procesos=True
             st.session_state.Consulta_Campo=True
             Consulta_Campo.Consulta_Campo(usuario,puesto)
@@ -376,6 +389,7 @@ def Procesos1(usuario,puesto):
             placeholder18_2.empty()
             placeholder19_2.empty()
             placeholder20_2.empty()
+            placeholder21_2.empty()
             st.session_state.Procesos=True
             st.session_state.Precampo=True
             Precampo.Precampo(usuario,puesto)
@@ -404,6 +418,7 @@ def Procesos1(usuario,puesto):
             placeholder18_2.empty()
             placeholder19_2.empty()
             placeholder20_2.empty()
+            placeholder21_2.empty()
             st.session_state.Procesos=True
             st.session_state.CC_Precampo=True
             CC_Precampo.CC_Precampo(usuario,puesto)
@@ -432,6 +447,7 @@ def Procesos1(usuario,puesto):
             placeholder18_2.empty()
             placeholder19_2.empty()
             placeholder20_2.empty()
+            placeholder21_2.empty()
             st.session_state.Procesos=True
             st.session_state.Preparacion_Insumos=True
             Preparacion_Insumos.Preparacion_Insumos(usuario,puesto)
@@ -460,6 +476,7 @@ def Procesos1(usuario,puesto):
             placeholder18_2.empty()
             placeholder19_2.empty()
             placeholder20_2.empty()
+            placeholder21_2.empty()
             st.session_state.Procesos=True
             st.session_state.Revision_Campo=True
             Revision_Campo.Revision_Campo(usuario,puesto)
@@ -488,6 +505,7 @@ def Procesos1(usuario,puesto):
             placeholder18_2.empty()
             placeholder19_2.empty()
             placeholder20_2.empty()
+            placeholder21_2.empty()
             st.session_state.Procesos=True
             st.session_state.Validacion=True
             Validacion.Validacion(usuario,puesto)
@@ -516,6 +534,7 @@ def Procesos1(usuario,puesto):
             placeholder18_2.empty()
             placeholder19_2.empty()
             placeholder20_2.empty()
+            placeholder21_2.empty()
             st.session_state.Procesos=True
             st.session_state.CC_Validacion=True
             CC_Validacion.CC_Validacion(usuario,puesto)
@@ -544,6 +563,7 @@ def Procesos1(usuario,puesto):
             placeholder18_2.empty()
             placeholder19_2.empty()
             placeholder20_2.empty()
+            placeholder21_2.empty()
             st.session_state.Procesos=True
             st.session_state.Restitucion_Tierras=True
             Restitucion_Tierras.Restitucion_Tierras(usuario,puesto)
@@ -572,9 +592,39 @@ def Procesos1(usuario,puesto):
             placeholder18_2.empty()
             placeholder19_2.empty()
             placeholder20_2.empty()
+            placeholder21_2.empty()
             st.session_state.Procesos=True
             st.session_state.Revision_Segregados=True
             Revision_Segregados.Revision_Segregados(usuario,puesto)
+                   
+        # ----- Estado UIT Hito ---- #
+
+        elif estado_uit_hito_2:
+
+            placeholder1_2.empty()
+            placeholder2_2.empty()
+            placeholder3_2.empty()
+            placeholder4_2.empty()
+            placeholder5_2.empty()
+            placeholder6_2.empty()
+            placeholder7_2.empty()
+            placeholder8_2.empty()
+            placeholder9_2.empty()
+            placeholder10_2.empty()
+            placeholder11_2.empty()
+            placeholder12_2.empty()
+            placeholder13_2.empty()
+            placeholder14_2.empty()
+            placeholder15_2.empty()
+            placeholder16_2.empty()
+            placeholder17_2.empty()
+            placeholder18_2.empty()
+            placeholder19_2.empty()
+            placeholder20_2.empty()
+            placeholder21_2.empty()
+            st.session_state.Procesos=True
+            st.session_state.Estado_UIT_Hito=True
+            Estado_UIT_Hito.Estado_UIT_Hito(usuario,puesto)
 
     elif st.session_state.Procesos==True:
 
@@ -628,6 +678,9 @@ def Procesos1(usuario,puesto):
 
         elif st.session_state.Revision_Segregados==True:
             Revision_Segregados.Revision_Segregados(usuario,puesto)
+            
+        elif st.session_state.Estado_UIT_Hito==True:
+            Estado_UIT_Hito.Estado_UIT_Hito(usuario,puesto)
             
 # ----- Procesos 2 (Gabinete) ---- #
 
