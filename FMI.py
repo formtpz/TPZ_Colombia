@@ -262,6 +262,6 @@ def FMI(usuario,puesto):
 
     unidad_3=municipio_3+'-'+unidad_inter_3
 
-    cursor01.execute(f"INSERT INTO registro (marca,usuario,nombre,puesto,supervisor,proceso,fecha,semana,año,unidad_asignacion,tipo,produccion,aprobados,rechazados,horas,uit,hito,lote,estado,area,efes,informales,paquete,con_fmi,sin_fmi)VALUES('{marca_3}','{usuario}','{nombre_3}','{puesto}','{supervisor_3}','Folios de Matricula Inmobiliaria','{fecha_3}','{semana_3}','{año_3}','{unidad_3}','{tipo_3}','{produccion_3}','0','0','0','{uit_3}','0','{lote_3}','{estado_3}','0','0','0','0','{folios_con_fmi_3},'{predios_sin_fmi_3}')")
+    cursor01.execute(f"INSERT INTO registro (marca,usuario,nombre,puesto,supervisor,proceso,fecha,semana,año,unidad_asignacion,tipo,produccion,aprobados,rechazados,horas,uit,hito,lote,estado,area,efes,informales,paquete,con_fmi,sin_fmi)VALUES('{marca_3}','{usuario}','{nombre_3}','{puesto}','{supervisor_3}','Folios de Matricula Inmobiliaria','{fecha_3}','{semana_3}','{año_3}','{unidad_3}','{tipo_3}','{produccion_3}','0','0','0','{uit_3}','0','{lote_3}','{estado_3}','0','0','0','0','{folios_con_fmi_3}','{predios_sin_fmi_3}')")
     con.commit()                                                                                                                                 
     st.success('Reporte enviado correctamente')
