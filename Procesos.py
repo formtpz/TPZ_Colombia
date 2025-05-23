@@ -70,7 +70,7 @@ def Procesos1(usuario,puesto):
         revision_segregados_2 = placeholder20_2.button("Revisión de Predios Segregados",key="revision_segregados_2")
 
         placeholder21_2 = st.empty()
-        estado_uit_hito_2 = placeholder21_2.button("Estado UIT e Hito",key="estado_uit_hito_2")
+        estado_uit_hito_2 = placeholder21_2.button("Estado del Hito y UIT's",key="estado_uit_hito_2")
 
         # ----- Historial ---- #
 
