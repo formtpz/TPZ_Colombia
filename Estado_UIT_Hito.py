@@ -46,24 +46,27 @@ def Estado_UIT_Hito(usuario,puesto):
   estado_uit_hito_3 = placeholder8_3.title("Estado del Hito y UIT's")
 
   default_date_3 = datetime.now(pytz.timezone('America/Guatemala'))
-
-  placeholder9_3= st.empty()
-  lote_3= placeholder9_3.selectbox("Lote",options=("1","2","3"), key="lote_3")
-                                  
+  
   placeholder10_3= st.empty()
-  municipio_3= placeholder10_3.selectbox("Municipio", options=("Cabuyaro","Chalán","Colombia","Cuítiva","Iza","Los Palmitos","Morroa","Trinidad","San Estanislao","San Luis de Cubarral","Zambrano"), key="municipio_3")
+  fecha_3= placeholder10_3.date_input("Fecha",value=default_date_3,key="fecha_3")
   
   placeholder11_3= st.empty()
-  hito_3= placeholder11_3.selectbox("Hito",options=("1","2","3","4","5","6","7","8","9","10"), key="hito_3") 
-  
+  lote_3= placeholder11_3.selectbox("Lote",options=("1","2","3"), key="lote_3")
+                                  
   placeholder12_3= st.empty()
-  uit_3= placeholder12_3.text_input("UIT",max_chars=20,key="uit_3")
+  municipio_3= placeholder12_3.selectbox("Municipio", options=("Cabuyaro","Chalán","Colombia","Cuítiva","Iza","Los Palmitos","Morroa","Trinidad","San Estanislao","San Luis de Cubarral","Zambrano"), key="municipio_3")
   
   placeholder13_3= st.empty()
-  estado_3= placeholder13_3.selectbox("Lote",options=("En Proceso","Finalizado"), key="estado_3")
+  hito_3= placeholder13_3.selectbox("Hito",options=("1","2","3","4","5","6","7","8","9","10"), key="hito_3") 
+  
+  placeholder14_3= st.empty()
+  uit_3= placeholder14_3.text_input("UIT",max_chars=20,key="uit_3")
+  
+  placeholder15_3= st.empty()
+  estado_3= placeholder15_3.selectbox("Lote",options=("En Proceso","Finalizado"), key="estado_3")
    
-  placeholder14_3 = st.empty()
-  reporte_3 = placeholder14_3.button("Generar Reporte",key="reporte_3")
+  placeholder16_3 = st.empty()
+  reporte_3 = placeholder16_3.button("Generar Reporte",key="reporte_3")
 
   # ----- Procesos ---- #
     
@@ -82,6 +85,8 @@ def Estado_UIT_Hito(usuario,puesto):
     placeholder12_3.empty()
     placeholder13_3.empty()
     placeholder14_3.empty()
+    placeholder15_3.empty()
+    placeholder16_3.empty()
     st.session_state.Procesos=False
     st.session_state.estado_uit_hito=False
 
@@ -118,6 +123,8 @@ def Estado_UIT_Hito(usuario,puesto):
     placeholder12_3.empty()
     placeholder13_3.empty()
     placeholder14_3.empty()
+    placeholder15_3.empty()
+    placeholder16_3.empty()
     st.session_state.estado_uit_hito=False
     st.session_state.Historial=True
     Historial.Historial(usuario,puesto)   
@@ -139,6 +146,8 @@ def Estado_UIT_Hito(usuario,puesto):
     placeholder12_3.empty()
     placeholder13_3.empty()
     placeholder14_3.empty()
+    placeholder15_3.empty()
+    placeholder16_3.empty()
     st.session_state.estado_uit_hito=False
     st.session_state.Capacitacion=True
     Capacitacion.Capacitacion(usuario,puesto)
@@ -160,6 +169,8 @@ def Estado_UIT_Hito(usuario,puesto):
     placeholder12_3.empty()
     placeholder13_3.empty()
     placeholder14_3.empty()
+    placeholder15_3.empty()
+    placeholder16_3.empty()
     st.session_state.estado_uit_hito=False
     st.session_state.Otros_Registros=True
     Otros_Registros.Otros_Registros(usuario,puesto)
@@ -181,6 +192,8 @@ def Estado_UIT_Hito(usuario,puesto):
     placeholder12_3.empty()
     placeholder13_3.empty()
     placeholder14_3.empty()
+    placeholder15_3.empty()
+    placeholder16_3.empty()
     st.session_state.estado_uit_hito=False
     st.session_state.Bonos_Extras=True
     Bonos_Extras.Bonos_Extras(usuario,puesto)    
@@ -202,6 +215,8 @@ def Estado_UIT_Hito(usuario,puesto):
     placeholder12_3.empty()
     placeholder13_3.empty()
     placeholder14_3.empty()
+    placeholder15_3.empty()
+    placeholder16_3.empty()
     st.session_state.Ingreso = False
     st.session_state.estado_uit_hito=False
     st.session_state.Salir=True
