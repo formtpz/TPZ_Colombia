@@ -60,7 +60,7 @@ def Estado_UIT_Hito(usuario,puesto):
   hito_3= placeholder13_3.selectbox("Hito",options=("1","2","3","4","5","6","7","8","9","10"), key="hito_3") 
   
   placeholder14_3= st.empty()
-  uit_3= placeholder14_3.text_input("UIT",max_chars=20,key="uit_3")
+  uit_3= placeholder14_3.text_input("UIT Ejemplo: UIT-1 (Siempre las letras en Mayúscula) ",max_chars=20,key="uit_3")
   
   placeholder15_3= st.empty()
   estado_3= placeholder15_3.selectbox("Lote",options=("En Proceso","Finalizado"), key="estado_3")
