@@ -69,7 +69,7 @@ def Estado_UIT_Hito(usuario,puesto):
   produccion_3= placeholder16_3.number_input("Total de Predios",min_value=0,step=1,key="produccion_3")
   
   placeholder17_3= st.empty()
-  informales_3= placeholder17_3.text_input("Predios Informales",min_value=0,step=1,key="informales_3")
+  informales_3= placeholder17_3.number_input("Predios Informales",min_value=0,step=1,key="informales_3")
    
   placeholder18_3 = st.empty()
   reporte_3 = placeholder18_3.button("Generar Reporte",key="reporte_3")
