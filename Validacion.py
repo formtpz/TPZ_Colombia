@@ -43,7 +43,7 @@ def Validacion(usuario,puesto):
   salir_3 = placeholder7_3.button("Salir",key="salir_3")
 
   placeholder8_3 = st.empty()
-  validacion_3 = placeholder8_3.title("Validación")
+  validacion_3 = placeholder8_3.title("Postcampo")
 
   default_date_3 = datetime.now(pytz.timezone('America/Guatemala'))
 
@@ -303,6 +303,6 @@ def Validacion(usuario,puesto):
 
     año_3 = fecha_3.isocalendar()[0]
   
-    cursor01.execute(f"INSERT INTO registro (marca,usuario,nombre,puesto,supervisor,proceso,fecha,semana,año,unidad_asignacion,tipo,produccion,aprobados,rechazados,horas,uit,hito,lote,estado,area,efes,informales,paquete,con_fmi,sin_fmi,observaciones)VALUES('{marca_3}','{usuario}','{nombre_3}','{puesto}','{supervisor_3}','Validación','{fecha_3}','{semana_3}','{año_3}','0','{tipo_3}','{produccion_3}','0','0','{horas_3}','{uit_3}','{hito_3}','{lote_3}','{estado_3}','{area_3}','{efes_3}','{informales_3}','{paquete_3}','0','0','{observaciones_3}')")
+    cursor01.execute(f"INSERT INTO registro (marca,usuario,nombre,puesto,supervisor,proceso,fecha,semana,año,unidad_asignacion,tipo,produccion,aprobados,rechazados,horas,uit,hito,lote,estado,area,efes,informales,paquete,con_fmi,sin_fmi,observaciones)VALUES('{marca_3}','{usuario}','{nombre_3}','{puesto}','{supervisor_3}','Postcampo','{fecha_3}','{semana_3}','{año_3}','0','{tipo_3}','{produccion_3}','0','0','{horas_3}','{uit_3}','{hito_3}','{lote_3}','{estado_3}','{area_3}','{efes_3}','{informales_3}','{paquete_3}','0','0','{observaciones_3}')")
     con.commit()                                                                                                                                 
     st.success('Reporte enviado correctamente')
