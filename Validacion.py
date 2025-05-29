@@ -60,10 +60,10 @@ def Validacion(usuario,puesto):
   hito_3= placeholder12_3.selectbox("Hito", options=("1","2","3","4","5","6","7","8","9","10"), key="hito_3")
 
   placeholder13_3= st.empty()
-  uit_3= placeholder13_3.text_input("UIT, Siga siempre el siguiente formato: UIT-1 RURAL (Que las letras siempre vayan en Mayúsculas).", max_chars=40, key="uit_3")
+  uit_3= placeholder13_3.text_input("UIT, Siga siempre el siguiente formato: UIT-1 RURAL (Que las letras siempre vayan en Mayúsculas).", max_chars=60, key="uit_3")
   
   placeholder14_3= st.empty()
-  paquete_3= placeholder14_3.text_input("Número de Paquete",max_chars=40,key="paquete_3")
+  paquete_3= placeholder14_3.text_input("Número de Paquete",max_chars=60,key="paquete_3")
   
   placeholder15_3= st.empty()
   tipo_3= placeholder15_3.selectbox("Tipo", options=("Ordinario","Corrección Inspección","Corrección Primera Reinspección","Reproceso Ordinario"," Reproceso Corrección Inspección"," Reproceso Corrección Primera Reinspección"), key="tipo_3")
