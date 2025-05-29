@@ -1293,9 +1293,6 @@ def Procesos3(usuario,puesto):
         elif st.session_state.Bonos_Extras==True:
             Bonos_Extras.Bonos_Extras(usuario,puesto)
 
-        elif st.session_state.FMI==True:
-            FMI.FMI(usuario,puesto)
-        
         elif st.session_state.CC_FMI==True:
             CC_FMI.CC_FMI(usuario,puesto)
             
