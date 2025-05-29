@@ -217,7 +217,7 @@ def Procesos1(usuario,puesto):
             st.session_state.Salir=True
             Salir.Salir()
 
-        # ----- FMI ---- #
+        #----- FMI ---- 
 
         elif fmi_2:
 
@@ -244,7 +244,7 @@ def Procesos1(usuario,puesto):
             placeholder21_2.empty()
             st.session_state.Procesos=True
             st.session_state.FMI=True
-            FMI.FMI(usuario,puesto)
+            FMI.FMI(usuario,puesto)#
         
         # ----- Control de Calidad FMI ---- #
 
