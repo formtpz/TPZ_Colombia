@@ -60,7 +60,7 @@ def Precampo(usuario,puesto):
   hito_3= placeholder12_3.selectbox("Hito", options=("1","2","3","4","5","6","7","8","9","10"), key="hito_3")
 
   placeholder13_3= st.empty()
-  uit_3= placeholder13_3.text_input("UIT, Siga siempre el siguiente formato: UIT-1 RURAL (Que las letras siempre vayan en Mayúsculas).", max_chars=40, key="uit_3")
+  uit_3= placeholder13_3.text_input("UIT, Siga siempre el siguiente formato: UIT-1 RURAL (Que las letras siempre vayan en Mayúsculas).", max_chars=60, key="uit_3")
 
   placeholder14_3= st.empty()
   consecutivo_3= placeholder14_3.text_input("Consecutivo (Unidad de Asignación)" ,max_chars=3,key="consecutivo_3")
