@@ -30,8 +30,7 @@ def Procesos1(usuario,puesto):
         placeholder7_2 = st.empty()
         procesos_2 = placeholder7_2.title("Procesos")
 
-        placeholder8_2 = st.empty()
-        fmi_2 = placeholder8_2.text(" ",key="fmi_2")
+        placeholder8_2 = st.text(" ")
 
         placeholder9_2 = st.empty()
         cc_fmi_2 = placeholder9_2.button("Control de Calidad Folios de Matricula Inmobiliaria",key="cc_fmi_2")
