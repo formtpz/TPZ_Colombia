@@ -1,7 +1,7 @@
 # ----- Librerías ---- #
 
 import streamlit as st
-import Historial, Capacitacion, Otros_Registros, Bonos_Extras, Salir, CC_FMI, Postcampo_FMI, Postcampo_CC_FMI, Consulta_Campo,Restitucion_Tierras,Revision_Segregados,Estado_UIT_Hito,Precampo, CC_Precampo, Preparacion_Insumos, Revision_Campo, Validacion, CC_Validacion
+import Historial, Capacitacion, Otros_Registros, Bonos_Extras, Salir, FMI, CC_FMI, Postcampo_FMI, Postcampo_CC_FMI, Consulta_Campo,Restitucion_Tierras,Revision_Segregados,Estado_UIT_Hito,Precampo, CC_Precampo, Preparacion_Insumos, Revision_Campo, Validacion, CC_Validacion
 
 def Procesos1(usuario,puesto):
 
@@ -30,7 +30,8 @@ def Procesos1(usuario,puesto):
         placeholder7_2 = st.empty()
         procesos_2 = placeholder7_2.title("Procesos")
 
-        placeholder8_2 = st.text(" ")
+        placeholder8_2 = st.empty()
+       fmi_2 = placeholder7_2.button("Folios de Matricula Inmobiliaria", key="fmi_2")
 
         placeholder9_2 = st.empty()
         cc_fmi_2 = placeholder9_2.button("Control de Calidad Folios de Matricula Inmobiliaria",key="cc_fmi_2")
@@ -216,7 +217,35 @@ def Procesos1(usuario,puesto):
             st.session_state.Procesos=True
             st.session_state.Salir=True
             Salir.Salir()
+            
+             # -----  FMI ---- #
 
+        elif fmi_2:
+
+            placeholder1_2.empty()
+            placeholder2_2.empty()
+            placeholder3_2.empty()
+            placeholder4_2.empty()
+            placeholder5_2.empty()
+            placeholder6_2.empty()
+            placeholder7_2.empty()
+            placeholder8_2.empty()
+            placeholder9_2.empty()
+            placeholder10_2.empty()
+            placeholder11_2.empty()
+            placeholder12_2.empty()
+            placeholder13_2.empty()
+            placeholder14_2.empty()
+            placeholder15_2.empty()
+            placeholder16_2.empty()
+            placeholder17_2.empty()
+            placeholder18_2.empty()
+            placeholder19_2.empty()
+            placeholder20_2.empty()
+            placeholder21_2.empty()
+            st.session_state.Procesos=True
+            st.session_state.FMI=True
+            FMI.FMI(usuario,puesto)
                 
         # ----- Control de Calidad FMI ---- #
 
@@ -1292,6 +1321,9 @@ def Procesos3(usuario,puesto):
 
         elif st.session_state.Bonos_Extras==True:
             Bonos_Extras.Bonos_Extras(usuario,puesto)
+
+        elif st.session_state.CC_FMI==True:
+            FMI.FMI(usuario,puesto)
 
         elif st.session_state.CC_FMI==True:
             CC_FMI.CC_FMI(usuario,puesto)
