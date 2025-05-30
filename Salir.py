@@ -96,6 +96,7 @@ def Salir():
                         st.session_state.Bonos_Extras=False
                         st.session_state.Salir=False
                         st.session_state.Estado_UIT_Hito=False
+                        st.session_state.FMI=False
                         st.session_state.CC_FMI=False
                         st.session_state.Postcampo_FMI=False
                         st.session_state.Postcampo_CC_FMI=False
