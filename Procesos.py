@@ -724,10 +724,10 @@ def Procesos2(usuario,puesto):
         revision_campo_2 = placeholder11_2.button("Revisión de Campo",key="revision_campo_2")
 
         placeholder12_2 = st.empty()
-        validacion_2 = placeholder12_2.button("Validación",key="validacion_2")
+        validacion_2 = placeholder12_2.button("Postcampo",key="validacion_2")
 
         placeholder13_2 = st.empty()
-        cc_validacion_2 = placeholder13_2.button("Control de Calidad Validación",key="cc_validacion_2")
+        cc_validacion_2 = placeholder13_2.button("Control de Calidad Postcampo",key="cc_validacion_2")
        
         # ----- Historial ---- #
 
