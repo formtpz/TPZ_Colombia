@@ -64,7 +64,7 @@ def FMI(usuario,puesto):
   unidad_inter_3=placeholder13_3.selectbox("Unidad de Intervención", options=("UITR-1","UITR-2","UITR-3","UITR-4","UITR-5","UITR-6","UITR-7","UITR-8","UITR-9","UITR-10","UITR-11","UITR-12","UITR-13","UITR-14","UITR-15","UITR-16","UITR-17","UITR-18","UITR-19","UITR-20","UITR-21","UITR-22","UITR-23","UITR-24","UITR-25","UITR-26","UITR-27","UITR-28","UITR-29","UITR-30","UITR-31","UITR-32","UITR-33","UITR-34","UITR-35","UITR-36","UITR-37","UITR-38","UITR-39","UITR-40","UITU-1","UITU-2","UITU-3","UITU-4","UITU-5","UITU-6","UITU-7","UITU-8","UITU-9","UITU-10","UITU-11","UITU-12","UITU-13","UITU-14","UITU-15","UITU-16","UITU-17","UITU-18","UITU-19","UITU-20","UITU-21","UITU-22","UITU-23","UITU-24","UITU-25","UITU-25","UITU-26","UITU-27","UITU-28","UITU-29","UITU-30","UITU-31","UITU-32","UITU-33","UITU-34","UITU-35","UITU-36","UITU-37","UITU-38","UITU-39","UITU-40","Sin Geometría"), key="unidad_inter_3")
   
   placeholder14_3= st.empty()
-  estado_3= placeholder14_3.selectbox("Estado", options=("Revisión de Folios","Control de Calidad Precampo","Predios sin Geometría","Devuelto a Campo", "Control de Calidad Post Campo", "Control de Calidad Previo XTF (Externo)","Homologación NPN","Migracion de Estudio Juridico","Asociacion FMI"), key="estado_3")
+  estado_3= placeholder14_3.selectbox("Tipo de Proceso", options=("Revisión de Folios","Control de Calidad Precampo","Predios sin Geometría","Devuelto a Campo", "Control de Calidad Post Campo", "Control de Calidad Previo XTF (Externo)","Homologación NPN","Migracion de Estudio Juridico","Asociacion FMI"), key="estado_3")
   
   placeholder15_3= st.empty()
   tipo_3= placeholder15_3.selectbox("Tipo", options=("Ordinario","Corrección"), key="tipo_3")
