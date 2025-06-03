@@ -64,7 +64,7 @@ def FMI(usuario,puesto):
   unidad_inter_3=placeholder13_3.text_input("UIT, Siga siempre el siguiente formato: UIT-1 RURAL (Que las letras siempre vayan en Mayúsculas).", max_chars=60, key="unidad_inter_3")
   
   placeholder14_3= st.empty()
-  estado_3= placeholder14_3.selectbox("Tipo de Proceso", options=("Revisión de Folios","Control de Calidad Precampo","Predios sin Geometría","Devuelto a Campo", "Control de Calidad Post Campo", "Control de Calidad Previo XTF (Externo)","Homologación NPN","Migracion de Estudio Juridico","Asociacion FMI"), key="estado_3")
+  estado_3= placeholder14_3.selectbox("Tipo de Proceso", options=("Revisión de Folios","Control de Calidad Precampo", "Devuelto a Campo", "Control de Calidad Post Campo", "Control de Calidad Previo XTF (Externo)","Homologación NPN","Migracion de Estudio Juridico","Asociacion FMI", "En Revisión", "Otros"), key="estado_3")
   
   placeholder15_3= st.empty()
   tipo_3= placeholder15_3.selectbox("Tipo", options=("Ordinario","Corrección"), key="tipo_3")
@@ -73,7 +73,7 @@ def FMI(usuario,puesto):
   produccion_3= placeholder16_3.number_input("Cantidad de Folios Revisados",min_value=0,step=1,key="produccion_3")
 
   placeholder17_3= st.empty()
-  folios_con_fmi_3= placeholder17_3.number_input("Cantidad de Predios con FMI",min_value=0,step=1,key="folios_con_fmi_3")
+  folios_con_fmi_3= placeholder17_3.number_input("Cantidad de Predios sin FMI",min_value=0,step=1,key="folios_con_fmi_3")
 
   placeholder18_3= st.empty()
   observaciones_3= placeholder18_3.text_input("Observaciones",key="observaciones_3")
