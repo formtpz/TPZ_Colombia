@@ -73,7 +73,7 @@ def FMI(usuario,puesto):
   produccion_3= placeholder16_3.number_input("Cantidad de Folios Revisados",min_value=0,step=1,key="produccion_3")
 
   placeholder17_3= st.empty()
-  folios_con_fmi_3= placeholder17_3.number_input("Cantidad de Predios sin FMI",min_value=0,step=1,key="folios_con_fmi_3")
+  predios_sin_fmi_3= placeholder17_3.number_input("Cantidad de Predios sin FMI",min_value=0,step=1,key="predios_sin_fmi_3")
 
   placeholder18_3= st.empty()
   observaciones_3= placeholder18_3.text_input("Observaciones",key="observaciones_3")
@@ -269,6 +269,6 @@ def FMI(usuario,puesto):
 
     año_3 = fecha_3.isocalendar()[0]
 
-    cursor01.execute(f"INSERT INTO registro (marca,usuario,nombre,puesto,supervisor,proceso,fecha,semana,año,unidad_asignacion,tipo,produccion,aprobados,rechazados,horas,uit,hito,lote,estado,area,efes,informales,paquete,con_fmi,sin_fmi,observaciones)VALUES('{marca_3}','{usuario}','{nombre_3}','{puesto}','{supervisor_3}','{proceso_3}','{fecha_3}','{semana_3}','{año_3}','0','{tipo_3}','{produccion_3}','0','0','0','{unidad_inter_3}','0','{lote_3}','{estado_3}','0','0','0','0','{folios_con_fmi_3}','{predios_sin_fmi_3}','{observaciones_3}')")
+    cursor01.execute(f"INSERT INTO registro (marca,usuario,nombre,puesto,supervisor,proceso,fecha,semana,año,unidad_asignacion,tipo,produccion,aprobados,rechazados,horas,uit,hito,lote,estado,area,efes,informales,paquete,con_fmi,sin_fmi,observaciones)VALUES('{marca_3}','{usuario}','{nombre_3}','{puesto}','{supervisor_3}','{proceso_3}','{fecha_3}','{semana_3}','{año_3}','0','{tipo_3}','{produccion_3}','0','0','0','{unidad_inter_3}','0','{lote_3}','{estado_3}','0','0','0','0','0','{predios_sin_fmi_3}','{observaciones_3}')")
     con.commit()                                                                                                                                 
     st.success('Reporte enviado correctamente')
