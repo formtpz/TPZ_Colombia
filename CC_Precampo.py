@@ -54,7 +54,7 @@ def CC_Precampo(usuario,puesto):
   municipio_3= placeholder10_3.selectbox("Municipio", options=("Cabuyaro","Chalán","Colombia","Cuítiva","Iza","Los Palmitos","Morroa","Trinidad","San Estanislao","San Luis de Cubarral","Zambrano"), key="municipio_3")
 
   placeholder11_3= st.empty()
-  consecutivo_3= placeholder11_3.number_input("Consecutivo",min_value=0,max_value=50, step=1, key="consecutivo_3")
+  consecutivo_3= placeholder11_3.number_input("Consecutivo",min_value=0,max_value=70, step=1, key="consecutivo_3")
 
   placeholder12_3= st.empty()
   tipo_3= placeholder12_3.selectbox("Tipo", options=("Inspección","Primera Reinspección","Segunda Reinspección","Reproceso Inspección","Reproceso Primera Reinspección","Reproceso Segunda Reinspección"), key="tipo_3")
@@ -244,6 +244,6 @@ def CC_Precampo(usuario,puesto):
 
     unidad_3=municipio_3+'-'+str(consecutivo_3)
 
-    cursor01.execute(f"INSERT INTO registro (marca,usuario,nombre,puesto,supervisor,proceso,fecha,semana,año,unidad_asignacion,tipo,produccion,aprobados,rechazados,horas)VALUES('{marca_3}','{usuario}','{nombre_3}','{puesto}','{supervisor_3}','Control de Calidad Precampo','{fecha_3}','{semana_3}','{año_3}','{unidad_3}','{tipo_3}','{produccion_3}','{aprobados_3}','{rechazados_3}','{horas_3}')")
+    cursor01.execute(f"INSERT INTO registro (marca,usuario,nombre,puesto,supervisor,proceso,fecha,semana,año,unidad_asignacion,tipo,produccion,aprobados,rechazados,horas,uit,hito,lote,estado,area,efes,informales,paquete,con_fmi,sin_fmi,observaciones)VALUES('{marca_3}','{usuario}','{nombre_3}','{puesto}','{supervisor_3}','Control de Calidad Precampo','{fecha_3}','{semana_3}','{año_3}','{unidad_3}','{tipo_3}','{produccion_3}','{aprobados_3}','{rechazados_3}','{horas_3}','0','0','0','0','0','0','0','0','0','0','0')")
     con.commit()                                                                                                                                 
     st.success('Reporte enviado correctamente')
