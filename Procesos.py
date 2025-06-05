@@ -1000,45 +1000,6 @@ def Procesos3(usuario,puesto):
             FMI.FMI(usuario,puesto)
 
       
-
-                # ----- Postcampo_FMI ---- #
-
-        elif postcampo_fmi_2:
-
-            placeholder1_2.empty()
-            placeholder2_2.empty()
-            placeholder3_2.empty()
-            placeholder4_2.empty()
-            placeholder5_2.empty()
-            placeholder6_2.empty()
-            placeholder7_2.empty()
-            placeholder8_2.empty()
-            placeholder9_2.empty()
-            placeholder10_2.empty()
-            placeholder11_2.empty()
-            st.session_state.Procesos=True
-            st.session_state.Postcampo_FMI=True
-            Postcampo_FMI.Postcampo_FMI(usuario,puesto)
-
-        # ----- Postcampo_CC_FMI ---- #
-
-        elif postcampo_cc_fmi_2:
-
-            placeholder1_2.empty()
-            placeholder2_2.empty()
-            placeholder3_2.empty()
-            placeholder4_2.empty()
-            placeholder5_2.empty()
-            placeholder6_2.empty()
-            placeholder7_2.empty()
-            placeholder8_2.empty()
-            placeholder9_2.empty()
-            placeholder10_2.empty()
-            placeholder11_2.empty()
-            st.session_state.Procesos=True
-            st.session_state.Postcampo_CC_FMI=True
-            Postcampo_CC_FMI.Postcampo_CC_FMI(usuario,puesto)
-            
         # ----- Consulta Campo ---- #
 
         elif consulta_campo_2:
