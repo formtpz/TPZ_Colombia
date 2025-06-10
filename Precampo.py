@@ -72,7 +72,7 @@ def Precampo(usuario,puesto):
   estado_3= placeholder16_3.selectbox("Estado" , options=("En Proceso", "Finalizado"),key="estado_3")
   
   placeholder17_3= st.empty()
-  area_3= placeholder17_3.number_input("Area en m²",min_value=0.0,key="area_3")
+  area_3= placeholder17_3.text_input("Area en m²",key="area_3")
 
   placeholder18_3= st.empty()
   produccion_3= placeholder18_3.number_input("Cantidad Total de Predios Producidos",min_value=0,key="produccion_3")
