@@ -52,24 +52,27 @@ def CC_Validacion(usuario,puesto):
   
   placeholder10_3= st.empty()
   municipio_3= placeholder10_3.selectbox("Municipio", options=("Cabuyaro","Chalán","Colombia","Cuítiva","Iza","Los Palmitos","Morroa","Trinidad","San Estanislao","San Luis de Cubarral","Zambrano"), key="municipio_3")
-
+  
   placeholder11_3= st.empty()
-  operador_3= placeholder11_3.selectbox("Operador objeto de CC",options=("Aaron Daniel Camacho Quesada","Alejandra Maria Alvarado Chacon","Ana Gabriel Fung Mendez","Ana Paula Perez Poveda","Andi Joan Morera Fonseca","Angie de los Angeles Rojas Martinez","Brayan Antonio Retana Mena","Brayan Steven Jimenez Garro","Bryan Eduardo Ruiz Soto","Djean Jafet Guerrero Gutierrez","Hayariht Tiare Aguilar Perez","Hemerson Barrantes Salmeron","Iliana Arrieta Acuna","Jeison Rene Fallas Vega","Jennifer Marcela Castro Duarte","Jordy Fernandez De La Vega","Jose Aristides Garcia Cordero","Juan Carlos Pereira Rodriguez","Karol Milena Delgado Herrera","Katherine Beatriz Hurtado Romero","Katherine Maria Hernandez Vargas","Keilor Gerardo Alvarado Fernandez","Keyla Veronica Chacon Castro","Kimberlyn Tatiana Mora Soto","Luis Andres Quesada Cerdas","Luis Fernando Venegas Luna","Maria Celeste Acuna Leiva","Maria Cristina Gonzalez Zuniga","Maria Jose Aguero Fernandez","Maria Paula Rojas Doza","Marian Alejandra Sanchez Elizondo","Maricruz Valverde Valdez","Marita de Jesus Fonseca Lopez","Martin Alonso Ramirez Leiva","Maryangel Gonzalez Mesen","Monserrath Maria Varela Miranda","Older Romario Torres Blanco","Pablo Cesar Marin Pacheco","Paula Maria Mora Mora","Ricardo Antonio Solano Leiton","Silvia Elena Jimenez Salvatierra","Steven Antonio Guillen Rivera","Tatiana Ballestero Munoz","Valery Cristal Villalobos Rojas","Weslyn Francisco Herrera Mora","Yerlin Gabriela Morales Picado","Zairy Nayarit Vargas Naranjo"), key="operador_3")
+  zona_3= placeholder11_3.selectbox("Zona", options=("Urbano","Rural"), key="zona_3")
 
   placeholder12_3= st.empty()
-  tipo_3= placeholder12_3.selectbox("Tipo", options=("Inspección","Primera Reinspección","Segunda Reinspección","Reproceso Inspección","Reproceso Primera Reinspección"," Reproceso Segunda Reinspección"), key="tipo_3")
-  
+  operador_3= placeholder12_3.selectbox("Operador objeto de CC",options=("Aaron Daniel Camacho Quesada","Alejandra Maria Alvarado Chacon","Ana Gabriel Fung Mendez","Ana Paula Perez Poveda","Andi Joan Morera Fonseca","Angie de los Angeles Rojas Martinez","Brayan Antonio Retana Mena","Brayan Steven Jimenez Garro","Bryan Eduardo Ruiz Soto","Djean Jafet Guerrero Gutierrez","Hayariht Tiare Aguilar Perez","Hemerson Barrantes Salmeron","Iliana Arrieta Acuna","Jeison Rene Fallas Vega","Jennifer Marcela Castro Duarte","Jordy Fernandez De La Vega","Jose Aristides Garcia Cordero","Juan Carlos Pereira Rodriguez","Karol Milena Delgado Herrera","Katherine Beatriz Hurtado Romero","Katherine Maria Hernandez Vargas","Keilor Gerardo Alvarado Fernandez","Keyla Veronica Chacon Castro","Kimberlyn Tatiana Mora Soto","Luis Andres Quesada Cerdas","Luis Fernando Venegas Luna","Maria Celeste Acuna Leiva","Maria Cristina Gonzalez Zuniga","Maria Jose Aguero Fernandez","Maria Paula Rojas Doza","Marian Alejandra Sanchez Elizondo","Maricruz Valverde Valdez","Marita de Jesus Fonseca Lopez","Martin Alonso Ramirez Leiva","Maryangel Gonzalez Mesen","Monserrath Maria Varela Miranda","Older Romario Torres Blanco","Pablo Cesar Marin Pacheco","Paula Maria Mora Mora","Ricardo Antonio Solano Leiton","Silvia Elena Jimenez Salvatierra","Steven Antonio Guillen Rivera","Tatiana Ballestero Munoz","Valery Cristal Villalobos Rojas","Weslyn Francisco Herrera Mora","Yerlin Gabriela Morales Picado","Zairy Nayarit Vargas Naranjo"), key="operador_3")
+
   placeholder13_3= st.empty()
-  aprobados_3= placeholder13_3.number_input("Cantidad de Predios Aprobados",min_value=0,step=1,key="aprobados_3")
-
-  placeholder14_3= st.empty()
-  rechazados_3= placeholder14_3.number_input("Cantidad de Predios Rechazados",min_value=0,step=1,key="rechazados_3")
+  tipo_3= placeholder13_3.selectbox("Tipo", options=("Inspección","Primera Reinspección","Segunda Reinspección","Reproceso Inspección","Reproceso Primera Reinspección"," Reproceso Segunda Reinspección"), key="tipo_3")
   
-  placeholder15_3= st.empty()
-  horas_3= placeholder15_3.number_input("Cantidad de Horas Trabajadas en el Proceso",min_value=0.0,key="horas_3")
+  placeholder14_3= st.empty()
+  aprobados_3= placeholder14_3.number_input("Cantidad de Predios Aprobados",min_value=0,step=1,key="aprobados_3")
 
-  placeholder16_3 = st.empty()
-  reporte_3 = placeholder16_3.button("Generar Reporte",key="reporte_3")
+  placeholder15_3= st.empty()
+  rechazados_3= placeholder15_3.number_input("Cantidad de Predios Rechazados",min_value=0,step=1,key="rechazados_3")
+  
+  placeholder16_3= st.empty()
+  horas_3= placeholder16_3.number_input("Cantidad de Horas Trabajadas en el Proceso",min_value=0.0,key="horas_3")
+
+  placeholder17_3 = st.empty()
+  reporte_3 = placeholder17_3.button("Generar Reporte",key="reporte_3")
 
   # ----- Procesos ---- #
     
@@ -90,6 +93,8 @@ def CC_Validacion(usuario,puesto):
     placeholder14_3.empty()
     placeholder15_3.empty()
     placeholder16_3.empty()
+    placeholder17_3.empty()
+    
     st.session_state.Procesos=False
     st.session_state.CC_Validacion=False
 
@@ -127,6 +132,7 @@ def CC_Validacion(usuario,puesto):
     placeholder14_3.empty()
     placeholder15_3.empty()
     placeholder16_3.empty()
+    placeholder17_3.empty()
     st.session_state.CC_Validacion=False
     st.session_state.Historial=True
     Historial.Historial(usuario,puesto)   
@@ -150,6 +156,7 @@ def CC_Validacion(usuario,puesto):
     placeholder14_3.empty()
     placeholder15_3.empty()
     placeholder16_3.empty()
+    placeholder17_3.empty()
     st.session_state.CC_Validacion=False
     st.session_state.Capacitacion=True
     Capacitacion.Capacitacion(usuario,puesto)
@@ -173,6 +180,7 @@ def CC_Validacion(usuario,puesto):
     placeholder14_3.empty()
     placeholder15_3.empty()
     placeholder16_3.empty()
+    placeholder17_3.empty()
     st.session_state.CC_Validacion=False
     st.session_state.Otros_Registros=True
     Otros_Registros.Otros_Registros(usuario,puesto)
@@ -196,6 +204,7 @@ def CC_Validacion(usuario,puesto):
     placeholder14_3.empty()
     placeholder15_3.empty()
     placeholder16_3.empty()
+    placeholder17_3.empty()
     st.session_state.CC_Validacion=False
     st.session_state.Bonos_Extras=True
     Bonos_Extras.Bonos_Extras(usuario,puesto)    
@@ -219,6 +228,7 @@ def CC_Validacion(usuario,puesto):
     placeholder14_3.empty()
     placeholder15_3.empty()
     placeholder16_3.empty()
+    placeholder17_3.empty()
     st.session_state.Ingreso = False
     st.session_state.CC_Validacion=False
     st.session_state.Salir=True
