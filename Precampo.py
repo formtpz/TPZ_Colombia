@@ -63,34 +63,37 @@ def Precampo(usuario,puesto):
   uit_3= placeholder13_3.text_input("UIT, Siga siempre el siguiente formato: UIT-1 RURAL (Que las letras siempre vayan en Mayúsculas).", max_chars=60, key="uit_3")
 
   placeholder14_3= st.empty()
-  consecutivo_3= placeholder14_3.text_input("Consecutivo (Unidad de Asignación)" ,max_chars=3,key="consecutivo_3")
+  zona_3= placeholder14_3.selectbox("Zona",options=("Urbano","Rural"), key="zona_3")
   
   placeholder15_3= st.empty()
-  tipo_3= placeholder15_3.selectbox("Tipo", options=("Ordinario","Corrección Inspección","Corrección Primera Reinspección","Reproceso Ordinario","Reproceso Corrección Inspección","Reproceso Corrección Primera Reinspección"), key="tipo_3")
+  consecutivo_3= placeholder15_3.text_input("Consecutivo (Unidad de Asignación)" ,max_chars=3,key="consecutivo_3")
   
   placeholder16_3= st.empty()
-  estado_3= placeholder16_3.selectbox("Estado" , options=("En Proceso", "Finalizado"),key="estado_3")
+  tipo_3= placeholder16_3.selectbox("Tipo", options=("Ordinario","Corrección Inspección","Corrección Primera Reinspección","Reproceso Ordinario","Reproceso Corrección Inspección","Reproceso Corrección Primera Reinspección"), key="tipo_3")
   
   placeholder17_3= st.empty()
-  area_3= placeholder17_3.number_input("Area en m²",min_value=0.0,key="area_3")
-
+  estado_3= placeholder17_3.selectbox("Estado" , options=("En Proceso", "Finalizado"),key="estado_3")
+  
   placeholder18_3= st.empty()
-  produccion_3= placeholder18_3.number_input("Cantidad Total de Predios Producidos",min_value=0,key="produccion_3")
+  area_3= placeholder18_3.number_input("Area en m²",min_value=0.0,key="area_3")
 
   placeholder19_3= st.empty()
-  informales_3= placeholder19_3.number_input("Cantidad de Predios Informales",min_value=0,key="informales_3")
-  
+  produccion_3= placeholder19_3.number_input("Cantidad Total de Predios Producidos",min_value=0,key="produccion_3")
+
   placeholder20_3= st.empty()
-  efes_3= placeholder20_3.number_input("Cantidad de F",min_value=0,key="efes_3")
+  informales_3= placeholder20_3.number_input("Cantidad de Predios Informales",min_value=0,key="informales_3")
   
   placeholder21_3= st.empty()
-  horas_3= placeholder21_3.number_input("Cantidad de Horas Trabajadas en el Proceso",min_value=0.0,key="horas_3")
-
+  efes_3= placeholder21_3.number_input("Cantidad de F",min_value=0,key="efes_3")
+  
   placeholder22_3= st.empty()
-  observaciones_3= placeholder22_3.text_input("Observaciones", max_chars=60, key="observaciones_3")
+  horas_3= placeholder22_3.number_input("Cantidad de Horas Trabajadas en el Proceso",min_value=0.0,key="horas_3")
 
-  placeholder23_3 = st.empty()
-  reporte_3 = placeholder23_3.button("Generar Reporte",key="reporte_3")
+  placeholder23_3= st.empty()
+  observaciones_3= placeholder23_3.text_input("Observaciones", max_chars=60, key="observaciones_3")
+
+  placeholder24_3 = st.empty()
+  reporte_3 = placeholder24_3.button("Generar Reporte",key="reporte_3")
 
   # ----- Procesos ---- #
     
@@ -117,6 +120,8 @@ def Precampo(usuario,puesto):
     placeholder20_3.empty()
     placeholder21_3.empty()
     placeholder22_3.empty()
+    placeholder23_3.empty()
+    placeholder24_3.empty()
     st.session_state.Procesos=False
     st.session_state.Precampo=False
 
@@ -161,6 +166,7 @@ def Precampo(usuario,puesto):
     placeholder21_3.empty()
     placeholder22_3.empty()
     placeholder23_3.empty()
+    placeholder24_3.empty()
     st.session_state.Precampo=False
     st.session_state.Historial=True
     Historial.Historial(usuario,puesto)   
@@ -191,6 +197,7 @@ def Precampo(usuario,puesto):
     placeholder21_3.empty()
     placeholder22_3.empty()
     placeholder23_3.empty()
+    placeholder24_3.empty()
     st.session_state.Precampo=False
     st.session_state.Capacitacion=True
     Capacitacion.Capacitacion(usuario,puesto)
@@ -221,6 +228,7 @@ def Precampo(usuario,puesto):
     placeholder21_3.empty()
     placeholder22_3.empty()
     placeholder23_3.empty()
+    placeholder24_3.empty()
     st.session_state.Precampo=False
     st.session_state.Otros_Registros=True
     Otros_Registros.Otros_Registros(usuario,puesto)
@@ -251,6 +259,7 @@ def Precampo(usuario,puesto):
     placeholder21_3.empty()
     placeholder22_3.empty()
     placeholder23_3.empty()
+    placeholder24_3.empty()
     st.session_state.Precampo=False
     st.session_state.Bonos_Extras=True
     Bonos_Extras.Bonos_Extras(usuario,puesto)    
@@ -281,6 +290,7 @@ def Precampo(usuario,puesto):
     placeholder21_3.empty()
     placeholder22_3.empty()
     placeholder23_3.empty()
+    placeholder24_3.empty()
     st.session_state.Ingreso = False
     st.session_state.Precampo=False
     st.session_state.Salir=True
@@ -304,6 +314,6 @@ def Precampo(usuario,puesto):
 
     unidad_3=municipio_3+'-'+str(consecutivo_3)
     
-    cursor01.execute(f"INSERT INTO registro (marca,usuario,nombre,puesto,supervisor,proceso,fecha,semana,año,unidad_asignacion,tipo,produccion,aprobados,rechazados,horas,uit,hito,lote,estado,area,efes,informales,paquete,con_fmi,sin_fmi,observaciones)VALUES('{marca_3}','{usuario}','{nombre_3}','{puesto}','{supervisor_3}','Precampo','{fecha_3}','{semana_3}','{año_3}','{unidad_3}','{tipo_3}','{produccion_3}','0','0','{horas_3}','{uit_3}','{hito_3}','{lote_3}','{estado_3}','{area_3}','{efes_3}','{informales_3}','P0','0','0','{observaciones_3}')")
+    cursor01.execute(f"INSERT INTO registro (marca,usuario,nombre,puesto,supervisor,proceso,fecha,semana,año,unidad_asignacion,tipo,produccion,aprobados,rechazados,horas,uit,hito,lote,estado,area,efes,informales,paquete,con_fmi,sin_fmi,observaciones)VALUES('{marca_3}','{usuario}','{nombre_3}','{puesto}','{supervisor_3}','Precampo','{fecha_3}','{semana_3}','{año_3}','{unidad_3}','{tipo_3}','{produccion_3}','0','0','{horas_3}','{uit_3}','{hito_3}','{lote_3}','{estado_3}','{area_3}','{efes_3}','{informales_3}','P0','0','0','{observaciones_3}','{zona_3'})")
     con.commit()                                                                                                                                 
     st.success('Reporte enviado correctamente')
