@@ -57,7 +57,7 @@ def Validacion(usuario,puesto):
   municipio_3= placeholder11_3.selectbox("Municipio", options=("Cabuyaro","Chalán","Colombia","Cuítiva","Iza","Los Palmitos","Morroa","Trinidad","San Estanislao","San Luis de Cubarral","Zambrano"), key="municipio_3")
 
   placeholder12_3= st.empty()
-  zona_3= placeholder12_3.selectbox("Zona", options=("Cabuyaro","Chalán"), key="zona_3")
+  zona_3= placeholder12_3.selectbox("Zona", options=("Urbano","Rural"), key="zona_3")
   
   placeholder13_3= st.empty()
   hito_3= placeholder13_3.selectbox("Hito", options=("1","2","3","4","5","6","7","8","9","10"), key="hito_3")
