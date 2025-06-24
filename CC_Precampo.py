@@ -70,9 +70,12 @@ def CC_Precampo(usuario,puesto):
   
   placeholder16_3= st.empty()
   horas_3= placeholder16_3.number_input("Cantidad de Horas Trabajadas en el Proceso",min_value=0.0,key="horas_3")
-
-  placeholder17_3 = st.empty()
-  reporte_3 = placeholder17_3.button("Generar Reporte",key="reporte_3")
+  
+  placeholder17_3= st.empty()
+  tipo_calidad= placeholder17_3.number_input("Cantidad de Horas Trabajadas en el Proceso",min_value=0.0,key="tipo_calidad_3")
+  
+  placeholder18_3 = st.empty()
+  reporte_3 = placeholder18_3.button("Generar Reporte",key="reporte_3")
 
   # ----- Procesos ---- #
     
@@ -94,6 +97,7 @@ def CC_Precampo(usuario,puesto):
     placeholder15_3.empty()
     placeholder16_3.empty()
     placeholder17_3.empty()
+    placeholder18_3.empty()
     st.session_state.Procesos=False
     st.session_state.CC_FMI=False
 
@@ -132,6 +136,7 @@ def CC_Precampo(usuario,puesto):
     placeholder15_3.empty()
     placeholder16_3.empty()
     placeholder17_3.empty()
+    placeholder18_3.empty()
     st.session_state.CC_FMI=False
     st.session_state.Historial=True
     Historial.Historial(usuario,puesto)   
@@ -156,6 +161,7 @@ def CC_Precampo(usuario,puesto):
     placeholder15_3.empty()
     placeholder16_3.empty()
     placeholder17_3.empty()
+    placeholder18_3.empty()
     st.session_state.CC_FMI=False
     st.session_state.Capacitacion=True
     Capacitacion.Capacitacion(usuario,puesto)
@@ -180,6 +186,7 @@ def CC_Precampo(usuario,puesto):
     placeholder15_3.empty()
     placeholder16_3.empty()
     placeholder17_3.empty()
+    placeholder18_3.empty()
     st.session_state.CC_FMI=False
     st.session_state.Otros_Registros=True
     Otros_Registros.Otros_Registros(usuario,puesto)
@@ -204,6 +211,7 @@ def CC_Precampo(usuario,puesto):
     placeholder15_3.empty()
     placeholder16_3.empty()
     placeholder17_3.empty()
+    placeholder18_3.empty()
     st.session_state.CC_FMI=False
     st.session_state.Bonos_Extras=True
     Bonos_Extras.Bonos_Extras(usuario,puesto)    
@@ -228,6 +236,7 @@ def CC_Precampo(usuario,puesto):
     placeholder15_3.empty()
     placeholder16_3.empty()
     placeholder17_3.empty()
+    placeholder18_3.empty()
     st.session_state.Ingreso = False
     st.session_state.CC_FMI=False
     st.session_state.Salir=True
@@ -253,6 +262,6 @@ def CC_Precampo(usuario,puesto):
 
     unidad_3=municipio_3+'-'+str(consecutivo_3)
 
-    cursor01.execute(f"INSERT INTO registro (marca,usuario,nombre,puesto,supervisor,proceso,fecha,semana,año,unidad_asignacion,tipo,produccion,aprobados,rechazados,horas,uit,hito,lote,estado,area,efes,informales,paquete,con_fmi,sin_fmi,observaciones,zona)VALUES('{marca_3}','{usuario}','{nombre_3}','{puesto}','{supervisor_3}','Control de Calidad Precampo','{fecha_3}','{semana_3}','{año_3}','{unidad_3}','{tipo_3}','{produccion_3}','{aprobados_3}','{rechazados_3}','{horas_3}','UIT-0','0','0','N/A','0.0','0','0','P0','0','0','N/A','{zona_3}')")
+    cursor01.execute(f"INSERT INTO registro (marca,usuario,nombre,puesto,supervisor,proceso,fecha,semana,año,unidad_asignacion,tipo,produccion,aprobados,rechazados,horas,uit,hito,lote,estado,area,efes,informales,paquete,con_fmi,sin_fmi,observaciones,zona,tipo_calidad)VALUES('{marca_3}','{usuario}','{nombre_3}','{puesto}','{supervisor_3}','Control de Calidad Precampo','{fecha_3}','{semana_3}','{año_3}','{unidad_3}','{tipo_3}','{produccion_3}','{aprobados_3}','{rechazados_3}','{horas_3}','UIT-0','0','0','N/A','0.0','0','0','P0','0','0','N/A','{zona_3}','{tipo_calidad_3}')")
     con.commit()                                                                                                                                 
     st.success('Reporte enviado correctamente')
