@@ -72,7 +72,7 @@ def CC_Precampo(usuario,puesto):
   horas_3= placeholder16_3.number_input("Cantidad de Horas Trabajadas en el Proceso",min_value=0.0,key="horas_3")
   
   placeholder17_3= st.empty()
-  tipo_calidad= placeholder17_3.number_input("Cantidad de Horas Trabajadas en el Proceso",min_value=0.0,key="tipo_calidad_3")
+  tipo_calidad_3= placeholder17_3.selectbox("Tipo de Calidad", options=("Interna","Externa"),key="tipo_calidad_3")
   
   placeholder18_3 = st.empty()
   reporte_3 = placeholder18_3.button("Generar Reporte",key="reporte_3")
