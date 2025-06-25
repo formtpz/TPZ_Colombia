@@ -311,7 +311,8 @@ def Validacion(usuario,puesto):
     semana_3 = fecha_3.isocalendar()[1]
 
     año_3 = fecha_3.isocalendar()[0]
-  
-    cursor01.execute(f"INSERT INTO registro (marca,usuario,nombre,puesto,supervisor,proceso,fecha,semana,año,unidad_asignacion,tipo,produccion,aprobados,rechazados,horas,uit,hito,lote,estado,area,efes,informales,paquete,con_fmi,sin_fmi,observaciones,zona)VALUES('{marca_3}','{usuario}','{nombre_3}','{puesto}','{supervisor_3}','Postcampo','{fecha_3}','{semana_3}','{año_3}','{municipio_3}','{tipo_3}','{produccion_3}','0','0','{horas_3}','{uit_3}','{hito_3}','{lote_3}','{estado_3}','{area_3}','{efes_3}','{informales_3}','{paquete_3}','0','0','{observaciones_3}','{zona_3}')")
+    horas_bi = float(horas_3)
+    area_bi= float(area_3)
+    cursor01.execute(f"INSERT INTO registro (marca,usuario,nombre,puesto,supervisor,proceso,fecha,semana,año,unidad_asignacion,tipo,produccion,aprobados,rechazados,horas,uit,hito,lote,estado,area,efes,informales,paquete,con_fmi,sin_fmi,observaciones,zona,tipo_calidad,horas_bi,area_bi)VALUES('{marca_3}','{usuario}','{nombre_3}','{puesto}','{supervisor_3}','Postcampo','{fecha_3}','{semana_3}','{año_3}','{municipio_3}','{tipo_3}','{produccion_3}','0','0','{horas_3}','{uit_3}','{hito_3}','{lote_3}','{estado_3}','{area_3}','{efes_3}','{informales_3}','{paquete_3}','0','0','{observaciones_3}','{zona_3}','N/A',,'{horas_bi}','{area_bi}')")
     con.commit()                                                                                                                                 
     st.success('Reporte enviado correctamente')
