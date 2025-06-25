@@ -75,7 +75,7 @@ def Validacion(usuario,puesto):
   estado_3= placeholder17_3.selectbox("Estado" , options=("En Proceso", "Finalizado"),key="estado_3")
   
   placeholder18_3= st.empty()
-  area_3= placeholder18_3.number_input("Area en m²",min_value=0.0,key="area_3")
+  area_3= placeholder18_3.doublepresision("Area en m²",min_value=0.0,key="area_3")
   
   placeholder19_3= st.empty()
   produccion_3= placeholder19_3.number_input("Cantidad de Predios Producidos",min_value=0,step=1,key="produccion_3")
