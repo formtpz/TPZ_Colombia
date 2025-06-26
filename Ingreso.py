@@ -180,7 +180,7 @@ if pivot!=1:
 
      st.subheader("En caso de dudas favor revisar el siguiente video tutorial")
 
-     st.subheader("Para soporte técnico favor escribir a evelyn.burgos@tpzco.com")
+     st.subheader("Para soporte técnico favor escribir a evelyn.burgos@external.telespazio.com")
 
 
 # ----- Pie de Página ---- #
