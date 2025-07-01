@@ -60,22 +60,22 @@ def Revision_Campo(usuario,puesto):
   tipo_3= placeholder12_3.selectbox("Tipo", options=("Inspección","Primera Reinspección","Segunda Reinspección","Reproceso Inspección","Reproceso Primera Reinspección"), key="tipo_3")
 
   placeholder13_3= st.empty()
-  tipo_3= placeholder12_3.selectbox("zona", options=("Rural","Urbano"), key="tipo_3")
+  zona_3= placeholder13_3.selectbox("zona", options=("Rural","Urbano"), key="zona_3")
 
   placeholder14_3= st.empty()
-  tipo_3= placeholder12_3.selectbox("lote", options=("1","2","3"), key="tipo_3")
+  lote_3= placeholder14_3.selectbox("lote", options=("1","2","3"), key="lote_3")
   
   placeholder15_3= st.empty()
-  aprobados_3= placeholder13_3.number_input("Cantidad de Predios Aprobados",min_value=0,step=1,key="aprobados_3")
+  aprobados_3= placeholder15_3.number_input("Cantidad de Predios Aprobados",min_value=0,step=1,key="aprobados_3")
 
   placeholder16_3= st.empty()
-  rechazados_3= placeholder14_3.number_input("Cantidad de Predios Rechazados",min_value=0,step=1,key="rechazados_3")
+  rechazados_3= placeholder16_3.number_input("Cantidad de Predios Rechazados",min_value=0,step=1,key="rechazados_3")
   
   placeholder17_3= st.empty()
-  horas_3= placeholder15_3.number_input("Cantidad de Horas Trabajadas en el Proceso",min_value=0.0,key="horas_3")
+  horas_3= placeholder17_3.number_input("Cantidad de Horas Trabajadas en el Proceso",min_value=0.0,key="horas_3")
 
   placeholder18_3 = st.empty()
-  reporte_3 = placeholder16_3.button("Generar Reporte",key="reporte_3")
+  reporte_3 = placeholder18_3.button("Generar Reporte",key="reporte_3")
 
   # ----- Procesos ---- #
     
@@ -136,7 +136,7 @@ def Revision_Campo(usuario,puesto):
     placeholder15_3.empty()
     placeholder16_3.empty()
     placeholder17_3.empty()
-    placeholder17_3.empty()
+    placeholder18_3.empty()
     st.session_state.Revision_Campo=False
     st.session_state.Historial=True
     Historial.Historial(usuario,puesto)   
@@ -262,6 +262,6 @@ def Revision_Campo(usuario,puesto):
 
     unidad_3=municipio_3+'-'+'Paquete'+'-'+str(consecutivo_3)
     horas_bi = float(horas_3)
-    cursor01.execute(f"INSERT INTO registro (marca,usuario,nombre,puesto,supervisor,proceso,fecha,semana,año,unidad_asignacion,tipo,produccion,aprobados,rechazados,horas,uit,hito,lote,estado,area,efes,informales,paquete,con_fmi,sin_fmi,observaciones,zona,tipo_calidad,horas_bi,area_bi,zona,lote)VALUES('{marca_3}','{usuario}','{nombre_3}','{puesto}','{supervisor_3}','Revisión de Campo','{fecha_3}','{semana_3}','{año_3}','{unidad_3}','{tipo_3}','{produccion_3}','{aprobados_3}','{rechazados_3}','{horas_3}','UIT-0','0','0','N/A','0.0','0','0','P0','0','0','N/A','N/A','N/A','{horas_bi}','0')")
+    cursor01.execute(f"INSERT INTO registro (marca,usuario,nombre,puesto,supervisor,proceso,fecha,semana,año,unidad_asignacion,tipo,produccion,aprobados,rechazados,horas,uit,hito,lote,estado,area,efes,informales,paquete,con_fmi,sin_fmi,observaciones,zona,tipo_calidad,horas_bi,area_bi)VALUES('{marca_3}','{usuario}','{nombre_3}','{puesto}','{supervisor_3}','Revisión de Campo','{fecha_3}','{semana_3}','{año_3}','{unidad_3}','{tipo_3}','{produccion_3}','{aprobados_3}','{rechazados_3}','{horas_3}','UIT-0','0','{lote_3}','N/A','0.0','0','0','P0','0','0','N/A','{zona_3}','N/A','{horas_bi}','0')")
     con.commit()                                                                                                                                 
     st.success('Reporte enviado correctamente')
