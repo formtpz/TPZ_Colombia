@@ -71,57 +71,57 @@ def Bonos_Extras(usuario,puesto):
     placeholder12_9 = st.empty()
     cargar_archivos_9 = placeholder12_9.button("Cargar Archivos",key="cargar_archivos_9")
 
+    #----INICIO CAMBIOS SUBIDA DE EXCEL INDIVIDUAL----#
     if cargar_archivos_9:
+     
+    engine = create_engine(uri)
+    cursor = con.cursor()
 
-      if bloques_nuevos_9 is None or bonos_nuevos_9 is None or extras_nuevas_9 is None or unidades_nuevas_9 is None or bonos_nuevos_juridico_9 is None :
+    # Bloques
+    if bloques_nuevos_9 is not None:
+        df_bloques = pd.read_excel(bloques_nuevos_9) if bloques_nuevos_9.name.endswith('.xlsx') else pd.read_csv(bloques_nuevos_9)
+        cursor.execute('DELETE FROM bloques;')
+        con.commit()
+        df_bloques.to_sql(name='bloques', con=engine, if_exists='append', index_label='id')
+        st.success('Archivo "bloques" cargado correctamente')
 
-        st.error('Favor cargar los archivos solicitados')
+    # Bonos
+    if bonos_nuevos_9 is not None:
+        df_bonos = pd.read_excel(bonos_nuevos_9) if bonos_nuevos_9.name.endswith('.xlsx') else pd.read_csv(bonos_nuevos_9)
+        cursor.execute('DELETE FROM bonos;')
+        con.commit()
+        df_bonos.to_sql(name='bonos', con=engine, if_exists='append', index_label='id')
+        st.success('Archivo "bonos" cargado correctamente')
 
-      else: 
+    # Extras
+    if extras_nuevas_9 is not None:
+        df_extras = pd.read_excel(extras_nuevas_9) if extras_nuevas_9.name.endswith('.xlsx') else pd.read_csv(extras_nuevas_9)
+        cursor.execute('DELETE FROM extras;')
+        con.commit()
+        df_extras.to_sql(name='extras', con=engine, if_exists='append', index_label='id')
+        st.success('Archivo "extras" cargado correctamente')
 
-        bloques_nuevos_9=pd.DataFrame(pd.read_excel(bloques_nuevos_9))
-        bonos_nuevos_9=pd.DataFrame(pd.read_excel(bonos_nuevos_9))
-        extras_nuevas_9=pd.DataFrame(pd.read_excel(extras_nuevas_9))
-        unidades_nuevas_9 = pd.DataFrame(pd.read_excel(unidades_nuevas_9))
-        bonos_nuevos_juridico_9 = pd.DataFrame(pd.read_excel(bonos_nuevos_juridico_9))
+    # Unidades
+    if unidades_nuevas_9 is not None:
+        df_unidades = pd.read_excel(unidades_nuevas_9) if unidades_nuevas_9.name.endswith('.xlsx') else pd.read_csv(unidades_nuevas_9)
+        cursor.execute('DELETE FROM unidades;')
+        con.commit()
+        df_unidades.to_sql(name='unidades', con=engine, if_exists='append', index_label='id')
+        st.success('Archivo "unidades" cargado correctamente')
 
-        con.cursor().execute('DELETE FROM bloques;',)
-        con.cursor().execute('DELETE FROM bonos;',)
-        con.cursor().execute('DELETE FROM extras;',)
-        con.cursor().execute('DELETE FROM unidades;',)
-        con.cursor().execute('DELETE FROM bonos_juridico;',)
+    # Bonos Jurídico
+    if bonos_nuevos_juridico_9 is not None:
+        df_bonos_juridico = pd.read_excel(bonos_nuevos_juridico_9) if bonos_nuevos_juridico_9.name.endswith('.xlsx') else pd.read_csv(bonos_nuevos_juridico_9)
+        cursor.execute('DELETE FROM bonos_juridico;')
+        con.commit()
+        df_bonos_juridico.to_sql(name='bonos_juridico', con=engine, if_exists='append', index_label='id')
+        st.success('Archivo "bonos_juridico" cargado correctamente')
 
-        con.commit()      
+    if all(file is None for file in [bloques_nuevos_9, bonos_nuevos_9, extras_nuevas_9, unidades_nuevas_9, bonos_nuevos_juridico_9]):
+        st.warning("No se cargó ningún archivo.")
+#----FIN CAMBIOS SUBIDA DE EXCEL INDIVIDUAL----#
 
-        engine = create_engine(uri)
-    
-        bloques_nuevos_9.to_sql(name='bloques', con = engine, if_exists = 'append',index_label='id')
-
-        st.success('Archivos Cargados Correctamente')
-
-        engine = create_engine(uri)
-    
-        bonos_nuevos_9.to_sql(name='bonos', con = engine, if_exists = 'append',index_label='id')
-
-        st.success('Archivos Cargados Correctamente')
-
-        engine = create_engine(uri)
-
-        extras_nuevas_9.to_sql(name='extras', con = engine, if_exists = 'append',index_label='id')
-
-        st.success('Archivos Cargados Correctamente')
-
-        engine = create_engine(uri)
-
-        unidades_nuevas_9.to_sql(name='unidades', con = engine, if_exists = 'append',index_label='id')
-
-        st.success('Archivos Cargados Correctamente')
-
-        engine = create_engine(uri)
-
-        bonos_nuevos_juridico_9.to_sql(name='bonos_juridico', con = engine, if_exists = 'append',index_label='id')
-
-        st.success('Archivos Cargados Correctamente')
+      
 
   elif nombre_9=="Gabriel Martin Prieto" or nombre_9=="Madeline Hernandez Gamboa":
 
