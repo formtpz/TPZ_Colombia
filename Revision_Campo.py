@@ -63,19 +63,16 @@ def Revision_Campo(usuario,puesto):
   zona_3= placeholder13_3.selectbox("zona", options=("Rural","Urbano"), key="zona_3")
 
   placeholder14_3= st.empty()
-  lote_3= placeholder14_3.selectbox("lote", options=("1","2","3"), key="lote_3")
-  
+  aprobados_3= placeholder14_3.number_input("Cantidad de Predios Aprobados",min_value=0,step=1,key="aprobados_3")
+
   placeholder15_3= st.empty()
-  aprobados_3= placeholder15_3.number_input("Cantidad de Predios Aprobados",min_value=0,step=1,key="aprobados_3")
-
-  placeholder16_3= st.empty()
-  rechazados_3= placeholder16_3.number_input("Cantidad de Predios Rechazados",min_value=0,step=1,key="rechazados_3")
+  rechazados_3= placeholder15_3.number_input("Cantidad de Predios Rechazados",min_value=0,step=1,key="rechazados_3")
   
-  placeholder17_3= st.empty()
-  horas_3= placeholder17_3.number_input("Cantidad de Horas Trabajadas en el Proceso",min_value=0.0,key="horas_3")
+  placeholder16_3= st.empty()
+  horas_3= placeholder16_3.number_input("Cantidad de Horas Trabajadas en el Proceso",min_value=0.0,key="horas_3")
 
-  placeholder18_3 = st.empty()
-  reporte_3 = placeholder18_3.button("Generar Reporte",key="reporte_3")
+  placeholder17_3 = st.empty()
+  reporte_3 = placeholder17_3.button("Generar Reporte",key="reporte_3")
 
   # ----- Procesos ---- #
     
@@ -97,7 +94,6 @@ def Revision_Campo(usuario,puesto):
     placeholder15_3.empty()
     placeholder16_3.empty()
     placeholder17_3.empty()
-    placeholder18_3.empty()
     st.session_state.Procesos=False
     st.session_state.Revision_Campo=False
 
@@ -136,7 +132,6 @@ def Revision_Campo(usuario,puesto):
     placeholder15_3.empty()
     placeholder16_3.empty()
     placeholder17_3.empty()
-    placeholder18_3.empty()
     st.session_state.Revision_Campo=False
     st.session_state.Historial=True
     Historial.Historial(usuario,puesto)   
@@ -161,7 +156,6 @@ def Revision_Campo(usuario,puesto):
     placeholder15_3.empty()
     placeholder16_3.empty()
     placeholder17_3.empty()
-    placeholder18_3.empty()
     st.session_state.Revision_Campo=False
     st.session_state.Capacitacion=True
     Capacitacion.Capacitacion(usuario,puesto)
@@ -186,7 +180,6 @@ def Revision_Campo(usuario,puesto):
     placeholder15_3.empty()
     placeholder16_3.empty()
     placeholder17_3.empty()
-    placeholder18_3.empty()
     st.session_state.Revision_Campo=False
     st.session_state.Otros_Registros=True
     Otros_Registros.Otros_Registros(usuario,puesto)
@@ -211,7 +204,6 @@ def Revision_Campo(usuario,puesto):
     placeholder15_3.empty()
     placeholder16_3.empty()
     placeholder17_3.empty()
-    placeholder18_3.empty()
     st.session_state.Revision_Campo=False
     st.session_state.Bonos_Extras=True
     Bonos_Extras.Bonos_Extras(usuario,puesto)    
@@ -236,7 +228,6 @@ def Revision_Campo(usuario,puesto):
     placeholder15_3.empty()
     placeholder16_3.empty()
     placeholder17_3.empty()
-    placeholder18_3.empty()
     st.session_state.Ingreso = False
     st.session_state.Revision_Campo=False
     st.session_state.Salir=True
@@ -260,6 +251,16 @@ def Revision_Campo(usuario,puesto):
 
     año_3 = fecha_3.isocalendar()[0]
 
+    lote_3_municipios = {"Cabuyaro", "Colombia", "Cubarral"}
+    lote_2_municipios = {"Trinidad", "Iza", "Cuítiva"}
+   
+    if municipio_3 in lote_3_municipios:
+    lote_3 = 3
+    elif municipio_3 in lote_2_municipios:
+    lote_3 = 2
+    else:
+    lote_3 = 1
+    
     unidad_3=municipio_3+'-'+'Paquete'+'-'+str(consecutivo_3)
     horas_bi = float(horas_3)
     cursor01.execute(f"INSERT INTO registro (marca,usuario,nombre,puesto,supervisor,proceso,fecha,semana,año,unidad_asignacion,tipo,produccion,aprobados,rechazados,horas,uit,hito,lote,estado,area,efes,informales,paquete,con_fmi,sin_fmi,observaciones,zona,tipo_calidad,horas_bi,area_bi)VALUES('{marca_3}','{usuario}','{nombre_3}','{puesto}','{supervisor_3}','Revisión de Campo','{fecha_3}','{semana_3}','{año_3}','{unidad_3}','{tipo_3}','{produccion_3}','{aprobados_3}','{rechazados_3}','{horas_3}','UIT-0','0','{lote_3}','N/A','0.0','0','0','P0','0','0','N/A','{zona_3}','N/A','{horas_bi}','0')")
