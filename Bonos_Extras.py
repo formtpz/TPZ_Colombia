@@ -96,12 +96,28 @@ def Bonos_Extras(usuario,puesto):
         engine = create_engine(uri)
     
         bloques_nuevos_9.to_sql(name='bloques', con = engine, if_exists = 'append',index_label='id')
+
+        st.success('Archivos Cargados Correctamente')
+
+        engine = create_engine(uri)
     
         bonos_nuevos_9.to_sql(name='bonos', con = engine, if_exists = 'append',index_label='id')
 
+        st.success('Archivos Cargados Correctamente')
+
+        engine = create_engine(uri)
+
         extras_nuevas_9.to_sql(name='extras', con = engine, if_exists = 'append',index_label='id')
 
+        st.success('Archivos Cargados Correctamente')
+
+        engine = create_engine(uri)
+
         unidades_nuevas_9.to_sql(name='unidades', con = engine, if_exists = 'append',index_label='id')
+
+        st.success('Archivos Cargados Correctamente')
+
+        engine = create_engine(uri)
 
         bonos_nuevos_juridico_9.to_sql(name='bonos_juridico', con = engine, if_exists = 'append',index_label='id')
 
