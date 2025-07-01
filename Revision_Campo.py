@@ -255,11 +255,11 @@ def Revision_Campo(usuario,puesto):
     lote_2_municipios = {"Trinidad", "Iza", "Cuítiva"}
    
     if municipio_3 in lote_3_municipios:
-    lote_3 = 3
+    lote_3 = "3"
     elif municipio_3 in lote_2_municipios:
-    lote_3 = 2
+    lote_3 = "2"
     else:
-    lote_3 = 1
+    lote_3 = "1"
     
     unidad_3=municipio_3+'-'+'Paquete'+'-'+str(consecutivo_3)
     horas_bi = float(horas_3)
