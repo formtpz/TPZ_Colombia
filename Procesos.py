@@ -49,10 +49,10 @@ def Procesos1(usuario,puesto):
         revision_campo_2 = placeholder13_2.button("Revisión de Campo",key="revision_campo_2")
 
         placeholder14_2 = st.empty()
-        validacion_2 = placeholder14_2.button("Postcampo",key="validacion_2")
+        validacion_2 = placeholder14_2.button(":blue[Postcampo]",key="validacion_2")
 
         placeholder15_2 = st.empty()
-        cc_validacion_2 = placeholder15_2.button(":blue[Control de Calidad Postcampo*]",key="cc_validacion_2")
+        cc_validacion_2 = placeholder15_2.button(":blue[Control de Calidad Postcampo]",key="cc_validacion_2")
 
         placeholder16_2 = st.empty()
         restitucion_tierras_2 = placeholder16_2.button("Restitución de Tierras",key="restitucion_tierras_2")
