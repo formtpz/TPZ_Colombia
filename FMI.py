@@ -52,7 +52,7 @@ def FMI(usuario,puesto):
   fecha_3= placeholder9_3.date_input("Fecha",value=default_date_3,key="fecha_3")
 
   placeholder10_3= st.empty()
-  proceso_3= placeholder10_3.selectbox("Proceso", options=("Precampo Folios de Matricula Inmobiliaria","Control de calidad Folios de Matricula Inmobiliaria","Postcampo Folios de Matricula Inmobiliaria"), key="proceso_3")
+  proceso_3= placeholder10_3.selectbox("Proceso", options=("Precampo Folios de Matricula Inmobiliaria","Postcampo Folios de Matricula Inmobiliaria","Control de calidad Folios de Matricula Inmobiliaria"), key="proceso_3")
   
   placeholder11_3= st.empty()
   lote_3= placeholder11_3.selectbox("Lote", options=("1","2","3"), key="lote_3")
