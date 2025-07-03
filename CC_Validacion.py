@@ -263,7 +263,19 @@ def CC_Validacion(usuario,puesto):
     unidad_3=municipio_3
     horas_bi = float(horas_3)
   
+      # ----- Almacenar Lote_3 según municipio seleccionado ---- #
     
-    cursor01.execute(f"INSERT INTO registro (marca,usuario,nombre,puesto,supervisor,proceso,fecha,semana,año,unidad_asignacion,tipo,produccion,aprobados,rechazados,horas,uit,hito,lote,estado,area,efes,informales,paquete,con_fmi,sin_fmi,observaciones,zona,tipo_calidad,horas_bi,area_bi)VALUES('{marca_3}','{usuario}','{nombre_3}','{puesto}','{supervisor_3}','Control de Calidad Postcampo','{fecha_3}','{semana_3}','{año_3}','{unidad_3}','{tipo_3}','{produccion_3}','{aprobados_3}','{rechazados_3}','{horas_3}','UIT-0','0','0','N/A','0.0','0','0','{operador_3}','0','0','N/A','{zona_3}','{tipo_calidad_3}','{horas_bi}','0')")
+    lote_3_municipios = {"Cabuyaro", "Colombia", "Cubarral"}
+    lote_2_municipios = {"Trinidad", "Iza", "Cuítiva"}
+   
+    if municipio_3 in lote_3_municipios:
+      lote_3 = '3'
+    elif municipio_3 in lote_2_municipios:
+      lote_3 = '2'
+    else:
+      lote_3 = '1'
+      # ----- Fin del script ---- #
+    
+    cursor01.execute(f"INSERT INTO registro (marca,usuario,nombre,puesto,supervisor,proceso,fecha,semana,año,unidad_asignacion,tipo,produccion,aprobados,rechazados,horas,uit,hito,lote,estado,area,efes,informales,paquete,con_fmi,sin_fmi,observaciones,zona,tipo_calidad,horas_bi,area_bi)VALUES('{marca_3}','{usuario}','{nombre_3}','{puesto}','{supervisor_3}','Control de Calidad Postcampo','{fecha_3}','{semana_3}','{año_3}','{unidad_3}','{tipo_3}','{produccion_3}','{aprobados_3}','{rechazados_3}','{horas_3}','UIT-0','0','{lote_3}','N/A','0.0','0','0','{operador_3}','0','0','N/A','{zona_3}','{tipo_calidad_3}','{horas_bi}','0')")
     con.commit()                                                                                                                                 
     st.success('Reporte enviado correctamente')
