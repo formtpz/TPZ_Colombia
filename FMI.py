@@ -53,33 +53,30 @@ def FMI(usuario,puesto):
 
   placeholder10_3= st.empty()
   proceso_3= placeholder10_3.selectbox("Proceso", options=("Precampo Folios de Matricula Inmobiliaria","Postcampo Folios de Matricula Inmobiliaria","Control de calidad Folios de Matricula Inmobiliaria"), key="proceso_3")
-  
+   
   placeholder11_3= st.empty()
-  lote_3= placeholder11_3.selectbox("Lote", options=("1","2","3"), key="lote_3")
+  municipio_3= placeholder11_3.selectbox("Municipio", options=("Cabuyaro","Chalán","Colombia","Cuítiva","Iza","Los Palmitos","Morroa","Trinidad","San Estanislao","San Luis de Cubarral","Zambrano"), key="municipio_3")
   
   placeholder12_3= st.empty()
-  municipio_3= placeholder12_3.selectbox("Municipio", options=("Cabuyaro","Chalán","Colombia","Cuítiva","Iza","Los Palmitos","Morroa","Trinidad","San Estanislao","San Luis de Cubarral","Zambrano"), key="municipio_3")
+  unidad_inter_3=placeholder12_3.text_input("UIT, Siga siempre el siguiente formato: UIT-1 RURAL (Que las letras siempre vayan en Mayúsculas).", max_chars=60, key="unidad_inter_3")
   
   placeholder13_3= st.empty()
-  unidad_inter_3=placeholder13_3.text_input("UIT, Siga siempre el siguiente formato: UIT-1 RURAL (Que las letras siempre vayan en Mayúsculas).", max_chars=60, key="unidad_inter_3")
+  estado_3= placeholder13_3.selectbox("Tipo de Proceso", options=("Revisión de Folios","Control de Calidad Precampo", "Devuelto a Campo", "Control de Calidad Post Campo", "Control de Calidad Previo XTF (Externo)","Homologación NPN","Migracion de Estudio Juridico","Asociacion FMI","Folio Antiguo", "En Revisión", "Otros"), key="estado_3")
   
   placeholder14_3= st.empty()
-  estado_3= placeholder14_3.selectbox("Tipo de Proceso", options=("Revisión de Folios","Control de Calidad Precampo", "Devuelto a Campo", "Control de Calidad Post Campo", "Control de Calidad Previo XTF (Externo)","Homologación NPN","Migracion de Estudio Juridico","Asociacion FMI","Folio Antiguo", "En Revisión", "Otros"), key="estado_3")
-  
-  placeholder15_3= st.empty()
-  tipo_3= placeholder15_3.selectbox("Tipo", options=("Ordinario","Corrección"), key="tipo_3")
+  tipo_3= placeholder14_3.selectbox("Tipo", options=("Ordinario","Corrección"), key="tipo_3")
                   
+  placeholder15_3= st.empty()
+  produccion_3= placeholder15_3.number_input("Cantidad de Folios Revisados",min_value=0,step=1,key="produccion_3")
+
   placeholder16_3= st.empty()
-  produccion_3= placeholder16_3.number_input("Cantidad de Folios Revisados",min_value=0,step=1,key="produccion_3")
+  predios_sin_fmi_3= placeholder16_3.number_input("Cantidad de Predios sin FMI",min_value=0,step=1,key="predios_sin_fmi_3")
 
   placeholder17_3= st.empty()
-  predios_sin_fmi_3= placeholder17_3.number_input("Cantidad de Predios sin FMI",min_value=0,step=1,key="predios_sin_fmi_3")
+  observaciones_3= placeholder17_3.text_input("Observaciones",key="observaciones_3")
 
-  placeholder18_3= st.empty()
-  observaciones_3= placeholder18_3.text_input("Observaciones",key="observaciones_3")
-
-  placeholder19_3 = st.empty()
-  reporte_3 = placeholder19_3.button("Generar Reporte",key="reporte_3")
+  placeholder18_3 = st.empty()
+  reporte_3 = placeholder18_3.button("Generar Reporte",key="reporte_3")
 
   # ----- Procesos ---- #
     
@@ -102,7 +99,6 @@ def FMI(usuario,puesto):
     placeholder16_3.empty()
     placeholder17_3.empty()
     placeholder18_3.empty()
-    placeholder19_3.empty()
     st.session_state.Procesos=False
     st.session_state.FMI=False
 
@@ -143,7 +139,6 @@ def FMI(usuario,puesto):
     placeholder16_3.empty()
     placeholder17_3.empty()
     placeholder18_3.empty()
-    placeholder19_3.empty()
     st.session_state.FMI=False
     st.session_state.Historial=True
     Historial.Historial(usuario,puesto)   
@@ -169,7 +164,6 @@ def FMI(usuario,puesto):
     placeholder16_3.empty()
     placeholder17_3.empty()
     placeholder18_3.empty()
-    placeholder19_3.empty()
     st.session_state.FMI=False
     st.session_state.Capacitacion=True
     Capacitacion.Capacitacion(usuario,puesto)
@@ -195,7 +189,6 @@ def FMI(usuario,puesto):
     placeholder16_3.empty()
     placeholder17_3.empty()
     placeholder18_3.empty()
-    placeholder19_3.empty()
     st.session_state.FMI=False
     st.session_state.Otros_Registros=True
     Otros_Registros.Otros_Registros(usuario,puesto)
@@ -221,7 +214,6 @@ def FMI(usuario,puesto):
     placeholder16_3.empty()
     placeholder17_3.empty()
     placeholder18_3.empty()
-    placeholder19_3.empty()
     st.session_state.FMI=False
     st.session_state.Bonos_Extras=True
     Bonos_Extras.Bonos_Extras(usuario,puesto)    
@@ -247,7 +239,6 @@ def FMI(usuario,puesto):
     placeholder16_3.empty()
     placeholder17_3.empty()
     placeholder18_3.empty()
-    placeholder19_3.empty()
     st.session_state.Ingreso = False
     st.session_state.FMI=False
     st.session_state.Salir=True
@@ -268,6 +259,7 @@ def FMI(usuario,puesto):
     semana_3 = fecha_3.isocalendar()[1]
 
     año_3 = fecha_3.isocalendar()[0]
+    
 
     cursor01.execute(f"INSERT INTO registro (marca,usuario,nombre,puesto,supervisor,proceso,fecha,semana,año,unidad_asignacion,tipo,produccion,aprobados,rechazados,horas,uit,hito,lote,estado,area,efes,informales,paquete,con_fmi,sin_fmi,observaciones,zona,tipo_calidad,horas_bi,area_bi)VALUES('{marca_3}','{usuario}','{nombre_3}','{puesto}','{supervisor_3}','{proceso_3}','{fecha_3}','{semana_3}','{año_3}','{municipio_3}','{tipo_3}','{produccion_3}','0','0','0.0','{unidad_inter_3}','0','{lote_3}','{estado_3}','0.0','0','0','P0','0','{predios_sin_fmi_3}','{observaciones_3}','N/A','N/A','0','0')")
     con.commit()                                                                                                                                 
