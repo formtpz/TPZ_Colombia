@@ -49,51 +49,48 @@ def Validacion(usuario,puesto):
 
   placeholder9_3= st.empty()
   fecha_3= placeholder9_3.date_input("Fecha",value=default_date_3,key="fecha_3")
-  
+   
   placeholder10_3= st.empty()
-  lote_3= placeholder10_3.selectbox("Lote", options=("1","2","3"), key="lote_3")
-  
+  municipio_3= placeholder10_3.selectbox("Municipio", options=("Cabuyaro","Chalán","Colombia","Cuítiva","Iza","Los Palmitos","Morroa","Trinidad","San Estanislao","San Luis de Cubarral","Zambrano"), key="municipio_3")
+
   placeholder11_3= st.empty()
-  municipio_3= placeholder11_3.selectbox("Municipio", options=("Cabuyaro","Chalán","Colombia","Cuítiva","Iza","Los Palmitos","Morroa","Trinidad","San Estanislao","San Luis de Cubarral","Zambrano"), key="municipio_3")
-
-  placeholder12_3= st.empty()
-  zona_3= placeholder12_3.selectbox("Zona", options=("Urbano","Rural","Sin Geometría"), key="zona_3")
+  zona_3= placeholder11_3.selectbox("Zona", options=("Urbano","Rural","Sin Geometría"), key="zona_3")
   
-  placeholder13_3= st.empty()
-  hito_3= placeholder13_3.selectbox("Hito", options=("1","2","3","4","5","6","7","8","9","10"), key="hito_3")
+  placeholder12_3= st.empty()
+  hito_3= placeholder12_3.selectbox("Hito", options=("1","2","3","4","5","6","7","8","9","10"), key="hito_3")
 
+  placeholder13_3= st.empty()
+  uit_3= placeholder13_3.text_input("UIT, Siga siempre el siguiente formato: UIT-1 RURAL (Que las letras siempre vayan en Mayúsculas).", max_chars=60, key="uit_3")
+  
   placeholder14_3= st.empty()
-  uit_3= placeholder14_3.text_input("UIT, Siga siempre el siguiente formato: UIT-1 RURAL (Que las letras siempre vayan en Mayúsculas).", max_chars=60, key="uit_3")
+  paquete_3= placeholder14_3.text_input("Número de Paquete",max_chars=60,key="paquete_3")
   
   placeholder15_3= st.empty()
-  paquete_3= placeholder15_3.text_input("Número de Paquete",max_chars=60,key="paquete_3")
+  tipo_3= placeholder15_3.selectbox("Tipo", options=("Ordinario","Corrección de Calidad","Corrección Inspección","Corrección Primera Reinspección","Reproceso Ordinario"," Reproceso Corrección Inspección"," Reproceso Corrección Primera Reinspección"), key="tipo_3")
   
   placeholder16_3= st.empty()
-  tipo_3= placeholder16_3.selectbox("Tipo", options=("Ordinario","Corrección de Calidad","Corrección Inspección","Corrección Primera Reinspección","Reproceso Ordinario"," Reproceso Corrección Inspección"," Reproceso Corrección Primera Reinspección"), key="tipo_3")
+  estado_3= placeholder16_3.selectbox("Estado" , options=("En Proceso", "Finalizado"),key="estado_3")
   
   placeholder17_3= st.empty()
-  estado_3= placeholder17_3.selectbox("Estado" , options=("En Proceso", "Finalizado"),key="estado_3")
+  area_3= placeholder17_3.number_input("Area en m²",min_value=0.0,key="area_3")
   
   placeholder18_3= st.empty()
-  area_3= placeholder18_3.number_input("Area en m²",min_value=0.0,key="area_3")
+  produccion_3= placeholder18_3.number_input("Cantidad de Predios Producidos",min_value=0,step=1,key="produccion_3")
   
   placeholder19_3= st.empty()
-  produccion_3= placeholder19_3.number_input("Cantidad de Predios Producidos",min_value=0,step=1,key="produccion_3")
+  informales_3= placeholder19_3.number_input("Cantidad de Predios Informales",min_value=0,step=1,key="informales_3")
   
   placeholder20_3= st.empty()
-  informales_3= placeholder20_3.number_input("Cantidad de Predios Informales",min_value=0,step=1,key="informales_3")
+  efes_3= placeholder20_3.number_input("Cantidad de F",min_value=0,step=1,key="efes_3")
   
   placeholder21_3= st.empty()
-  efes_3= placeholder21_3.number_input("Cantidad de F",min_value=0,step=1,key="efes_3")
-  
-  placeholder22_3= st.empty()
-  horas_3= placeholder22_3.number_input("Cantidad de Horas Trabajadas en el Proceso",min_value=0.0,key="horas_3")
+  horas_3= placeholder21_3.number_input("Cantidad de Horas Trabajadas en el Proceso",min_value=0.0,key="horas_3")
 
-  placeholder23_3= st.empty()
-  observaciones_3= placeholder23_3.text_input("Observaciones", max_chars=60, key="observaciones_3")
+  placeholder22_3= st.empty()
+  observaciones_3= placeholder22_3.text_input("Observaciones", max_chars=60, key="observaciones_3")
  
-  placeholder24_3 = st.empty()
-  reporte_3 = placeholder24_3.button("Generar Reporte",key="reporte_3")
+  placeholder23_3 = st.empty()
+  reporte_3 = placeholder23_3.button("Generar Reporte",key="reporte_3")
 
   # ----- Procesos ---- #
     
@@ -121,7 +118,6 @@ def Validacion(usuario,puesto):
     placeholder21_3.empty()
     placeholder22_3.empty()
     placeholder23_3.empty()
-    placeholder24_3.empty()
     st.session_state.Procesos=False
     st.session_state.Validacion=False
 
@@ -166,7 +162,6 @@ def Validacion(usuario,puesto):
     placeholder21_3.empty()
     placeholder22_3.empty()
     placeholder23_3.empty()
-    placeholder24_3.empty()
     st.session_state.Validacion=False
     st.session_state.Historial=True
     Historial.Historial(usuario,puesto)   
@@ -197,7 +192,6 @@ def Validacion(usuario,puesto):
     placeholder21_3.empty()
     placeholder22_3.empty()
     placeholder23_3.empty()
-    placeholder24_3.empty()
     st.session_state.Validacion=False
     st.session_state.Capacitacion=True
     Capacitacion.Capacitacion(usuario,puesto)
@@ -228,7 +222,6 @@ def Validacion(usuario,puesto):
     placeholder21_3.empty()
     placeholder22_3.empty()
     placeholder23_3.empty()
-    placeholder24_3.empty()
     st.session_state.Validacion=False
     st.session_state.Otros_Registros=True
     Otros_Registros.Otros_Registros(usuario,puesto)
@@ -259,7 +252,6 @@ def Validacion(usuario,puesto):
     placeholder21_3.empty()
     placeholder22_3.empty()
     placeholder23_3.empty()
-    placeholder24_3.empty()
     st.session_state.Validacion=False
     st.session_state.Bonos_Extras=True
     Bonos_Extras.Bonos_Extras(usuario,puesto)    
@@ -290,7 +282,6 @@ def Validacion(usuario,puesto):
     placeholder21_3.empty()
     placeholder22_3.empty()
     placeholder23_3.empty()
-    placeholder24_3.empty()
     st.session_state.Ingreso = False
     st.session_state.Validacion=False
     st.session_state.Salir=True
@@ -307,12 +298,22 @@ def Validacion(usuario,puesto):
       
     supervisor_3= pd.read_sql(f"select supervisor from usuarios where usuario ='{usuario}'",uri)
     supervisor_3 = supervisor_3.loc[0,'supervisor']
- 
     semana_3 = fecha_3.isocalendar()[1]
-
     año_3 = fecha_3.isocalendar()[0]
     horas_bi = float(horas_3)
     area_bi= float(area_3)
+      # ----- Almacenar Lote_3 según municipio seleccionado ---- #
+    
+    lote_3_municipios = {"Cabuyaro", "Colombia", "Cubarral"}
+    lote_2_municipios = {"Trinidad", "Iza", "Cuítiva"}
+   
+    if municipio_3 in lote_3_municipios:
+      lote_3 = '3'
+    elif municipio_3 in lote_2_municipios:
+      lote_3 = '2'
+    else:
+      lote_3 = '1'
+      # ----- Fin del script ---- #
     cursor01.execute(f"INSERT INTO registro (marca,usuario,nombre,puesto,supervisor,proceso,fecha,semana,año,unidad_asignacion,tipo,produccion,aprobados,rechazados,horas,uit,hito,lote,estado,area,efes,informales,paquete,con_fmi,sin_fmi,observaciones,zona,tipo_calidad,horas_bi,area_bi)VALUES('{marca_3}','{usuario}','{nombre_3}','{puesto}','{supervisor_3}','Postcampo','{fecha_3}','{semana_3}','{año_3}','{municipio_3}','{tipo_3}','{produccion_3}','0','0','{horas_3}','{uit_3}','{hito_3}','{lote_3}','{estado_3}','{area_3}','{efes_3}','{informales_3}','{paquete_3}','0','0','{observaciones_3}','{zona_3}','N/A','{horas_bi}','{area_bi}')")
     con.commit()                                                                                                                                 
     st.success('Reporte enviado correctamente')
