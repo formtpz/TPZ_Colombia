@@ -55,7 +55,7 @@ def FMI(usuario,puesto):
   proceso_3= placeholder10_3.selectbox("Proceso", options=("Precampo Folios de Matricula Inmobiliaria","Postcampo Folios de Matricula Inmobiliaria","Control de calidad Folios de Matricula Inmobiliaria"), key="proceso_3")
    
   placeholder11_3= st.empty()
-  municipio_3= placeholder11_3.selectbox("Municipio", options=("Cabuyaro","Chalán","Colombia","Cuítiva","Iza","Los Palmitos","Morroa","Trinidad","San Estanislao","San Luis de Cubarral","Zambrano"), key="municipio_3")
+  municipio_3= placeholder11_3.selectbox("Municipio", options=("Cabuyaro","Chalán","Colombia","Cuítiva","Iza","Los Palmitos","Morroa","Trinidad","San Estanislao","Cubarral","Zambrano"), key="municipio_3")
   
   placeholder12_3= st.empty()
   unidad_inter_3=placeholder12_3.text_input("UIT, Siga siempre el siguiente formato: UIT-1 RURAL (Que las letras siempre vayan en Mayúsculas).", max_chars=60, key="unidad_inter_3")
