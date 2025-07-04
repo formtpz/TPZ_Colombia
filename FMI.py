@@ -67,7 +67,7 @@ def FMI(usuario,puesto):
   tipo_3= placeholder14_3.selectbox("Tipo", options=("Ordinario","Corrección"), key="tipo_3")
                   
   placeholder15_3= st.empty()
-  produccion_3= placeholder15_3.number_input("Cantidad de Folios Revisados",min_value=0,step=1,key="produccion_3")
+  produccion_3= placeholder15_3.number_input("Cantidad de Predios Revisados",min_value=0,step=1,key="produccion_3")
 
   placeholder16_3= st.empty()
   predios_sin_fmi_3= placeholder16_3.number_input("Cantidad de Predios sin FMI",min_value=0,step=1,key="predios_sin_fmi_3")
