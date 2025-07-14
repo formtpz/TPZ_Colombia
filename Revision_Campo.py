@@ -253,7 +253,7 @@ def Revision_Campo(usuario,puesto):
 
     # ----- Almacenar Lote_3 según municipio seleccionado ---- #
     
-    lote_3_municipios = {"Cabuyaro", "Colombia", "Cubarral"}
+    lote_3_municipios = {"Cabuyaro", "Colombia", "San Luis de Cubarral"}
     lote_2_municipios = {"Trinidad", "Iza", "Cuítiva"}
    
     if municipio_3 in lote_3_municipios:
