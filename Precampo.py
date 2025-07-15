@@ -63,28 +63,28 @@ def Precampo(usuario,puesto):
   zona_3= placeholder13_3.selectbox("Zona",options=("Urbano","Rural","Sin Geometría"), key="zona_3")
   
   placeholder14_3= st.empty()
-  tipo_3= placeholder15_3.selectbox("Tipo", options=("Ordinario","Corrección de Calidad","Corrección Inspección","Corrección Primera Reinspección","Reproceso Ordinario","Reproceso Corrección Inspección","Reproceso Corrección Primera Reinspección"), key="tipo_3")
+  tipo_3= placeholder14_3.selectbox("Tipo", options=("Ordinario","Corrección de Calidad","Corrección Inspección","Corrección Primera Reinspección","Reproceso Ordinario","Reproceso Corrección Inspección","Reproceso Corrección Primera Reinspección"), key="tipo_3")
   
   placeholder15_3= st.empty()
-  estado_3= placeholder16_3.selectbox("Estado" , options=("En Proceso", "Finalizado"),key="estado_3")
+  estado_3= placeholder15_3.selectbox("Estado" , options=("En Proceso", "Finalizado"),key="estado_3")
   
   placeholder16_3= st.empty()
-  produccion_3= placeholder17_3.number_input("Cantidad Total de Predios Producidos",min_value=0,key="produccion_3")
+  produccion_3= placeholder16_3.number_input("Cantidad Total de Predios Producidos",min_value=0,key="produccion_3")
 
   placeholder17_3= st.empty()
-  informales_3= placeholder18_3.number_input("Cantidad de Predios Informales",min_value=0,key="informales_3")
+  informales_3= placeholder17_3.number_input("Cantidad de Predios Informales",min_value=0,key="informales_3")
   
   placeholder18_3= st.empty()
-  efes_3= placeholder19_3.number_input("Cantidad de F",min_value=0,key="efes_3")
+  efes_3= placeholder18_3.number_input("Cantidad de F",min_value=0,key="efes_3")
   
   placeholder19_3= st.empty()
-  horas_3= placeholder20_3.number_input("Cantidad de Horas Trabajadas en el Proceso",min_value=0.0,key="horas_3")
+  horas_3= placeholder19_3.number_input("Cantidad de Horas Trabajadas en el Proceso",min_value=0.0,key="horas_3")
 
   placeholder20_3= st.empty()
-  observaciones_3= placeholder21_3.text_input("Observaciones", max_chars=60, key="observaciones_3")
+  observaciones_3= placeholder20_3.text_input("Observaciones", max_chars=60, key="observaciones_3")
 
   placeholder21_3 = st.empty()
-  reporte_3 = placeholder22_3.button("Generar Reporte",key="reporte_3")
+  reporte_3 = placeholder21_3.button("Generar Reporte",key="reporte_3")
 
   # ----- Procesos ---- #
     
