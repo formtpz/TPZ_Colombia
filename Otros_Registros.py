@@ -385,7 +385,8 @@ def Otros_Registros(usuario,puesto):
 
           supervisor_13= pd.read_sql(f"select supervisor from usuarios where nombre ='{nombre}'",uri)
           supervisor_13 = supervisor_13.loc[0,'supervisor']
-          
-          cursor01.execute(f"INSERT INTO otros_registros (marca,usuario,nombre,puesto,supervisor,fecha,motivo,horas,observaciones,reporte)VALUES('{marca_13}','{usuario_13}','{nombre}','{puesto_13}','{supervisor_13}','{fecha_13}','{motivo_13}','{horas_13}','{observaciones_13}','{nombre_13}')")
+
+          horas_bi = float(horas_13)
+          cursor01.execute(f"INSERT INTO otros_registros (marca,usuario,nombre,puesto,supervisor,fecha,motivo,horas,observaciones,reporte,horas_bi)VALUES('{marca_13}','{usuario_13}','{nombre}','{puesto_13}','{supervisor_13}','{fecha_13}','{motivo_13}','{horas_13}','{observaciones_13}','{nombre_13}','{horas_bi}')")
           con.commit()                                                                                            
         st.success('Registro enviado correctamente')
