@@ -52,7 +52,7 @@ def FMI(usuario,puesto):
   fecha_3= placeholder9_3.date_input("Fecha",value=default_date_3,key="fecha_3")
 
   placeholder10_3= st.empty()
-  proceso_3= placeholder10_3.selectbox("Proceso", options=("Precampo Folios de Matricula Inmobiliaria","Postcampo Folios de Matricula Inmobiliaria","Control de calidad Folios de Matricula Inmobiliaria"), key="proceso_3")
+  proceso_3= placeholder10_3.selectbox("Proceso", options=("Precampo Folios de Matricula Inmobiliaria","Postcampo Folios de Matricula Inmobiliaria"), key="proceso_3")
    
   placeholder11_3= st.empty()
   municipio_3= placeholder11_3.selectbox("Municipio", options=("Cabuyaro","Chalán","Colombia","Cuítiva","Iza","Los Palmitos","Morroa","Trinidad","San Estanislao","San Luis de Cubarral","Zambrano"), key="municipio_3")
@@ -61,7 +61,7 @@ def FMI(usuario,puesto):
   unidad_inter_3=placeholder12_3.text_input("UIT, Siga siempre el siguiente formato: UIT-1 RURAL (Que las letras siempre vayan en Mayúsculas).", max_chars=60, key="unidad_inter_3")
   
   placeholder13_3= st.empty()
-  estado_3= placeholder13_3.selectbox("Tipo de Proceso", options=("Revisión de Folios","Control de Calidad Precampo", "Devuelto a Campo", "Control de Calidad Post Campo", "Control de Calidad Previo XTF (Externo)","Homologación NPN","Migracion de Estudio Juridico","Asociacion FMI","Folio Antiguo", "En Revisión", "Otros"), key="estado_3")
+  estado_3= placeholder13_3.selectbox("Tipo de Proceso", options=("Revisión de Folios","Control de Calidad Precampo", "Devuelto a Campo", "Control de Calidad Post Campo", "Control de Calidad Previo XTF (Externo)","Homologación NPN","Migracion de Estudio Juridico","Asociacion FMI","Folio Antiguo", "Revisión de Previos Segregados","En Revisión", "Otros"), key="estado_3")
   
   placeholder14_3= st.empty()
   tipo_3= placeholder14_3.selectbox("Tipo", options=("Ordinario","Corrección"), key="tipo_3")
