@@ -96,7 +96,7 @@ def Estado_UIT_Hito(usuario,puesto):
     placeholder17_3.empty()
     placeholder18_3.empty()
     st.session_state.Procesos=False
-    st.session_state.estado_uit_hito=False
+    st.session_state.calidad_externa_xft=False
 
     perfil=pd.read_sql(f"select perfil from usuarios where usuario ='{usuario}'",uri)
     perfil= perfil.loc[0,'perfil']
@@ -135,7 +135,7 @@ def Estado_UIT_Hito(usuario,puesto):
     placeholder16_3.empty()
     placeholder17_3.empty()
     placeholder18_3.empty()
-    st.session_state.estado_uit_hito=False
+    st.session_state.calidad_externa_xft=False
     st.session_state.Historial=True
     Historial.Historial(usuario,puesto)   
 
@@ -160,7 +160,7 @@ def Estado_UIT_Hito(usuario,puesto):
     placeholder16_3.empty()
     placeholder17_3.empty()
     placeholder18_3.empty()
-    st.session_state.estado_uit_hito=False
+    st.session_state.calidad_externa_xft=False
     st.session_state.Capacitacion=True
     Capacitacion.Capacitacion(usuario,puesto)
 
@@ -185,7 +185,7 @@ def Estado_UIT_Hito(usuario,puesto):
     placeholder16_3.empty()
     placeholder17_3.empty()
     placeholder18_3.empty()
-    st.session_state.estado_uit_hito=False
+    st.session_state.calidad_externa_xft=False
     st.session_state.Otros_Registros=True
     Otros_Registros.Otros_Registros(usuario,puesto)
 
@@ -210,7 +210,7 @@ def Estado_UIT_Hito(usuario,puesto):
     placeholder16_3.empty()
     placeholder17_3.empty()
     placeholder18_3.empty()
-    st.session_state.estado_uit_hito=False
+    st.session_state.calidad_externa_xft=False
     st.session_state.Bonos_Extras=True
     Bonos_Extras.Bonos_Extras(usuario,puesto)    
 
@@ -236,7 +236,7 @@ def Estado_UIT_Hito(usuario,puesto):
     placeholder17_3.empty()
     placeholder18_3.empty()
     st.session_state.Ingreso = False
-    st.session_state.estado_uit_hito=False
+    st.session_state.calidad_externa_xft=False
     st.session_state.Salir=True
     Salir.Salir()
 
@@ -257,6 +257,6 @@ def Estado_UIT_Hito(usuario,puesto):
     año_3 = fecha_3.isocalendar()[0]
 
     
-    cursor01.execute(f"INSERT INTO registro (marca,usuario,nombre,puesto,supervisor,proceso,fecha,semana,año,unidad_asignacion,tipo,produccion,aprobados,rechazados,horas,uit,hito,lote,estado,area,efes,informales,paquete,con_fmi,sin_fmi,observaciones,zona,tipo_calidad,horas_bi,area_bi)VALUES('{marca_3}','{usuario}','{nombre_3}','{puesto}','{supervisor_3}','Estado UIT Hito','{fecha_3}','{semana_3}','{año_3}','{municipio_3}','0','{produccion_3}','0','0','0','{uit_3}','{hito_3}','{lote_3}','{estado_3}','0','0','{informales_3}','0','0','0','N/A','N/A','N/A','0','0')")
+    cursor01.execute(f"INSERT INTO registro (marca,usuario,nombre,puesto,supervisor,proceso,fecha,semana,año,unidad_asignacion,tipo,produccion,aprobados,rechazados,horas,uit,hito,lote,estado,area,efes,informales,paquete,con_fmi,sin_fmi,observaciones,zona,tipo_calidad,total_de_erorres,errores_por_excepciones,horas_bi,area_bi)VALUES('{marca_3}','{usuario}','{nombre_3}','{puesto}','{supervisor_3}','Calidad Externa XTF','{fecha_3}','{semana_3}','{año_3}','{municipio_3}','0','{produccion_3}','0','0','0','{uit_3}','{hito_3}','{lote_3}','{estado_3}','0','0','{informales_3}','0','0','0','N/A','N/A','N/A','0','0')")
     con.commit()                                                                                                                                 
     st.success('Reporte enviado correctamente')
