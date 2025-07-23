@@ -43,7 +43,7 @@ def Estado_UIT_Hito(usuario,puesto):
   salir_3 = placeholder7_3.button("Salir",key="salir_3")
 
   placeholder8_3 = st.empty()
-  estado_uit_hito_3 = placeholder8_3.title("Estado del Hito y UIT's")
+  estado_uit_hito_3 = placeholder8_3.title("Calidad Externa XTF")
 
   default_date_3 = datetime.now(pytz.timezone('America/Guatemala'))
   
@@ -60,16 +60,16 @@ def Estado_UIT_Hito(usuario,puesto):
   hito_3= placeholder13_3.selectbox("Hito",options=("1","2","3","4","5","6","7","8","9","10"), key="hito_3") 
   
   placeholder14_3= st.empty()
-  uit_3= placeholder14_3.text_input("UIT, Siga siempre el siguiente formato: UIT-1 RURAL (Que las letras siempre vayan en Mayúsculas).",max_chars=20,key="uit_3")
+  uit_3= placeholder14_3.text_input("Observaciones").",max_chars=20,key="uit_3")
   
   placeholder15_3= st.empty()
-  estado_3= placeholder15_3.selectbox("Estado UIT",options=("En Proceso","Finalizado"), key="estado_3")
+  estado_3= placeholder15_3.selectbox("Zona",options=("Rural","Urbana"), key="estado_3")
 
   placeholder16_3= st.empty()
-  produccion_3= placeholder16_3.number_input("Total de Predios",min_value=0,step=1,key="produccion_3")
+  produccion_3= placeholder16_3.number_input("Total de erorres",min_value=0,step=1,key="produccion_3")
   
   placeholder17_3= st.empty()
-  informales_3= placeholder17_3.number_input("Predios Informales",min_value=0,step=1,key="informales_3")
+  informales_3= placeholder17_3.number_input("Errores por excepciones",min_value=0,step=1,key="informales_3")
    
   placeholder18_3 = st.empty()
   reporte_3 = placeholder18_3.button("Generar Reporte",key="reporte_3")
