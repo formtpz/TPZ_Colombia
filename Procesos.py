@@ -458,7 +458,7 @@ def Procesos1(usuario,puesto):
                    
         # ----- Estado UIT Hito ---- #
 
-        elif calidad_externa_XTF_2:
+        elif estado_uit_hito_2:
 
             placeholder1_2.empty()
             placeholder2_2.empty()
