@@ -47,32 +47,32 @@ def Estado_UIT_Hito(usuario,puesto):
 
   default_date_3 = datetime.now(pytz.timezone('America/Guatemala'))
   
-  placeholder10_3= st.empty()
-  fecha_3= placeholder10_3.date_input("Fecha",value=default_date_3,key="fecha_3")
+  placeholder9_3= st.empty()
+  fecha_3= placeholder9_3.date_input("Fecha",value=default_date_3,key="fecha_3")
   
-  placeholder11_3= st.empty()
-  lote_3= placeholder11_3.selectbox("Lote",options=("1","2","3"), key="lote_3")
+  placeholder10_3= st.empty()
+  lote_3= placeholder10_3.selectbox("Lote",options=("1","2","3"), key="lote_3")
                                   
+  placeholder11_3= st.empty()
+  municipio_3= placeholder11_3.selectbox("Municipio", options=("Cabuyaro","Chalán","Colombia","Cuítiva","Iza","Los Palmitos","Morroa","Trinidad","San Estanislao","San Luis de Cubarral","Zambrano"), key="municipio_3")
+  
   placeholder12_3= st.empty()
-  municipio_3= placeholder12_3.selectbox("Municipio", options=("Cabuyaro","Chalán","Colombia","Cuítiva","Iza","Los Palmitos","Morroa","Trinidad","San Estanislao","San Luis de Cubarral","Zambrano"), key="municipio_3")
+  hito_3= placeholder12_3.selectbox("Hito",options=("1","2","3","4","5","6","7","8","9","10"), key="hito_3") 
   
   placeholder13_3= st.empty()
-  hito_3= placeholder13_3.selectbox("Hito",options=("1","2","3","4","5","6","7","8","9","10"), key="hito_3") 
+  nombre_xtf_3= placeholder13_3.text_input("Nombre XTF",max_chars=40,key="nombre_xtf_3")
   
   placeholder14_3= st.empty()
-  nombre_xtf_3= placeholder14_3.text_input("Nombre XTF",max_chars=40,key="nombre_xtf_3")
-  
-  placeholder15_3= st.empty()
-  estado_3= placeholder15_3.selectbox("Zona",options=("Rural","Urbana"), key="estado_3")
+  estado_3= placeholder14_3.selectbox("Zona",options=("Rural","Urbana"), key="estado_3")
 
-  placeholder16_3= st.empty()
-  total_de_errores_3= placeholder16_3.number_input("Total de erorres",min_value=0,step=1,key="total_de_errores_3")
+  placeholder15_3= st.empty()
+  total_de_errores_3= placeholder15_3.number_input("Total de erorres",min_value=0,step=1,key="total_de_errores_3")
   
-  placeholder17_3= st.empty()
-  errores_por_excepciones_3= placeholder17_3.number_input("Errores por excepciones",min_value=0,step=1,key="errores_por_excepciones_3")
+  placeholder16_3= st.empty()
+  errores_por_excepciones_3= placeholder16_3.number_input("Errores por excepciones",min_value=0,step=1,key="errores_por_excepciones_3")
    
-  placeholder18_3 = st.empty()
-  reporte_3 = placeholder18_3.button("Generar Reporte",key="reporte_3")
+  placeholder17_3 = st.empty()
+  reporte_3 = placeholder17_3.button("Generar Reporte",key="reporte_3")
 
   # ----- Procesos ---- #
     
@@ -94,7 +94,6 @@ def Estado_UIT_Hito(usuario,puesto):
     placeholder15_3.empty()
     placeholder16_3.empty()
     placeholder17_3.empty()
-    placeholder18_3.empty()
     st.session_state.Procesos=False
     st.session_state.calidad_externa_xft=False
 
@@ -134,7 +133,6 @@ def Estado_UIT_Hito(usuario,puesto):
     placeholder15_3.empty()
     placeholder16_3.empty()
     placeholder17_3.empty()
-    placeholder18_3.empty()
     st.session_state.calidad_externa_xft=False
     st.session_state.Historial=True
     Historial.Historial(usuario,puesto)   
@@ -159,7 +157,6 @@ def Estado_UIT_Hito(usuario,puesto):
     placeholder15_3.empty()
     placeholder16_3.empty()
     placeholder17_3.empty()
-    placeholder18_3.empty()
     st.session_state.calidad_externa_xft=False
     st.session_state.Capacitacion=True
     Capacitacion.Capacitacion(usuario,puesto)
@@ -184,7 +181,6 @@ def Estado_UIT_Hito(usuario,puesto):
     placeholder15_3.empty()
     placeholder16_3.empty()
     placeholder17_3.empty()
-    placeholder18_3.empty()
     st.session_state.calidad_externa_xft=False
     st.session_state.Otros_Registros=True
     Otros_Registros.Otros_Registros(usuario,puesto)
@@ -209,7 +205,6 @@ def Estado_UIT_Hito(usuario,puesto):
     placeholder15_3.empty()
     placeholder16_3.empty()
     placeholder17_3.empty()
-    placeholder18_3.empty()
     st.session_state.calidad_externa_xft=False
     st.session_state.Bonos_Extras=True
     Bonos_Extras.Bonos_Extras(usuario,puesto)    
@@ -234,7 +229,6 @@ def Estado_UIT_Hito(usuario,puesto):
     placeholder15_3.empty()
     placeholder16_3.empty()
     placeholder17_3.empty()
-    placeholder18_3.empty()
     st.session_state.Ingreso = False
     st.session_state.calidad_externa_xft=False
     st.session_state.Salir=True
