@@ -61,7 +61,7 @@ def Procesos1(usuario,puesto):
         revision_segregados_2 = placeholder17_2.button("Revisión de Predios Segregados",key="revision_segregados_2")
 
         placeholder18_2 = st.empty()
-        calidad_externa_xtf = placeholder18_2.button("Calidad Externa XTF",key="calidad_externa_xtf")
+        calidad_externa_xtf_2 = placeholder18_2.button("Calidad Externa XTF",key="calidad_externa_xtf_2")
 
         # ----- Historial ---- #
 
@@ -458,7 +458,7 @@ def Procesos1(usuario,puesto):
                    
         # ----- Estado UIT Hito ---- #
 
-        elif estado_uit_hito_2:
+        elif calidad_externa_XTF_2:
 
             placeholder1_2.empty()
             placeholder2_2.empty()
@@ -529,7 +529,7 @@ def Procesos1(usuario,puesto):
         elif st.session_state.Revision_Segregados==True:
             Revision_Segregados.Revision_Segregados(usuario,puesto)
             
-        elif st.session_state.Calidad_Externa_XTF==True:
+        elif st.session_state.Estado_UIT_Hito==True:
             Estado_UIT_Hito.Estado_UIT_Hito(usuario,puesto)
             
 # ----- Procesos 2 (Gabinete) ---- #
