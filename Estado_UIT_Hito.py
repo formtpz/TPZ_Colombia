@@ -60,16 +60,16 @@ def Estado_UIT_Hito(usuario,puesto):
   hito_3= placeholder13_3.selectbox("Hito",options=("1","2","3","4","5","6","7","8","9","10"), key="hito_3") 
   
   placeholder14_3= st.empty()
-  uit_3= placeholder14_3.text_input("Observaciones").",max_chars=20,key="uit_3")
+  uit_3= placeholder14_3.text_input("Nombre XTF").",max_chars=40,key="uit_3")
   
   placeholder15_3= st.empty()
   estado_3= placeholder15_3.selectbox("Zona",options=("Rural","Urbana"), key="estado_3")
 
   placeholder16_3= st.empty()
-  produccion_3= placeholder16_3.number_input("Total de erorres",min_value=0,step=1,key="produccion_3")
+  total_de_errores_3= placeholder16_3.number_input("Total de erorres",min_value=0,step=1,key="total_de_errores_3")
   
   placeholder17_3= st.empty()
-  informales_3= placeholder17_3.number_input("Errores por excepciones",min_value=0,step=1,key="informales_3")
+  errores_por_excepciones_3= placeholder17_3.number_input("Errores por excepciones",min_value=0,step=1,key="errores_por_excepciones_3")
    
   placeholder18_3 = st.empty()
   reporte_3 = placeholder18_3.button("Generar Reporte",key="reporte_3")
@@ -257,6 +257,6 @@ def Estado_UIT_Hito(usuario,puesto):
     año_3 = fecha_3.isocalendar()[0]
 
     
-    cursor01.execute(f"INSERT INTO registro (marca,usuario,nombre,puesto,supervisor,proceso,fecha,semana,año,unidad_asignacion,tipo,produccion,aprobados,rechazados,horas,uit,hito,lote,estado,area,efes,informales,paquete,con_fmi,sin_fmi,observaciones,zona,tipo_calidad,total_de_erorres,errores_por_excepciones,horas_bi,area_bi)VALUES('{marca_3}','{usuario}','{nombre_3}','{puesto}','{supervisor_3}','Calidad Externa XTF','{fecha_3}','{semana_3}','{año_3}','{municipio_3}','0','{produccion_3}','0','0','0','{uit_3}','{hito_3}','{lote_3}','{estado_3}','0','0','{informales_3}','0','0','0','N/A','N/A','N/A','0','0')")
+    cursor01.execute(f"INSERT INTO registro (marca,usuario,nombre,puesto,supervisor,proceso,fecha,semana,año,unidad_asignacion,tipo,produccion,aprobados,rechazados,horas,uit,hito,lote,estado,area,efes,informales,paquete,con_fmi,sin_fmi,observaciones,zona,tipo_calidad,horas_bi,area_bi,operador_cc,total_de_errores,errores_por_excepciones)VALUES('{marca_3}','{usuario}','{nombre_3}','{puesto}','{supervisor_3}','Calidad Externa XTF','{fecha_3}','{semana_3}','{año_3}','{municipio_3}','0','0','0','0','0','{uit_3}','{hito_3}','{lote_3}','{estado_3}','0','0','0','0','0','0','N/A','N/A','N/A','0','0','0','{total_errores_3}','{Errores_por_excepciones_3}')")
     con.commit()                                                                                                                                 
     st.success('Reporte enviado correctamente')
