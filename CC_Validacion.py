@@ -61,21 +61,24 @@ def CC_Validacion(usuario,puesto):
 
   placeholder13_3= st.empty()
   tipo_3= placeholder13_3.selectbox("Tipo", options=("Inspección","Primera Reinspección","Segunda Reinspección","Reproceso Inspección","Reproceso Primera Reinspección"," Reproceso Segunda Reinspección"), key="tipo_3")
-  
-  placeholder14_3= st.empty()
-  aprobados_3= placeholder14_3.number_input("Cantidad de Predios Aprobados",min_value=0,step=1,key="aprobados_3")
 
+  placeholder14_3= st.empty()
+  tipo_de_errores_3= placeholder14_3.multiselect("Tipo Errores", options=("Errores topológicos","Ejecución de códigos","Dirección","Digitalización de construcciones","Consecutivos de NPN","Derecho interesado fuente","Georreferenciación","Informacion Catastral","Notas en aplicativo","Creación de F","Método de captura","Validadores","Novedades"), key="tipo_de_errores_3")
+    
   placeholder15_3= st.empty()
-  rechazados_3= placeholder15_3.number_input("Cantidad de Predios Rechazados",min_value=0,step=1,key="rechazados_3")
-  
+  aprobados_3= placeholder15_3.number_input("Cantidad de Predios Aprobados",min_value=0,step=1,key="aprobados_3")
+
   placeholder16_3= st.empty()
-  horas_3= placeholder16_3.number_input("Cantidad de Horas Trabajadas en el Proceso",min_value=0.0,key="horas_3")
+  rechazados_3= placeholder16_3.number_input("Cantidad de Predios Rechazados",min_value=0,step=1,key="rechazados_3")
   
   placeholder17_3= st.empty()
-  tipo_calidad_3= placeholder17_3.selectbox("Tipo de Calidad", options=("Interna","Externa"),key="tipo_calidad_3")
+  horas_3= placeholder17_3.number_input("Cantidad de Horas Trabajadas en el Proceso",min_value=0.0,key="horas_3")
   
-  placeholder18_3 = st.empty()
-  reporte_3 = placeholder18_3.button("Generar Reporte",key="reporte_3")
+  placeholder18_3= st.empty()
+  tipo_calidad_3= placeholder18_3.selectbox("Tipo de Calidad", options=("Interna","Externa"),key="tipo_calidad_3")
+  
+  placeholder19_3 = st.empty()
+  reporte_3 = placeholder19_3.button("Generar Reporte",key="reporte_3")
 
   # ----- Procesos ---- #
     
@@ -98,6 +101,7 @@ def CC_Validacion(usuario,puesto):
     placeholder16_3.empty()
     placeholder17_3.empty()
     placeholder18_3.empty()
+    placeholder19_3.empty()
     st.session_state.Procesos=False
     st.session_state.CC_Validacion=False
 
@@ -137,6 +141,7 @@ def CC_Validacion(usuario,puesto):
     placeholder16_3.empty()
     placeholder17_3.empty()
     placeholder18_3.empty()
+    placeholder19_3.empty()
     st.session_state.CC_Validacion=False
     st.session_state.Historial=True
     Historial.Historial(usuario,puesto)   
@@ -162,6 +167,7 @@ def CC_Validacion(usuario,puesto):
     placeholder16_3.empty()
     placeholder17_3.empty()
     placeholder18_3.empty()
+    placeholder19_3.empty()
     st.session_state.CC_Validacion=False
     st.session_state.Capacitacion=True
     Capacitacion.Capacitacion(usuario,puesto)
@@ -187,6 +193,7 @@ def CC_Validacion(usuario,puesto):
     placeholder16_3.empty()
     placeholder17_3.empty()
     placeholder18_3.empty()
+    placeholder19_3.empty()
     st.session_state.CC_Validacion=False
     st.session_state.Otros_Registros=True
     Otros_Registros.Otros_Registros(usuario,puesto)
@@ -212,6 +219,7 @@ def CC_Validacion(usuario,puesto):
     placeholder16_3.empty()
     placeholder17_3.empty()
     placeholder18_3.empty()
+    placeholder19_3.empty()
     st.session_state.CC_Validacion=False
     st.session_state.Bonos_Extras=True
     Bonos_Extras.Bonos_Extras(usuario,puesto)    
@@ -237,6 +245,7 @@ def CC_Validacion(usuario,puesto):
     placeholder16_3.empty()
     placeholder17_3.empty()
     placeholder18_3.empty()
+    placeholder19_3.empty()
     st.session_state.Ingreso = False
     st.session_state.CC_Validacion=False
     st.session_state.Salir=True
