@@ -61,21 +61,24 @@ def CC_Precampo(usuario,puesto):
 
   placeholder13_3= st.empty()
   tipo_3= placeholder13_3.selectbox("Tipo", options=("Inspección","Primera Reinspección","Segunda Reinspección","Reproceso Inspección","Reproceso Primera Reinspección","Reproceso Segunda Reinspección"), key="tipo_3")
-  
+
   placeholder14_3= st.empty()
-  aprobados_3= placeholder14_3.number_input("Cantidad de Predios Aprobados",min_value=0,step=1,key="aprobados_3")
+  tipo_de_errores_3= placeholder14_3.multiselect("Tipo de Errores", options=("Errores topologicos","Ejecución de códigos","Dirección","Digitalizacion de construcciones","Consecutivos de NPN","Derecho interesado fuente","Georreferenciación","Informacion Catastral","Notas en aplicativo","Creación de F","Método de captura"), key="tipo_de_errores_3")
 
   placeholder15_3= st.empty()
-  rechazados_3= placeholder15_3.number_input("Cantidad de Predios Rechazados",min_value=0,step=1,key="rechazados_3")
-  
+  aprobados_3= placeholder15_3.number_input("Cantidad de Predios Aprobados",min_value=0,step=1,key="aprobados_3")
+
   placeholder16_3= st.empty()
-  horas_3= placeholder16_3.number_input("Cantidad de Horas Trabajadas en el Proceso",min_value=0.0,key="horas_3")
+  rechazados_3= placeholder16_3.number_input("Cantidad de Predios Rechazados",min_value=0,step=1,key="rechazados_3")
   
   placeholder17_3= st.empty()
-  tipo_calidad_3= placeholder17_3.selectbox("Tipo de Calidad", options=("Interna","Externa"),key="tipo_calidad_3")
+  horas_3= placeholder17_3.number_input("Cantidad de Horas Trabajadas en el Proceso",min_value=0.0,key="horas_3")
   
-  placeholder18_3 = st.empty()
-  reporte_3 = placeholder18_3.button("Generar Reporte",key="reporte_3")
+  placeholder18_3= st.empty()
+  tipo_calidad_3= placeholder18_3.selectbox("Tipo de Calidad", options=("Interna","Externa"),key="tipo_calidad_3")
+  
+  placeholder19_3 = st.empty()
+  reporte_3 = placeholder19_3.button("Generar Reporte",key="reporte_3")
 
   # ----- Procesos ---- #
     
@@ -98,6 +101,7 @@ def CC_Precampo(usuario,puesto):
     placeholder16_3.empty()
     placeholder17_3.empty()
     placeholder18_3.empty()
+    placeholder19_3.empty()
     st.session_state.Procesos=False
     st.session_state.CC_FMI=False
 
@@ -137,6 +141,7 @@ def CC_Precampo(usuario,puesto):
     placeholder16_3.empty()
     placeholder17_3.empty()
     placeholder18_3.empty()
+    placeholder19_3.empty()
     st.session_state.CC_FMI=False
     st.session_state.Historial=True
     Historial.Historial(usuario,puesto)   
@@ -162,6 +167,7 @@ def CC_Precampo(usuario,puesto):
     placeholder16_3.empty()
     placeholder17_3.empty()
     placeholder18_3.empty()
+    placeholder19_3.empty()
     st.session_state.CC_FMI=False
     st.session_state.Capacitacion=True
     Capacitacion.Capacitacion(usuario,puesto)
@@ -187,6 +193,7 @@ def CC_Precampo(usuario,puesto):
     placeholder16_3.empty()
     placeholder17_3.empty()
     placeholder18_3.empty()
+    placeholder19_3.empty()
     st.session_state.CC_FMI=False
     st.session_state.Otros_Registros=True
     Otros_Registros.Otros_Registros(usuario,puesto)
@@ -212,6 +219,7 @@ def CC_Precampo(usuario,puesto):
     placeholder16_3.empty()
     placeholder17_3.empty()
     placeholder18_3.empty()
+    placeholder19_3.empty()
     st.session_state.CC_FMI=False
     st.session_state.Bonos_Extras=True
     Bonos_Extras.Bonos_Extras(usuario,puesto)    
@@ -237,6 +245,7 @@ def CC_Precampo(usuario,puesto):
     placeholder16_3.empty()
     placeholder17_3.empty()
     placeholder18_3.empty()
+    placeholder19_3.empty()
     st.session_state.Ingreso = False
     st.session_state.CC_FMI=False
     st.session_state.Salir=True
@@ -263,6 +272,12 @@ def CC_Precampo(usuario,puesto):
     unidad_3=municipio_3
 
     horas_bi = float(horas_3)
+    
+    tipos_de_errores_3 = ',' .join(tipo_de_errores_3)
+
+    conteo_3 = len(tipo_de_errores_3)
+
+    
       # ----- Almacenar Lote_3 según municipio seleccionado ---- #
     
     lote_3_municipios = {"Cabuyaro", "Colombia", "San Luis de Cubarral"}
@@ -276,6 +291,6 @@ def CC_Precampo(usuario,puesto):
       lote_3 = '1'
       # ----- Fin del script ---- #
     
-    cursor01.execute(f"INSERT INTO registro (marca,usuario,nombre,puesto,supervisor,proceso,fecha,semana,año,unidad_asignacion,tipo,produccion,aprobados,rechazados,horas,uit,hito,lote,estado,area,efes,informales,paquete,con_fmi,sin_fmi,observaciones,zona,tipo_calidad,horas_bi,area_bi,operador_cc,total_de_errores,errores_por_excepciones)VALUES('{marca_3}','{usuario}','{nombre_3}','{puesto}','{supervisor_3}','Control de Calidad Precampo','{fecha_3}','{semana_3}','{año_3}','{unidad_3}','{tipo_3}','{produccion_3}','{aprobados_3}','{rechazados_3}','{horas_3}','UIT-0','0','{lote_3}','N/A','0.0','0','0','N/A','0','0','N/A','{zona_3}','{tipo_calidad_3}','{horas_bi}','0','{operador_3}','0','0')")
+    cursor01.execute(f"INSERT INTO registro (marca,usuario,nombre,puesto,supervisor,proceso,fecha,semana,año,unidad_asignacion,tipo,produccion,aprobados,rechazados,horas,uit,hito,lote,estado,area,efes,informales,paquete,con_fmi,sin_fmi,observaciones,zona,tipo_calidad,horas_bi,area_bi,operador_cc,total_de_errores,errores_por_excepciones,tipo_de_errores,conteo_de_errores)VALUES('{marca_3}','{usuario}','{nombre_3}','{puesto}','{supervisor_3}','Control de Calidad Precampo','{fecha_3}','{semana_3}','{año_3}','{unidad_3}','{tipo_3}','{produccion_3}','{aprobados_3}','{rechazados_3}','{horas_3}','UIT-0','0','{lote_3}','N/A','0.0','0','0','N/A','0','0','N/A','{zona_3}','{tipo_calidad_3}','{horas_bi}','0','{operador_3}','0','0','{tipos_de_errores_3}','{conteo_3}')")
     con.commit()                                                                                                                                 
     st.success('Reporte enviado correctamente')
