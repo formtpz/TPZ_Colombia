@@ -66,7 +66,7 @@ def Estado_UIT_Hito(usuario,puesto):
   estado_3= placeholder14_3.selectbox("Zona",options=("Rural","Urbana"), key="estado_3")
 
   placeholder15_3= st.empty()
-  total_de_errores_3= placeholder15_3.number_input("Total de erorres SIG",min_value=0,step=1,key="total_de_errores_3")
+  total_de_errores_3= placeholder15_3.number_input("Total de Errores SIG",min_value=0,step=1,key="total_de_errores_3")
   
   placeholder16_3= st.empty()
   errores_por_excepciones_3= placeholder16_3.number_input("Errores por excepciones",min_value=0,step=1,key="errores_por_excepciones_3")
