@@ -75,7 +75,7 @@ def CC_Precampo(usuario,puesto):
   horas_3= placeholder17_3.number_input("Cantidad de Horas Trabajadas en el Proceso",min_value=0.0,key="horas_3")
   
   placeholder18_3= st.empty()
-  tipo_calidad_3= placeholder18_3.text_input("Número de Paquete",max_chars=60,key="paquete_3")
+  numero_de_paquete_3= placeholder18_3.text_input("Número de Paquete",max_chars=60,key="paquete_3")
   
   placeholder19_3 = st.empty()
   reporte_3 = placeholder19_3.button("Generar Reporte",key="reporte_3")
