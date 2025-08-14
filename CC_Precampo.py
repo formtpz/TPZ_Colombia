@@ -74,8 +74,8 @@ def CC_Precampo(usuario,puesto):
   placeholder17_3= st.empty()
   horas_3= placeholder17_3.number_input("Cantidad de Horas Trabajadas en el Proceso",min_value=0.0,key="horas_3")
   
-  placeholder19_3 = st.empty()
-  reporte_3 = placeholder19_3.button("Generar Reporte",key="reporte_3")
+  placeholder18_3 = st.empty()
+  reporte_3 = placeholder18_3.button("Generar Reporte",key="reporte_3")
 
   # ----- Procesos ---- #
     
@@ -98,7 +98,6 @@ def CC_Precampo(usuario,puesto):
     placeholder16_3.empty()
     placeholder17_3.empty()
     placeholder18_3.empty()
-    placeholder19_3.empty()
     st.session_state.Procesos=False
     st.session_state.CC_FMI=False
 
@@ -138,7 +137,6 @@ def CC_Precampo(usuario,puesto):
     placeholder16_3.empty()
     placeholder17_3.empty()
     placeholder18_3.empty()
-    placeholder19_3.empty()
     st.session_state.CC_FMI=False
     st.session_state.Historial=True
     Historial.Historial(usuario,puesto)   
@@ -164,7 +162,6 @@ def CC_Precampo(usuario,puesto):
     placeholder16_3.empty()
     placeholder17_3.empty()
     placeholder18_3.empty()
-    placeholder19_3.empty()
     st.session_state.CC_FMI=False
     st.session_state.Capacitacion=True
     Capacitacion.Capacitacion(usuario,puesto)
@@ -190,7 +187,6 @@ def CC_Precampo(usuario,puesto):
     placeholder16_3.empty()
     placeholder17_3.empty()
     placeholder18_3.empty()
-    placeholder19_3.empty()
     st.session_state.CC_FMI=False
     st.session_state.Otros_Registros=True
     Otros_Registros.Otros_Registros(usuario,puesto)
@@ -216,7 +212,6 @@ def CC_Precampo(usuario,puesto):
     placeholder16_3.empty()
     placeholder17_3.empty()
     placeholder18_3.empty()
-    placeholder19_3.empty()
     st.session_state.CC_FMI=False
     st.session_state.Bonos_Extras=True
     Bonos_Extras.Bonos_Extras(usuario,puesto)    
@@ -242,7 +237,6 @@ def CC_Precampo(usuario,puesto):
     placeholder16_3.empty()
     placeholder17_3.empty()
     placeholder18_3.empty()
-    placeholder19_3.empty()
     st.session_state.Ingreso = False
     st.session_state.CC_FMI=False
     st.session_state.Salir=True
