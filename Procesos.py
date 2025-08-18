@@ -873,7 +873,7 @@ def Procesos3(usuario,puesto):
         registro_2 = placeholder7_2.title("Procesos")
 
         placeholder8_2 = st.empty()
-        fmi_2 = placeholder8_2.button("Folios de Matricula Inmobiliaria",key="fmi_2")
+        fmi_2 = placeholder8_2.button("Procesos Jurídicos",key="fmi_2")
       
         #placeholder9_2 = st.empty()
         #consulta_campo_2 = placeholder9_2.button("Consultas de Campo",key="consulta_campo_2")
