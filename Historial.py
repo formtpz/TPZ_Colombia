@@ -489,7 +489,7 @@ def Historial(usuario,puesto):
       data_2_r ["rendimiento"] = data_2_r["produccion"]/data_2_r["horas"]
       data_2_r['rendimiento'] *= 8.5 
 
-      data_4_r["produccion_total"] = (data_4_r["efes"] + data_4_r["informales"] + data_4_r["produccion"])
+      data_4_r["produccion_total"] = (data_4_r["produccion"] + data_4_r["efes"] + data_4_r["informales"])
        
       placeholder45_7 = st.empty()
       historial_7_producción= placeholder45_7.dataframe(data=data_2_r)
