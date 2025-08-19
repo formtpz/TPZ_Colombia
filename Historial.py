@@ -310,7 +310,7 @@ def Historial(usuario,puesto):
       historial_7_producción= placeholder23_7.dataframe(data=data_2_r)
 
       data_4_r ["valor esperado"] = [200 if x == 'Folios de Matricula Inmobiliaria' else 350 if x == 'Control de Calidad Folios de Matricula Inmobiliaria' else 0 for x in data_4_r['proceso']]    
-      data_4_r ["diferencia"] = data_4_r["produccion"] - data_4_r["valor esperado"]
+      data_4_r ["diferencia"] = data_4_r["efes"] - data_4_r["valor esperado"]
 
       placeholder23_2_7 = st.empty()
       historial_7_diferencia= placeholder23_2_7.subheader("Resumen Semanal")  
