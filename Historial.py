@@ -294,7 +294,7 @@ def Historial(usuario,puesto):
     data_2_r = data_1_r.groupby(["nombre", "fecha"], as_index=False)[["produccion","horas"]].agg(np.sum)
 
     data_4_r = data_1_r.groupby(["nombre", "semana","proceso"], as_index=False)[["produccion","efes","informales"]].agg(np.sum)
-    data_4_r["produccion_total"] = (data_4_r["produccion"] + data_4_r["efes"] + data_4_r["informales"])
+    data_4_r["produccion_total"] = (data_4_r["produccion"] + data_4_r["informales"])
     
     if pivot_r==0:  
 
@@ -477,7 +477,7 @@ def Historial(usuario,puesto):
     data_2_r = data_1_r.groupby(["nombre", "fecha"], as_index=False)[["produccion","horas"]].agg(np.sum)
 
     data_4_r = data_1_r.groupby(["nombre", "semana","proceso"], as_index=False)[["produccion","efes","informales"]].agg(np.sum)
-    data_4_r["produccion_total"] = (data_4_r["produccion"] + data_4_r["efes"] + data_4_r["informales"])
+    data_4_r["produccion_total"] = (data_4_r["produccion"] + data_4_r["informales"])
     
     if pivot_r==0:  
 
