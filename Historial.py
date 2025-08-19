@@ -292,6 +292,8 @@ def Historial(usuario,puesto):
     producción_7=placeholder21_7.subheader("Resumen de Producción")  
 
     data_2_r = data_1_r.groupby(["nombre", "fecha"], as_index=False)[["produccion","horas","efes","informales"]].agg(np.sum)
+
+    #-----crear columna para sumar produccion mas efes mas informales
     data_2_r["produccion_total"] = (data_2_r["produccion"] + data_2_r["efes"] + data_2_r["informales"])
     
     data_4_r = data_1_r.groupby(["nombre","semana","proceso"], as_index=False)[["produccion"]].sum()
@@ -305,11 +307,14 @@ def Historial(usuario,puesto):
 
       data_2_r["rendimiento"] = data_2_r["produccion_total"]/data_2_r["horas"]
       data_2_r['rendimiento'] *= 8.5 
-      Columnas_a_mostrar= ["nombre","fecha","produccion_total","horas","rendimiento"]
+      
+      #--------agrupamos las columnas a mostrar en la tabla
+      columnas_a_mostrar= ["nombre","fecha","produccion_total","horas","rendimiento"]
    
       placeholder23_7 = st.empty()
-      
-      historial_7_producción= placeholder23_7.dataframe(data=data_2_r)
+
+      #--------editamos el dataframe con las columnas a mostrar
+      historial_7_producción= placeholder23_7.dataframe(data=data_2_r[columnas_a_mostrar])
 
       data_4_r ["valor esperado"] = [200 if x == 'Folios de Matricula Inmobiliaria' else 350 if x == 'Control de Calidad Folios de Matricula Inmobiliaria' else 0 for x in data_4_r['proceso']]    
       data_4_r ["diferencia"] = data_4_r["produccion"] - data_4_r["valor esperado"]
@@ -477,11 +482,11 @@ def Historial(usuario,puesto):
     producción_7=placeholder43_7.subheader("Resumen de Producción")  
 
     data_2_r = data_1_r.groupby(["nombre", "fecha"], as_index=False)[["produccion","horas","efes","informales"]].agg(np.sum)
-    data_2_r["predios_totales"] = (data_2_r["produccion"] + data_2_r["efes"] + data_2_r["informales"])
+    #------creamos una columna nueva sumando producciones
+    data_2_r["produccion_total"] = (data_2_r["produccion"] + data_2_r["efes"] + data_2_r["informales"])
 
     data_4_r = data_1_r.groupby(["nombre", "semana","proceso"], as_index=False)[["produccion"]].sum()
-    #data_4_r["produccion_total"] = (data_4_r["produccion"] + data_4_r["informales"])
-    
+       
     if pivot_r==0:  
 
       placeholder44_7 = st.empty()
@@ -489,11 +494,14 @@ def Historial(usuario,puesto):
 
     else:
 
-      data_2_r ["rendimiento"] = data_2_r["produccion"]/data_2_r["horas"]
+      data_2_r["rendimiento"] = data_2_r["produccion_total"]/data_2_r["horas"]
       data_2_r['rendimiento'] *= 8.5 
       
+      #------agrupamos las columnas a mostrar
+      columnas_a_mostrar= ["nombre","fecha","produccion_total","horas","rendimiento"]
+      
       placeholder45_7 = st.empty()
-      historial_7_producción= placeholder45_7.dataframe(data=data_2_r)
+      historial_7_producción= placeholder45_7.dataframe(data=data_2_r[columnas_a_mostrar])
 
       placeholder46_7 = st.empty()
       descarga_7_producción = placeholder46_7.download_button("Decargar CSV",data=data_2_r.to_csv(),mime="text/csv",key="descarga_7_producción")
