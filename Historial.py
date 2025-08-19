@@ -475,7 +475,7 @@ def Historial(usuario,puesto):
     producción_7=placeholder43_7.subheader("Resumen de Producción")  
 
     data_2_r = data_1_r.groupby(["nombre", "fecha"], as_index=False)[["produccion","horas","efes","informales"]].agg(np.sum)
-    data_2_r[predios_totales] = (data_2_r["produccion"] + data_2_r["efes"] + data_2_r["informales"])
+    data_2_r["predios_totales"] = (data_2_r["produccion"] + data_2_r["efes"] + data_2_r["informales"])
 
     data_4_r = data_1_r.groupby(["nombre", "semana","proceso"], as_index=False)[["produccion"]].sum()
     #data_4_r["produccion_total"] = (data_4_r["produccion"] + data_4_r["informales"])
