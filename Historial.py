@@ -290,7 +290,7 @@ def Historial(usuario,puesto):
 
     placeholder21_7 = st.empty()
     producción_7=placeholder21_7.subheader("Resumen de Producción")  
-"
+
     data_2_r = data_1_r.groupby(["nombre", "fecha"], as_index=False)[["produccion","horas"]].agg(np.sum)
 
     data_4_r = data_1_r.groupby(["nombre","semana","proceso"], as_index=False)[["produccion"]].sum()
