@@ -72,6 +72,7 @@ def Bonos_Extras(usuario,puesto):
     cargar_archivos_9 = placeholder12_9.button("Cargar Archivos",key="cargar_archivos_9")
 
 #----INICIO CAMBIOS SUBIDA DE EXCEL INDIVIDUAL----#
+    #----NOTA, si pone error de Key (id)=(x) se debe ver el id de la ultima linea y poner sin las comillas "SELECT from setval('bonos_id_seq', x);" 
     if cargar_archivos_9:
       if bloques_nuevos_9 is not None:
         df_bloques = pd.read_excel(bloques_nuevos_9) if bloques_nuevos_9.name.endswith('.xlsx') else pd.read_csv(bloques_nuevos_9)
