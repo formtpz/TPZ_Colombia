@@ -57,7 +57,7 @@ def Revision_Campo(usuario,puesto):
   consecutivo_3= placeholder11_3.text_input("Número de Paquete",max_chars=15,key="consecutivo_3")
 
   placeholder12_3= st.empty()
-  tipo_3= placeholder12_3.selectbox("Tipo", options=("Inspección","Primera Reinspección","Segunda Reinspección","Tercera Reinspección","Cuarta Reinspección","Reproceso Inspección","Reproceso Primera Reinspección","Reproceso Segunda Reinspección","Reproceso Tercera Reinspección","Reproceso cuarta Reinspección"), key="tipo_3")
+  tipo_3= placeholder12_3.selectbox("Tipo", options=("Inspección","Primera Reinspección","Segunda Reinspección","Tercera Reinspección","Cuarta Reinspección","Quinta Reinspección","Reproceso Inspección","Reproceso Primera Reinspección","Reproceso Segunda Reinspección","Reproceso Tercera Reinspección","Reproceso cuarta Reinspección"), key="tipo_3")
 
   placeholder13_3= st.empty()
   zona_3= placeholder13_3.selectbox("zona", options=("Rural","Urbano"), key="zona_3")
