@@ -67,16 +67,16 @@ def Revision_Campo(usuario,puesto):
   predios_3= placeholder14_3.number_input("Cantidad de Predios",min_value=0,step=1,key="predios_3")
 
   placeholder15_3= st.empty()
-  aprobados_3= placeholder14_3.number_input("Cantidad de Predios Aprobados",min_value=0,step=1,key="aprobados_3")
+  aprobados_3= placeholder15_3.number_input("Cantidad de Predios Aprobados",min_value=0,step=1,key="aprobados_3")
 
   placeholder16_3= st.empty()
-  rechazados_3= placeholder15_3.number_input("Cantidad de Predios Rechazados",min_value=0,step=1,key="rechazados_3")
+  rechazados_3= placeholder16_3.number_input("Cantidad de Predios Rechazados",min_value=0,step=1,key="rechazados_3")
   
   placeholder17_3= st.empty()
-  horas_3= placeholder16_3.number_input("Cantidad de Horas Trabajadas en el Proceso",min_value=0.0,key="horas_3")
+  horas_3= placeholder17_3.number_input("Cantidad de Horas Trabajadas en el Proceso",min_value=0.0,key="horas_3")
 
   placeholder18_3 = st.empty()
-  reporte_3 = placeholder17_3.button("Generar Reporte",key="reporte_3")
+  reporte_3 = placeholder18_3.button("Generar Reporte",key="reporte_3")
 
   # ----- Procesos ---- #
     
