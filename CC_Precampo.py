@@ -63,7 +63,7 @@ def CC_Precampo(usuario,puesto):
   tipo_3= placeholder13_3.selectbox("Tipo", options=("Inspección","Primera Reinspección","Segunda Reinspección","Reproceso Inspección","Reproceso Primera Reinspección","Reproceso Segunda Reinspección"), key="tipo_3")
 
   placeholder14_3= st.empty()
-  tipo_de_errores_3= placeholder14_3.multiselect("Tipo de Errores", options=("Errores topologicos","Ejecución de códigos","Dirección","Digitalizacion de construcciones","Consecutivos de NPN","Derecho interesado fuente","Georreferenciación","Informacion Catastral","Notas en aplicativo","Creación de F","Método de captura","Novedades","Rechazo por espacios vacios","Consultas a campo","Predios en omision","Consultas a jurídico","N/A"), key="tipo_de_errores_3")
+  tipo_de_errores_3= placeholder14_3.multiselect("Tipo de Errores", options=("Errores topologicos","Ejecución de códigos","Dirección","Digitalización de construcciones","Consecutivos de NPN","Derecho interesado fuente","Georreferenciación","Informacion Catastral","Notas en aplicativo","Creación de F","Método de captura","Novedades","Rechazo por espacios vacios","Consultas a campo","Predios en omision","Consultas a jurídico","N/A"), key="tipo_de_errores_3")
 
   placeholder15_3= st.empty()
   aprobados_3= placeholder15_3.number_input("Cantidad de Predios Aprobados",min_value=0,step=1,key="aprobados_3")
