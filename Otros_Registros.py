@@ -43,7 +43,7 @@ def Otros_Registros(usuario,puesto):
   placeholder7_13 = st.empty()
   otros_registros_13 = placeholder7_13.title("Otros Registros")
 
-  if puesto== "Coordinador":
+  if puesto== "Coordinador" or puesto=="Técnico SIG":
 
     nombre_13= pd.read_sql(f"select nombre from usuarios where usuario='{usuario}'",uri)
     nombre_13 = nombre_13.loc[0,'nombre']
@@ -167,7 +167,7 @@ def Otros_Registros(usuario,puesto):
     elif filtro_13=="Reportados" :
       data = pd.read_sql(f"select cast(id as integer),marca,usuario,nombre,puesto,supervisor,fecha,motivo,horas,observaciones,reporte from otros_registros where reporte='{nombre_13}' and fecha>='{fecha_de__inicio_13}' and fecha<='{fecha_de__finalizacion_13}'", con)
 
-  elif puesto=="Operario Catastral" or puesto=="Profesional Jurídico":
+  elif puesto=="Operario Catastral" or puesto=="QC" or puesto=="Entregas" or puesto=="Profesional Jurídico":
  
     placeholder20_13 = st.empty()
     otros_registros_historial_13 = placeholder20_13.subheader("Historial")
@@ -195,7 +195,7 @@ def Otros_Registros(usuario,puesto):
     placeholder5_13.empty()   
     placeholder6_13.empty()
     placeholder7_13.empty()
-    if puesto=="Supervisor" or puesto=="Coordinador":
+    if puesto=="Supervisor" or puesto=="Técnico SIG" or puesto=="Coordinador":
       placeholder8_13.empty()
       placeholder9_13.empty()
       placeholder10_13.empty()
@@ -208,7 +208,7 @@ def Otros_Registros(usuario,puesto):
       placeholder17_13.empty()  
       placeholder18_13.empty()
       placeholder19_13.empty()
-    elif puesto=="Operario Catastral" or puesto=="Profesional Jurídico":
+    elif puesto=="Operario Catastral" or puesto=="QC" or puesto=="Entregas" or puesto=="Profesional Jurídico":
       placeholder20_13.empty()
       placeholder21_13.empty()
       placeholder22_13.empty()
@@ -241,7 +241,7 @@ def Otros_Registros(usuario,puesto):
     placeholder5_13.empty()   
     placeholder6_13.empty()
     placeholder7_13.empty()
-    if puesto=="Supervisor" or puesto=="Coordinador":
+    if puesto=="Supervisor" or puesto=="Técnico SIG" or puesto=="Coordinador":
       placeholder8_13.empty()
       placeholder9_13.empty()
       placeholder10_13.empty()
@@ -254,7 +254,7 @@ def Otros_Registros(usuario,puesto):
       placeholder17_13.empty()  
       placeholder18_13.empty()
       placeholder19_13.empty()
-    elif puesto=="Operario Catastral" or puesto=="Profesional Jurídico":
+    elif puesto=="Operario Catastral" or puesto=="QC" or puesto=="Entregas" or puesto=="Profesional Jurídico":
       placeholder20_13.empty()
       placeholder21_13.empty()
       placeholder22_13.empty()
@@ -273,7 +273,7 @@ def Otros_Registros(usuario,puesto):
     placeholder5_13.empty()   
     placeholder6_13.empty()
     placeholder7_13.empty()
-    if puesto=="Supervisor" or puesto=="Coordinador":
+    if puesto=="Supervisor" or puesto=="Técnico SIG" or puesto=="Coordinador":
       placeholder8_13.empty()
       placeholder9_13.empty()
       placeholder10_13.empty()
@@ -286,7 +286,7 @@ def Otros_Registros(usuario,puesto):
       placeholder17_13.empty()  
       placeholder18_13.empty()
       placeholder19_13.empty()
-    elif puesto=="Operario Catastral" or puesto=="Profesional Jurídico":
+    elif puesto=="Operario Catastral" or puesto=="QC" or puesto=="Entregas" or puesto=="Profesional Jurídico":
       placeholder20_13.empty()
       placeholder21_13.empty()
       placeholder22_13.empty()
@@ -305,7 +305,7 @@ def Otros_Registros(usuario,puesto):
     placeholder5_13.empty()   
     placeholder6_13.empty()
     placeholder7_13.empty()
-    if puesto=="Supervisor" or puesto=="Coordinador":
+    if puesto=="Supervisor" or puesto=="Técnico SIG" or puesto=="Coordinador":
       placeholder8_13.empty()
       placeholder9_13.empty()
       placeholder10_13.empty()
@@ -318,7 +318,7 @@ def Otros_Registros(usuario,puesto):
       placeholder17_13.empty()  
       placeholder18_13.empty()
       placeholder19_13.empty()
-    elif puesto=="Operario Catastral" or puesto=="Profesional Jurídico":
+    elif puesto=="Operario Catastral" or puesto=="QC" or puesto=="Entregas" or puesto=="Profesional Jurídico":
       placeholder20_13.empty()
       placeholder21_13.empty()
       placeholder22_13.empty()
@@ -337,7 +337,7 @@ def Otros_Registros(usuario,puesto):
     placeholder5_13.empty()   
     placeholder6_13.empty()
     placeholder7_13.empty()
-    if puesto=="Supervisor" or puesto=="Coordinador":
+    if puesto=="Supervisor" or puesto=="Técnico SIG" or puesto=="Coordinador":
       placeholder8_13.empty()
       placeholder9_13.empty()
       placeholder10_13.empty()
@@ -350,11 +350,11 @@ def Otros_Registros(usuario,puesto):
       placeholder17_13.empty()  
       placeholder18_13.empty()
       placeholder19_13.empty()
-    elif puesto=="Operario Catastral" or puesto=="Profesional Jurídico":
+    elif puesto=="Operario Catastral" or puesto=="QC" or puesto=="Entregas" or puesto=="Profesional Jurídico":
       placeholder20_13.empty()
       placeholder21_13.empty()
       placeholder22_13.empty()
-    placeholder23_13.empty()
+      placeholder23_13.empty()
     st.session_state.Ingreso = False
     st.session_state.Otros_Registros=False
     st.session_state.Salir=True
@@ -362,7 +362,7 @@ def Otros_Registros(usuario,puesto):
 
   # ----- Reporte ---- #
 
-  if puesto=="Supervisor" or puesto=="Coordinador":
+  if puesto=="Supervisor" or puesto=="Técnico SIG" or puesto=="Coordinador":
 
     if reporte_13:
 
