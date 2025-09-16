@@ -42,7 +42,7 @@ def Capacitacion(usuario,puesto):
   placeholder7_8 = st.empty()
   capacitacion_8 = placeholder7_8.title("Capacitaciones")
 
-  if puesto== "Coordinador":
+  if puesto== "Coordinador" or puesto== "Técnico SIG":
 
     nombre_8= pd.read_sql(f"select nombre from usuarios where usuario='{usuario}'",uri)
     nombre_8 = nombre_8.loc[0,'nombre']
@@ -166,7 +166,7 @@ def Capacitacion(usuario,puesto):
     elif filtro_8=="Reportados" :
       data = pd.read_sql(f"select cast(id as integer),marca,usuario,nombre,puesto,supervisor,fecha,tema,horas,observaciones,reporte from capacitaciones where reporte='{nombre_8}' and fecha>='{fecha_de__inicio_8}' and fecha<='{fecha_de__finalizacion_8}'", con)
 
-  elif puesto=="Operario Catastral" or puesto=="Profesional Jurídico":
+  elif puesto=="Operario Catastral"  or puesto=="QC" or puesto=="Entregas" or puesto=="Profesional Jurídico":
 
     placeholder19_8 = st.empty()
     capacitacion_historial_8 = placeholder19_8.subheader("Historial")
@@ -194,7 +194,7 @@ def Capacitacion(usuario,puesto):
     placeholder5_8.empty()   
     placeholder6_8.empty()
     placeholder7_8.empty()
-    if puesto=="Supervisor" or puesto=="Coordinador":
+    if puesto=="Supervisor" or puesto=="Coordinador" or puesto=="Técnico SIG":
       placeholder8_8.empty()
       placeholder9_8.empty()
       placeholder10_8.empty()
@@ -207,7 +207,7 @@ def Capacitacion(usuario,puesto):
       placeholder17_8.empty()
       placeholder18_8.empty()
       placeholder19_8.empty()
-    elif puesto=="Operario Catastral" or puesto=="Profesional Jurídico":
+    elif puesto=="Operario Catastral" or puesto=="QC" or puesto=="Entregas" or puesto=="Profesional Jurídico":
       placeholder19_8.empty()
       placeholder20_8.empty()
       placeholder21_8.empty()
@@ -240,7 +240,7 @@ def Capacitacion(usuario,puesto):
     placeholder5_8.empty()   
     placeholder6_8.empty()
     placeholder7_8.empty()
-    if puesto=="Supervisor" or puesto=="Coordinador":
+    if puesto=="Supervisor" or puesto=="Coordinador" or puesto== "Técnico SIG":
       placeholder8_8.empty()
       placeholder9_8.empty()
       placeholder10_8.empty()
@@ -253,7 +253,7 @@ def Capacitacion(usuario,puesto):
       placeholder17_8.empty()
       placeholder18_8.empty()
       placeholder19_8.empty()
-    elif puesto=="Operario Catastral" or puesto=="Profesional Jurídico":
+    elif puesto=="Operario Catastral" or puesto=="QC" or puesto=="Entregas" or puesto=="Profesional Jurídico":
       placeholder19_8.empty()
       placeholder20_8.empty()
       placeholder21_8.empty()
@@ -272,7 +272,7 @@ def Capacitacion(usuario,puesto):
     placeholder5_8.empty()   
     placeholder6_8.empty()
     placeholder7_8.empty()
-    if puesto=="Supervisor" or puesto=="Coordinador":
+    if puesto=="Supervisor" or puesto=="Coordinador" or puesto=="Técnico SIG":
       placeholder8_8.empty()
       placeholder9_8.empty()
       placeholder10_8.empty()
@@ -285,7 +285,7 @@ def Capacitacion(usuario,puesto):
       placeholder17_8.empty()
       placeholder18_8.empty()
       placeholder19_8.empty()
-    elif puesto=="Operario Catastral" or puesto=="Profesional Jurídico":
+    elif puesto=="Operario Catastral" or puesto=="QC" or puesto=="Entregas" or puesto=="Profesional Jurídico":
       placeholder19_8.empty()
       placeholder20_8.empty()
       placeholder21_8.empty()
@@ -304,7 +304,7 @@ def Capacitacion(usuario,puesto):
     placeholder5_8.empty()   
     placeholder6_8.empty()
     placeholder7_8.empty()
-    if puesto=="Supervisor" or puesto=="Coordinador":
+    if puesto=="Supervisor" or puesto=="Coordinador" or puesto=="Técnico SIG":
       placeholder8_8.empty()
       placeholder9_8.empty()
       placeholder10_8.empty()
@@ -317,7 +317,7 @@ def Capacitacion(usuario,puesto):
       placeholder17_8.empty()
       placeholder18_8.empty()
       placeholder19_8.empty()
-    elif puesto=="Operario Catastral" or puesto=="Profesional Jurídico":
+    elif puesto=="Operario Catastral" or puesto=="QC" or puesto=="Entregas" or puesto=="Profesional Jurídico":
       placeholder19_8.empty()
       placeholder20_8.empty()
       placeholder21_8.empty()
@@ -336,7 +336,7 @@ def Capacitacion(usuario,puesto):
     placeholder5_8.empty()   
     placeholder6_8.empty()
     placeholder7_8.empty()
-    if puesto=="Supervisor" or puesto=="Coordinador":
+    if puesto=="Supervisor" or puesto=="Coordinador" or puesto=="Técnico SIG":
       placeholder8_8.empty()
       placeholder9_8.empty()
       placeholder10_8.empty()
@@ -349,7 +349,7 @@ def Capacitacion(usuario,puesto):
       placeholder17_8.empty()
       placeholder18_8.empty()
       placeholder19_8.empty()
-    elif puesto=="Operario Catastral" or puesto=="Profesional Jurídico":
+    elif puesto=="Operario Catastral" or puesto=="QC" or puesto=="Entregas" or puesto=="Profesional Jurídico":
       placeholder19_8.empty()
       placeholder20_8.empty()
       placeholder21_8.empty()
@@ -361,7 +361,7 @@ def Capacitacion(usuario,puesto):
 
   # ----- Reporte ---- #
 
-  if puesto=="Supervisor" or puesto=="Coordinador":
+  if puesto=="Supervisor" or puesto=="Coordinador" or puesto=="Técnico SIG":
 
     if reporte_8:
 
