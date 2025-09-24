@@ -66,7 +66,7 @@ def Validacion(usuario,puesto):
   paquete_3= placeholder14_3.text_input("Número de Paquete",max_chars=60,key="paquete_3")
   
   placeholder15_3= st.empty()
-  tipo_3= placeholder15_3.selectbox("Tipo", options=("Ordinario","Reproceso Ordinario","Corrección de Calidad"), key="tipo_3")
+  tipo_3= placeholder15_3.selectbox("Tipo", options=("Ordinario","Reproceso Ordinario","Corrección de Calidad","En conflicto"), key="tipo_3")
   
   placeholder16_3= st.empty()
   estado_3= placeholder16_3.selectbox("Estado" , options=("Finalizado"),key="estado_3")
