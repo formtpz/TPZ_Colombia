@@ -658,8 +658,6 @@ def Historial(usuario,puesto):
       placeholder39_7.empty()
       placeholder43_7.empty()
       placeholder49_7.empty()
-      placeholder55_7.empty()
-      placeholder56_7.empty()
 
       if pivot_reportes==0:
         placeholder36_7.empty()
@@ -771,8 +769,6 @@ def Historial(usuario,puesto):
       placeholder39_7.empty()
       placeholder43_7.empty()
       placeholder49_7.empty()
-      placeholder55_7.empty()
-      placeholder56_7.empty()
 
       if pivot_reportes==0:
         placeholder36_7.empty()
@@ -870,8 +866,6 @@ def Historial(usuario,puesto):
       placeholder39_7.empty()
       placeholder43_7.empty()
       placeholder49_7.empty()
-      placeholder55_7.empty()
-      placeholder56_7.empty()
 
       if pivot_reportes==0:
         placeholder36_7.empty()
@@ -969,8 +963,8 @@ def Historial(usuario,puesto):
       placeholder39_7.empty()
       placeholder43_7.empty()
       placeholder49_7.empty()
-      placeholder55_7.empty()
-      placeholder56_7.empty()
+
+
 
       if pivot_reportes==0:
         placeholder36_7.empty()
@@ -1069,9 +1063,7 @@ def Historial(usuario,puesto):
       placeholder39_7.empty()
       placeholder43_7.empty()
       placeholder49_7.empty()
-      placeholder55_7.empty()
-      placeholder56_7.empty()
-      
+
 
       if pivot_reportes==0:
         placeholder36_7.empty()
@@ -1104,6 +1096,8 @@ def Historial(usuario,puesto):
         placeholder47_7.empty()
         placeholder48_7.empty()
         placeholder51_7.empty()
+        placeholder55_7.empty()
+        placeholder56_7.empty()
 
     st.session_state.Ingreso = False
     st.session_state.Historial=False
