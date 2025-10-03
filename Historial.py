@@ -328,7 +328,7 @@ def Historial(usuario,puesto):
 
       #------Creando el dataframe de Resumen calidad 
 
-      data_5_r = data_1_r.groupby(["operador_cc", "semana"], as_index=False)[["horas","produccion","aprobados","rechazados"]].agg(np.sum)
+      data_5_r = data_1_r.groupby(["operador_cc", "semana"], as_index=False)[["produccion","aprobados","rechazados"]].agg(np.sum)
       data_5_r["porcentaje_aprobacion"] = ((data_5_r["aprobados"] / data_5_r["produccion"]) * 100).round(2).astype(str) + "%"
             
       placeholder25_2_7 = st.empty()
@@ -454,11 +454,9 @@ def Historial(usuario,puesto):
       placeholder37_7 = st.empty()
       historial_7_reportes=placeholder37_7.dataframe(data=data_1_r)
 
-    # ----- Resumen de Horas ---- #
+    #------Creando el dataframe de Resumen calidad 
 
-     #------Creando el dataframe de Resumen calidad 
-
-    data_5 = data_5_r.groupby(["operador_cc", "semana"], as_index=False)[["horas","produccion","aprobados","rechazados"]].agg(np.sum)
+    data_5 = data_5_r.groupby(["operador_cc", "semana"], as_index=False)[["produccion","aprobados","rechazados"]].agg(np.sum)
     data_5["porcentaje_aprobacion"] = ((data_5["aprobados"] / data_5["produccion"]) * 100).round(2).astype(str) + "%"
             
     placeholder25_2_7 = st.empty()
@@ -468,6 +466,7 @@ def Historial(usuario,puesto):
     tabla_resumen_calidad = placeholder26_2_7.dataframe(data=data_5)
     #fin del dataframe para resumen calidad
     
+    # ----- Resumen de Horas ---- #
     placeholder39_7 = st.empty()
     horas_7=placeholder39_7.subheader("Resumen de Horas")  
 
