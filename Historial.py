@@ -329,7 +329,7 @@ def Historial(usuario,puesto):
       #------Creando el dataframe de Resumen calidad 
 
       data_5_r = data_1_r.groupby(["operador_cc", "semana"], as_index=False)[["horas","produccion","aprobados","rechazados"]].agg(np.sum)
-      data_5_r["porcentaje_aprobacion"] = (data_5_r["aprobados"] / data_2_r["produccion"])*100
+      data_5_r["porcentaje_aprobacion"] = ((data_5_r["aprobados"] / data_5_r["produccion"]) * 100).round(2).astype(str) + "%"
             
       placeholder25_2_7 = st.empty()
       titulo_resumen_calidad= placeholder25_2_7.subheader("Resumen Calidad")  
