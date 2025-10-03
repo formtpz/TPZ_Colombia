@@ -391,6 +391,13 @@ def Historial(usuario,puesto):
       placeholder32_7 = st.empty()
       grafico_horas_total_2 = placeholder32_7.plotly_chart(fig_horas_total_2)
 
+  
+  
+
+  
+  
+  
+  
   # ----- Operario Catastral y Profesional Jurídico ---- #
 
   elif puesto=="Operario Catastral" or puesto=="Entregas" or puesto=="Validación" or puesto=="QC" or puesto=="Profesional Jurídico":
@@ -450,20 +457,26 @@ def Historial(usuario,puesto):
       error_reportes= placeholder36_7.error('No existen reportes para mostrar')
 
     else:
-
       placeholder37_7 = st.empty()
       historial_7_reportes=placeholder37_7.dataframe(data=data_1_r)
 
     #------Creando el dataframe de Resumen calidad 
-
-    data_5 = data_5_r.groupby(["operador_cc", "semana"], as_index=False)[["produccion","aprobados","rechazados"]].agg(np.sum)
-    data_5["porcentaje_aprobacion"] = ((data_5["aprobados"] / data_5["produccion"]) * 100).round(2).astype(str) + "%"
-            
     placeholder25_2_7 = st.empty()
     titulo_resumen_calidad= placeholder25_2_7.subheader("Resumen Calidad")  
     
-    placeholder26_2_7 = st.empty()
-    tabla_resumen_calidad = placeholder26_2_7.dataframe(data=data_5)
+    data_5 = data_5_r.groupby(["operador_cc", "semana"], as_index=False)[["produccion","aprobados","rechazados"]].agg(np.sum)
+    
+    pivot_calidad=len(data_5.iloc[:,0])
+    
+    if pivot_calidad==0:
+      placeholder55_7 = st.empty()
+      error_reportes= placeholder55_7.error('No existen reportes para mostrar')
+      
+    else:
+      data_5["porcentaje_aprobacion"] = ((data_5["aprobados"] / data_5["produccion"]) * 100).round(2).astype(str) + "%"         
+   
+      placeholder26_2_7 = st.empty()
+      tabla_resumen_calidad = placeholder26_2_7.dataframe(data=data_5)
     #fin del dataframe para resumen calidad
     
     # ----- Resumen de Horas ---- #
@@ -659,7 +672,12 @@ def Historial(usuario,puesto):
       placeholder43_7.empty()
       placeholder49_7.empty()
       placeholder25_2_7.empty()
-      placeholder26_2_7.empty()
+      
+      if pivot_calidad==0:
+        placeholder55_7.empty()
+
+      else:
+        placeholder26_2_7.empty()
 
       if pivot_reportes==0:
         placeholder36_7.empty()
@@ -772,8 +790,14 @@ def Historial(usuario,puesto):
       placeholder43_7.empty()
       placeholder49_7.empty()
       placeholder25_2_7.empty()
-      placeholder26_2_7.empty()
+      
+      if pivot_calidad==0:
+        placeholder55_7.empty()
 
+      else:
+        placeholder26_2_7.empty()
+
+      
       if pivot_reportes==0:
         placeholder36_7.empty()
       
@@ -871,7 +895,13 @@ def Historial(usuario,puesto):
       placeholder43_7.empty()
       placeholder49_7.empty()
       placeholder25_2_7.empty()
-      placeholder26_2_7.empty()
+      
+      if pivot_calidad==0:
+        placeholder55_7.empty()
+
+      else:
+        placeholder26_2_7.empty()
+
 
       if pivot_reportes==0:
         placeholder36_7.empty()
@@ -970,7 +1000,13 @@ def Historial(usuario,puesto):
       placeholder43_7.empty()
       placeholder49_7.empty()
       placeholder25_2_7.empty()
-      placeholder26_2_7.empty()
+      
+      if pivot_calidad==0:
+        placeholder55_7.empty()
+
+      else:
+        placeholder26_2_7.empty()
+
 
       if pivot_reportes==0:
         placeholder36_7.empty()
@@ -1070,7 +1106,13 @@ def Historial(usuario,puesto):
       placeholder43_7.empty()
       placeholder49_7.empty()
       placeholder25_2_7.empty()
-      placeholder26_2_7.empty()
+      
+      if pivot_calidad==0:
+        placeholder55_7.empty()
+
+      else:
+        placeholder26_2_7.empty()
+
 
       if pivot_reportes==0:
         placeholder36_7.empty()
