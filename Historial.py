@@ -404,7 +404,8 @@ def Historial(usuario,puesto):
     if proceso_7_o =="Todos" and tipo_7_o=="Todos":
         
       data_1_r=pd.read_sql(f"select cast(id as integer),marca,usuario,nombre,puesto,supervisor,proceso,fecha,semana,año,unidad_asignacion,uit,hito,lote,estado,zona,area,cast(efes as float),cast(informales as float),paquete,con_fmi,sin_fmi,tipo,cast(produccion as float),cast(aprobados as float),cast(rechazados as float),operador_cc,total_de_errores,errores_por_excepciones,tipo_calidad,tipo_de_errores,conteo_de_errores,cast(horas as float) from registro where usuario='{usuario}' and fecha>='{fecha_de__inicio_7}' and fecha<='{fecha_de__finalizacion_7}'", con)
-
+      #-----importar la base completa sin filtro de usuario para jalar operador cc en la vista resumen
+      data_5_r=pd.read_sql(f"select cast(id as integer),marca,usuario,nombre,puesto,supervisor,proceso,fecha,semana,año,unidad_asignacion,uit,hito,lote,estado,zona,area,cast(efes as float),cast(informales as float),paquete,con_fmi,sin_fmi,tipo,cast(produccion as float),cast(aprobados as float),cast(rechazados as float),operador_cc,total_de_errores,errores_por_excepciones,tipo_calidad,tipo_de_errores,conteo_de_errores,cast(horas as float) from registro where fecha>='{fecha_de__inicio_7}' and fecha<='{fecha_de__finalizacion_7}'", con)
       data_1_c = pd.read_sql(f"select cast(id as integer),marca,usuario,nombre,puesto,supervisor,fecha,tema,cast(horas as float),observaciones,reporte from capacitaciones where usuario='{usuario}' and fecha>='{fecha_de__inicio_7}' and fecha<='{fecha_de__finalizacion_7}'", con)
 
       data_1_o = pd.read_sql(f"select cast(id as integer),marca,usuario,nombre,puesto,supervisor,fecha,motivo,cast(horas as float),observaciones,reporte from otros_registros where usuario='{usuario}' and fecha>='{fecha_de__inicio_7}' and fecha<='{fecha_de__finalizacion_7}'", con)
@@ -412,7 +413,8 @@ def Historial(usuario,puesto):
     elif proceso_7_o =="Todos" and tipo_7_o!="Todos":
       
       data_1_r=pd.read_sql(f"select cast(id as integer),marca,usuario,nombre,puesto,supervisor,proceso,fecha,semana,año,unidad_asignacion,uit,hito,lote,estado,zona,area,cast(efes as float),cast(informales as float),paquete,con_fmi,sin_fmi,tipo,cast(produccion as float),cast(aprobados as float),cast(rechazados as float),operador_cc,total_de_errores,errores_por_excepciones,tipo_calidad,tipo_de_errores,conteo_de_errores,cast(horas as float)from registro where usuario='{usuario}' and tipo='{tipo_7_o}' and fecha>='{fecha_de__inicio_7}' and fecha<='{fecha_de__finalizacion_7}'", con)
-
+      #-----importar la base completa sin filtro de usuario para jalar operador cc en la vista resumen
+      data_5_r=pd.read_sql(f"select cast(id as integer),marca,usuario,nombre,puesto,supervisor,proceso,fecha,semana,año,unidad_asignacion,uit,hito,lote,estado,zona,area,cast(efes as float),cast(informales as float),paquete,con_fmi,sin_fmi,tipo,cast(produccion as float),cast(aprobados as float),cast(rechazados as float),operador_cc,total_de_errores,errores_por_excepciones,tipo_calidad,tipo_de_errores,conteo_de_errores,cast(horas as float) from registro where fecha>='{fecha_de__inicio_7}' and fecha<='{fecha_de__finalizacion_7}'", con)
       data_1_c = pd.read_sql(f"select cast(id as integer),marca,usuario,nombre,puesto,supervisor,fecha,tema,cast(horas as float),observaciones,reporte from capacitaciones where usuario='{usuario}' and fecha>='{fecha_de__inicio_7}' and fecha<='{fecha_de__finalizacion_7}'", con)
 
       data_1_o = pd.read_sql(f"select cast(id as integer),marca,usuario,nombre,puesto,supervisor,fecha,motivo,cast(horas as float),observaciones,reporte from otros_registros where usuario='{usuario}' and fecha>='{fecha_de__inicio_7}' and fecha<='{fecha_de__finalizacion_7}'", con)
@@ -420,7 +422,8 @@ def Historial(usuario,puesto):
     elif proceso_7_o !="Todos" and tipo_7_o=="Todos":
       
       data_1_r=pd.read_sql(f"select cast(id as integer),marca,usuario,nombre,puesto,supervisor,proceso,fecha,semana,año,unidad_asignacion,uit,hito,lote,estado,zona,area,cast(efes as float),cast(informales as float),paquete,con_fmi,sin_fmi,tipo,cast(produccion as float),cast(aprobados as float),cast(rechazados as float),operador_cc,total_de_errores,errores_por_excepciones,tipo_calidad,tipo_de_errores,conteo_de_errores,cast(horas as float)from registro where usuario='{usuario}' and proceso='{proceso_7_o}' and fecha>='{fecha_de__inicio_7}' and fecha<='{fecha_de__finalizacion_7}'", con)
-
+      #-----importar la base completa sin filtro de usuario para jalar operador cc en la vista resumen
+      data_5_r=pd.read_sql(f"select cast(id as integer),marca,usuario,nombre,puesto,supervisor,proceso,fecha,semana,año,unidad_asignacion,uit,hito,lote,estado,zona,area,cast(efes as float),cast(informales as float),paquete,con_fmi,sin_fmi,tipo,cast(produccion as float),cast(aprobados as float),cast(rechazados as float),operador_cc,total_de_errores,errores_por_excepciones,tipo_calidad,tipo_de_errores,conteo_de_errores,cast(horas as float) from registro where fecha>='{fecha_de__inicio_7}' and fecha<='{fecha_de__finalizacion_7}'", con)
       data_1_c = pd.read_sql(f"select cast(id as integer),marca,usuario,nombre,puesto,supervisor,fecha,tema,cast(horas as float),observaciones,reporte from capacitaciones where usuario='{usuario}' and fecha>='{fecha_de__inicio_7}' and fecha<='{fecha_de__finalizacion_7}'", con)
 
       data_1_o = pd.read_sql(f"select cast(id as integer),marca,usuario,nombre,puesto,supervisor,fecha,motivo,cast(horas as float),observaciones,reporte from otros_registros where usuario='{usuario}' and fecha>='{fecha_de__inicio_7}' and fecha<='{fecha_de__finalizacion_7}'", con)
@@ -428,7 +431,8 @@ def Historial(usuario,puesto):
     elif proceso_7_o !="Todos" and tipo_7_o!="Todos":
       
       data_1_r=pd.read_sql(f"select cast(id as integer),marca,usuario,nombre,puesto,supervisor,proceso,fecha,semana,año,unidad_asignacion,uit,hito,lote,estado,zona,area,cast(efes as float),cast(informales as float),paquete,con_fmi,sin_fmi,tipo,cast(produccion as float),cast(aprobados as float),cast(rechazados as float),operador_cc,total_de_errores,errores_por_excepciones,tipo_calidad,tipo_de_errores,conteo_de_errores,cast(horas as float)from registro where usuario='{usuario}' and proceso='{proceso_7_o}' and tipo='{tipo_7_o}' and fecha>='{fecha_de__inicio_7}' and fecha<='{fecha_de__finalizacion_7}'", con)
-
+      #-----importar la base completa sin filtro de usuario para jalar operador cc en la vista resumen
+      data_5_r=pd.read_sql(f"select cast(id as integer),marca,usuario,nombre,puesto,supervisor,proceso,fecha,semana,año,unidad_asignacion,uit,hito,lote,estado,zona,area,cast(efes as float),cast(informales as float),paquete,con_fmi,sin_fmi,tipo,cast(produccion as float),cast(aprobados as float),cast(rechazados as float),operador_cc,total_de_errores,errores_por_excepciones,tipo_calidad,tipo_de_errores,conteo_de_errores,cast(horas as float) from registro where fecha>='{fecha_de__inicio_7}' and fecha<='{fecha_de__finalizacion_7}'", con)
       data_1_c = pd.read_sql(f"select cast(id as integer),marca,usuario,nombre,puesto,supervisor,fecha,tema,cast(horas as float),observaciones,reporte from capacitaciones where usuario='{usuario}' and fecha>='{fecha_de__inicio_7}' and fecha<='{fecha_de__finalizacion_7}'", con)
 
       data_1_o = pd.read_sql(f"select cast(id as integer),marca,usuario,nombre,puesto,supervisor,fecha,motivo,cast(horas as float),observaciones,reporte from otros_registros where usuario='{usuario}' and fecha>='{fecha_de__inicio_7}' and fecha<='{fecha_de__finalizacion_7}'", con)
@@ -531,14 +535,14 @@ def Historial(usuario,puesto):
 
       #------Creando el dataframe de Resumen calidad 
 
-      data_5_r = data_1_r.groupby(["operador_cc", "semana"], as_index=False)[["horas","produccion","aprobados","rechazados"]].agg(np.sum)
-      data_5_r["porcentaje_aprobacion"] = ((data_5_r["aprobados"] / data_5_r["produccion"]) * 100).round(2).astype(str) + "%"
+      data_5 = data_5_r.groupby(["operador_cc", "semana"], as_index=False)[["horas","produccion","aprobados","rechazados"]].agg(np.sum)
+      data_5["porcentaje_aprobacion"] = ((data_5["aprobados"] / data_5["produccion"]) * 100).round(2).astype(str) + "%"
             
       placeholder25_2_7 = st.empty()
       titulo_resumen_calidad= placeholder25_2_7.subheader("Resumen Calidad")  
     
       placeholder26_2_7 = st.empty()
-      tabla_resumen_calidad = placeholder26_2_7.dataframe(data=data_5_r)
+      tabla_resumen_calidad = placeholder26_2_7.dataframe(data=data_5)
 
       
       nombre_producción=data_2_r.iloc[:,0]
