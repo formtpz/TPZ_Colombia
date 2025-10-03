@@ -504,7 +504,17 @@ def Historial(usuario,puesto):
     data_2_r["produccion_total"] = (data_2_r["produccion"] + data_2_r["efes"] + data_2_r["informales"])
 
     data_4_r = data_1_r.groupby(["nombre", "semana","proceso"], as_index=False)[["produccion"]].sum()
-       
+     #------Creando el dataframe de Resumen calidad 
+
+    data_5 = data_5_r.groupby(["operador_cc", "semana"], as_index=False)[["horas","produccion","aprobados","rechazados"]].agg(np.sum)
+    data_5["porcentaje_aprobacion"] = ((data_5["aprobados"] / data_5["produccion"]) * 100).round(2).astype(str) + "%"
+            
+    placeholder25_2_7 = st.empty()
+    titulo_resumen_calidad= placeholder25_2_7.subheader("Resumen Calidad")  
+    
+    placeholder26_2_7 = st.empty()
+    tabla_resumen_calidad = placeholder26_2_7.dataframe(data=data_5)
+    
     if pivot_r==0:  
 
       placeholder44_7 = st.empty()
@@ -532,19 +542,7 @@ def Historial(usuario,puesto):
       
       placeholder46_2_7 = st.empty()
       descarga_7_diferencia = placeholder46_2_7.download_button("Decargar CSV",data=data_4_r.to_csv(),mime="text/csv",key="descarga_7_diferencia")
-
-      #------Creando el dataframe de Resumen calidad 
-
-      data_5 = data_5_r.groupby(["operador_cc", "semana"], as_index=False)[["horas","produccion","aprobados","rechazados"]].agg(np.sum)
-      data_5["porcentaje_aprobacion"] = ((data_5["aprobados"] / data_5["produccion"]) * 100).round(2).astype(str) + "%"
-            
-      placeholder25_2_7 = st.empty()
-      titulo_resumen_calidad= placeholder25_2_7.subheader("Resumen Calidad")  
-    
-      placeholder26_2_7 = st.empty()
-      tabla_resumen_calidad = placeholder26_2_7.dataframe(data=data_5)
-
-      
+       
       nombre_producción=data_2_r.iloc[:,0]
       fecha_producción=data_2_r.iloc[:,1]
       rendimiento_producción=data_2_r.iloc[:,4]
