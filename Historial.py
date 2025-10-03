@@ -319,12 +319,26 @@ def Historial(usuario,puesto):
       data_4_r ["valor esperado"] = [200 if x == 'Folios de Matricula Inmobiliaria' else 350 if x == 'Control de Calidad Folios de Matricula Inmobiliaria' else 0 for x in data_4_r['proceso']]    
       data_4_r ["diferencia"] = data_4_r["produccion"] - data_4_r["valor esperado"]
 
+      #------agregamos titulo y imprimimos dataframe Resumen semanal
       placeholder23_2_7 = st.empty()
       historial_7_diferencia= placeholder23_2_7.subheader("Resumen Semanal")  
     
       placeholder24_2_7 = st.empty()
-      descarga_7_diferencia = placeholder24_2_7.    dataframe(data=data_4_r)
-      
+      descarga_7_diferencia = placeholder24_2_7.dataframe(data=data_4_r)
+
+      #------Creando el dataframe de Resumen calidad 
+
+      data_5_r = data_1_r.groupby(["operador_cc", "fecha"], as_index=False)[["horas","produccion","aprobados","rechazados"]].agg(np.sum)
+      data_5_r["porcentaje_aprobacion"] = (data_5_r["aprobados"] / data_2_r["produccion"])*100
+            
+      placeholder25_2_7 = st.empty()
+      titulo_resumen_calidad= placeholder25_2_7.subheader("Resumen Calidad")  
+    
+      placeholder26_2_7 = st.empty()
+      tabla_resumen_calidad = placeholder26_2_7.dataframe(data=data_5_r)
+
+
+      #-------generando listado de nombres desde la base de datos para seleccionar filtros en los graficos
       nombre_producción=data_2_r.iloc[:,0]
       fecha_producción=data_2_r.iloc[:,1]
       rendimiento_producción=data_2_r.iloc[:,4]
