@@ -472,7 +472,7 @@ def Historial(usuario,puesto):
     titulo_resumen_calidad= placeholder25_2_7.subheader("Resumen Calidad")  
     
     # Filtramos los datos antes del groupby
-    data_filtrada_1 = data_1_r[(data_1_r["tipo"] == "Inspección")]
+    data_filtrada_1 = data_5_r[(data_5_r["tipo"] == "Inspección")]
     # Agrupamos los datos filtrados
     data_5=(data_filtrada_1.groupby(["operador_cc", "semana"], as_index=False)[["produccion", "aprobados", "rechazados"]].agg(np.sum))
        
