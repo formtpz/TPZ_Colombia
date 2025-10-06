@@ -326,16 +326,22 @@ def Historial(usuario,puesto):
       placeholder24_2_7 = st.empty()
       descarga_7_diferencia = placeholder24_2_7.dataframe(data=data_4_r)
 
-      #------Creando el dataframe de Resumen calidad 
+      #------Creando el dataframe de Resumen Calidad--------
       
-      data_5_r = data_1_r.groupby(["operador_cc", "semana"], as_index=False)[["produccion","aprobados","rechazados"]].agg(np.sum)
-      data_5_r["porcentaje_aprobacion"] = ((data_5_r["aprobados"] / data_5_r["produccion"]) * 100).round(2).astype(str) + "%"
-            
+      # Filtramos los datos antes del groupby
+      data_filtrada = data_1_r[(data_1_r["tipo"] == "inspección") & (data_1_r["operador_cc"].notna()) & (data_1_r["operador_cc"] != "N/A")]
+      # Agrupamos los datos filtrados
+      data_5_r = (data_filtrada.groupby(["operador_cc", "semana"], as_index=False)[["produccion", "aprobados", "rechazados"]].agg(np.sum))
+
+      # Calculamos el porcentaje de aprobación
+      data_5_r["porcentaje_aprobacion"] = ((data_5_r["aprobados"] / data_5_r["produccion"]) * 100).round(2).astype(str) + "%" 
+                  
       placeholder25_2_7 = st.empty()
       titulo_resumen_calidad= placeholder25_2_7.subheader("Resumen Calidad")  
     
       placeholder26_2_7 = st.empty()
       tabla_resumen_calidad = placeholder26_2_7.dataframe(data=data_5_r)
+      #-----Fin data frame Resumen Calidad-------
 
       #-------generando listado de nombres desde la base de datos para seleccionar filtros en los graficos
       nombre_producción=data_2_r.iloc[:,0]
