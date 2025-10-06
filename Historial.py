@@ -337,10 +337,6 @@ def Historial(usuario,puesto):
       placeholder26_2_7 = st.empty()
       tabla_resumen_calidad = placeholder26_2_7.dataframe(data=data_5_r)
 
-      placeholder26_2_7 = st.empty()
-      tabla_resumen_calidad = placeholder26_2_7.dataframe(data=data_5_r)
-
-
       #-------generando listado de nombres desde la base de datos para seleccionar filtros en los graficos
       nombre_producción=data_2_r.iloc[:,0]
       fecha_producción=data_2_r.iloc[:,1]
