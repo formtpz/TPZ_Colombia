@@ -466,12 +466,16 @@ def Historial(usuario,puesto):
       placeholder37_7 = st.empty()
       historial_7_reportes=placeholder37_7.dataframe(data=data_1_r)
 
+    
     #------Creando el dataframe de Resumen calidad 
     placeholder25_2_7 = st.empty()
     titulo_resumen_calidad= placeholder25_2_7.subheader("Resumen Calidad")  
     
-    data_5 = data_5_r.groupby(["operador_cc", "semana"], as_index=False)[["produccion","aprobados","rechazados"]].agg(np.sum)
-    
+    # Filtramos los datos antes del groupby
+    data_filtrada = data_1_r[(data_1_r["tipo"] == "Inspección") & (data_1_r["operador_cc"].notna()) & (data_1_r["operador_cc"] != "N/A")]
+    # Agrupamos los datos filtrados
+    data_5_r = (data_filtrada.groupby(["operador_cc", "semana"], as_index=False)[["produccion", "aprobados", "rechazados"]].agg(np.sum))
+       
     pivot_calidad=len(data_5.iloc[:,0])
     
     if pivot_calidad==0:
@@ -483,7 +487,8 @@ def Historial(usuario,puesto):
    
       placeholder26_2_7 = st.empty()
       tabla_resumen_calidad = placeholder26_2_7.dataframe(data=data_5)
-    #fin del dataframe para resumen calidad
+    #-------fin del dataframe para resumen calidad-------
+
     
     # ----- Resumen de Horas ---- #
     placeholder39_7 = st.empty()
