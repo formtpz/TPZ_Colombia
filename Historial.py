@@ -474,7 +474,7 @@ def Historial(usuario,puesto):
     # Filtramos los datos antes del groupby
     data_filtrada = data_1_r[(data_1_r["tipo"] == "Inspección") & (data_1_r["operador_cc"] != "N/A")]
     # Agrupamos los datos filtrados
-    data_5_r = (data_filtrada.groupby(["operador_cc", "semana"], as_index=False)[["produccion", "aprobados", "rechazados"]].agg(np.sum))
+    data_5= (data_filtrada.groupby(["operador_cc", "semana"], as_index=False)[["produccion", "aprobados", "rechazados"]].agg(np.sum))
        
     pivot_calidad=len(data_5.iloc[:,0])
     
