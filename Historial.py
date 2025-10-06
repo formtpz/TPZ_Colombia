@@ -328,12 +328,39 @@ def Historial(usuario,puesto):
 
       #------Creando el dataframe de Resumen calidad 
 
-      data_5_r = data_1_r.groupby(["operador_cc", "semana"], as_index=False)[["produccion","aprobados","rechazados"]].agg(np.sum)
+      import pandas as pd
+      import numpy as np
+      import streamlit as st
+      # ... (otras importaciones y código que tengas)
+      
+      # ... (código donde cargas data_1_r, por ejemplo, lectura de un archivo)
+      
+      # ------ Creando el dataframe de Resumen calidad
+      
+      # 1. APLICAR LOS FILTROS AQUÍ:
+      
+      # Crear el filtro combinado:
+      # a) 'operador_cc' NO sea "N/A"
+      # b) 'tipo' sea IGUAL a "Inspección"
+      filtro_combinado = (data_1_r['operador_cc'] != 'N/A') & \
+                         (data_1_r['tipo'] == 'Inspección')
+      
+      # Aplicar el filtro para crear el DataFrame filtrado
+      data_filtrada = data_1_r[filtro_combinado]
+      
+      
+      # 2. USAR EL DATAFRAME FILTRADO (data_filtrada) PARA EL GROUPBY
+      data_5_r = data_filtrada.groupby(["operador_cc", "semana"], as_index=False)[["produccion","aprobados","rechazados"]].agg(np.sum)
       data_5_r["porcentaje_aprobacion"] = ((data_5_r["aprobados"] / data_5_r["produccion"]) * 100).round(2).astype(str) + "%"
-            
+      
+      # ----------------------------------------------------------------------------------
+      
+      # El resto de tu código de Streamlit permanece igual,
+      # ya que ahora data_5_r contiene los datos correctamente filtrados.
+      
       placeholder25_2_7 = st.empty()
-      titulo_resumen_calidad= placeholder25_2_7.subheader("Resumen Calidad")  
-    
+      titulo_resumen_calidad = placeholder25_2_7.subheader("Resumen Calidad")
+      
       placeholder26_2_7 = st.empty()
       tabla_resumen_calidad = placeholder26_2_7.dataframe(data=data_5_r)
 
