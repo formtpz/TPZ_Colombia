@@ -63,7 +63,7 @@ def CC_Validacion(usuario,puesto):
   tipo_3= placeholder13_3.selectbox("Tipo", options=("Inspección","Primera Reinspección","Segunda Reinspección","Reproceso Inspección","Reproceso Primera Reinspección"," Reproceso Segunda Reinspección","Control de Calidad Supervisión"), key="tipo_3")
 
   placeholder14_3= st.empty()
-  tipo_de_errores_3= placeholder14_3.multiselect("Tipo Errores", options=("Errores topológicos","Digitalización de construcciones","Derecho interesado fuente","Georreferenciación","Errores en aplicativo","Creación de F","Validadores","Consultas a campo","Consultas a jurídico","Predios en omision","N/A"), key="tipo_de_errores_3")
+  tipo_de_errores_3= placeholder14_3.multiselect("Tipo Errores", options=("Errores topológicos","Digitalización de construcciones","Derecho interesado fuente","Georreferenciación","Errores en aplicativo","Creación de F","Validadores","Consultas a campo","Consultas a jurídico","Predios en omision","Revisión de Observaciones","N/A"), key="tipo_de_errores_3")
     
   placeholder15_3= st.empty()
   aprobados_3= placeholder15_3.number_input("Cantidad de Predios Aprobados",min_value=0,step=1,key="aprobados_3")
