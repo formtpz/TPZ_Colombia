@@ -144,32 +144,42 @@ def Bonos_Extras(usuario,puesto):
 
         bono_productividad_9=0
         bono_calidad_9=0
+        bono_produccion_qc_9=0
         bono_supervision_9=0
+        bono_produccion_validacion_9=0
         bono_calidad_externa_igac_9=0
+        bono_entregas_9=0
         bonos_variables_9=0
         bonos_fijos_9=0
         bono_total_9=0
         
         for a in range(0,pivot1):
-          bono_productividad_9 = bono_productividad_9 + sum([float(bonos_9.iloc[a,8])])
-          bono_calidad_9 = bono_calidad_9 + sum([float(bonos_9.iloc[a,15])])
-          bono_supervision_9 = bono_supervision_9 + sum([float(bonos_9.iloc[a,17])])
-          bono_calidad_externa_igac_9 = bono_calidad_externa_igac_9 + sum([float(bonos_9.iloc[a,18])])
-          bonos_variables_9 = bonos_variables_9 + sum([float(bonos_9.iloc[a,21])])
-          bonos_fijos_9 = bonos_fijos_9 + sum([float(bonos_9.iloc[a,16])])
+          bono_productividad_9 = bono_productividad_9 + sum([float(bonos_9.iloc[a,5])])#a5-bono productividad 
+          bono_calidad_9 = bono_calidad_9 + sum([float(bonos_9.iloc[a,6])])#a6-bono calidad 
+          bono_produccion_qc_9 = bono_produccion_qc_9 + sum([float(bonos_9.iloc[a,7])])
+          bono_produccion_validacion_9 = bono_produccion_validacion_9 + sum([float(bonos_9.iloc[a,8])])
+          bono_supervision_9 = bono_supervision_9 + sum([float(bonos_9.iloc[a,9])])  #a9-bono por supervision 
+          bono_calidad_externa_igac_9 = bono_calidad_externa_igac_9 + sum([float(bonos_9.iloc[a,10])]) #a10-bono calidad externa igac/Calidad/Entregas Supervisor 
+          bono_entregas_9 = bono_entregas_9= + sum([float(bonos_9.iloc[a,11])])#a13 bono entregas
+          bonos_variables_9 = bonos_variables_9 + sum([float(bonos_9.iloc[a,12])]) #a12 bono variable/Calidad/Entregas SIG
+          bonos_fijos_9 = bonos_fijos_9 + sum([float(bonos_9.iloc[a,13])])#a13-bono fijo
           #bonos_fijos_9 = bonos_fijos_9 + sum([float(bonos_9.iloc[a,75]),float(bonos_9.iloc[a,76]),float(bonos_9.iloc[a,77]),float(bonos_9.iloc[a,78]),float(bonos_9.iloc[a,79]),float(bonos_9.iloc[a,80]),float(bonos_9.iloc[a,81]),float(bonos_9.iloc[a,82]),float(bonos_9.iloc[a,83])])
-          bono_total_9= bono_total_9 + sum([float(bonos_9.iloc[a,22])])
-          #a8-bono productividad a15-bono calidad a16-bono fijo a17-bono por supervision a18-bono calidad externa igac/Calidad/Entregas Supervisor a21 bono variable/Calidad/Entregas SIG a22 bono total
+          bono_total_9= bono_total_9 + sum([float(bonos_9.iloc[a,22])]) #a22 bono total
+          #a23 es la fecha en formato: Agosto-2025
+          
         
         placeholder17_9 = st.empty()
-        col1, col2, col3, col4, col5, col6, col7 = placeholder17_9.columns(7)
+        col1, col2, col3, col4, col5, col6, col7, col8, col9, col10 = placeholder17_9.columns(7)
         col1.metric("Bono Productividad", bono_productividad_9)
         col2.metric("Bono Calidad", bono_calidad_9)
-        col3.metric("Bono Supervisión", bono_supervision_9)
-        col4.metric("Bono Calidad Externa IGAC", bono_calidad_externa_igac_9)
-        col5.metric("Bono Variable", bonos_variables_9)
-        col6.metric("Bono Fijo", bonos_fijos_9)
-        col7.metric("Bono Total", bono_total_9)
+        col3.metric("Bono Producción QC", bono_produccion_qc_9)
+        col4.metric("Bono Producción Validación", bono_produccion_validacion_9)
+        col5.metric("Bono Supervisión", bono_supervision_9)
+        col6.metric("Bono Calidad Entregas Supervisión", bono_calidad_externa_igac_9)
+        col7.metric("Bono Entregas", bono_entregas_9)
+        col8.metric("Bono Variable", bonos_variables_9)
+        col9.metric("Bono Fijo", bonos_fijos_9)
+        col10.metric("Bono Total", bono_total_9)
 
       placeholder18_9 = st.empty()
       titulo_extras_9 = placeholder18_9.subheader("Horas Extra")
@@ -214,23 +224,31 @@ def Bonos_Extras(usuario,puesto):
       else:
 
         # Resumen #
-        bono_productividad_9=sum([float(bonos_9.iloc[0,8])])
-        bono_calidad_9=sum([float(bonos_9.iloc[0,15])])
-        bono_supervision_9=sum([float(bonos_9.iloc[0,17])])
-        bono_calidad_externa_igac_9=sum([float(bonos_9.iloc[0,18])])
-        bonos_variables_9=sum([float(bonos_9.iloc[0,21])])
-        bonos_fijos_9=sum([float(bonos_9.iloc[0,16])])
-        bono_total_9=sum([float(bonos_9.iloc[0,22])])
+        bono_productividad_9 = bono_productividad_9 + sum([float(bonos_9.iloc[a,5])])#a5-bono productividad 
+        bono_calidad_9 = bono_calidad_9 + sum([float(bonos_9.iloc[a,6])])#a6-bono calidad 
+        bono_produccion_qc_9 = bono_produccion_qc_9 + sum([float(bonos_9.iloc[a,7])])
+        bono_produccion_validacion_9 = bono_produccion_validacion_9 + sum([float(bonos_9.iloc[a,8])])
+        bono_supervision_9 = bono_supervision_9 + sum([float(bonos_9.iloc[a,9])])  #a9-bono por supervision 
+        bono_calidad_externa_igac_9 = bono_calidad_externa_igac_9 + sum([float(bonos_9.iloc[a,10])]) #a10-bono calidad externa igac/Calidad/Entregas Supervisor 
+        bono_entregas_9 = bono_entregas_9= + sum([float(bonos_9.iloc[a,11])])#a13 bono entregas
+        bonos_variables_9 = bonos_variables_9 + sum([float(bonos_9.iloc[a,12])]) #a12 bono variable/Calidad/Entregas SIG
+        bonos_fijos_9 = bonos_fijos_9 + sum([float(bonos_9.iloc[a,13])])#a13-bono fijo
+        #bonos_fijos_9 = bonos_fijos_9 + sum([float(bonos_9.iloc[a,75]),float(bonos_9.iloc[a,76]),float(bonos_9.iloc[a,77]),float(bonos_9.iloc[a,78]),float(bonos_9.iloc[a,79]),float(bonos_9.iloc[a,80]),float(bonos_9.iloc[a,81]),float(bonos_9.iloc[a,82]),float(bonos_9.iloc[a,83])])
+        bono_total_9= bono_total_9 + sum([float(bonos_9.iloc[a,22])]) #a22 bono total
+        #a23 es la fecha en formato: Agosto-2025
         
         placeholder23_9 = st.empty()
-        col1, col2, col3, col4, col5, col6, col7 = placeholder23_9.columns(7)
+        col1, col2, col3, col4, col5, col6, col7, col8, col9, col10 = placeholder23_9.columns(7)
         col1.metric("Bono Productividad", bono_productividad_9)
         col2.metric("Bono Calidad", bono_calidad_9)
-        col3.metric("Bono Supervisión", bono_supervision_9)
-        col4.metric("Bono Calidad Externa IGAC", bono_calidad_externa_igac_9)
-        col5.metric("Bono Variable", bonos_variables_9)
-        col6.metric("Bono Fijo", bonos_fijos_9)
-        col7.metric("Bono Total", bono_total_9)
+        col3.metric("Bono Producción QC", bono_produccion_qc_9)
+        col4.metric("Bono Producción Validación", bono_produccion_validacion_9)
+        col5.metric("Bono Supervisión", bono_supervision_9)
+        col6.metric("Bono Calidad Entregas Supervisión", bono_calidad_externa_igac_9)
+        col7.metric("Bono Entregas", bono_entregas_9)
+        col8.metric("Bono Variable", bonos_variables_9)
+        col9.metric("Bono Fijo", bonos_fijos_9)
+        col10.metric("Bono Total", bono_total_9)
 
         # Procesos #
           
