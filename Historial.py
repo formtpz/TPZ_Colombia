@@ -333,7 +333,7 @@ def Historial(usuario,puesto):
 
       columnas_a_mostrar_c= ["nombre","fecha","correcciones","horas","correcion_bruta_hora"]
       placeholder22_3_7 = st.empty()
-      historial_7_producción= placeholder22_3_7.dataframe(data=data_2_r[columnas_a_mostrar])
+      historial_7_producción= placeholder22_3_7.dataframe(data=data_2_r[columnas_a_mostrar_c])
 
       
       #-----Fin Resumen Correcciones--------------------------------------------------------------------------------------------
