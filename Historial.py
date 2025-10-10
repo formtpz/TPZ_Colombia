@@ -492,7 +492,7 @@ def Historial(usuario,puesto):
       historial_7_reportes=placeholder37_7.dataframe(data=data_1_r)
 
     
-    #------Creando el dataframe de Resumen calidad 
+    #------Creando el dataframe de Resumen calidad ---------------------------------------------------------------------------------------
     placeholder25_2_7 = st.empty()
     titulo_resumen_calidad= placeholder25_2_7.subheader("Resumen Calidad")  
     
@@ -512,7 +512,7 @@ def Historial(usuario,puesto):
    
       placeholder26_2_7 = st.empty()
       tabla_resumen_calidad = placeholder26_2_7.dataframe(data=data_5)
-    #-------fin del dataframe para resumen calidad-------
+    #-------fin del dataframe para resumen calidad-----------------------------------------------------------------------------------------
 
     
     # ----- Resumen de Horas ---- #
@@ -555,7 +555,7 @@ def Historial(usuario,puesto):
       historial_7_horas= placeholder41_7.dataframe(data=datos_horas)
 
     
-# ----- Resumen de Producción ---- #
+# ----- Resumen de Producción -------------------------------------------------------------------------------------------------------------------------------- #
     placeholder43_7 = st.empty()
     producción_7=placeholder43_7.subheader("Resumen de Producción")  
    
@@ -565,8 +565,9 @@ def Historial(usuario,puesto):
       error_producción= placeholder44_7.error('No existe producción para mostrar')
 
     else:
-      
-      data_2_r = data_1_r.groupby(["nombre", "fecha"], as_index=False)[["produccion","horas","efes","informales"]].agg(np.sum)
+      # ----- Filtrar los registros antes de agrupar -----
+      data_filtrada = data_1_r[data_1_r["tipo"] != "Corrección de Calidad"]
+      data_2_r = data_filtrada.groupby(["nombre", "fecha"], as_index=False)[["produccion","horas","efes","informales"]].agg(np.sum)
       #------creamos una columna nueva sumando producciones
       data_2_r["produccion_total"] = (data_2_r["produccion"] + data_2_r["efes"] + data_2_r["informales"])
       # ----- Filtrar los registros antes del groupby -----
@@ -595,6 +596,22 @@ def Historial(usuario,puesto):
       placeholder46_2_7 = st.empty()
       descarga_7_diferencia = placeholder46_2_7.download_button("Decargar CSV",data=data_4_r.to_csv(),mime="text/csv",key="descarga_7_diferencia")
        
+      #---Inicio Resumen Correcciones-----------------------------------------------------------------------------------------#
+      placeholder57_7 = st.empty()
+      producción_7=placeholder57_7.subheader("Resumen Correciones")
+      
+      data_correciones = data_1_r[data_1_r["tipo"] == "Corrección de Calidad"]
+      agrupar_data_correcciones = data_correciones.groupby(["nombre", "fecha"], as_index=False)[["produccion","horas","efes","informales"]].agg(np.sum)
+      agrupar_data_correcciones["correcciones"]= agrupar_data_correcciones["produccion"]
+      agrupar_data_correcciones["correccion_bruta_hora"] = agrupar_data_correcciones["produccion"]/agrupar_data_correcciones["horas"]
+      agrupar_data_correcciones["correccion_bruta_hora"] = agrupar_data_correcciones["correccion_bruta_hora"].round(2)
+      columnas_a_mostrar_c= ["nombre","fecha","correcciones","horas","correccion_bruta_hora"]
+      
+      placeholder58_7 = st.empty()
+      historial_7_producción= placeholder58_7.dataframe(data=agrupar_data_correcciones[columnas_a_mostrar_c])
+      #-----Fin Resumen Correcciones--------------------------------------------------------------------------------------------
+
+            
       nombre_producción=data_2_r.iloc[:,0]
       fecha_producción=data_2_r.iloc[:,1]
       rendimiento_producción=data_2_r.iloc[:,4]
