@@ -668,7 +668,11 @@ def Historial(usuario,puesto):
       placeholder13_7.empty()
       placeholder17_7.empty()
       placeholder21_7.empty()
-      placeholder22_1_7.empty()      
+      placeholder22_1_7.empty()
+      if pivot_r==0:
+        placeholder22_2_7.empty()
+      else:
+        placeholder22_3_7
       placeholder27_7.empty()
     
       if pivot_reportes==0:
@@ -789,6 +793,7 @@ def Historial(usuario,puesto):
       placeholder13_7.empty()
       placeholder17_7.empty()
       placeholder21_7.empty()
+      placeholder22_1_7.empty()
       placeholder27_7.empty()
     
       if pivot_reportes==0:
@@ -896,6 +901,7 @@ def Historial(usuario,puesto):
       placeholder13_7.empty()
       placeholder17_7.empty()
       placeholder21_7.empty()
+      placeholder22_1_7.empty()
       placeholder27_7.empty()
     
       if pivot_reportes==0:
@@ -1003,6 +1009,7 @@ def Historial(usuario,puesto):
       placeholder13_7.empty()
       placeholder17_7.empty()
       placeholder21_7.empty()
+      placeholder22_1_7.empty()
       placeholder27_7.empty()
     
       if pivot_reportes==0:
@@ -1110,6 +1117,7 @@ def Historial(usuario,puesto):
       placeholder13_7.empty()
       placeholder17_7.empty()
       placeholder21_7.empty()
+      placeholder22_1_7.empty()
       placeholder27_7.empty()
     
       if pivot_reportes==0:
