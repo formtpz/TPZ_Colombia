@@ -669,10 +669,6 @@ def Historial(usuario,puesto):
       placeholder17_7.empty()
       placeholder21_7.empty()
       placeholder22_1_7.empty()
-      if pivot_r==0:
-        placeholder22_2_7.empty()
-      else:
-        placeholder22_3_7
       placeholder27_7.empty()
     
       if pivot_reportes==0:
@@ -693,11 +689,16 @@ def Historial(usuario,puesto):
       else: 
         placeholder31_7.empty()
         placeholder32_7.empty()
+        
+      if pivot_r==0:
+        placeholder22_2_7.empty()
+      else:
+        placeholder22_3_7.empty()
       
       if pivot_r==0:
         placeholder22_7.empty()
         placeholder28_7.empty()
-
+             
       else:
         placeholder23_7.empty()
         placeholder23_2_7.empty()
