@@ -317,6 +317,8 @@ def Historial(usuario,puesto):
       historial_7_producción= placeholder23_7.dataframe(data=data_2_r[columnas_a_mostrar])
       # ----- FIN Resumen de Producción ------------------------------------------------------------------------------------ #
 
+
+    
       #---Inicio Resumen Correcciones-----------------------------------------------------------------------------------------#
     placeholder22_1_7 = st.empty()
     producción_7=placeholder22_1_7.subheader("Resumen Correciones")
@@ -331,13 +333,13 @@ def Historial(usuario,puesto):
       data_2_r["correccion_bruta_hora"] = data_2_r["produccion_total"]/data_2_r["horas"]
       data_2_r["correccion_bruta_hora"] = data_2_r["correccion_bruta_hora"].round(2)
 
-      columnas_a_mostrar_c= ["nombre","fecha","correcciones","horas","correcion_bruta_hora"]
+      columnas_a_mostrar_c= ["nombre","fecha","correcciones","horas","correccion_bruta_hora"]
       placeholder22_3_7 = st.empty()
       historial_7_producción= placeholder22_3_7.dataframe(data=data_2_r[columnas_a_mostrar_c])
-
-      
       #-----Fin Resumen Correcciones--------------------------------------------------------------------------------------------
 
+
+      
       
       data_4_r ["valor esperado"] = [200 if x == 'Folios de Matricula Inmobiliaria' else 350 if x == 'Control de Calidad Folios de Matricula Inmobiliaria' else 0 for x in data_4_r['proceso']]    
       data_4_r ["diferencia"] = data_4_r["produccion"] - data_4_r["valor esperado"]
