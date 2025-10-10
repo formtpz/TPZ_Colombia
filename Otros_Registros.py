@@ -168,8 +168,7 @@ def Otros_Registros(usuario,puesto):
       data = pd.read_sql(f"select cast(id as integer),marca,usuario,nombre,puesto,supervisor,fecha,motivo,horas,observaciones,reporte from otros_registros where reporte='{nombre_13}' and fecha>='{fecha_de__inicio_13}' and fecha<='{fecha_de__finalizacion_13}'", con)
 
   elif puesto=="Operario Catastral" or puesto=="QC" or puesto=="Entregas" or puesto=="Validación" or puesto=="Profesional Jurídico":
-      
-
+ 
     placeholder20_13 = st.empty()
     otros_registros_historial_13 = placeholder20_13.subheader("Historial")
 
@@ -182,99 +181,9 @@ def Otros_Registros(usuario,puesto):
     fecha_de__finalizacion_13 = placeholder22_13.date_input("Fecha de Finalización",value=default_date_13,key="fecha_de_finalizacion_13")
       
     data = pd.read_sql(f"select cast(id as integer),marca,usuario,nombre,puesto,supervisor,fecha,motivo,horas,observaciones,reporte from otros_registros where usuario='{usuario}' and fecha>='{fecha_de__inicio_13}' and fecha<='{fecha_de__finalizacion_13}'", con)
-    
-
 
   placeholder23_13 = st.empty()
   histo_13= placeholder23_13.dataframe(data=data)
-
-  # ----- Contador de tiempo ----------------------------------------------------------------------------
-    
-  import time
-
-  st.subheader("⏱ Registro de tiempo en espera de asignación")
-
-  # Inicializar variables de sesión
-  if "inicio_tiempo" not in st.session_state:
-      st.session_state.inicio_tiempo = None
-  if "corriendo_tiempo" not in st.session_state:
-      st.session_state.corriendo_tiempo = False
-  if "tiempo_total_seg" not in st.session_state:
-      st.session_state.tiempo_total_seg = 0.0
-  if "ultimo_update" not in st.session_state:
-      st.session_state.ultimo_update = time.time()
-
-  col_t1, col_t2, col_t3 = st.columns(3)
-
-    # Funciones
-  def iniciar_tiempo():
-      if not st.session_state.corriendo_tiempo:
-          st.session_state.inicio_tiempo = time.time()
-          st.session_state.corriendo_tiempo = True
-
-  def detener_tiempo():
-      if st.session_state.corriendo_tiempo:
-          tiempo_actual = time.time() - st.session_state.inicio_tiempo
-          st.session_state.tiempo_total_seg += tiempo_actual
-          st.session_state.corriendo_tiempo = False
-
-  with col_t1:
-      st.button("▶️ Iniciar", on_click=iniciar_tiempo)
-  with col_t2:
-      st.button("⏹ Detener", on_click=detener_tiempo)
-
-    # Calcular tiempo transcurrido
-  if st.session_state.corriendo_tiempo:
-      tiempo_transcurrido = time.time() - st.session_state.inicio_tiempo + st.session_state.tiempo_total_seg
-        # Refrescar cada 1 segundo manualmente
-      if time.time() - st.session_state.ultimo_update >= 1:
-          st.session_state.ultimo_update = time.time()
-          st.rerun()
-  else:
-      tiempo_transcurrido = st.session_state.tiempo_total_seg
-
-    # Mostrar tiempo
-  horas = int(tiempo_transcurrido // 3600)
-  minutos = int((tiempo_transcurrido % 3600) // 60)
-  segundos = int(tiempo_transcurrido % 60)
-  st.metric("Tiempo transcurrido", f"{horas:02d}:{minutos:02d}:{segundos:02d}")
-
-  tiempo_en_horas = round(tiempo_transcurrido / 3600, 2)
-  st.write(f"**Tiempo total en horas decimales:** {tiempo_en_horas} h")
-
-    # Generar reporte
-  with col_t3:
-      generar_reporte_tiempo = st.button("📝 Generar Reporte")
-
-  if generar_reporte_tiempo:
-      nombre_13 = pd.read_sql(f"select nombre from usuarios where usuario='{usuario}'", con)
-      nombre_13 = nombre_13.loc[0, 'nombre']
-
-      puesto_13 = pd.read_sql(f"select puesto from usuarios where usuario='{usuario}'", con)
-      puesto_13 = puesto_13.loc[0, 'puesto']
-
-      supervisor_13 = pd.read_sql(f"select supervisor from usuarios where usuario='{usuario}'", con)
-      supervisor_13 = supervisor_13.loc[0, 'supervisor']
-
-      marca_13 = datetime.now(pytz.timezone('America/Guatemala')).strftime("%Y-%m-%d %H:%M:%S")
-      fecha_13 = datetime.now(pytz.timezone('America/Guatemala')).strftime("%Y-%m-%d")
-
-      cursor01 = con.cursor()
-      cursor01.execute(f"""
-          INSERT INTO otros_registros 
-          (marca, usuario, nombre, puesto, supervisor, fecha, motivo, horas, observaciones, reporte, horas_bi) VALUES ('{marca_13}', '{usuario}', '{nombre_13}', '{puesto_13}', '{supervisor_13}', '{fecha_13}', 'Horas cronometradas', '{tiempo_en_horas}', 'Registro automático desde Streamlit', '{nombre_13}', '{tiempo_en_horas}')
-        """)
-      con.commit()
-      st.success("✅ Reporte generado correctamente.")
-
-        # Reiniciar contador
-      st.session_state.inicio_tiempo = None
-      st.session_state.corriendo_tiempo = False
-      st.session_state.tiempo_total_seg = 0.0
-
-
-    #fin contador--------------------------------------------------------------------------------------------------------
-    
 
   # ----- Registro ---- #
     
