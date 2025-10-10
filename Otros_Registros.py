@@ -192,7 +192,7 @@ def Otros_Registros(usuario,puesto):
     
   import time
 
-  st.subheader("⏱ Registro de tiempo trabajado")
+  st.subheader("⏱ Registro de tiempo en espera de asignación")
 
   # Inicializar variables de sesión
   if "inicio_tiempo" not in st.session_state:
@@ -262,7 +262,7 @@ def Otros_Registros(usuario,puesto):
       cursor01 = con.cursor()
       cursor01.execute(f"""
           INSERT INTO otros_registros 
-          (marca, usuario, nombre, puesto, supervisor, fecha, motivo, horas, observaciones, reporte, horas_bi) VALUES ('{marca_13}', '{usuario}', '{nombre_13}', '{puesto_13}', '{supervisor_13}', '{fecha_13}', 'Horas cronometradas', '{tiempo_en_horas}', 'Registro automático desde contador', '{nombre_13}', '{tiempo_en_horas}')
+          (marca, usuario, nombre, puesto, supervisor, fecha, motivo, horas, observaciones, reporte, horas_bi) VALUES ('{marca_13}', '{usuario}', '{nombre_13}', '{puesto_13}', '{supervisor_13}', '{fecha_13}', 'Horas cronometradas', '{tiempo_en_horas}', 'Registro automático desde Streamlit', '{nombre_13}', '{tiempo_en_horas}')
         """)
       con.commit()
       st.success("✅ Reporte generado correctamente.")
