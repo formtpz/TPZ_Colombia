@@ -590,15 +590,7 @@ def Historial(usuario,puesto):
       data_4_r ["valor esperado"] = [200 if x == 'Folios de Matricula Inmobiliaria' else 350 if x == 'Control de Calidad Folios de Matricula Inmobiliaria' else 0 for x in data_4_r['proceso']]    
       data_4_r ["diferencia"] = data_4_r["produccion"] - data_4_r["valor esperado"]
 
-      placeholder45_1_7 = st.empty()
-      producción_7=placeholder45_1_7.subheader("Resumen Semanal")
-      
-      placeholder45_2_7 = st.empty()
-      historial_7_diferencia= placeholder45_2_7.dataframe(data=data_4_r)
-      
-      placeholder46_2_7 = st.empty()
-      descarga_7_diferencia = placeholder46_2_7.download_button("Decargar CSV",data=data_4_r.to_csv(),mime="text/csv",key="descarga_7_diferencia")
-       
+                         
       #---Inicio Resumen Correcciones-----------------------------------------------------------------------------------------#
       placeholder59_7 = st.empty()
       producción_7=placeholder59_7.subheader("Resumen Correciones")
@@ -614,6 +606,11 @@ def Historial(usuario,puesto):
       historial_7_producción= placeholder58_7.dataframe(data=agrupar_data_correcciones[columnas_a_mostrar_c])
       #-----Fin Resumen Correcciones--------------------------------------------------------------------------------------------
 
+      placeholder45_1_7 = st.empty()
+      producción_7=placeholder45_1_7.subheader("Resumen Semanal")
+      
+      placeholder45_2_7 = st.empty()
+      historial_7_diferencia= placeholder45_2_7.dataframe(data=data_4_r)
             
       nombre_producción=data_2_r.iloc[:,0]
       fecha_producción=data_2_r.iloc[:,1]
@@ -772,7 +769,6 @@ def Historial(usuario,puesto):
         placeholder46_7.empty()
         placeholder45_1_7.empty()
         placeholder45_2_7.empty()
-        placeholder46_2_7.empty()
         placeholder47_7.empty()
         placeholder48_7.empty()
         placeholder51_7.empty()
@@ -900,7 +896,7 @@ def Historial(usuario,puesto):
         placeholder46_7.empty()
         placeholder45_1_7.empty()
         placeholder45_2_7.empty()
-        placeholder46_2_7.empty()
+        
         placeholder47_7.empty()
         placeholder48_7.empty()
         placeholder51_7.empty()
@@ -1014,7 +1010,7 @@ def Historial(usuario,puesto):
         placeholder46_7.empty()
         placeholder45_1_7.empty()
         placeholder45_2_7.empty()
-        placeholder46_2_7.empty()
+        
         placeholder47_7.empty()
         placeholder48_7.empty()
         placeholder51_7.empty()
@@ -1128,7 +1124,7 @@ def Historial(usuario,puesto):
         placeholder46_7.empty()
         placeholder45_1_7.empty()
         placeholder45_2_7.empty()
-        placeholder46_2_7.empty()
+        
         placeholder47_7.empty()
         placeholder48_7.empty()
         placeholder51_7.empty()
@@ -1242,7 +1238,7 @@ def Historial(usuario,puesto):
         placeholder46_7.empty()
         placeholder45_1_7.empty()
         placeholder45_2_7.empty()
-        placeholder46_2_7.empty()
+        
         placeholder47_7.empty()
         placeholder48_7.empty()
         placeholder51_7.empty()
