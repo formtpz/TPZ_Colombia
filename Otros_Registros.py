@@ -229,7 +229,7 @@ def Otros_Registros(usuario,puesto):
         # Refrescar cada 1 segundo manualmente
       if time.time() - st.session_state.ultimo_update >= 1:
           st.session_state.ultimo_update = time.time()
-          st.experimental_rerun()
+          st.rerun()
   else:
       tiempo_transcurrido = st.session_state.tiempo_total_seg
 
