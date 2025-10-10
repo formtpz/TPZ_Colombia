@@ -182,9 +182,10 @@ def Otros_Registros(usuario,puesto):
     fecha_de__finalizacion_13 = placeholder22_13.date_input("Fecha de Finalización",value=default_date_13,key="fecha_de_finalizacion_13")
       
     data = pd.read_sql(f"select cast(id as integer),marca,usuario,nombre,puesto,supervisor,fecha,motivo,horas,observaciones,reporte from otros_registros where usuario='{usuario}' and fecha>='{fecha_de__inicio_13}' and fecha<='{fecha_de__finalizacion_13}'", con)
-        # ----- Contador de tiempo ----------------------------------------------------------------------------
+    
+    # ----- Contador de tiempo ----------------------------------------------------------------------------
+    
     import time
-    from streamlit_autorefresh import st_autorefresh
 
     st.subheader("⏱ Registro de tiempo trabajado")
 
@@ -195,13 +196,12 @@ def Otros_Registros(usuario,puesto):
         st.session_state.corriendo_tiempo = False
     if "tiempo_total_seg" not in st.session_state:
         st.session_state.tiempo_total_seg = 0.0
-
-    # Si el contador está corriendo, refrescar cada segundo sin bucle infinito
-    if st.session_state.corriendo_tiempo:
-        st_autorefresh(interval=1000, key="actualizacion_tiempo")
+    if "ultimo_update" not in st.session_state:
+        st.session_state.ultimo_update = time.time()
 
     col_t1, col_t2, col_t3 = st.columns(3)
 
+    # Funciones
     def iniciar_tiempo():
         if not st.session_state.corriendo_tiempo:
             st.session_state.inicio_tiempo = time.time()
@@ -221,19 +221,23 @@ def Otros_Registros(usuario,puesto):
     # Calcular tiempo transcurrido
     if st.session_state.corriendo_tiempo:
         tiempo_transcurrido = time.time() - st.session_state.inicio_tiempo + st.session_state.tiempo_total_seg
+        # Refrescar cada 1 segundo manualmente
+        if time.time() - st.session_state.ultimo_update >= 1:
+            st.session_state.ultimo_update = time.time()
+            st.experimental_rerun()
     else:
         tiempo_transcurrido = st.session_state.tiempo_total_seg
 
-    # Mostrar tiempo transcurrido
+    # Mostrar tiempo
     horas = int(tiempo_transcurrido // 3600)
     minutos = int((tiempo_transcurrido % 3600) // 60)
     segundos = int(tiempo_transcurrido % 60)
     st.metric("Tiempo transcurrido", f"{horas:02d}:{minutos:02d}:{segundos:02d}")
 
-    # Calcular tiempo decimal en horas
     tiempo_en_horas = round(tiempo_transcurrido / 3600, 2)
     st.write(f"**Tiempo total en horas decimales:** {tiempo_en_horas} h")
 
+    # Generar reporte
     with col_t3:
         generar_reporte_tiempo = st.button("📝 Generar Reporte")
 
@@ -260,7 +264,7 @@ def Otros_Registros(usuario,puesto):
         con.commit()
         st.success("✅ Reporte generado correctamente.")
 
-        # Reiniciar el contador
+        # Reiniciar contador
         st.session_state.inicio_tiempo = None
         st.session_state.corriendo_tiempo = False
         st.session_state.tiempo_total_seg = 0.0
