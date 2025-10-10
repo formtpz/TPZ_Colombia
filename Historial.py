@@ -329,13 +329,13 @@ def Historial(usuario,puesto):
     else:
       data_correciones = data_1_r[data_1_r["tipo"] == "Corrección de Calidad"]
       agrupar_data_correciones = (data_correciones.groupby(["nombre", "semana", "proceso"], as_index=False)[["produccion"]].sum())
-      data_2_r["correcciones"]= data_2_r["produccion_total"]
-      data_2_r["correccion_bruta_hora"] = data_2_r["produccion_total"]/data_2_r["horas"]
-      data_2_r["correccion_bruta_hora"] = data_2_r["correccion_bruta_hora"].round(2)
+      agrupar_data_correciones["correcciones"]= agrupar_data_correciones["produccion_total"]
+      agrupar_data_correciones["correccion_bruta_hora"] = agrupar_data_correciones["produccion_total"]/data_2_r["horas"]
+      agrupar_data_correciones["correccion_bruta_hora"] = agrupar_data_correciones["correccion_bruta_hora"].round(2)
 
       columnas_a_mostrar_c= ["nombre","fecha","correcciones","horas","correccion_bruta_hora"]
       placeholder22_3_7 = st.empty()
-      historial_7_producción= placeholder22_3_7.dataframe(data=data_2_r[columnas_a_mostrar_c])
+      historial_7_producción= placeholder22_3_7.dataframe(data=agrupar_data_correciones[columnas_a_mostrar_c])
       #-----Fin Resumen Correcciones--------------------------------------------------------------------------------------------
 
 
