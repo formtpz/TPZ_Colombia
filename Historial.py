@@ -327,7 +327,7 @@ def Historial(usuario,puesto):
     else:
       data_correciones = data_1_r[data_1_r["tipo"] == "Corrección de Calidad"]
       agrupar_data_correciones = (data_correciones.groupby(["nombre", "semana", "proceso"], as_index=False)[["produccion"]].sum())
-      data_2_r["correciones"]= data_2_r["produccion_total"]
+      data_2_r["correcciones"]= data_2_r["produccion_total"]
       data_2_r["correccion_bruta_hora"] = data_2_r["produccion_total"]/data_2_r["horas"]
       data_2_r["correccion_bruta_hora"] = data_2_r["correccion_bruta_hora"].round(2)
 
