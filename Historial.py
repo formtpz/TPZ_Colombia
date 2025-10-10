@@ -597,8 +597,8 @@ def Historial(usuario,puesto):
       descarga_7_diferencia = placeholder46_2_7.download_button("Decargar CSV",data=data_4_r.to_csv(),mime="text/csv",key="descarga_7_diferencia")
        
       #---Inicio Resumen Correcciones-----------------------------------------------------------------------------------------#
-      placeholder57_7 = st.empty()
-      producción_7=placeholder57_7.subheader("Resumen Correciones")
+      placeholder59_7 = st.empty()
+      producción_7=placeholder59_7.subheader("Resumen Correciones")
       
       data_correciones = data_1_r[data_1_r["tipo"] == "Corrección de Calidad"]
       agrupar_data_correcciones = data_correciones.groupby(["nombre", "fecha"], as_index=False)[["produccion","horas","efes","informales"]].agg(np.sum)
