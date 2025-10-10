@@ -308,6 +308,7 @@ def Historial(usuario,puesto):
     else:
 
       data_2_r["produccion_bruta_hora"] = data_2_r["produccion_total"]/data_2_r["horas"]
+      data_2_r["produccion_total"] = data_2_r["produccion_total"].round(2)
            
       #--------agrupamos las columnas a mostrar en la tabla
       columnas_a_mostrar= ["nombre","fecha","produccion_total","horas","produccion_bruta_hora"]
@@ -551,6 +552,7 @@ def Historial(usuario,puesto):
       data_4_r = (data_filtrada.groupby(["nombre", "semana", "proceso"], as_index=False)[["produccion"]].sum())
 
       data_2_r["produccion_bruta_hora"] = data_2_r["produccion_total"]/data_2_r["horas"]
+      data_2_r["produccion_total"] = data_2_r["produccion_total"].round(2)
            
       #------agrupamos las columnas a mostrar
       columnas_a_mostrar= ["nombre","fecha","produccion_total","horas","produccion_bruta_hora"]
