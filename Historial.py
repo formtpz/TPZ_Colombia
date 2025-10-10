@@ -328,14 +328,14 @@ def Historial(usuario,puesto):
       error_producción= placeholder22_2_7.error('No existen correciones para mostrar')
     else:
       data_correciones = data_1_r[data_1_r["tipo"] == "Corrección de Calidad"]
-      agrupar_data_correciones = data_correciones.groupby(["nombre", "fecha"], as_index=False)[["produccion","horas","efes","informales"]].agg(np.sum)
-      agrupar_data_correciones["correcciones"]= agrupar_data_correciones["produccion"]
-      agrupar_data_correciones["correccion_bruta_hora"] = agrupar_data_correciones["produccion"]/agrupar_data_correcciones["horas"]
-      agrupar_data_correciones["correccion_bruta_hora"] = agrupar_data_correciones["correccion_bruta_hora"].round(2)
+      agrupar_data_correcciones = data_correciones.groupby(["nombre", "fecha"], as_index=False)[["produccion","horas","efes","informales"]].agg(np.sum)
+      agrupar_data_correcciones["correcciones"]= agrupar_data_correcciones["produccion"]
+      agrupar_data_correcciones["correccion_bruta_hora"] = agrupar_data_correcciones["produccion"]/agrupar_data_correcciones["horas"]
+      agrupar_data_correcciones["correccion_bruta_hora"] = agrupar_data_correcciones["correccion_bruta_hora"].round(2)
 
       columnas_a_mostrar_c= ["nombre","fecha","correcciones","horas","correccion_bruta_hora"]
       placeholder22_3_7 = st.empty()
-      historial_7_producción= placeholder22_3_7.dataframe(data=agrupar_data_correciones[columnas_a_mostrar_c])
+      historial_7_producción= placeholder22_3_7.dataframe(data=agrupar_data_correcciones[columnas_a_mostrar_c])
       #-----Fin Resumen Correcciones--------------------------------------------------------------------------------------------
 
 
