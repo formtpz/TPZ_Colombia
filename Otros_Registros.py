@@ -169,8 +169,22 @@ def Otros_Registros(usuario,puesto):
 
   elif puesto=="Operario Catastral" or puesto=="QC" or puesto=="Entregas" or puesto=="Validación" or puesto=="Profesional Jurídico":
       
-    # ----- Contador de tiempo ----------------------------------------------------------------------------
+
+    placeholder20_13 = st.empty()
+    otros_registros_historial_13 = placeholder20_13.subheader("Historial")
+
+    default_date_13 = datetime.now(pytz.timezone('America/Guatemala'))
+
+    placeholder21_13 = st.empty()
+    fecha_de__inicio_13 = placeholder21_13.date_input("Fecha de Inicio",value=default_date_13,key="fecha_de_inicio_13")
+
+    placeholder22_13 = st.empty()
+    fecha_de__finalizacion_13 = placeholder22_13.date_input("Fecha de Finalización",value=default_date_13,key="fecha_de_finalizacion_13")
+      
+    data = pd.read_sql(f"select cast(id as integer),marca,usuario,nombre,puesto,supervisor,fecha,motivo,horas,observaciones,reporte from otros_registros where usuario='{usuario}' and fecha>='{fecha_de__inicio_13}' and fecha<='{fecha_de__finalizacion_13}'", con)
+        # ----- Contador de tiempo ----------------------------------------------------------------------------
     import time
+    from streamlit_autorefresh import st_autorefresh
 
     st.subheader("⏱ Registro de tiempo trabajado")
 
@@ -182,9 +196,12 @@ def Otros_Registros(usuario,puesto):
     if "tiempo_total_seg" not in st.session_state:
         st.session_state.tiempo_total_seg = 0.0
 
+    # Si el contador está corriendo, refrescar cada segundo sin bucle infinito
+    if st.session_state.corriendo_tiempo:
+        st_autorefresh(interval=1000, key="actualizacion_tiempo")
+
     col_t1, col_t2, col_t3 = st.columns(3)
 
-    # Funciones del cronómetro
     def iniciar_tiempo():
         if not st.session_state.corriendo_tiempo:
             st.session_state.inicio_tiempo = time.time()
@@ -217,12 +234,6 @@ def Otros_Registros(usuario,puesto):
     tiempo_en_horas = round(tiempo_transcurrido / 3600, 2)
     st.write(f"**Tiempo total en horas decimales:** {tiempo_en_horas} h")
 
-    # Recargar cada segundo mientras está corriendo
-    if st.session_state.corriendo_tiempo:
-        time.sleep(1)
-        st.rerun()
-
-    # Botón para generar reporte
     with col_t3:
         generar_reporte_tiempo = st.button("📝 Generar Reporte")
 
@@ -240,7 +251,12 @@ def Otros_Registros(usuario,puesto):
         fecha_13 = datetime.now(pytz.timezone('America/Guatemala')).strftime("%Y-%m-%d")
 
         cursor01 = con.cursor()
-        cursor01.execute(f""" INSERT INTO otros_registros (marca, usuario, nombre, puesto, supervisor, fecha, motivo, horas, observaciones, reporte, horas_bi) VALUES ('{marca_13}', '{usuario}', '{nombre_13}', '{puesto_13}', '{supervisor_13}', '{fecha_13}', 'Horas cronometradas', '{tiempo_en_horas}', 'Registro automático desde contador', '{nombre_13}', '{tiempo_en_horas}')""")
+        cursor01.execute(f"""
+            INSERT INTO otros_registros 
+            (marca, usuario, nombre, puesto, supervisor, fecha, motivo, horas, observaciones, reporte, horas_bi)
+            VALUES ('{marca_13}', '{usuario}', '{nombre_13}', '{puesto_13}', '{supervisor_13}', '{fecha_13}',
+                    'Horas cronometradas', '{tiempo_en_horas}', 'Registro automático desde contador', '{nombre_13}', '{tiempo_en_horas}')
+        """)
         con.commit()
         st.success("✅ Reporte generado correctamente.")
 
@@ -249,20 +265,9 @@ def Otros_Registros(usuario,puesto):
         st.session_state.corriendo_tiempo = False
         st.session_state.tiempo_total_seg = 0.0
 
+
     #fin contador--------------------------------------------------------------------------------------------------------
     
-    placeholder20_13 = st.empty()
-    otros_registros_historial_13 = placeholder20_13.subheader("Historial")
-
-    default_date_13 = datetime.now(pytz.timezone('America/Guatemala'))
-
-    placeholder21_13 = st.empty()
-    fecha_de__inicio_13 = placeholder21_13.date_input("Fecha de Inicio",value=default_date_13,key="fecha_de_inicio_13")
-
-    placeholder22_13 = st.empty()
-    fecha_de__finalizacion_13 = placeholder22_13.date_input("Fecha de Finalización",value=default_date_13,key="fecha_de_finalizacion_13")
-      
-    data = pd.read_sql(f"select cast(id as integer),marca,usuario,nombre,puesto,supervisor,fecha,motivo,horas,observaciones,reporte from otros_registros where usuario='{usuario}' and fecha>='{fecha_de__inicio_13}' and fecha<='{fecha_de__finalizacion_13}'", con)
 
   placeholder23_13 = st.empty()
   histo_13= placeholder23_13.dataframe(data=data)
