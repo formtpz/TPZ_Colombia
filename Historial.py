@@ -606,12 +606,13 @@ def Historial(usuario,puesto):
       historial_7_producción= placeholder58_7.dataframe(data=agrupar_data_correcciones[columnas_a_mostrar_c])
       #-----Fin Resumen Correcciones--------------------------------------------------------------------------------------------
 
+      # Tabla Resumen Semanal---------------------------------------------------------------------------------------------------
       placeholder45_1_7 = st.empty()
       producción_7=placeholder45_1_7.subheader("Resumen Semanal")
       
       placeholder45_2_7 = st.empty()
       historial_7_diferencia= placeholder45_2_7.dataframe(data=data_4_r)
-            
+      #Fin Tabla Resumen Semanal--------------------------------------------------------------------------------------------------
       nombre_producción=data_2_r.iloc[:,0]
       fecha_producción=data_2_r.iloc[:,1]
       rendimiento_producción=data_2_r.iloc[:,4]
@@ -767,6 +768,8 @@ def Historial(usuario,puesto):
       else:
         placeholder45_7.empty()
         placeholder46_7.empty()
+        placeholder59_7.empty()
+        placeholder58_7.empty()
         placeholder45_1_7.empty()
         placeholder45_2_7.empty()
         placeholder47_7.empty()
@@ -894,6 +897,8 @@ def Historial(usuario,puesto):
       else:
         placeholder45_7.empty()
         placeholder46_7.empty()
+        placeholder59_7.empty()
+        placeholder58_7.empty()
         placeholder45_1_7.empty()
         placeholder45_2_7.empty()
         
@@ -1008,6 +1013,8 @@ def Historial(usuario,puesto):
       else:
         placeholder45_7.empty()
         placeholder46_7.empty()
+        placeholder59_7.empty()
+        placeholder58_7.empty()
         placeholder45_1_7.empty()
         placeholder45_2_7.empty()
         
@@ -1122,6 +1129,8 @@ def Historial(usuario,puesto):
       else:
         placeholder45_7.empty()
         placeholder46_7.empty()
+        placeholder59_7.empty()
+        placeholder58_7.empty()
         placeholder45_1_7.empty()
         placeholder45_2_7.empty()
         
@@ -1236,6 +1245,8 @@ def Historial(usuario,puesto):
       else:
         placeholder45_7.empty()
         placeholder46_7.empty()
+        placeholder59_7.empty()
+        placeholder58_7.empty()
         placeholder45_1_7.empty()
         placeholder45_2_7.empty()
         
