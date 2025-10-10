@@ -295,9 +295,11 @@ def Historial(usuario,puesto):
 
     #-----crear columna para sumar produccion mas efes mas informales
     data_2_r["produccion_total"] = (data_2_r["produccion"] + data_2_r["efes"] + data_2_r["informales"])
-    
-    data_4_r = data_1_r.groupby(["nombre","semana","proceso"], as_index=False)[["produccion"]].sum()
-        
+    # ----- Filtrar los registros antes del groupby -----
+    data_filtrada = data_1_r[data_1_r["tipo"] != "Corrección de Calidad"]
+    # ----- Agrupar solo los datos válidos -----
+    data_4_r = (data_filtrada.groupby(["nombre", "semana", "proceso"], as_index=False)[["produccion"]].sum())
+           
     if pivot_r==0:  
 
       placeholder22_7 = st.empty()
@@ -305,9 +307,8 @@ def Historial(usuario,puesto):
 
     else:
 
-      data_2_r["rendimiento"] = data_2_r["produccion_total"]/data_2_r["horas"]
-      data_2_r['rendimiento'] *= 8.5 
-      
+      data_2_r["produccion_bruta_hora"] = data_2_r["produccion_total"]/data_2_r["horas"]
+           
       #--------agrupamos las columnas a mostrar en la tabla
       columnas_a_mostrar= ["nombre","fecha","produccion_total","horas","rendimiento"]
    
@@ -544,12 +545,13 @@ def Historial(usuario,puesto):
       data_2_r = data_1_r.groupby(["nombre", "fecha"], as_index=False)[["produccion","horas","efes","informales"]].agg(np.sum)
       #------creamos una columna nueva sumando producciones
       data_2_r["produccion_total"] = (data_2_r["produccion"] + data_2_r["efes"] + data_2_r["informales"])
+      # ----- Filtrar los registros antes del groupby -----
+      data_filtrada = data_1_r[data_1_r["tipo"] != "Corrección de Calidad"]
+      # ----- Agrupar solo los datos válidos -----
+      data_4_r = (data_filtrada.groupby(["nombre", "semana", "proceso"], as_index=False)[["produccion"]].sum())
 
-      data_4_r = data_1_r.groupby(["nombre", "semana","proceso"], as_index=False)[["produccion"]].sum()
-
-      data_2_r["rendimiento"] = data_2_r["produccion_total"]/data_2_r["horas"]
-      data_2_r['rendimiento'] *= 8.5 
-      
+      data_2_r["produccion_bruta_hora"] = data_2_r["produccion_total"]/data_2_r["horas"]
+           
       #------agrupamos las columnas a mostrar
       columnas_a_mostrar= ["nombre","fecha","produccion_total","horas","rendimiento"]
       
