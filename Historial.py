@@ -286,7 +286,7 @@ def Historial(usuario,puesto):
       placeholder19_7 = st.empty()
       historial_7_horas= placeholder19_7.dataframe(data=datos_horas)
 
-    # ----- Resumen de Producción ---- #
+    # ----- Resumen de Producción ---- -----------------------------------------------------------------------------#
 
     placeholder21_7 = st.empty()
     producción_7=placeholder21_7.subheader("Resumen de Producción")  
@@ -314,10 +314,31 @@ def Historial(usuario,puesto):
       columnas_a_mostrar= ["nombre","fecha","produccion_total","horas","produccion_bruta_hora"]
    
       placeholder23_7 = st.empty()
-
-      #--------editamos el dataframe con las columnas a mostrar
       historial_7_producción= placeholder23_7.dataframe(data=data_2_r[columnas_a_mostrar])
+      # ----- FIN Resumen de Producción ------------------------------------------------------------------------------------ #
 
+      #---Inicio Resumen Correcciones-----------------------------------------------------------------------------------------#
+    placeholder22_1_7 = st.empty()
+    producción_7=placeholder22_1_7.subheader("Resumen Correciones")
+            
+    if pivot_r==0:
+      placeholder22_2_7 = st.empty()
+      error_producción= placeholder22_2_7.error('No existen correciones para mostrar')
+    else:
+      data_correciones = data_1_r[data_1_r["tipo"] = "Corrección de Calidad"]
+      agrupar_data_correciones = (data_correciones.groupby(["nombre", "semana", "proceso"], as_index=False)[["produccion"]].sum())
+      data_2_r["correciones"]= data_2_r["produccion_total"]
+      data_2_r["correccion_bruta_hora"] = data_2_r["produccion_total"]/data_2_r["horas"]
+      data_2_r["correccion_bruta_hora"] = data_2_r["correccion_bruta_hora"].round(2)
+
+      columnas_a_mostrar_c= ["nombre","fecha","correcciones","horas","correcion_bruta_hora"]
+      placeholder22_3_7 = st.empty()
+      historial_7_producción= placeholder22_3_7.dataframe(data=data_2_r[columnas_a_mostrar])
+
+      
+      #-----Fin Resumen Correcciones--------------------------------------------------------------------------------------------
+
+      
       data_4_r ["valor esperado"] = [200 if x == 'Folios de Matricula Inmobiliaria' else 350 if x == 'Control de Calidad Folios de Matricula Inmobiliaria' else 0 for x in data_4_r['proceso']]    
       data_4_r ["diferencia"] = data_4_r["produccion"] - data_4_r["valor esperado"]
 
@@ -645,6 +666,7 @@ def Historial(usuario,puesto):
       placeholder13_7.empty()
       placeholder17_7.empty()
       placeholder21_7.empty()
+      placeholder22_1_7.empty()      
       placeholder27_7.empty()
     
       if pivot_reportes==0:
