@@ -306,6 +306,7 @@ def Otros_Registros(usuario,puesto):
       placeholder21_13.empty()
       placeholder22_13.empty()
     placeholder23_13.empty()
+    placeholder_tiempo.empty()
     st.session_state.Procesos=False
     st.session_state.Otros_Registros=False
 
@@ -352,6 +353,7 @@ def Otros_Registros(usuario,puesto):
       placeholder21_13.empty()
       placeholder22_13.empty()
     placeholder23_13.empty()
+    placeholder_tiempo.empty()
     st.session_state.Otros_Registros=False
     st.session_state.Historial=True
     Historial.Historial(usuario,puesto)
@@ -384,6 +386,7 @@ def Otros_Registros(usuario,puesto):
       placeholder21_13.empty()
       placeholder22_13.empty()
     placeholder23_13.empty()
+    placeholder_tiempo.empty()
     st.session_state.Otros_Registros=False
     st.session_state.Capacitacion=True
     Capacitacion.Capacitacion(usuario,puesto)
@@ -416,6 +419,7 @@ def Otros_Registros(usuario,puesto):
       placeholder21_13.empty()
       placeholder22_13.empty()
     placeholder23_13.empty()
+    placeholder_tiempo.empty()
     st.session_state.Otros_Registros=False
     st.session_state.Bonos_Extras=True
     Bonos_Extras.Bonos_Extras(usuario,puesto)
@@ -447,7 +451,8 @@ def Otros_Registros(usuario,puesto):
       placeholder20_13.empty()
       placeholder21_13.empty()
       placeholder22_13.empty()
-      placeholder23_13.empty()
+    placeholder23_13.empty()
+    placeholder_tiempo.empty()
     st.session_state.Ingreso = False
     st.session_state.Otros_Registros=False
     st.session_state.Salir=True
