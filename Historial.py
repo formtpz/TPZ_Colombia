@@ -587,7 +587,7 @@ def Historial(usuario,puesto):
       placeholder46_7 = st.empty()
       descarga_7_producción = placeholder46_7.download_button("Decargar CSV",data=data_2_r.to_csv(),mime="text/csv",key="descarga_7_producción")
 
-      data_4_r ["valor esperado"] = [200 if x == 'Folios de Matricula Inmobiliaria' else 350 if x == 'Control de Calidad Folios de Matricula Inmobiliaria' else 0 for x in data_4_r['proceso']]    
+      data_4_r ["valor esperado"] = [120 if x == 'Precampo Folios de Matricula Inmobiliaria' else 120 if x == 'Postcampo Folios de Matricula Inmobiliaria' else 225 if x == 'Precampo' else 190 if x == 'Postcampo' else 325 if x=='Revisión de Campo' else 400 if x=='Control de Calidad Postcampo'else 400 if x=='Control de Calidad Precampo' for x in data_4_r['proceso']]    
       data_4_r ["diferencia"] = data_4_r["produccion"] - data_4_r["valor esperado"]
 
                          
