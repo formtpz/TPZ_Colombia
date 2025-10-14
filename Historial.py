@@ -298,7 +298,7 @@ def Historial(usuario,puesto):
     #-----crear columna para sumar produccion mas efes mas informales
     data_2_r["produccion_total"] = (data_2_r["produccion"] + data_2_r["efes"] + data_2_r["informales"])
     # ----- Agrupar solo los datos válidos -----
-    data_4_r = (data_1_r.groupby(["nombre", "semana", "proceso","efes","informales"], as_index=False)[["produccion"]].sum())
+    data_4_r = (data_1_r.groupby(["nombre", "semana", "proceso"], as_index=False)[["produccion","efes","informales"]].sum())
            
     if pivot_r==0:  
 
@@ -349,7 +349,7 @@ def Historial(usuario,puesto):
       historial_7_diferencia= placeholder23_2_7.subheader("Resumen Semanal")  
 
       columnas_a_mostrar_s= ["nombre","semana","proceso","produccion_total","Ratio meta","diferencia"]
-    
+      
       placeholder24_2_7 = st.empty()
       descarga_7_diferencia = placeholder24_2_7.dataframe(data=data_4_r[columnas_a_mostrar_s])
 
@@ -575,7 +575,7 @@ def Historial(usuario,puesto):
       # ----- Filtrar los registros antes del groupby -----
       data_filtrada = data_1_r[data_1_r["tipo"] != "Corrección de Calidad"]
       # ----- Agrupar solo los datos válidos -----
-      data_4_r = (data_filtrada.groupby(["nombre", "semana", "proceso", "efes", "informales"], as_index=False)[["produccion"]].sum())
+      data_4_r = (data_filtrada.groupby(["nombre", "semana", "proceso"], as_index=False)[["produccion","efes","informales"]].sum())
 
       data_2_r["produccion_bruta_hora"] = data_2_r["produccion_total"]/data_2_r["horas"]
       data_2_r["produccion_bruta_hora"] = data_2_r["produccion_bruta_hora"].round(2)
