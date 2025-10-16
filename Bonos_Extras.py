@@ -169,12 +169,15 @@ def Bonos_Extras(usuario,puesto):
           
         
         placeholder17_9 = st.empty()
-        col1, col2, col3, col4, col5, col6, col7, col8, col9, col10 = placeholder17_9.columns(10)
+        col1, col2, col3, col4, col5, = placeholder17_9.columns(5)
         col1.metric("Bono Productividad", bono_productividad_9)
         col2.metric("Bono Calidad", bono_calidad_9)
         col3.metric("Bono Producción QC", bono_produccion_qc_9)
         col4.metric("Bono Producción Validación", bono_produccion_validacion_9)
         col5.metric("Bono Supervisión", bono_supervision_9)
+                
+        placeholder17_1_9 = st.empty()
+        col6, col7, col8, col9, col10 = placeholder17_1_9.columns(5)
         col6.metric("Bono Calidad Entregas Supervisión", bono_calidad_externa_igac_9)
         col7.metric("Bono Entregas", bono_entregas_9)
         col8.metric("Bono Variable", bonos_variables_9)
@@ -929,6 +932,7 @@ def Bonos_Extras(usuario,puesto):
         else:
 
           placeholder17_9.empty()
+          placeholder17_1_9.empty()
 
         if pivot2==0:
         
@@ -1116,6 +1120,7 @@ def Bonos_Extras(usuario,puesto):
         else:
 
           placeholder17_9.empty()
+          placeholder17_1_9.empty()
 
         if pivot2==0:
         
@@ -1289,6 +1294,7 @@ def Bonos_Extras(usuario,puesto):
         else:
 
           placeholder17_9.empty()
+          placeholder17_1_9.empty()
 
         if pivot2==0:
         
@@ -1462,6 +1468,7 @@ def Bonos_Extras(usuario,puesto):
         else:
 
           placeholder17_9.empty()
+          placeholder17_1_9.empty()
 
         if pivot2==0:
         
@@ -1635,6 +1642,7 @@ def Bonos_Extras(usuario,puesto):
         else:
 
           placeholder17_9.empty()
+          placeholder17_1_9.empty()
 
         if pivot2==0:
         
