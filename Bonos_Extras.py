@@ -169,7 +169,7 @@ def Bonos_Extras(usuario,puesto):
           
         
         placeholder17_9 = st.empty()
-        col1, col2, col3, col4, col5, col6, col7, col8, col9, col10 = placeholder17_9.columns(7)
+        col1, col2, col3, col4, col5, col6, col7, col8, col9, col10 = placeholder17_9.columns(10)
         col1.metric("Bono Productividad", bono_productividad_9)
         col2.metric("Bono Calidad", bono_calidad_9)
         col3.metric("Bono Producción QC", bono_produccion_qc_9)
@@ -238,7 +238,7 @@ def Bonos_Extras(usuario,puesto):
         #a23 es la fecha en formato: Agosto-2025
         
         placeholder23_9 = st.empty()
-        col1, col2, col3, col4, col5, col6, col7, col8, col9, col10 = placeholder23_9.columns(7)
+        col1, col2, col3, col4, col5, col6, col7, col8, col9, col10 = placeholder23_9.columns(10)
         col1.metric("Bono Productividad", bono_productividad_9)
         col2.metric("Bono Calidad", bono_calidad_9)
         col3.metric("Bono Producción QC", bono_produccion_qc_9)
