@@ -296,6 +296,7 @@ def Historial(usuario,puesto):
     data_2_r = data_filtrada.groupby(["nombre", "fecha"], as_index=False)[["produccion","horas","efes","informales"]].agg(np.sum)
 
     #-----crear columna para sumar produccion mas efes mas informales
+    data_2_r['produccion'] = data_2_r['produccion'].fillna(0.0)
     data_2_r["produccion_total"] = (data_2_r["produccion"] + data_2_r["efes"] + data_2_r["informales"])
     # ----- Agrupar solo los datos válidos -----
     data_4_r = (data_filtrada.groupby(["nombre", "semana", "proceso"], as_index=False)[["produccion","efes","informales"]].sum())
