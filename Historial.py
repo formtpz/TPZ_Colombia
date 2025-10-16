@@ -71,7 +71,7 @@ def Historial(usuario,puesto):
 
     if personal_7=="Todos" and proceso_7_s=="Todos" and tipo_7_s=="Todos":
       
-      cast(id as integer),marca,usuario,nombre,puesto,supervisor,proceso,fecha,semana,año,unidad_asignacion,uit,hito,lote,estado,zona,area,cast(efes as float),cast(informales as float),paquete,con_fmi,sin_fmi,tipo,cast(produccion as float),cast(aprobados as float),cast(rechazados as float),operador_cc,total_de_errores,errores_por_excepciones,tipo_calidad,tipo_de_errores,conteo_de_errores,cast(horas as float)from registro where fecha>='{fecha_de__inicio_7}' and fecha<='{fecha_de__finalizacion_7}'", con)
+      data_1_r=pd.read_sql(f"select cast(id as integer),marca,usuario,nombre,puesto,supervisor,proceso,fecha,semana,año,unidad_asignacion,uit,hito,lote,estado,zona,area,cast(efes as float),cast(informales as float),paquete,con_fmi,sin_fmi,tipo,cast(produccion as float),cast(aprobados as float),cast(rechazados as float),operador_cc,total_de_errores,errores_por_excepciones,tipo_calidad,tipo_de_errores,conteo_de_errores,cast(horas as float)from registro where fecha>='{fecha_de__inicio_7}' and fecha<='{fecha_de__finalizacion_7}'", con)
 
       data_1_c = pd.read_sql(f"select cast(id as integer),marca,usuario,nombre,puesto,supervisor,fecha,tema,cast(horas as float),observaciones,reporte from capacitaciones where fecha>='{fecha_de__inicio_7}' and fecha<='{fecha_de__finalizacion_7}'", con)
 
