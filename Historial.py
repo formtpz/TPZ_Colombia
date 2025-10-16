@@ -290,24 +290,24 @@ def Historial(usuario,puesto):
 
     placeholder21_7 = st.empty()
     producción_7=placeholder21_7.subheader("Resumen de Producción")  
-    
-    # ----- Filtrar los registros antes del groupby -----
-    data_filtrada = data_1_r[data_1_r["tipo"] != "Corrección de Calidad"]
-    data_2_r = data_filtrada.groupby(["nombre", "fecha"], as_index=False)[["produccion","horas","efes","informales"]].agg(np.sum)
-
-    #-----crear columna para sumar produccion mas efes mas informales
-    data_2_r['produccion'] = data_2_r['produccion'].fillna(0.0)
-    data_2_r["produccion_total"] = (data_2_r["produccion"] + data_2_r["efes"] + data_2_r["informales"])
-    # ----- Agrupar solo los datos válidos -----
-    data_4_r = (data_filtrada.groupby(["nombre", "semana", "proceso"], as_index=False)[["produccion","efes","informales"]].sum())
-           
+                   
     if pivot_r==0:  
 
       placeholder22_7 = st.empty()
       error_producción= placeholder22_7.error('No existe producción para mostrar')
 
     else:
+      
+      # ----- Filtrar los registros antes del groupby -----
+      data_filtrada = data_1_r[data_1_r["tipo"] != "Corrección de Calidad"]
+      data_2_r = data_filtrada.groupby(["nombre", "fecha"], as_index=False)[["produccion","horas","efes","informales"]].agg(np.sum)
 
+    #-----crear columna para sumar produccion mas efes mas informales
+      data_2_r["produccion_total"] = (data_2_r["produccion"] + data_2_r["efes"] + data_2_r["informales"])
+    # ----- Agrupar solo los datos válidos -----
+      data_4_r = (data_filtrada.groupby(["nombre", "semana", "proceso"], as_index=False)[["produccion","efes","informales"]].sum())
+
+      #-----
       data_2_r["produccion_bruta_hora"] = data_2_r["produccion_total"]/data_2_r["horas"]
       data_2_r["produccion_bruta_hora"] = data_2_r["produccion_bruta_hora"].round(2)
            
