@@ -46,7 +46,6 @@ hide_streamlit_style = """
                 """
 st.markdown(hide_streamlit_style, unsafe_allow_html=True)
 
-st.snow()
 
 # ----- Conexión, Botones y Memoria ---- #
 
