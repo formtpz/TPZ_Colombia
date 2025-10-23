@@ -179,7 +179,9 @@ if pivot!=1:
 
      st.header("Aplicación de uso exclusivo para el personal de Telespazio Argentina S.A.")
 
-     st.subheader("En caso de dudas o correcciones favor escribir a https://discord.com/users/1385305245998907573")
+     st.subheader("En caso de dudas o correcciones favor escribir a")
+     discord_url = "https://discord.com/users/1385305245998907573"
+     st.markdown(f"[Dylana]({discord_url})")
 
      st.subheader("Para soporte técnico favor escribir a evelyn.burgos@external.telespazio.com")
 
