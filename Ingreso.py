@@ -192,11 +192,11 @@ footer = """
         bottom: 0;
         left: 0;
         width: 100%;
-        background-color: #f1f1f1;
+        background-color: #2C3E50;
         text-align: center;
         padding: 2px;
         font-size: 12px;
-        color: #555;
+        color: #ECF0F1;
      }
      .footer a {
         color: tomato;
