@@ -192,7 +192,7 @@ footer = """
         bottom: 0;
         left: 0;
         width: 100%;
-        background-color: #2C3E50;
+        background-color: #0e1117;
         text-align: center;
         padding: 2px;
         font-size: 12px;
