@@ -73,7 +73,7 @@ def FMI(usuario,puesto):
   predios_sin_fmi_3= placeholder16_3.number_input("Cantidad de Predios sin FMI",min_value=0,step=1,key="predios_sin_fmi_3")
 
   placeholder17_3= st.empty()
-  = placeholder17_3.number_input("Cantidad de Horas Trabajadas en el Proceso",min_value=0.0,key="")
+  horas_3= placeholder17_3.number_input("Cantidad de Horas Trabajadas en el Proceso",min_value=0.0,key="")
 
   placeholder18_3= st.empty()
   observaciones_3= placeholder18_3.text_input("Observaciones",key="observaciones_3")
