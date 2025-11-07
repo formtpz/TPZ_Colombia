@@ -102,6 +102,7 @@ def FMI(usuario,puesto):
     placeholder16_3.empty()
     placeholder17_3.empty()
     placeholder18_3.empty()
+    placeholder19_3.empty()
     st.session_state.Procesos=False
     st.session_state.FMI=False
 
