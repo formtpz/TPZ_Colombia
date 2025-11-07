@@ -268,10 +268,11 @@ def FMI(usuario,puesto):
     semana_3 = fecha_3.isocalendar()[1]
 
     año_3 = fecha_3.isocalendar()[0]
+
+    horas_bi = float(horas_3)
     
     # ----- Almacenar Lote_3 según municipio seleccionado ---- #
 
-    horas_bi = float(horas_3)
     lote_3_municipios = {"Cabuyaro", "Colombia", "San Luis de Cubarral"}
     lote_2_municipios = {"Trinidad", "Iza", "Cuítiva"}
    
