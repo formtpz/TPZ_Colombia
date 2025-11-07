@@ -73,7 +73,7 @@ def FMI(usuario,puesto):
   predios_sin_fmi_3= placeholder16_3.number_input("Cantidad de Predios sin FMI",min_value=0,step=1,key="predios_sin_fmi_3")
 
   placeholder17_3= st.empty()
-  horas_3= placeholder17_3.number_input("Cantidad de Horas Trabajadas en el Proceso",min_value=0.0,key="horas_3")
+  = placeholder17_3.number_input("Cantidad de Horas Trabajadas en el Proceso",min_value=0.0,key="")
 
   placeholder18_3= st.empty()
   observaciones_3= placeholder18_3.text_input("Observaciones",key="observaciones_3")
@@ -285,6 +285,6 @@ def FMI(usuario,puesto):
       lote_3 = '1'
       # ----- Fin del script ---- #
 
-    cursor01.execute(f"INSERT INTO registro (marca,usuario,nombre,puesto,supervisor,proceso,fecha,semana,año,unidad_asignacion,tipo,produccion,aprobados,rechazados,horas,uit,hito,lote,estado,area,efes,informales,paquete,con_fmi,sin_fmi,observaciones,zona,tipo_calidad,horas_bi,area_bi,operador_cc,total_de_errores,errores_por_excepciones,tipo_de_errores,conteo_de_errores)VALUES('{marca_3}','{usuario}','{nombre_3}','{puesto}','{supervisor_3}','{proceso_3}','{fecha_3}','{semana_3}','{año_3}','{municipio_3}','{tipo_3}','{produccion_3}','0','0','{horas_3}','{unidad_inter_3}','0','{lote_3}','{estado_3}','0.0','0','0','P0','0','{predios_sin_fmi_3}','{observaciones_3}','N/A','N/A','0','0','N/A','0','0','N/A','0')")
+    cursor01.execute(f"INSERT INTO registro (marca,usuario,nombre,puesto,supervisor,proceso,fecha,semana,año,unidad_asignacion,tipo,produccion,aprobados,rechazados,horas,uit,hito,lote,estado,area,efes,informales,paquete,con_fmi,sin_fmi,observaciones,zona,tipo_calidad,horas_bi,area_bi,operador_cc,total_de_errores,errores_por_excepciones,tipo_de_errores,conteo_de_errores)VALUES('{marca_3}','{usuario}','{nombre_3}','{puesto}','{supervisor_3}','{proceso_3}','{fecha_3}','{semana_3}','{año_3}','{municipio_3}','{tipo_3}','{produccion_3}','0','0','{horas_3}','{unidad_inter_3}','0','{lote_3}','{estado_3}','0.0','0','0','P0','0','{predios_sin_fmi_3}','{observaciones_3}','N/A','N/A',{horas_bi},'0','N/A','0','0','N/A','0')")
     con.commit()                                                                                                                                 
     st.success('Reporte enviado correctamente')
