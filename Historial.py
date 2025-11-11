@@ -307,7 +307,7 @@ def Historial(usuario,puesto):
     # ----- Agrupar solo los datos válidos -----
       data_4_r = (data_filtrada.groupby(["nombre", "semana", "proceso"], as_index=False)[["produccion","efes","informales"]].sum())
       data_filtrada_calidad = data_1_r[data_1_r["tipo"] == "Inspección"]
-      data_3_r = data_filtrada.groupby(["nombre", "fecha"], as_index=False)[["produccion","horas"]].agg(np.sum)
+      data_3_r = data_filtrada_calidad.groupby(["nombre", "fecha"], as_index=False)[["produccion","horas"]].agg(np.sum)
       data_2_r["Produccion_total_QC"] = (data_3_r["produccion"])
 
       #-----
