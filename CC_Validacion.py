@@ -293,23 +293,23 @@ def CC_Validacion(usuario,puesto):
       # ----- Fin del script ---- #
 
     #----------unificacion del paquete
-    if municipio_3 = "Cabuyaro" in municipio_3:
+    if  "Cabuyaro" in municipio_3:
       paq_3='CA_PAQ'
-    elif municipio_3 ="Colombia" in municipio_3:
+    elif "Colombia" in municipio_3:
       paq_3='CO_PAQ'
-    elif municipio_3 ="San Luis de Cubarral" in municipio_3:
+    elif "San Luis de Cubarral" in municipio_3:
       paq_3='CU_PAQ'
-    elif municipio_3 ="Iza" in municipio_3:
+    elif "Iza" in municipio_3:
       paq_3='IZ_PAQ'
-    elif municipio_3 ="Trinidad" in municipio_3:
+    elif "Trinidad" in municipio_3:
       paq_3='TR_PAQ'
-    elif municipio_3 ="Cuitiva" in municipio_3:
+    elif "Cuitiva" in municipio_3:
       paq_3='CUI_PAQ'
-    elif municipio_3 ="Morroa" in municipio_3:
+    elif "Morroa" in municipio_3:
       paq_3='MO_PAQ'
-    elif municipio_3 ="Los Palmitos" in municipio_3:
+    elif "Los Palmitos" in municipio_3:
       paq_3='PA_PAQ'
-    elif municipio_3 ="San Estanislao" in municipio_3:
+    elif "San Estanislao" in municipio_3:
       paq_3='SE_PAQ'
     paq_4 = f"{paq_3}{paquete_3}{seleccion_3}"
 
