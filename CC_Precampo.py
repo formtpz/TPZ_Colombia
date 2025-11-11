@@ -20,7 +20,7 @@ def CC_Precampo(usuario,puesto):
   pwd = result.password
   port_id = result.port
   con = psycopg2.connect(host=hostname,dbname= database,user= username,password=pwd,port= port_id)
-
+  
   placeholder1_3= st.sidebar.empty()
   titulo= placeholder1_3.title("Menú")
 
@@ -281,7 +281,19 @@ def CC_Precampo(usuario,puesto):
     else:
       lote_3 = '1'
       # ----- Fin del script ---- #
+
+    
+
     
     cursor01.execute(f"INSERT INTO registro (marca,usuario,nombre,puesto,supervisor,proceso,fecha,semana,año,unidad_asignacion,tipo,produccion,aprobados,rechazados,horas,uit,hito,lote,estado,area,efes,informales,paquete,con_fmi,sin_fmi,observaciones,zona,tipo_calidad,horas_bi,area_bi,operador_cc,total_de_errores,errores_por_excepciones,tipo_de_errores,conteo_de_errores)VALUES('{marca_3}','{usuario}','{nombre_3}','{puesto}','{supervisor_3}','Control de Calidad Precampo','{fecha_3}','{semana_3}','{año_3}','{unidad_3}','{tipo_3}','{produccion_3}','{aprobados_3}','{rechazados_3}','{horas_3}','UIT-0','0','{lote_3}','N/A','0.0','0','0','N/A','0','0','N/A','{zona_3}','N/A','{horas_bi}','0','{operador_3}','0','0','{tipos_de_errores_3}','{conteo_3}')")
-    con.commit()                                                                                                                                 
+    con.commit()    
+    # Consulta SQL para leer los datos de usuario para tabla cc_paquete
+    df=pd.read_sql(f"select usuario,nombre,puesto,perfil,supervisor from usuarios where nombre=='{operador_3}'", con)
+    usuario_objeto_cc= df.iloc[0, 0]
+    puesto_objeto_cc = df.iloc[0, 2]
+    supervisor_objeto_cc = df.iloc[0, 4]
+
+
+    cursor01.execute(f"INSERT INTO cc_paquetes (usuario, nombre, supervisor, proceso, tipo, paquete, horas, produccion, produccion_aprobados, produccion_rechazados, estado, porcentage_error, usuario_calidad, nombre_calidad, ratio_limpio_predio_por_dia, primera_reinspeccion, segunda_reinspeccion, porcentage_penalizacion_ratio, ratio_penalizado_predio_por_dia, fecha_produccion, fecha_corte, fecha_bono, horas_bi)VALUES('{usuario_objeto_cc}','{operador_3}','{supervisor_objeto_cc}','Control de Calidad Precampo', '{tipo_3}', '{horas_3}', '{produccion_3}', '{aprobados_3}', '{rechazados_3}', 'N/A', '0','{usuario}','{nombre_3}','0','0','0','0','0','0','0','0','{horas_bi}' )")
+    con.commit()
     st.success('Reporte enviado correctamente')
