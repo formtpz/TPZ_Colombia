@@ -78,7 +78,7 @@ def CC_Validacion(usuario,puesto):
   paquete_3= placeholder18_3.text_input("Número de Paquete",max_chars=3,key="paquete_3")
 
   placeholder18_1_3= st.empty()
-  seleccion_3= placeholder18_1_3.multiselect("Tipo de Revisión", options=("V","G"), key="seleccion_3")
+  seleccion_3= placeholder18_1_3.selectbox("Tipo de Revisión", options=("V","G"), key="seleccion_3")
       
   placeholder19_3 = st.empty()
   reporte_3 = placeholder19_3.button("Generar Reporte",key="reporte_3")
