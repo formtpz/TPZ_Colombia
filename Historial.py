@@ -306,13 +306,16 @@ def Historial(usuario,puesto):
       data_2_r["produccion_total"] = (data_2_r["produccion"] + data_2_r["efes"] + data_2_r["informales"])
     # ----- Agrupar solo los datos válidos -----
       data_4_r = (data_filtrada.groupby(["nombre", "semana", "proceso"], as_index=False)[["produccion","efes","informales"]].sum())
+      data_filtrada_calidad = data_1_r[data_1_r["tipo"] == "Inspección"]
+      data_3_r = data_filtrada.groupby(["nombre", "fecha"], as_index=False)[["produccion","horas"]].agg(np.sum)
+      data_2_r["Produccion_total_QC"] = (data_3_r["produccion"])
 
       #-----
       data_2_r["produccion_bruta_hora"] = data_2_r["produccion_total"]/data_2_r["horas"]
       data_2_r["produccion_bruta_hora"] = data_2_r["produccion_bruta_hora"].round(2)
            
       #--------agrupamos las columnas a mostrar en la tabla
-      columnas_a_mostrar= ["nombre","fecha","produccion_total","horas","produccion_bruta_hora"]
+      columnas_a_mostrar= ["nombre","fecha","produccion_total","Produccion_total_QC","horas","produccion_bruta_hora"]
    
       placeholder23_7 = st.empty()
       historial_7_producción= placeholder23_7.dataframe(data=data_2_r[columnas_a_mostrar])
@@ -574,8 +577,8 @@ def Historial(usuario,puesto):
       #------creamos una columna nueva sumando producciones
       data_2_r["produccion_total"] = (data_2_r["produccion"] + data_2_r["efes"] + data_2_r["informales"])
      
-      data_filtrada_calidad = data_1_r[data_1_r["tipo"] != "Inspección"]
-      data_3_r = data_filtrada.groupby(["nombre", "fecha"], as_index=False)[["produccion","horas"]].agg(np.sum)
+      data_filtrada_calidad = data_1_r[data_1_r["tipo"] == "Inspección"]
+      data_3_r = data_filtrada_calidad.groupby(["nombre", "fecha"], as_index=False)[["produccion","horas"]].agg(np.sum)
       data_2_r["Produccion_total_QC"] = (data_3_r["produccion"])
        # ----- Filtrar los registros antes del groupby -----
       #data_filtrada = data_1_r[data_1_r["tipo"] != "Corrección de Calidad"]
