@@ -78,7 +78,7 @@ def CC_Validacion(usuario,puesto):
   paquete_3= placeholder18_3.text_input("Número de Paquete",max_chars=3,key="paquete_3")
 
   placeholder18_1_3= st.empty()
-  seleccion_3= placeholder18_1_3.multiselect("Tipo de Revisión", options=("_V","_G"), key="seleccion_3")
+  seleccion_3= placeholder18_1_3.multiselect("Tipo de Revisión", options=("V","G"), key="seleccion_3")
       
   placeholder19_3 = st.empty()
   reporte_3 = placeholder19_3.button("Generar Reporte",key="reporte_3")
@@ -311,7 +311,7 @@ def CC_Validacion(usuario,puesto):
       paq_3='PA_PAQ'
     elif "San Estanislao" in municipio_3:
       paq_3='SE_PAQ'
-    paq_4 = f"{paq_3}{paquete_3}{seleccion_3}"
+    paq_4 = f"{paq_3}{paquete_3}_{seleccion_3}"
 
     
     
