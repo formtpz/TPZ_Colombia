@@ -307,8 +307,7 @@ def Historial(usuario,puesto):
     # ----- Agrupar solo los datos válidos -----
       data_4_r = (data_filtrada.groupby(["nombre", "semana", "proceso"], as_index=False)[["produccion","efes","informales"]].sum())
       #------Creamos un join para mostrar de la data frame 3 los valores de inspeccion agrupados por dia, solo por tipo Inspeccion------
-      data_filtrada_calidad = data_1_r[(data_1_r["tipo"] == "Inspección") & (data_1_r["produccion"].str.contains("Control de Calidad", case=False, na=False))
-]
+      data_filtrada_calidad = data_1_r[(data_1_r["tipo"] == "Inspección") & (data_1_r["proceso"].str.contains("Control de Calidad", case=False, na=False))]
       data_3_r = data_filtrada_calidad.groupby(["nombre", "fecha"], as_index=False)[["produccion","horas"]].agg(np.sum)
       data_2_r= data_2_r.merge(data_3_r[["nombre", "fecha", "produccion"]], on=["nombre", "fecha"], how="left", suffixes=("", "_total_QC"))
     
@@ -580,7 +579,7 @@ def Historial(usuario,puesto):
       #------creamos una columna nueva sumando producciones
       data_2_r["produccion_total"] = (data_2_r["produccion"] + data_2_r["efes"] + data_2_r["informales"])
      
-      data_filtrada_calidad = data_1_r[data_1_r["tipo"] == "Inspección"]
+      data_filtrada_calidad = data_1_r[(data_1_r["tipo"] == "Inspección") & (data_1_r["proceso"].str.contains("Control de Calidad", case=False, na=False))]
       data_3_r = data_filtrada_calidad.groupby(["nombre", "fecha"], as_index=False)[["produccion","horas"]].agg(np.sum)
       data_2_r= data_2_r.merge(data_3_r[["nombre", "fecha", "produccion"]], on=["nombre", "fecha"], how="left", suffixes=("", "_total_QC"))
        # ----- Filtrar los registros antes del groupby -----
