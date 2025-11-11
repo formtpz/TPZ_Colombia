@@ -586,7 +586,7 @@ def Historial(usuario,puesto):
       data_2_r["produccion_bruta_hora"] = data_2_r["produccion_bruta_hora"].round(2)
            
       #------agrupamos las columnas a mostrar
-      columnas_a_mostrar= ["nombre","fecha","produccion_total","horas","produccion_bruta_hora"]
+      columnas_a_mostrar= ["nombre","fecha","produccion_total","Produccion_total_QC","horas","produccion_bruta_hora"]
       
       placeholder45_7 = st.empty()
       historial_7_producción= placeholder45_7.dataframe(data=data_2_r[columnas_a_mostrar])
