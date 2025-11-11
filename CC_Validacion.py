@@ -104,6 +104,7 @@ def CC_Validacion(usuario,puesto):
     placeholder16_3.empty()
     placeholder17_3.empty()
     placeholder18_3.empty()
+    placeholder18_1_3.empty()
     placeholder19_3.empty()
     st.session_state.Procesos=False
     st.session_state.CC_Validacion=False
@@ -144,6 +145,7 @@ def CC_Validacion(usuario,puesto):
     placeholder16_3.empty()
     placeholder17_3.empty()
     placeholder18_3.empty()
+    placeholder18_1_3.empty()
     placeholder19_3.empty()
     st.session_state.CC_Validacion=False
     st.session_state.Historial=True
@@ -170,6 +172,7 @@ def CC_Validacion(usuario,puesto):
     placeholder16_3.empty()
     placeholder17_3.empty()
     placeholder18_3.empty()
+    placeholder18_1_3.empty()
     placeholder19_3.empty()
     st.session_state.CC_Validacion=False
     st.session_state.Capacitacion=True
@@ -196,6 +199,7 @@ def CC_Validacion(usuario,puesto):
     placeholder16_3.empty()
     placeholder17_3.empty()
     placeholder18_3.empty()
+    placeholder18_1_3.empty()
     placeholder19_3.empty()
     st.session_state.CC_Validacion=False
     st.session_state.Otros_Registros=True
@@ -222,6 +226,7 @@ def CC_Validacion(usuario,puesto):
     placeholder16_3.empty()
     placeholder17_3.empty()
     placeholder18_3.empty()
+    placeholder18_1_3.empty()
     placeholder19_3.empty()
     st.session_state.CC_Validacion=False
     st.session_state.Bonos_Extras=True
@@ -248,6 +253,7 @@ def CC_Validacion(usuario,puesto):
     placeholder16_3.empty()
     placeholder17_3.empty()
     placeholder18_3.empty()
+    placeholder18_1_3.empty()
     placeholder19_3.empty()
     st.session_state.Ingreso = False
     st.session_state.CC_Validacion=False
