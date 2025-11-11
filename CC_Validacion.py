@@ -75,8 +75,11 @@ def CC_Validacion(usuario,puesto):
   horas_3= placeholder17_3.number_input("Cantidad de Horas Trabajadas en el Proceso",min_value=0.0,key="horas_3")
   
   placeholder18_3= st.empty()
-  paquete_3= placeholder18_3.text_input("Número de Paquete",max_chars=60,key="paquete_3")
-  
+  paquete_3= placeholder18_3.text_input("Número de Paquete",max_chars=3,key="paquete_3")
+
+  placeholder18_1_3= st.empty()
+  seleccion_3= placeholder18_1_3.multiselect("Tipo de Revisión", options=("_V","_G"), key="seleccion_3")
+      
   placeholder19_3 = st.empty()
   reporte_3 = placeholder19_3.button("Generar Reporte",key="reporte_3")
 
@@ -288,7 +291,30 @@ def CC_Validacion(usuario,puesto):
     else:
       lote_3 = '1'
       # ----- Fin del script ---- #
+
+    #----------unificacion del paquete
+    if municipio_3 = "Cabuyaro" in municipio_3:
+      paq_3='CA_PAQ'
+    elif municipio_3 ="Colombia" in municipio_3:
+      paq_3='CO_PAQ'
+    elif municipio_3 ="San Luis de Cubarral" in municipio_3:
+      paq_3='CU_PAQ'
+    elif municipio_3 ="Iza" in municipio_3:
+      paq_3='IZ_PAQ'
+    elif municipio_3 ="Trinidad" in municipio_3:
+      paq_3='TR_PAQ'
+    elif municipio_3 ="Cuitiva" in municipio_3:
+      paq_3='CUI_PAQ'
+    elif municipio_3 ="Morroa" in municipio_3:
+      paq_3='MO_PAQ'
+    elif municipio_3 ="Los Palmitos" in municipio_3:
+      paq_3='PA_PAQ'
+    elif municipio_3 ="San Estanislao" in municipio_3:
+      paq_3='SE_PAQ'
+    paq_4 = f"{paq_3}{paquete_3}{seleccion_3}"
+
     
-    cursor01.execute(f"INSERT INTO registro (marca,usuario,nombre,puesto,supervisor,proceso,fecha,semana,año,unidad_asignacion,tipo,produccion,aprobados,rechazados,horas,uit,hito,lote,estado,area,efes,informales,paquete,con_fmi,sin_fmi,observaciones,zona,tipo_calidad,horas_bi,area_bi,operador_cc,total_de_errores,errores_por_excepciones,tipo_de_errores,conteo_de_errores)VALUES('{marca_3}','{usuario}','{nombre_3}','{puesto}','{supervisor_3}','Control de Calidad Postcampo','{fecha_3}','{semana_3}','{año_3}','{unidad_3}','{tipo_3}','{produccion_3}','{aprobados_3}','{rechazados_3}','{horas_3}','UIT-0','0','{lote_3}','N/A','0.0','0','0','{paquete_3}','0','0','N/A','{zona_3}','N/A','{horas_bi}','0','{operador_3}','0','0','{tipos_de_errores_3}','{conteo_3}')")
+    
+    cursor01.execute(f"INSERT INTO registro (marca,usuario,nombre,puesto,supervisor,proceso,fecha,semana,año,unidad_asignacion,tipo,produccion,aprobados,rechazados,horas,uit,hito,lote,estado,area,efes,informales,paquete,con_fmi,sin_fmi,observaciones,zona,tipo_calidad,horas_bi,area_bi,operador_cc,total_de_errores,errores_por_excepciones,tipo_de_errores,conteo_de_errores)VALUES('{marca_3}','{usuario}','{nombre_3}','{puesto}','{supervisor_3}','Control de Calidad Postcampo','{fecha_3}','{semana_3}','{año_3}','{unidad_3}','{tipo_3}','{produccion_3}','{aprobados_3}','{rechazados_3}','{horas_3}','UIT-0','0','{lote_3}','N/A','0.0','0','0','{paq_4}','0','0','N/A','{zona_3}','N/A','{horas_bi}','0','{operador_3}','0','0','{tipos_de_errores_3}','{conteo_3}')")
     con.commit()                                                                                                                                 
     st.success('Reporte enviado correctamente')
