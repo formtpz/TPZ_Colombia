@@ -294,6 +294,6 @@ def CC_Precampo(usuario,puesto):
     supervisor_objeto_cc = df.iloc[0, 4]
 
 
-    cursor01.execute(f"INSERT INTO cc_paquetes (usuario, nombre, supervisor, proceso, tipo, paquete, horas, muestra_cc, aprobados, rechazados, estado, porcentage_error, usuario_calidad, nombre_calidad, ratio_limpio_predio_por_dia, primera_reinspeccion, segunda_reinspeccion, porcentage_penalizacion_ratio, ratio_penalizado_predio_por_dia, fecha_produccion, fecha_corte, fecha_bono, horas_bi)VALUES('{usuario_objeto_cc}','{operador_3}','{supervisor_objeto_cc}','Control de Calidad Precampo', '{tipo_3}', '0','0', '{produccion_3}', '{aprobados_3}', '{rechazados_3}', 'N/A', '0','{usuario}','{nombre_3}','0','0','0','0','0','0','0','0','0' )")
+    cursor01.execute(f"INSERT INTO cc_paquetes (usuario, nombre, supervisor, proceso, tipo, paquete, horas, muestra_cc, aprobados, rechazados, estado, porcentage_error, usuario_calidad, nombre_calidad, tipos_de_errores, conteo, segunda_reinspeccion, porcentage_penalizacion_ratio, ratio_penalizado_predio_por_dia, fecha_produccion, fecha_corte, fecha_bono, horas_bi)VALUES('{usuario_objeto_cc}','{operador_3}','{supervisor_objeto_cc}','Control de Calidad Precampo', '{tipo_3}', '0','0', '{produccion_3}', '{aprobados_3}', '{rechazados_3}', 'N/A', '0','{usuario}','{nombre_3}','0','0','0','0','0','{fecha_3}','0','0','0' )")
     con.commit()
     st.success('Reporte enviado correctamente')
