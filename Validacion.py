@@ -325,23 +325,23 @@ def Validacion(usuario,puesto):
 
 #----------unificacion del paquete
     if  "Cabuyaro" in municipio_3:
-      paq_3='CA_PAQ'
+      paquete_3='CA_PAQ'
     elif "Colombia" in municipio_3:
-      paq_3='CO_PAQ'
+      paquete_3='CO_PAQ'
     elif "San Luis de Cubarral" in municipio_3:
-      paq_3='CU_PAQ'
+      paquete_3='CU_PAQ'
     elif "Iza" in municipio_3:
-      paq_3='IZ_PAQ'
+      paquete_3='IZ_PAQ'
     elif "Trinidad" in municipio_3:
-      paq_3='TR_PAQ'
+      paquete_3='TR_PAQ'
     elif "Cuitiva" in municipio_3:
-      paq_3='CUI_PAQ'
+      paquete_3='CUI_PAQ'
     elif "Morroa" in municipio_3:
-      paq_3='MO_PAQ'
+      paquete_3='MO_PAQ'
     elif "Los Palmitos" in municipio_3:
-      paq_3='PA_PAQ'
+      paquete_3='PA_PAQ'
     elif "San Estanislao" in municipio_3:
-      paq_3='SE_PAQ'
+      paquete_3='SE_PAQ'
     paq_4 = f"{paq_3}{paquete_3}_{seleccion_3}"
     
       # ----- Fin del script ---- #
