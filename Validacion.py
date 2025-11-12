@@ -84,16 +84,16 @@ def Validacion(usuario,puesto):
   efes_3= placeholder20_3.number_input("Cantidad de F",min_value=0,step=1,key="efes_3")
 
   placeholder21_3= st.empty()
-  seleccion_3= placeholder18_1_3.selectbox("Tipo de Revisión", options=("V","G"), key="seleccion_3")
+  seleccion_3= placeholder21_3.selectbox("Tipo de Revisión", options=("V","G"), key="seleccion_3")
   
   placeholder22_3= st.empty()
-  horas_3= placeholder21_3.number_input("Cantidad de Horas Trabajadas en el Proceso",min_value=0.0,key="horas_3")
+  horas_3= placeholder22_3.number_input("Cantidad de Horas Trabajadas en el Proceso",min_value=0.0,key="horas_3")
 
   placeholder23_3= st.empty()
-  observaciones_3= placeholder22_3.text_input("Observaciones", max_chars=60, key="observaciones_3")
+  observaciones_3= placeholder23_3.text_input("Observaciones", max_chars=60, key="observaciones_3")
  
   placeholder24_3 = st.empty()
-  reporte_3 = placeholder23_3.button("Generar Reporte",key="reporte_3")
+  reporte_3 = placeholder24_3.button("Generar Reporte",key="reporte_3")
 
   # ----- Procesos ---- #
     
