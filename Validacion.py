@@ -83,8 +83,8 @@ def Validacion(usuario,puesto):
   placeholder20_3= st.empty()
   efes_3= placeholder20_3.number_input("Cantidad de F",min_value=0,step=1,key="efes_3")
 
-  placeholder21_3= st.empty()
-  seleccion_3= placeholder21_3.selectbox("Tipo de Revisión", options=("V","G"), key="seleccion_3")
+  #placeholder21_3= st.empty()
+  #seleccion_3= placeholder21_3.selectbox("Tipo de Revisión", options=("V","G"), key="seleccion_3")
   
   placeholder22_3= st.empty()
   horas_3= placeholder22_3.number_input("Cantidad de Horas Trabajadas en el Proceso",min_value=0.0,key="horas_3")
@@ -118,7 +118,7 @@ def Validacion(usuario,puesto):
     placeholder18_3.empty()
     placeholder19_3.empty()
     placeholder20_3.empty()
-    placeholder21_3.empty()
+    #placeholder21_3.empty()
     placeholder22_3.empty()
     placeholder23_3.empty()
     placeholder24_3.empty()
@@ -163,7 +163,7 @@ def Validacion(usuario,puesto):
     placeholder18_3.empty()
     placeholder19_3.empty()
     placeholder20_3.empty()
-    placeholder21_3.empty()
+    #placeholder21_3.empty()
     placeholder22_3.empty()
     placeholder23_3.empty()
     placeholder24_3.empty()
@@ -194,7 +194,7 @@ def Validacion(usuario,puesto):
     placeholder18_3.empty()
     placeholder19_3.empty()
     placeholder20_3.empty()
-    placeholder21_3.empty()
+    #placeholder21_3.empty()
     placeholder22_3.empty()
     placeholder23_3.empty()
     placeholder24_3.empty()
@@ -225,7 +225,7 @@ def Validacion(usuario,puesto):
     placeholder18_3.empty()
     placeholder19_3.empty()
     placeholder20_3.empty()
-    placeholder21_3.empty()
+    #placeholder21_3.empty()
     placeholder22_3.empty()
     placeholder23_3.empty()
     placeholder24_3.empty()
@@ -256,7 +256,7 @@ def Validacion(usuario,puesto):
     placeholder18_3.empty()
     placeholder19_3.empty()
     placeholder20_3.empty()
-    placeholder21_3.empty()
+    #placeholder21_3.empty()
     placeholder22_3.empty()
     placeholder23_3.empty()
     placeholder24_3.empty()
@@ -287,7 +287,7 @@ def Validacion(usuario,puesto):
     placeholder18_3.empty()
     placeholder19_3.empty()
     placeholder20_3.empty()
-    placeholder21_3.empty()
+    #placeholder21_3.empty()
     placeholder22_3.empty()
     placeholder23_3.empty()
     placeholder24_3.empty()
@@ -324,25 +324,25 @@ def Validacion(usuario,puesto):
       lote_3 = '1'
 
 #----------unificacion del paquete
-    if  "Cabuyaro" in municipio_3:
-      paquete_3='CA_PAQ'
-    elif "Colombia" in municipio_3:
-      paquete_3='CO_PAQ'
-    elif "San Luis de Cubarral" in municipio_3:
-      paquete_3='CU_PAQ'
-    elif "Iza" in municipio_3:
-      paquete_3='IZ_PAQ'
-    elif "Trinidad" in municipio_3:
-      paquete_3='TR_PAQ'
-    elif "Cuitiva" in municipio_3:
-      paquete_3='CUI_PAQ'
-    elif "Morroa" in municipio_3:
-      paquete_3='MO_PAQ'
-    elif "Los Palmitos" in municipio_3:
-      paquete_3='PA_PAQ'
-    elif "San Estanislao" in municipio_3:
-      paquete_3='SE_PAQ'
-    paq_4 = f"{paq_3}{paquete_3}_{seleccion_3}"
+    #if  "Cabuyaro" in municipio_3:
+      #paquete_3='CA_PAQ'
+    #elif "Colombia" in municipio_3:
+      #paquete_3='CO_PAQ'
+    #elif "San Luis de Cubarral" in municipio_3:
+      #paquete_3='CU_PAQ'
+    #elif "Iza" in municipio_3:
+      #paquete_3='IZ_PAQ'
+    #elif "Trinidad" in municipio_3:
+      #paquete_3='TR_PAQ'
+    #elif "Cuitiva" in municipio_3:
+      #paquete_3='CUI_PAQ'
+    #elif "Morroa" in municipio_3:
+      #paquete_3='MO_PAQ'
+    #elif "Los Palmitos" in municipio_3:
+      #paquete_3='PA_PAQ'
+    #elif "San Estanislao" in municipio_3:
+      #paquete_3='SE_PAQ'
+    #paq_4 = f"{paq_3}{paquete_3}_{seleccion_3}"
     
       # ----- Fin del script ---- #
     cursor01.execute(f"INSERT INTO registro (marca,usuario,nombre,puesto,supervisor,proceso,fecha,semana,año,unidad_asignacion,tipo,produccion,aprobados,rechazados,horas,uit,hito,lote,estado,area,efes,informales,paquete,con_fmi,sin_fmi,observaciones,zona,tipo_calidad,horas_bi,area_bi,operador_cc,total_de_errores,errores_por_excepciones,tipo_de_errores,conteo_de_errores)VALUES('{marca_3}','{usuario}','{nombre_3}','{puesto}','{supervisor_3}','Postcampo','{fecha_3}','{semana_3}','{año_3}','{municipio_3}','{tipo_3}','{produccion_3}','0','0','{horas_3}','{uit_3}','{hito_3}','{lote_3}','{estado_3}','{area_3}','{efes_3}','{informales_3}','{paquete_3}','0','0','{observaciones_3}','{zona_3}','N/A','{horas_bi}','{area_bi}','N/A','0','0','N/A','0')")
