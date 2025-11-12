@@ -344,7 +344,7 @@ def Validacion(usuario,puesto):
     elif "Los Palmitos" in municipio_3:
       paq_3='PA_PAQ'
     elif "San Estanislao" in municipio_3:
-      paquete_3='SE_PAQ'
+      paq_3='SE_PAQ'
     paq_4 = f"{paq_3}{paquete_3}_{seleccion_3}"
           # ----- Fin del script ---- #
     
