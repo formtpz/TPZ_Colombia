@@ -82,14 +82,17 @@ def Validacion(usuario,puesto):
   
   placeholder20_3= st.empty()
   efes_3= placeholder20_3.number_input("Cantidad de F",min_value=0,step=1,key="efes_3")
-  
+
   placeholder21_3= st.empty()
+  seleccion_3= placeholder18_1_3.selectbox("Tipo de Revisión", options=("V","G"), key="seleccion_3")
+  
+  placeholder22_3= st.empty()
   horas_3= placeholder21_3.number_input("Cantidad de Horas Trabajadas en el Proceso",min_value=0.0,key="horas_3")
 
-  placeholder22_3= st.empty()
+  placeholder23_3= st.empty()
   observaciones_3= placeholder22_3.text_input("Observaciones", max_chars=60, key="observaciones_3")
  
-  placeholder23_3 = st.empty()
+  placeholder24_3 = st.empty()
   reporte_3 = placeholder23_3.button("Generar Reporte",key="reporte_3")
 
   # ----- Procesos ---- #
@@ -118,6 +121,7 @@ def Validacion(usuario,puesto):
     placeholder21_3.empty()
     placeholder22_3.empty()
     placeholder23_3.empty()
+    placeholder24_3.empty()
     st.session_state.Procesos=False
     st.session_state.Validacion=False
 
@@ -162,6 +166,7 @@ def Validacion(usuario,puesto):
     placeholder21_3.empty()
     placeholder22_3.empty()
     placeholder23_3.empty()
+    placeholder24_3.empty()
     st.session_state.Validacion=False
     st.session_state.Historial=True
     Historial.Historial(usuario,puesto)   
@@ -192,6 +197,7 @@ def Validacion(usuario,puesto):
     placeholder21_3.empty()
     placeholder22_3.empty()
     placeholder23_3.empty()
+    placeholder24_3.empty()
     st.session_state.Validacion=False
     st.session_state.Capacitacion=True
     Capacitacion.Capacitacion(usuario,puesto)
@@ -222,6 +228,7 @@ def Validacion(usuario,puesto):
     placeholder21_3.empty()
     placeholder22_3.empty()
     placeholder23_3.empty()
+    placeholder24_3.empty()
     st.session_state.Validacion=False
     st.session_state.Otros_Registros=True
     Otros_Registros.Otros_Registros(usuario,puesto)
@@ -252,6 +259,7 @@ def Validacion(usuario,puesto):
     placeholder21_3.empty()
     placeholder22_3.empty()
     placeholder23_3.empty()
+    placeholder24_3.empty()
     st.session_state.Validacion=False
     st.session_state.Bonos_Extras=True
     Bonos_Extras.Bonos_Extras(usuario,puesto)    
@@ -282,6 +290,7 @@ def Validacion(usuario,puesto):
     placeholder21_3.empty()
     placeholder22_3.empty()
     placeholder23_3.empty()
+    placeholder24_3.empty()
     st.session_state.Ingreso = False
     st.session_state.Validacion=False
     st.session_state.Salir=True
