@@ -309,7 +309,7 @@ def CC_Validacion(usuario,puesto):
       paq_3='IZ_PAQ'
     elif "Trinidad" in municipio_3:
       paq_3='TR_PAQ'
-    elif "Cuitiva" in municipio_3:
+    elif "Cuítiva" in municipio_3:
       paq_3='CUI_PAQ'
     elif "Morroa" in municipio_3:
       paq_3='MO_PAQ'
@@ -318,7 +318,7 @@ def CC_Validacion(usuario,puesto):
     elif "San Estanislao" in municipio_3:
       paq_3='SE_PAQ'
     paq_4 = f"{paq_3}{paquete_3}_{seleccion_3}"
-
+"Cabuyaro","Chalán","Colombia","Cuítiva","Iza","Los Palmitos","Morroa","Trinidad","San Estanislao","San Luis de Cubarral","Zambrano"
     
     
     cursor01.execute(f"INSERT INTO registro (marca,usuario,nombre,puesto,supervisor,proceso,fecha,semana,año,unidad_asignacion,tipo,produccion,aprobados,rechazados,horas,uit,hito,lote,estado,area,efes,informales,paquete,con_fmi,sin_fmi,observaciones,zona,tipo_calidad,horas_bi,area_bi,operador_cc,total_de_errores,errores_por_excepciones,tipo_de_errores,conteo_de_errores)VALUES('{marca_3}','{usuario}','{nombre_3}','{puesto}','{supervisor_3}','Control de Calidad Postcampo','{fecha_3}','{semana_3}','{año_3}','{unidad_3}','{tipo_3}','{produccion_3}','{aprobados_3}','{rechazados_3}','{horas_3}','UIT-0','0','{lote_3}','N/A','0.0','0','0','{paq_4}','0','0','N/A','{zona_3}','N/A','{horas_bi}','0','{operador_3}','0','0','{tipos_de_errores_3}','{conteo_3}') RETURNING id;")
