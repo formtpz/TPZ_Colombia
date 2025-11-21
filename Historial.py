@@ -346,7 +346,7 @@ def Historial(usuario,puesto):
 
 
       
-      data_4_r ["Ratio meta"] = [150 if x == 'Precampo Folios de Matricula Inmobiliaria' else 150 if x == 'Postcampo Folios de Matricula Inmobiliaria' else 225 if x == 'Precampo' else 190 if x == 'Postcampo' else 425 if x=='Revisión de Campo' else 475 if x=='Control de Calidad Postcampo'else 475 if x=='Control de Calidad Precampo' else 0 for x in data_4_r['proceso']]
+      data_4_r ["Ratio meta"] = [150 if x == 'Precampo Folios de Matricula Inmobiliaria' else 150 if x == 'Postcampo Folios de Matricula Inmobiliaria' else 225 if x == 'Precampo' else 190 if x == 'Postcampo' else 325 if x=='Revisión de Campo' else 425 if x=='Control de Calidad Postcampo'else 425 if x=='Control de Calidad Precampo' else 0 for x in data_4_r['proceso']]
       data_4_r["produccion_total"] = (data_4_r["produccion"] + data_4_r["efes"] + data_4_r["informales"])
       data_4_r ["diferencia"] = data_4_r["produccion_total"] - data_4_r["Ratio meta"]
 
@@ -599,7 +599,7 @@ def Historial(usuario,puesto):
       placeholder46_7 = st.empty()
       descarga_7_producción = placeholder46_7.download_button("Decargar CSV",data=data_2_r.to_csv(),mime="text/csv",key="descarga_7_producción")
 
-      data_4_r ["Ratio meta"] = [120 if x == 'Precampo Folios de Matricula Inmobiliaria' else 120 if x == 'Postcampo Folios de Matricula Inmobiliaria' else 225 if x == 'Precampo' else 190 if x == 'Postcampo' else 325 if x=='Revisión de Campo' else 350 if x=='Control de Calidad Postcampo'else 350 if x=='Control de Calidad Precampo' else 0 for x in data_4_r['proceso']]    
+      data_4_r ["Ratio meta"] = [150 if x == 'Precampo Folios de Matricula Inmobiliaria' else 150 if x == 'Postcampo Folios de Matricula Inmobiliaria' else 225 if x == 'Precampo' else 190 if x == 'Postcampo' else 325 if x=='Revisión de Campo' else 425 if x=='Control de Calidad Postcampo'else 425 if x=='Control de Calidad Precampo' else 0 for x in data_4_r['proceso']]    
       data_4_r["produccion_total"] = (data_4_r["produccion"] + data_4_r["efes"] + data_4_r["informales"])
       data_4_r ["diferencia"] = data_4_r["produccion_total"] - data_4_r["Ratio meta"]
 
