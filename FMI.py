@@ -64,7 +64,7 @@ def FMI(usuario,puesto):
   estado_3= placeholder13_3.selectbox("Tipo de Proceso", options=("Revisión de Folios","Control de Calidad Precampo", "Devuelto a Campo", "Control de Calidad Post Campo", "Control de Calidad Previo XTF (Externo)","Homologación NPN","Migracion de Estudio Juridico","Asociacion FMI","Folio Antiguo", "Revisión de Predios Segregados","En Revisión","Control de calidad pos XTF","Resolución de alertas IGAC","Mesa conjunta con SIG"), key="estado_3")
   
   placeholder14_3= st.empty()
-  tipo_3= placeholder14_3.selectbox("Tipo", options=("Ordinario","Corrección"), key="tipo_3")
+  tipo_3= placeholder14_3.selectbox("Tipo", options=("Ordinario","Corrección","Extraordinaria"), key="tipo_3")
                   
   placeholder15_3= st.empty()
   produccion_3= placeholder15_3.number_input("Cantidad de Predios Revisados",min_value=0,step=1,key="produccion_3")
