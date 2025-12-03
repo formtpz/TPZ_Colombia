@@ -126,7 +126,7 @@ def Correcciones(usuario, puesto):
 
             if tipo_correccion == "Modificar valor":
         
-                descripcion1 = st.radio("Motivo:", ("Estado Incorrecto", "Fecha Incorrecta","Hora Incorrecta", "Predios Incorrectos","Caracteres Especiales" "#Paquete Incorrecto","Usuario Incorrecto","Tipo Incorrecto", "Unidad de Asignación Incorrecto"))
+                descripcion1 = st.radio("Motivo:", ("Estado Incorrecto", "Fecha Incorrecta","Hora Incorrecta", "Predios Incorrectos","Caracteres Especiales", "Paquete Incorrecto","Usuario Incorrecto","Tipo Incorrecto", "Unidad de Asignación Incorrecto"))
                 columna = st.text_input(
                     "indique la columna que deseas corregir"
                 )
