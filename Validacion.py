@@ -6,7 +6,7 @@ import psycopg2
 from datetime import datetime
 import pytz
 from urllib.parse import urlparse
-import Procesos,Historial,Capacitacion,Otros_Registros,Bonos_Extras,Salir
+import Procesos,Historial,Capacitacion,Otros_Registros,Bonos_Extras,Salir,Correcciones
 
 def Validacion(usuario,puesto):
 
