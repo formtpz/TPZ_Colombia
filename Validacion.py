@@ -337,7 +337,7 @@ def Validacion(usuario,puesto):
       paq_3='IZ_PAQ'
     elif "Trinidad" in municipio_3:
       paq_3='TR_PAQ'
-    elif "Cuitiva" in municipio_3:
+    elif "Cuítiva" in municipio_3:
       paq_3='CUI_PAQ'
     elif "Morroa" in municipio_3:
       paq_3='MO_PAQ'
