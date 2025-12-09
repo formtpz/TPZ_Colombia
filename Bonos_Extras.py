@@ -586,7 +586,7 @@ def Bonos_Extras(usuario,puesto):
       bono_total_9 = float(bonos_9.iloc[0, 14])
       
       placeholder33_9 = st.empty()
-      df_bonos = pd.DataFrame({ "Concepto": ["Bono Por Productividad","Bono Por Calidad","Bono QC","Bono Validación","Bono Supervisión","Bono Calidad /Entregas Supervisor","Bono Supervisión SIG","Bono Calidad /Entregas SIG","Bono Fijo","Bono Total","TOTAL"], 
+      df_bonos = pd.DataFrame({ "Concepto": ["Bono Por Productividad","Bono Por Calidad","Bono QC","Bono Validación","Bono Supervisión","Bono Calidad /Entregas Supervisor","Bono Supervisión SIG","Bono Calidad /Entregas SIG","Bono Fijo","TOTAL"], 
                                "Monto de bonificación": [bono_productividad_9,bono_calidad_9,bono_qc_9,bono_validacion_9,bono_supervision_9,bono_calidad_entregas_supervisor_9,bono_upervision_sig_9,bono_calidad_entregas_sig_9,bonos_fijos_9,bono_total_9]})
       placeholder33_9.dataframe(df_bonos, hide_index=True)
 
