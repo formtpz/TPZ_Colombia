@@ -562,7 +562,7 @@ def Bonos_Extras(usuario,puesto):
     #placeholder31_9 = st.empty()
     #titulo_bonos_9 = placeholder31_9.subheader("Bonos")
     #a8-bono productividad a15-bono calidad a16-bono fijo a17-bono por supervision a18-bono calidad externa igac a21 bono variable a22 bono total
-    bonos_9 = pd.read_sql(f"select a5, a6, a13, a9, a10, a12, a22, a23 FROM bonos WHERE a0='{usuario}' AND a23='{periodo_9}'", con)
+    bonos_9 = pd.read_sql(f"select a0,a1,a2,a3,a4,a5,a6,a7,a8,a9,a10,a11,a12,a13,a14,a15,a16,a17,a18,a19,a20,a21,a22,a23 FROM bonos WHERE a0='{usuario}' AND a23='{periodo_9}'", con)
     bonos_9= pd.DataFrame(data=bonos_9)
     
     pivot5= len(bonos_9.iloc[:,0])
@@ -573,19 +573,22 @@ def Bonos_Extras(usuario,puesto):
       error_9 = placeholder32_9.error('No existen datos para mostrar')
     else:
       # Reemplaza nulos por 0 y suma solo las columnas necesarias
-
-      bono_productividad_9= float(bonos_9.iloc[0, 0]) 
-      bono_calidad_9= float(bonos_9.iloc[0, 1]) 
-      bono_supervision_9= float(bonos_9.iloc[0, 3])
-      bono_calidad_externa_igac_9= float(bonos_9.iloc[0, 4]) 
-      bonos_variables_9 = float(bonos_9.iloc[0, 5]) 
-      bonos_fijos_9 = float(bonos_9.iloc[0, 2]) 
-      bono_total_9 = float(bonos_9.iloc[0, 6])
+      
+      bono_productividad_9= float(bonos_9.iloc[0, 5]) 
+      bono_calidad_9= float(bonos_9.iloc[0, 6]) 
+      bono_qc_9= float(bonos_9.iloc[0, 7])
+      bono_validacion_9= float(bonos_9.iloc[0, 8])
+      bono_supervision_9= float(bonos_9.iloc[0, 9])
+      bono_calidad_entregas_supervisor_9= float(bonos_9.iloc[0, 10])
+      bono_upervision_sig_9= float(bonos_9.iloc[0, 11])
+      bono_calidad_entregas_sig_9= float(bonos_9.iloc[0, 12])
+      bonos_fijos_9 = float(bonos_9.iloc[0, 13]) 
+      bono_total_9 = float(bonos_9.iloc[0, 14])
       
       placeholder33_9 = st.empty()
-      col1 = placeholder33_9.columns(1)
-   
-      col1.metric("Bono Total", bono_total_9)
+      df_bonos = pd.DataFrame({ "Concepto": ["Bono Por Productividad","Bono Por Calidad","Bono QC","Bono Validación","Bono Supervisión","Bono Calidad /Entregas Supervisor","Bono Supervisión SIG","Bono Calidad /Entregas SIG","Bono Fijo","Bono Total","TOTAL"], 
+                               "Monto de bonificación": [bono_productividad_9,bono_calidad_9,bono_qc_9,bono_validacion_9,bono_supervision_9,bono_calidad_entregas_supervisor_9,bono_upervision_sig_9,bono_calidad_entregas_sig_9,bonos_fijos_9,bono_total_9]})
+      placeholder33_9.dataframe(df_bonos, hide_index=True)
 
       # Procesos #
       
