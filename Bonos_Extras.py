@@ -583,7 +583,7 @@ def Bonos_Extras(usuario,puesto):
       bono_total_9 = float(bonos_9.iloc[0, 6])
       
       placeholder33_9 = st.empty()
-      col1 = placeholder33_9.columns(7)
+      col1 = placeholder33_9.columns(1)
    
       col1.metric("Bono Total", bono_total_9)
 
