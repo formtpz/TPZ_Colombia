@@ -956,6 +956,9 @@ def Procesos3(usuario,puesto):
 
         placeholder5_2 = st.sidebar.empty()
         bonos_extras_2 = placeholder5_2.button("Bonos y Horas Extras",key="bonos_extras_2")
+        
+        ph_correcciones = st.sidebar.empty()
+        correcciones = ph_correcciones.button("Solicitud Correcciones",key="correcciones")
 
         placeholder6_2 = st.sidebar.empty()
         salir_2 = placeholder6_2.button("Salir",key="salir_2")
@@ -984,6 +987,7 @@ def Procesos3(usuario,puesto):
             placeholder3_2.empty()
             placeholder4_2.empty()
             placeholder5_2.empty()
+            ph_correcciones.empty()
             placeholder6_2.empty()
             placeholder7_2.empty()
             placeholder8_2.empty()
@@ -1003,6 +1007,7 @@ def Procesos3(usuario,puesto):
             placeholder3_2.empty()
             placeholder4_2.empty()
             placeholder5_2.empty()
+            ph_correcciones.empty()
             placeholder6_2.empty()
             placeholder7_2.empty()
             placeholder8_2.empty()
@@ -1022,6 +1027,7 @@ def Procesos3(usuario,puesto):
             placeholder3_2.empty()
             placeholder4_2.empty()
             placeholder5_2.empty()
+            ph_correcciones.empty()
             placeholder6_2.empty()
             placeholder7_2.empty()
             placeholder8_2.empty()
@@ -1041,6 +1047,7 @@ def Procesos3(usuario,puesto):
             placeholder3_2.empty()
             placeholder4_2.empty()
             placeholder5_2.empty()
+            ph_correcciones.empty()
             placeholder6_2.empty()
             placeholder7_2.empty()
             placeholder8_2.empty()
@@ -1060,6 +1067,7 @@ def Procesos3(usuario,puesto):
             placeholder3_2.empty()
             placeholder4_2.empty()
             placeholder5_2.empty()
+            ph_correcciones.empty()
             placeholder6_2.empty()
             placeholder7_2.empty()
             placeholder8_2.empty()
@@ -1080,6 +1088,7 @@ def Procesos3(usuario,puesto):
             placeholder3_2.empty()
             placeholder4_2.empty()
             placeholder5_2.empty()
+            ph_correcciones.empty()
             placeholder6_2.empty()
             placeholder7_2.empty()
             placeholder8_2.empty()
@@ -1161,6 +1170,9 @@ def Procesos3(usuario,puesto):
 
         elif st.session_state.Bonos_Extras==True:
             Bonos_Extras.Bonos_Extras(usuario,puesto)
+
+        elif st.session_state.Correcciones==True:
+            Correcciones.Correcciones(usuario,puesto)
 
         elif st.session_state.FMI==True:
             FMI.FMI(usuario,puesto)
