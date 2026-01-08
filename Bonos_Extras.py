@@ -799,7 +799,7 @@ def Bonos_Extras(usuario,puesto):
   elif perfil_9 == "3":
     
     placeholder44_9 = st.empty()
-    periodo_9 = placeholder44_9.selectbox("Periodo",options=("Enero-2025","Febrero-2025","Marzo-2025","Abril-2025","Mayo-2025","Junio-2025","Julio-2025","Agosto-2025","Septiembre-2025","Octubre-2025","Noviembre-2025","Diciembre-2025","Enero-2026", "Febrero-2026", "Marzo-2026", "Abril-2026", "Mayo-2026", "Junio-2026", "Julio-2026", "Agosto-2026", "Septiembre-2026", "Octubre-2026", "Noviembre-2026", "Diciembre-2026"), key="periodo_bonos_9")    
+    periodo_9 = placeholder44_9.selectbox("Periodo",options=("Enero-2025","Febrero-2025","Marzo-2025","Abril-2025","Mayo-2025","Junio-2025","Julio-2025","Agosto-2025","Septiembre-2025","Octubre-2025","Noviembre-2025", "Retroactivo-Noviembre-2025","Diciembre-2025","Enero-2026", "Febrero-2026", "Marzo-2026", "Abril-2026", "Mayo-2026", "Junio-2026", "Julio-2026", "Agosto-2026", "Septiembre-2026", "Octubre-2026", "Noviembre-2026", "Diciembre-2026"), key="periodo_bonos_9")    
 
     placeholder45_9 = st.empty()
     titulo_bonos_9 = placeholder45_9.subheader("Bonos")
