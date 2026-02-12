@@ -325,12 +325,12 @@ def CC_Validacion(usuario,puesto):
     id_registro = cursor01.fetchone()[0]
     con.commit()      
     # Consulta SQL para leer los datos de usuario para tabla cc_paquete
-    df=pd.read_sql(f"select usuario,nombre,puesto,perfil,supervisor from usuarios where nombre='{operador_3}'", con)
-    usuario_objeto_cc= df.iloc[0, 0]
-    puesto_objeto_cc = df.iloc[0, 2]
-    supervisor_objeto_cc = df.iloc[0, 4]
+    #df=pd.read_sql(f"select usuario,nombre,puesto,perfil,supervisor from usuarios where nombre='{operador_3}'", con)
+    #usuario_objeto_cc= df.iloc[0, 0]
+    #puesto_objeto_cc = df.iloc[0, 2]
+    #supervisor_objeto_cc = df.iloc[0, 4]
 
 
-    cursor01.execute(f"INSERT INTO cc_paquetes (usuario, nombre, supervisor, proceso, tipo, paquete, horas, muestra_cc, aprobados, rechazados, estado, porcentage_error, usuario_calidad, nombre_calidad, tipos_de_errores, conteo, segunda_reinspeccion, porcentage_penalizacion_ratio, ratio_penalizado_predio_por_dia, fecha_produccion, fecha_corte, fecha_bono, horas_bi, id_registro)VALUES('{usuario_objeto_cc}','{operador_3}','{supervisor_objeto_cc}','Control de Calidad Postcampo', '{tipo_3}', '{paq_4}','0', '{produccion_3}', '{aprobados_3}', '{rechazados_3}', 'N/A', '0','{usuario}','{nombre_3}','{tipos_de_errores_3}','{conteo_3}','0','0','0','{fecha_3}','0','0','0','{id_registro}' )")
-    con.commit()
+    #cursor01.execute(f"INSERT INTO cc_paquetes (usuario, nombre, supervisor, proceso, tipo, paquete, horas, muestra_cc, aprobados, rechazados, estado, porcentage_error, usuario_calidad, nombre_calidad, tipos_de_errores, conteo, segunda_reinspeccion, porcentage_penalizacion_ratio, ratio_penalizado_predio_por_dia, fecha_produccion, fecha_corte, fecha_bono, horas_bi, id_registro)VALUES('{usuario_objeto_cc}','{operador_3}','{supervisor_objeto_cc}','Control de Calidad Postcampo', '{tipo_3}', '{paq_4}','0', '{produccion_3}', '{aprobados_3}', '{rechazados_3}', 'N/A', '0','{usuario}','{nombre_3}','{tipos_de_errores_3}','{conteo_3}','0','0','0','{fecha_3}','0','0','0','{id_registro}' )")
+    #con.commit()
     st.success('Reporte enviado correctamente')
