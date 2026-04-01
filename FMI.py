@@ -288,13 +288,13 @@ def FMI(usuario,puesto):
 
     lote_3_municipios = {"Cabuyaro", "Colombia", "San Luis de Cubarral"}
     lote_2_municipios = {"Trinidad", "Iza", "Cuítiva"}
-    n_a = "N/A"
+    n_a = {"N/A","Ninguno"}
    
     if municipio_3 in lote_3_municipios:
       lote_3 = '3'
     elif municipio_3 in lote_2_municipios:
       lote_3 = '2'
-    elif municipio_3 = n_a
+    elif municipio_3 in n_a
       lote_3 = '0'
     else:
       lote_3 = '1'
