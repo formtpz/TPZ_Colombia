@@ -621,6 +621,9 @@ def Procesos2(usuario,puesto):
         placeholder9_2 = st.empty()
         cc_precampo_2 = placeholder9_2.button("Control de Calidad Precampo",key="cc_precampo_2")
 
+        placeholder9_2_1 = st.empty()
+        estado_uit_hito = placeholder9_2_1.button("Revisión de Planos",key="estado_uit_hito_2")
+
         placeholder10_2 = st.empty()
         preparacion_insumos_2 = placeholder10_2.button("Preparación de Insumos",key="preparacion_insumos_2")
 
@@ -810,6 +813,28 @@ def Procesos2(usuario,puesto):
             st.session_state.CC_Precampo=True
             CC_Precampo.CC_Precampo(usuario,puesto)
 
+                # ----- Precampo ---- #
+
+        elif estado_uit_hito:
+
+            placeholder1_2.empty()
+            placeholder2_2.empty()
+            placeholder3_2.empty()
+            placeholder4_2.empty()
+            placeholder5_2.empty()
+            ph_correcciones.empty()
+            placeholder6_2.empty()
+            placeholder7_2.empty()
+            placeholder8_2.empty()
+            placeholder9_2.empty()
+            placeholder10_2.empty()
+            placeholder11_2.empty()
+            placeholder12_2.empty()
+            placeholder13_2.empty()
+            st.session_state.Procesos=True
+            st.session_state.Estado_UIT_Hito=True
+            Estado_UIT_Hito.Estado_UIT_Hito(usuario,puesto)
+
         # ----- Preparación de Insumos ---- #
 
         elif preparacion_insumos_2:
@@ -920,6 +945,9 @@ def Procesos2(usuario,puesto):
 
         elif st.session_state.CC_Precampo==True:
             CC_Precampo.CC_Precampo(usuario,puesto)
+
+        elif st.session_state.Estado_UIT_Hito==True:
+            Estado_UIT_Hito.Estado_UIT_Hito(usuario,puesto)        
 
         elif st.session_state.Preparacion_Insumos==True:
             Preparacion_Insumos.Preparacion_Insumos(usuario,puesto)
