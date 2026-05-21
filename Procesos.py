@@ -45,7 +45,7 @@ def Procesos1(usuario,puesto):
         precampo_2 = placeholder10_2.button("Precampo",key="precampo_2")
 
         placeholder11_2 = st.empty()
-        cc_precampo_2 = placeholder11_2.button("Control de Calidad Precampo",key="cc_precampo_2")
+        cc_precampo_2 = placeholder11_2.button("Revisión de Planos",key="estado_uit_hito_2")
         
         placeholder12_2 = st.empty()
         preparacion_insumos_2 = placeholder12_2.button("Preparación de Insumos",key="preparacion_insumos_2") 
@@ -66,7 +66,7 @@ def Procesos1(usuario,puesto):
         revision_segregados_2 = placeholder17_2.button("Revisión de Predios Segregados",key="revision_segregados_2")
 
         placeholder18_2 = st.empty()
-        estado_uit_hito_2 = placeholder18_2.button("Calidad Externa XTF",key="estado_uit_hito_2")
+        estado_uit_hito_2 = placeholder18_2.button("Control de Calidad Precampo",key="cc_precampo_2")
 
         # ----- Historial ---- #
 
