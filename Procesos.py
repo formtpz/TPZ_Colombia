@@ -316,7 +316,7 @@ def Procesos1(usuario,puesto):
 
         # ----- CC_Precampo ---- #
 
-        elif cc_precampo_2:
+        elif estado_uit_hito:
 
             placeholder1_2.empty()
             placeholder2_2.empty()
@@ -338,8 +338,8 @@ def Procesos1(usuario,puesto):
             placeholder17_2.empty()
             placeholder18_2.empty()
             st.session_state.Procesos=True
-            st.session_state.CC_Precampo=True
-            CC_Precampo.CC_Precampo(usuario,puesto)
+            st.session_state.Estado_UIT_Hito=True
+            Estado_UIT_Hito.Estado_UIT_Hito(usuario,puesto)
             
         # ----- Preparación de Insumos ---- #
 
@@ -505,7 +505,7 @@ def Procesos1(usuario,puesto):
                    
         # ----- Estado UIT Hito ---- #
 
-        elif estado_uit_hito_2:
+        elif cc_precampo_2:
 
             placeholder1_2.empty()
             placeholder2_2.empty()
@@ -527,8 +527,8 @@ def Procesos1(usuario,puesto):
             placeholder17_2.empty()
             placeholder18_2.empty()
             st.session_state.Procesos=True
-            st.session_state.Estado_UIT_Hito=True
-            Estado_UIT_Hito.Estado_UIT_Hito(usuario,puesto)
+            st.session_state.CC_Precampo=True
+            CC_Precampo.CC_Precampo(usuario,puesto)
 
     elif st.session_state.Procesos==True:
 
