@@ -142,6 +142,7 @@ if iniciar_sesion_1:
                 st.session_state.Calidad_externa_XTF=False
                 st.session_state.Precampo=False 
                 st.session_state.CC_Precampo=False
+                st.session_state.Estado_UIT_Hito=False
                 st.session_state.Preparacion_Insumos=False
                 st.session_state.Revision_Campo=False
                 st.session_state.Validacion=False
